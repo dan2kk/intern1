@@ -71,7 +71,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: 108,
+                    height: 107,
                     decoration: BoxDecoration(
                       color: Colors.white,
                     ),
