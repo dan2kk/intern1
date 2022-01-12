@@ -1,0 +1,32 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "repairstore",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "category",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "rate",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "repairstore",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "category",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "hashtag",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    }
+  ]
+}
