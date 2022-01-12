@@ -148,7 +148,8 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                             child: Image.network(
-                                              aaaaaItem.imgUrl,
+                                              valueOrDefault(aaaaaItem.imgUrl,
+                                                "https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/assets%2Fbqllo__.png?alt=media&token=f8a92a93-3ed5-4a18-a86d-e12e988aa58c"),
                                               width: 80,
                                               height: 80,
                                               fit: BoxFit.cover,

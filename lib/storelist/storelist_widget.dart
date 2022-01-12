@@ -234,8 +234,8 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                                       CrossAxisAlignment.center,
                                                   children: [
                                                     Image.network(
-                                                      listViewRepairstoreRecord
-                                                          .imgUrl1,
+                                                      valueOrDefault(listViewRepairstoreRecord
+                                                          .imgUrl1, "https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/assets%2Fbqllo__.png?alt=media&token=f8a92a93-3ed5-4a18-a86d-e12e988aa58c"),
                                                       width: 100,
                                                       height: 100,
                                                       fit: BoxFit.cover,

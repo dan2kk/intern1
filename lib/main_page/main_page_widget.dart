@@ -9,6 +9,7 @@ import '../flutter_flow/place.dart';
 import '../login_page/login_page_widget.dart';
 import '../main.dart';
 import '../storelist/storelist_widget.dart';
+import '../store_list_new/store_list_new_widget.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -44,7 +45,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.45,
+                          width: MediaQuery.of(context).size.width * 0.8,
                           height: 35,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -57,7 +58,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                 if ((currentUserUid) == '')
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        30, 0, 0, 0),
+                                        10, 0, 0, 0),
                                     child: InkWell(
                                       onTap: () async {
                                         await Navigator.push(
@@ -93,7 +94,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                     child: Text(
                                       '마이페이지',
                                       style:
-                                      FlutterFlowTheme.bodyText1.override(
+                                          FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'tway_air medium',
                                         color: Color(0xFF2163CB),
                                         fontSize: 18,
@@ -107,24 +108,20 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                           ),
                         ),
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.55,
+                          width: MediaQuery.of(context).size.width * 0.2,
                           height: 35,
                           decoration: BoxDecoration(
                             color: Colors.white,
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
-                                child: FaIcon(
-                                  FontAwesomeIcons.bell,
-                                  color: Color(0xFF3F51B5),
-                                  size: 24,
-                                ),
+                              FaIcon(
+                                FontAwesomeIcons.bell,
+                                color: Color(0xFF3F51B5),
+                                size: 24,
                               ),
                             ],
                           ),
@@ -136,11 +133,11 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
                     child: FlutterFlowPlacePicker(
                       iOSGoogleMapsApiKey:
-                      'AIzaSyDNoM8WgkE9gXuLPh9AcDjMvr2o5fspSpI',
+                          'AIzaSyDNoM8WgkE9gXuLPh9AcDjMvr2o5fspSpI',
                       androidGoogleMapsApiKey:
-                      'AIzaSyD0cTKJv0xqY_p1XU7OEzliJOs2cn5nL-E',
+                          'AIzaSyD0cTKJv0xqY_p1XU7OEzliJOs2cn5nL-E',
                       webGoogleMapsApiKey:
-                      'AIzaSyA-zHCiO1a9q5VM4zmWdOrbXgdLcKiIrSo',
+                          'AIzaSyA-zHCiO1a9q5VM4zmWdOrbXgdLcKiIrSo',
                       onSelect: (place) =>
                           setState(() => placePickerValue = place),
                       defaultText: 'Select Location',
@@ -178,7 +175,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                           ),
                           child: Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                             child: Text(
                               '수리가 필요한 모든 것엔 ',
                               textAlign: TextAlign.center,
@@ -210,7 +207,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                             alignment: AlignmentDirectional(0, -1),
                             child: Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                               child: Text(
                                 '딱따구리',
                                 textAlign: TextAlign.center,
@@ -240,7 +237,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                           ),
                           child: Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                             child: Text(
                               '   수리 카테고리',
                               textAlign: TextAlign.start,
@@ -283,7 +280,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                            MainAxisAlignment.center,
                                         children: [
                                           Container(
                                             width: MediaQuery.of(context)
@@ -296,19 +293,19 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                                  MainAxisAlignment.center,
                                               children: [
                                                 Container(
                                                   width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
+                                                          .size
+                                                          .width *
                                                       0.2,
                                                   height: 80,
                                                   decoration: BoxDecoration(
                                                     color: Color(0xFFEEEEEE),
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        20),
+                                                        BorderRadius.circular(
+                                                            20),
                                                   ),
                                                   child: InkWell(
                                                     onTap: () async {
@@ -317,22 +314,22 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                         MaterialPageRoute(
                                                           builder: (context) =>
                                                               StorelistWidget(
-                                                                category:
+                                                            category:
                                                                 'electronics',
-                                                              ),
+                                                          ),
                                                         ),
                                                       );
                                                     },
                                                     child: ClipRRect(
                                                       borderRadius:
-                                                      BorderRadius.circular(
-                                                          20),
+                                                          BorderRadius.circular(
+                                                              20),
                                                       child: Image.asset(
                                                         'assets/images/0at40_.PNG',
                                                         width: MediaQuery.of(
-                                                            context)
-                                                            .size
-                                                            .width *
+                                                                    context)
+                                                                .size
+                                                                .width *
                                                             0.8,
                                                         height: 75,
                                                         fit: BoxFit.cover,
@@ -345,16 +342,16 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                       .fromSTEB(7, 0, 0, 0),
                                                   child: Container(
                                                     width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                        0.2,
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            0.2,
                                                     height: 80,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFEEEEEE),
                                                       borderRadius:
-                                                      BorderRadius.circular(
-                                                          20),
+                                                          BorderRadius.circular(
+                                                              20),
                                                     ),
                                                     child: InkWell(
                                                       onTap: () async {
@@ -363,26 +360,26 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                           MaterialPageRoute(
                                                             builder: (context) =>
                                                                 StorelistWidget(
-                                                                  category:
+                                                              category:
                                                                   'mobile_phone',
-                                                                ),
+                                                            ),
                                                           ),
                                                         );
                                                       },
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                        BorderRadius
-                                                            .circular(20),
+                                                            BorderRadius
+                                                                .circular(20),
                                                         child: Image.asset(
                                                           'assets/images/bqllo__.png',
                                                           width: MediaQuery.of(
-                                                              context)
+                                                                  context)
                                                               .size
                                                               .width,
                                                           height: MediaQuery.of(
-                                                              context)
-                                                              .size
-                                                              .height *
+                                                                      context)
+                                                                  .size
+                                                                  .height *
                                                               1,
                                                           fit: BoxFit.fill,
                                                         ),
@@ -395,16 +392,16 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                       .fromSTEB(7, 0, 0, 0),
                                                   child: Container(
                                                     width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                        0.2,
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            0.2,
                                                     height: 80,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFEEEEEE),
                                                       borderRadius:
-                                                      BorderRadius.circular(
-                                                          20),
+                                                          BorderRadius.circular(
+                                                              20),
                                                     ),
                                                     child: InkWell(
                                                       onTap: () async {
@@ -413,16 +410,16 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                           MaterialPageRoute(
                                                             builder: (context) =>
                                                                 StorelistWidget(
-                                                                  category:
+                                                              category:
                                                                   'luxury',
-                                                                ),
+                                                            ),
                                                           ),
                                                         );
                                                       },
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                        BorderRadius
-                                                            .circular(20),
+                                                            BorderRadius
+                                                                .circular(20),
                                                         child: Image.asset(
                                                           'assets/images/t12if_.PNG',
                                                           width: 75,
@@ -438,16 +435,16 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                       .fromSTEB(7, 0, 0, 0),
                                                   child: Container(
                                                     width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                        0.2,
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            0.2,
                                                     height: 80,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFEEEEEE),
                                                       borderRadius:
-                                                      BorderRadius.circular(
-                                                          20),
+                                                          BorderRadius.circular(
+                                                              20),
                                                     ),
                                                     child: InkWell(
                                                       onTap: () async {
@@ -455,27 +452,27 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                           context,
                                                           PageTransition(
                                                             type:
-                                                            PageTransitionType
-                                                                .leftToRight,
+                                                                PageTransitionType
+                                                                    .leftToRight,
                                                             duration: Duration(
                                                                 milliseconds:
-                                                                300),
+                                                                    300),
                                                             reverseDuration:
-                                                            Duration(
-                                                                milliseconds:
-                                                                300),
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        300),
                                                             child:
                                                             StorelistWidget(
                                                               category:
-                                                              'vehicle',
+                                                                  'vehicle',
                                                             ),
                                                           ),
                                                         );
                                                       },
                                                       child: ClipRRect(
                                                         borderRadius:
-                                                        BorderRadius
-                                                            .circular(20),
+                                                            BorderRadius
+                                                                .circular(20),
                                                         child: Image.asset(
                                                           'assets/images/fzg8e_.PNG',
                                                           width: 75,
@@ -498,7 +495,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: [
                                             Container(
                                               width: MediaQuery.of(context)
@@ -511,41 +508,41 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
-                                                MainAxisAlignment.center,
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Container(
                                                     width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                        0.22,
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            0.22,
                                                     height: 25,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFEEEEEE),
                                                     ),
                                                     child: Row(
                                                       mainAxisSize:
-                                                      MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .center,
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Text(
                                                           '컴퓨터/가전',
                                                           textAlign:
-                                                          TextAlign.center,
+                                                              TextAlign.center,
                                                           style:
-                                                          FlutterFlowTheme
-                                                              .bodyText1
-                                                              .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                             fontFamily:
-                                                            'tway_air medium',
+                                                                'tway_air medium',
                                                             color: Colors.black,
                                                             fontSize: 15,
                                                             fontWeight:
-                                                            FontWeight.w500,
+                                                                FontWeight.w500,
                                                             useGoogleFonts:
-                                                            false,
+                                                                false,
                                                           ),
                                                         ),
                                                       ],
@@ -553,37 +550,37 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   ),
                                                   Container(
                                                     width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                        0.22,
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            0.22,
                                                     height: 25,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFEEEEEE),
                                                     ),
                                                     child: Row(
                                                       mainAxisSize:
-                                                      MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .center,
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Text(
                                                           '핸드폰',
                                                           textAlign:
-                                                          TextAlign.center,
+                                                              TextAlign.center,
                                                           style:
-                                                          FlutterFlowTheme
-                                                              .bodyText1
-                                                              .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                             fontFamily:
-                                                            'tway_air medium',
+                                                                'tway_air medium',
                                                             color: Colors.black,
                                                             fontSize: 15,
                                                             fontWeight:
-                                                            FontWeight.w500,
+                                                                FontWeight.w500,
                                                             useGoogleFonts:
-                                                            false,
+                                                                false,
                                                           ),
                                                         ),
                                                       ],
@@ -591,37 +588,37 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   ),
                                                   Container(
                                                     width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                        0.22,
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            0.22,
                                                     height: 25,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFEEEEEE),
                                                     ),
                                                     child: Row(
                                                       mainAxisSize:
-                                                      MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .center,
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Text(
                                                           '명품',
                                                           textAlign:
-                                                          TextAlign.center,
+                                                              TextAlign.center,
                                                           style:
-                                                          FlutterFlowTheme
-                                                              .bodyText1
-                                                              .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                             fontFamily:
-                                                            'tway_air medium',
+                                                                'tway_air medium',
                                                             color: Colors.black,
                                                             fontSize: 15,
                                                             fontWeight:
-                                                            FontWeight.w500,
+                                                                FontWeight.w500,
                                                             useGoogleFonts:
-                                                            false,
+                                                                false,
                                                           ),
                                                         ),
                                                       ],
@@ -629,37 +626,37 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   ),
                                                   Container(
                                                     width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                        0.22,
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            0.22,
                                                     height: 25,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFEEEEEE),
                                                     ),
                                                     child: Row(
                                                       mainAxisSize:
-                                                      MainAxisSize.max,
+                                                          MainAxisSize.max,
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .center,
+                                                          MainAxisAlignment
+                                                              .center,
                                                       children: [
                                                         Text(
                                                           '자동차',
                                                           textAlign:
-                                                          TextAlign.center,
+                                                              TextAlign.center,
                                                           style:
-                                                          FlutterFlowTheme
-                                                              .bodyText1
-                                                              .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                             fontFamily:
-                                                            'tway_air medium',
+                                                                'tway_air medium',
                                                             color: Colors.black,
                                                             fontSize: 15,
                                                             fontWeight:
-                                                            FontWeight.w500,
+                                                                FontWeight.w500,
                                                             useGoogleFonts:
-                                                            false,
+                                                                false,
                                                           ),
                                                         ),
                                                       ],
@@ -678,14 +675,14 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                            MainAxisAlignment.center,
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                            CrossAxisAlignment.center,
                                         children: [
                                           Container(
                                             width: MediaQuery.of(context)
-                                                .size
-                                                .width *
+                                                    .size
+                                                    .width *
                                                 0.2,
                                             height: 80,
                                             decoration: BoxDecoration(
@@ -704,14 +701,14 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                         milliseconds: 300),
                                                     child: StorelistWidget(
                                                       category:
-                                                      'transportation',
+                                                          'transportation',
                                                     ),
                                                   ),
                                                 );
                                               },
                                               child: ClipRRect(
                                                 borderRadius:
-                                                BorderRadius.circular(20),
+                                                    BorderRadius.circular(20),
                                                 child: Image.asset(
                                                   'assets/images/lp2pe_.PNG',
                                                   width: 75,
@@ -723,12 +720,12 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                7, 0, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    7, 0, 0, 0),
                                             child: Container(
                                               width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                                      .size
+                                                      .width *
                                                   0.2,
                                               height: 80,
                                               decoration: BoxDecoration(
@@ -741,14 +738,14 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                     MaterialPageRoute(
                                                       builder: (context) =>
                                                           StorelistWidget(
-                                                            category: 'instrument',
-                                                          ),
+                                                        category: 'instrument',
+                                                      ),
                                                     ),
                                                   );
                                                 },
                                                 child: ClipRRect(
                                                   borderRadius:
-                                                  BorderRadius.circular(20),
+                                                      BorderRadius.circular(20),
                                                   child: Image.asset(
                                                     'assets/images/bti21_.PNG',
                                                     width: 75,
@@ -761,12 +758,12 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                7, 0, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    7, 0, 0, 0),
                                             child: Container(
                                               width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                                      .size
+                                                      .width *
                                                   0.2,
                                               height: 80,
                                               decoration: BoxDecoration(
@@ -779,14 +776,14 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                     MaterialPageRoute(
                                                       builder: (context) =>
                                                           StorelistWidget(
-                                                            category: 'furniture',
-                                                          ),
+                                                        category: 'furniture',
+                                                      ),
                                                     ),
                                                   );
                                                 },
                                                 child: ClipRRect(
                                                   borderRadius:
-                                                  BorderRadius.circular(20),
+                                                      BorderRadius.circular(20),
                                                   child: Image.asset(
                                                     'assets/images/mjgug_.PNG',
                                                     width: 75,
@@ -799,12 +796,12 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                7, 0, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    7, 0, 0, 0),
                                             child: Container(
                                               width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                                      .size
+                                                      .width *
                                                   0.2,
                                               height: 80,
                                               decoration: BoxDecoration(
@@ -817,15 +814,15 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                     MaterialPageRoute(
                                                       builder: (context) =>
                                                           StorelistWidget(
-                                                            category:
+                                                        category:
                                                             'household_products',
-                                                          ),
+                                                      ),
                                                     ),
                                                   );
                                                 },
                                                 child: ClipRRect(
                                                   borderRadius:
-                                                  BorderRadius.circular(20),
+                                                      BorderRadius.circular(20),
                                                   child: Image.asset(
                                                     'assets/images/47ziq_.PNG',
                                                     width: 75,
@@ -855,12 +852,12 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                       children: [
                                         Container(
                                           width: MediaQuery.of(context)
-                                              .size
-                                              .width *
+                                                  .size
+                                                  .width *
                                               0.22,
                                           height: 25,
                                           decoration: BoxDecoration(
@@ -869,7 +866,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text(
                                                 '운송수단',
@@ -889,8 +886,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         ),
                                         Container(
                                           width: MediaQuery.of(context)
-                                              .size
-                                              .width *
+                                                  .size
+                                                  .width *
                                               0.22,
                                           height: 25,
                                           decoration: BoxDecoration(
@@ -899,7 +896,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text(
                                                 '악기',
@@ -919,8 +916,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         ),
                                         Container(
                                           width: MediaQuery.of(context)
-                                              .size
-                                              .width *
+                                                  .size
+                                                  .width *
                                               0.22,
                                           height: 25,
                                           decoration: BoxDecoration(
@@ -929,7 +926,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text(
                                                 '가구',
@@ -949,8 +946,8 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         ),
                                         Container(
                                           width: MediaQuery.of(context)
-                                              .size
-                                              .width *
+                                                  .size
+                                                  .width *
                                               0.22,
                                           height: 25,
                                           decoration: BoxDecoration(
@@ -959,7 +956,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text(
                                                 '생활제품',
@@ -1001,7 +998,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                           ),
                           child: Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                             child: Text(
                               '   이벤트',
                               style: TextStyle(
@@ -1071,7 +1068,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                   itemCount: pageViewEventsRecordList.length,
                                   itemBuilder: (context, pageViewIndex) {
                                     final pageViewEventsRecord =
-                                    pageViewEventsRecordList[pageViewIndex];
+                                        pageViewEventsRecordList[pageViewIndex];
                                     return Stack(
                                       children: [
                                         InkWell(
@@ -1081,23 +1078,23 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               MaterialPageRoute(
                                                 builder: (context) =>
                                                     EventdetailWidget(
-                                                      events: pageViewEventsRecord
-                                                          .reference,
-                                                    ),
+                                                  events: pageViewEventsRecord
+                                                      .reference,
+                                                ),
                                               ),
                                             );
                                           },
                                           child: ClipRRect(
                                             borderRadius:
-                                            BorderRadius.circular(20),
+                                                BorderRadius.circular(20),
                                             child: Image.network(
                                               pageViewEventsRecord.banner,
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width,
                                               height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
+                                                      .size
+                                                      .height *
                                                   1,
                                               fit: BoxFit.cover,
                                             ),
@@ -1105,15 +1102,15 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              260, 80, 0, 0),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  260, 80, 0, 0),
                                           child: Container(
                                             width: 100,
                                             height: 20,
                                             decoration: BoxDecoration(
                                               color: Color(0x9614181B),
                                               borderRadius:
-                                              BorderRadius.circular(20),
+                                                  BorderRadius.circular(20),
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional

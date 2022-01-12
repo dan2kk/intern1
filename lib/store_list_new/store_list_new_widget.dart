@@ -36,8 +36,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
     return StreamBuilder<List<RepairstoreRecord>>(
       stream: queryRepairstoreRecord(
         queryBuilder: (repairstoreRecord) => repairstoreRecord
-            .where('category', isEqualTo: widget.category)
-            .where('hashtag', arrayContains: searchFieldController.text),
+            .where('category', isEqualTo: widget.category),
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
