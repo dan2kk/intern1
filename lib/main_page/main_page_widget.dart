@@ -363,7 +363,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                           BorderRadius.circular(
                                                               20),
                                                       child: Image.asset(
-                                                        'assets/images/bqllo__.png',
+                                                        'assets/images/nfu9r_.PNG',
                                                         width: MediaQuery.of(
                                                                 context)
                                                             .size
