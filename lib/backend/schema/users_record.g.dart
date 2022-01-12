@@ -93,6 +93,27 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
               const FullType(DocumentReference, const [const FullType(Object)])
             ])));
     }
+    value = object.locationsetting;
+    if (value != null) {
+      result
+        ..add('locationsetting')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.pushalarm;
+    if (value != null) {
+      result
+        ..add('pushalarm')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.emailalarm;
+    if (value != null) {
+      result
+        ..add('emailalarm')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.reference;
     if (value != null) {
       result
@@ -163,6 +184,18 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
                     DocumentReference, const [const FullType(Object)])
               ])) as BuiltList<Object>);
           break;
+        case 'locationsetting':
+          result.locationsetting = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'pushalarm':
+          result.pushalarm = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'emailalarm':
+          result.emailalarm = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
         case 'Document__Reference__Field':
           result.reference = serializers.deserialize(value,
                   specifiedType: const FullType(
@@ -198,6 +231,12 @@ class _$UsersRecord extends UsersRecord {
   @override
   final BuiltList<DocumentReference<Object>> couponHis;
   @override
+  final bool locationsetting;
+  @override
+  final bool pushalarm;
+  @override
+  final bool emailalarm;
+  @override
   final DocumentReference<Object> reference;
 
   factory _$UsersRecord([void Function(UsersRecordBuilder) updates]) =>
@@ -214,6 +253,9 @@ class _$UsersRecord extends UsersRecord {
       this.point,
       this.pointHis,
       this.couponHis,
+      this.locationsetting,
+      this.pushalarm,
+      this.emailalarm,
       this.reference})
       : super._();
 
@@ -238,6 +280,9 @@ class _$UsersRecord extends UsersRecord {
         point == other.point &&
         pointHis == other.pointHis &&
         couponHis == other.couponHis &&
+        locationsetting == other.locationsetting &&
+        pushalarm == other.pushalarm &&
+        emailalarm == other.emailalarm &&
         reference == other.reference;
   }
 
@@ -252,16 +297,22 @@ class _$UsersRecord extends UsersRecord {
                             $jc(
                                 $jc(
                                     $jc(
-                                        $jc($jc(0, email.hashCode),
-                                            displayName.hashCode),
-                                        photoUrl.hashCode),
-                                    uid.hashCode),
-                                createdTime.hashCode),
-                            favorites.hashCode),
-                        phoneNumber.hashCode),
-                    point.hashCode),
-                pointHis.hashCode),
-            couponHis.hashCode),
+                                        $jc(
+                                            $jc(
+                                                $jc(
+                                                    $jc($jc(0, email.hashCode),
+                                                        displayName.hashCode),
+                                                    photoUrl.hashCode),
+                                                uid.hashCode),
+                                            createdTime.hashCode),
+                                        favorites.hashCode),
+                                    phoneNumber.hashCode),
+                                point.hashCode),
+                            pointHis.hashCode),
+                        couponHis.hashCode),
+                    locationsetting.hashCode),
+                pushalarm.hashCode),
+            emailalarm.hashCode),
         reference.hashCode));
   }
 
@@ -278,6 +329,9 @@ class _$UsersRecord extends UsersRecord {
           ..add('point', point)
           ..add('pointHis', pointHis)
           ..add('couponHis', couponHis)
+          ..add('locationsetting', locationsetting)
+          ..add('pushalarm', pushalarm)
+          ..add('emailalarm', emailalarm)
           ..add('reference', reference))
         .toString();
   }
@@ -331,6 +385,19 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   set couponHis(ListBuilder<DocumentReference<Object>> couponHis) =>
       _$this._couponHis = couponHis;
 
+  bool _locationsetting;
+  bool get locationsetting => _$this._locationsetting;
+  set locationsetting(bool locationsetting) =>
+      _$this._locationsetting = locationsetting;
+
+  bool _pushalarm;
+  bool get pushalarm => _$this._pushalarm;
+  set pushalarm(bool pushalarm) => _$this._pushalarm = pushalarm;
+
+  bool _emailalarm;
+  bool get emailalarm => _$this._emailalarm;
+  set emailalarm(bool emailalarm) => _$this._emailalarm = emailalarm;
+
   DocumentReference<Object> _reference;
   DocumentReference<Object> get reference => _$this._reference;
   set reference(DocumentReference<Object> reference) =>
@@ -353,6 +420,9 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _point = $v.point;
       _pointHis = $v.pointHis?.toBuilder();
       _couponHis = $v.couponHis?.toBuilder();
+      _locationsetting = $v.locationsetting;
+      _pushalarm = $v.pushalarm;
+      _emailalarm = $v.emailalarm;
       _reference = $v.reference;
       _$v = null;
     }
@@ -386,6 +456,9 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
               point: point,
               pointHis: _pointHis?.build(),
               couponHis: _couponHis?.build(),
+              locationsetting: locationsetting,
+              pushalarm: pushalarm,
+              emailalarm: emailalarm,
               reference: reference);
     } catch (_) {
       String _$failedField;
