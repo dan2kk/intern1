@@ -59,8 +59,17 @@ class _RepairmentStoreDetailWidgetState
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Center(
-            child: LinearProgressIndicator(
-              color: Color(0xFF2163CB),
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 20),
+              width: 300,
+              height: 20,
+              child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                child: LinearProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xff00ff00)),
+                  backgroundColor: Color(0xffD6D6D6),
+                ),
+              ),
             ),
           );
         }
@@ -290,7 +299,7 @@ class _RepairmentStoreDetailWidgetState
                                                 child: Card(
                                                   clipBehavior: Clip
                                                       .antiAliasWithSaveLayer,
-                                                  color: Color(0x3A000000),
+                                                  color: Color(0x3A050505),
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -315,7 +324,7 @@ class _RepairmentStoreDetailWidgetState
                                               Card(
                                                 clipBehavior:
                                                     Clip.antiAliasWithSaveLayer,
-                                                color: Color(0x3A000000),
+                                                color: Color(0x3A050505),
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(8),
@@ -434,7 +443,7 @@ class _RepairmentStoreDetailWidgetState
                                 ),
                                 direction: Axis.horizontal,
                                 rating:
-                                    repairmentStoreDetailRepairstoreRecord.rate,
+                                    valueOrDefault(repairmentStoreDetailRepairstoreRecord.rate, 0),
                                 unratedColor: Color(0xFF95A1AC),
                                 itemCount: 5,
                                 itemSize: 24,
@@ -454,10 +463,19 @@ class _RepairmentStoreDetailWidgetState
                                     // Customize what your widget looks like when it's loading.
                                     if (!snapshot.hasData) {
                                       return Center(
-                                        child: LinearProgressIndicator(
-                                          color: Color(0xFF2163CB),
-                                        ),
-                                      );
+                                        child: Container(
+                                          margin: EdgeInsets.symmetric(vertical: 20),
+                                          width: 300,
+                                          height: 20,
+                                          child: ClipRRect(
+                                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                                            child: LinearProgressIndicator(
+                                              valueColor: AlwaysStoppedAnimation<Color>(Color(0xff00ff00)),
+                                              backgroundColor: Color(0xffD6D6D6),
+                                            ),
+                                          ),
+                                        )
+                                          );
                                     }
                                     List<ReviewRecord> textReviewRecordList =
                                         snapshot.data;
@@ -476,7 +494,7 @@ class _RepairmentStoreDetailWidgetState
                                         );
                                       },
                                       child: Text(
-                                        '${textReviewRecordList.length.toString()} 리뷰',
+                                        '${valueOrDefault(textReviewRecordList.length.toString(), '0')} 리뷰',
                                         style:
                                             FlutterFlowTheme.bodyText2.override(
                                           fontFamily: 'Lexend Deca',
@@ -520,8 +538,8 @@ class _RepairmentStoreDetailWidgetState
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 0, 0, 24),
                                   child: Text(
-                                    repairmentStoreDetailRepairstoreRecord
-                                        .explain,
+                                    valueOrDefault(repairmentStoreDetailRepairstoreRecord
+                                        .explain, "내무"),
                                     style: FlutterFlowTheme.bodyText2.override(
                                       fontFamily: 'Lexend Deca',
                                       color: Color(0xFF8B97A2),
