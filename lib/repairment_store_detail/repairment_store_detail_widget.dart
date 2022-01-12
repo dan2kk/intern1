@@ -31,7 +31,7 @@ class _RepairmentStoreDetailWidgetState
     extends State<RepairmentStoreDetailWidget> {
   PageController pageViewController;
   final riveAnimationAnimationsList = [
-    'Animation 1',
+    'Animation 1', 'Animation 2',
   ];
   List<FlutterFlowRiveController> riveAnimationControllers = [];
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -59,18 +59,16 @@ class _RepairmentStoreDetailWidgetState
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Center(
-            child: Container(
-              margin: EdgeInsets.symmetric(vertical: 20),
-              width: 300,
-              height: 20,
-              child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                child: LinearProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xff00ff00)),
-                  backgroundColor: Color(0xffD6D6D6),
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.1,
+                child: RiveAnimation.asset(
+                  'assets/rive_animations/loading.riv',
+                  artboard: 'New Artboard',
+                  fit: BoxFit.cover,
+                  controllers: riveAnimationControllers,
                 ),
-              ),
-            ),
+              )
           );
         }
         List<RepairstoreRecord> repairmentStoreDetailRepairstoreRecordList =
@@ -464,15 +462,13 @@ class _RepairmentStoreDetailWidgetState
                                     if (!snapshot.hasData) {
                                       return Center(
                                         child: Container(
-                                          margin: EdgeInsets.symmetric(vertical: 20),
-                                          width: 300,
-                                          height: 20,
-                                          child: ClipRRect(
-                                            borderRadius: BorderRadius.all(Radius.circular(10)),
-                                            child: LinearProgressIndicator(
-                                              valueColor: AlwaysStoppedAnimation<Color>(Color(0xff00ff00)),
-                                              backgroundColor: Color(0xffD6D6D6),
-                                            ),
+                                          width: MediaQuery.of(context).size.width * 0.8,
+                                          height: MediaQuery.of(context).size.height * 0.1,
+                                          child: RiveAnimation.asset(
+                                            'assets/rive_animations/loading.riv',
+                                            artboard: 'New Artboard',
+                                            fit: BoxFit.cover,
+                                            controllers: riveAnimationControllers,
                                           ),
                                         )
                                           );
