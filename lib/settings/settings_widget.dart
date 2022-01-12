@@ -16,9 +16,9 @@ class SettingsWidget extends StatefulWidget {
 }
 
 class _SettingsWidgetState extends State<SettingsWidget> {
-  bool switchListTileValue1 = true;
-  bool switchListTileValue2 = true;
-  bool switchListTileValue3 = true;
+  bool switchListTileValue1 =true ;
+  bool switchListTileValue2 =true ;
+  bool switchListTileValue3 =true ;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -65,8 +65,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10, 0, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                10, 0, 0, 0),
                                             child: InkWell(
                                               onTap: () async {
                                                 Navigator.pop(context);
@@ -80,8 +80,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20, 0, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                20, 0, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -91,7 +91,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                                   style: FlutterFlowTheme.title1
                                                       .override(
                                                     fontFamily:
-                                                        'tway_air medium',
+                                                    'tway_air medium',
                                                     color: Color(0xFFFBFBF6),
                                                     fontSize: 25,
                                                     fontWeight: FontWeight.w500,
@@ -163,35 +163,38 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             Expanded(
                               child: Align(
                                 alignment: AlignmentDirectional(0, 0),
-                                child: SwitchListTile.adaptive(
-                                  value: switchListTileValue1 ??= true,
-                                  onChanged: (newValue) => setState(
-                                      () => switchListTileValue1 = newValue),
-                                  title: Text(
-                                    '푸쉬 설정',
-                                    style: GoogleFonts.getFont(
-                                      'Lexend Deca',
-                                      color: Color(0xFF3F51B5),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 17,
+                                child: AuthUserStreamWidget(
+                                  child: SwitchListTile.adaptive(
+                                    value: switchListTileValue1 ??=
+                                        currentUserDocument?.pushalarm,
+                                    onChanged: (newValue) => setState(
+                                            () => switchListTileValue1 = newValue),
+                                    title: Text(
+                                      '푸쉬 설정',
+                                      style: GoogleFonts.getFont(
+                                        'Lexend Deca',
+                                        color: Color(0xFF3F51B5),
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 17,
+                                      ),
                                     ),
-                                  ),
-                                  subtitle: Text(
-                                    '애플리케이션으로부터 Push 알림을 반기별로 수신합니다.',
-                                    textAlign: TextAlign.justify,
-                                    style: GoogleFonts.getFont(
-                                      'Lexend Deca',
-                                      color: Color(0xFF8B97A2),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14,
-                                      fontStyle: FontStyle.normal,
+                                    subtitle: Text(
+                                      '애플리케이션으로부터 Push 알림을 반기별로 수신합니다.',
+                                      textAlign: TextAlign.justify,
+                                      style: GoogleFonts.getFont(
+                                        'Lexend Deca',
+                                        color: Color(0xFF8B97A2),
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                        fontStyle: FontStyle.normal,
+                                      ),
                                     ),
+                                    activeColor: Color(0xFF4B39EF),
+                                    activeTrackColor: Color(0xFF3B2DB6),
+                                    dense: false,
+                                    controlAffinity:
+                                    ListTileControlAffinity.trailing,
                                   ),
-                                  activeColor: Color(0xFF4B39EF),
-                                  activeTrackColor: Color(0xFF3B2DB6),
-                                  dense: false,
-                                  controlAffinity:
-                                      ListTileControlAffinity.trailing,
                                 ),
                               ),
                             ),
@@ -220,9 +223,10 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             Expanded(
                               child: AuthUserStreamWidget(
                                 child: SwitchListTile.adaptive(
-                                  value: switchListTileValue2 ??= true,
+                                  value: switchListTileValue2 ??=
+                                      currentUserDocument?.emailalarm,
                                   onChanged: (newValue) => setState(
-                                      () => switchListTileValue2 = newValue),
+                                          () => switchListTileValue2 = newValue),
                                   title: Text(
                                     '이메일 알람',
                                     style: TextStyle(
@@ -245,7 +249,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   activeTrackColor: Color(0xFF3B2DB6),
                                   dense: false,
                                   controlAffinity:
-                                      ListTileControlAffinity.trailing,
+                                  ListTileControlAffinity.trailing,
                                 ),
                               ),
                             ),
@@ -282,7 +286,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   value: switchListTileValue3 ??=
                                       currentUserDocument?.locationsetting,
                                   onChanged: (newValue) => setState(
-                                      () => switchListTileValue3 = newValue),
+                                          () => switchListTileValue3 = newValue),
                                   title: Text(
                                     '위치 설정',
                                     style: GoogleFonts.getFont(
@@ -305,7 +309,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   activeTrackColor: Color(0xFF3B2DB6),
                                   dense: false,
                                   controlAffinity:
-                                      ListTileControlAffinity.trailing,
+                                  ListTileControlAffinity.trailing,
                                 ),
                               ),
                             ),
