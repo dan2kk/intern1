@@ -30,7 +30,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
       backgroundColor: Color(0xFF4450C5),
       body: Container(
         width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height * 0.8,
+        height: MediaQuery.of(context).size.height * 1,
         child: Stack(
           children: [
             Column(
