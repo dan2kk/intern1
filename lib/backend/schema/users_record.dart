@@ -46,6 +46,15 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   BuiltList<DocumentReference> get couponHis;
 
   @nullable
+  bool get locationsetting;
+
+  @nullable
+  bool get pushalarm;
+
+  @nullable
+  bool get emailalarm;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -58,7 +67,10 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
     ..phoneNumber = ''
     ..point = 0
     ..pointHis = ListBuilder()
-    ..couponHis = ListBuilder();
+    ..couponHis = ListBuilder()
+    ..locationsetting = false
+    ..pushalarm = false
+    ..emailalarm = false;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
@@ -89,6 +101,9 @@ Map<String, dynamic> createUsersRecordData({
   DateTime createdTime,
   String phoneNumber,
   int point,
+  bool locationsetting,
+  bool pushalarm,
+  bool emailalarm,
 }) =>
     serializers.toFirestore(
         UsersRecord.serializer,
@@ -102,4 +117,7 @@ Map<String, dynamic> createUsersRecordData({
           ..phoneNumber = phoneNumber
           ..point = point
           ..pointHis = null
-          ..couponHis = null));
+          ..couponHis = null
+          ..locationsetting = locationsetting
+          ..pushalarm = pushalarm
+          ..emailalarm = emailalarm));

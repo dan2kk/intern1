@@ -158,7 +158,7 @@ class _EventdetailWidgetState extends State<EventdetailWidget>
                                                   .override(
                                                 fontFamily: 'tway_air medium',
                                                 color: Colors.white,
-                                                fontSize: 24,
+                                                fontSize: 23,
                                                 fontWeight: FontWeight.w500,
                                                 useGoogleFonts: false,
                                               ),
