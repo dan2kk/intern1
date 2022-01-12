@@ -84,7 +84,6 @@ class _RepairmentStoreDetailWidgetState
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
                   child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
