@@ -16,9 +16,9 @@ class SettingsWidget extends StatefulWidget {
 }
 
 class _SettingsWidgetState extends State<SettingsWidget> {
-  bool switchListTileValue1;
-  bool switchListTileValue2;
-  bool switchListTileValue3;
+  bool switchListTileValue1 = true;
+  bool switchListTileValue2 = true;
+  bool switchListTileValue3 = true;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

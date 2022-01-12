@@ -6,10 +6,8 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
 import '../order_complete/order_complete_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class FixOrderWidget extends StatefulWidget {
   const FixOrderWidget({
@@ -29,11 +27,11 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
   String uploadedFileUrl2 = '';
   TextEditingController textController1;
   TextEditingController textController2;
-  bool picturevideoValue;
+  bool picturevideoValue = true;
   TextEditingController textController3;
   TextEditingController textController4;
   TextEditingController textController5;
-  bool switchListTileValue;
+  bool switchListTileValue = true;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

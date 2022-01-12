@@ -12,11 +12,17 @@ import 'main_page/main_page_widget.dart';
 import 'favorite/favorite_widget.dart';
 import 'fix_history/fix_history_widget.dart';
 import 'my_page/my_page_widget.dart';
+import 'dart:io';
+import 'package:flutter/foundation.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.presentError(details);
+    if (kReleaseMode)
+      exit(1);
+  };
   runApp(MyApp());
 }
 
