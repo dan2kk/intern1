@@ -12,6 +12,8 @@ export 'apple_auth.dart';
 export 'email_auth.dart';
 export 'facebook_auth.dart';
 export 'google_auth.dart';
+export '../custom_code/actions/sign_in_with_ka_kao.dart';
+export '../custom_code/actions/sign_in_with_naver.dart';
 
 /// Tries to sign in or create an account using Firebase Auth.
 /// Returns the User object if sign in was successful.
