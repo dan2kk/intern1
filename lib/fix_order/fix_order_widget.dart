@@ -29,11 +29,11 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
   String uploadedFileUrl2 = '';
   TextEditingController textController1;
   TextEditingController textController2;
-  bool picturevideoValue = true;
+  bool picturevideoValue;
   TextEditingController textController3;
   TextEditingController textController4;
   TextEditingController textController5;
-  bool switchListTileValue = true;
+  bool switchListTileValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -65,9 +65,9 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
         }
         List<RepairstoreRecord> fixOrderRepairstoreRecordList = snapshot.data;
         final fixOrderRepairstoreRecord =
-        fixOrderRepairstoreRecordList.isNotEmpty
-            ? fixOrderRepairstoreRecordList.first
-            : null;
+            fixOrderRepairstoreRecordList.isNotEmpty
+                ? fixOrderRepairstoreRecordList.first
+                : null;
         return Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
@@ -112,7 +112,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                           alignment: AlignmentDirectional(0, 0),
                           child: Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.9,
                               height: MediaQuery.of(context).size.height * 0.38,
@@ -129,20 +129,20 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                          MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
+                                          CrossAxisAlignment.stretch,
                                       children: [
                                         Stack(
                                           children: [
                                             if (picturevideoValue ?? true)
                                               Align(
                                                 alignment:
-                                                AlignmentDirectional(0, 0),
+                                                    AlignmentDirectional(0, 0),
                                                 child: InkWell(
                                                   onTap: () async {
                                                     final selectedMedia =
-                                                    await selectMediaWithSourceBottomSheet(
+                                                        await selectMediaWithSourceBottomSheet(
                                                       context: context,
                                                       allowPhoto: false,
                                                       allowVideo: true,
@@ -156,18 +156,18 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                           'Uploading file...',
                                                           showLoading: true);
                                                       final downloadUrl =
-                                                      await uploadData(
-                                                          selectedMedia
-                                                              .storagePath,
-                                                          selectedMedia
-                                                              .bytes);
+                                                          await uploadData(
+                                                              selectedMedia
+                                                                  .storagePath,
+                                                              selectedMedia
+                                                                  .bytes);
                                                       ScaffoldMessenger.of(
-                                                          context)
+                                                              context)
                                                           .hideCurrentSnackBar();
                                                       if (downloadUrl != null) {
                                                         setState(() =>
-                                                        uploadedFileUrl1 =
-                                                            downloadUrl);
+                                                            uploadedFileUrl1 =
+                                                                downloadUrl);
                                                         showUploadMessage(
                                                             context,
                                                             'Success!');
@@ -193,19 +193,19 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                             if (!(picturevideoValue) ?? true)
                                               Align(
                                                 alignment:
-                                                AlignmentDirectional(0, 0),
+                                                    AlignmentDirectional(0, 0),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(0, 10, 0, 0),
                                                   child: InkWell(
                                                     onTap: () async {
                                                       final selectedMedia =
-                                                      await selectMediaWithSourceBottomSheet(
+                                                          await selectMediaWithSourceBottomSheet(
                                                         context: context,
                                                         allowPhoto: true,
                                                       );
                                                       if (selectedMedia !=
-                                                          null &&
+                                                              null &&
                                                           validateFileFormat(
                                                               selectedMedia
                                                                   .storagePath,
@@ -215,19 +215,19 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                             'Uploading file...',
                                                             showLoading: true);
                                                         final downloadUrl =
-                                                        await uploadData(
-                                                            selectedMedia
-                                                                .storagePath,
-                                                            selectedMedia
-                                                                .bytes);
+                                                            await uploadData(
+                                                                selectedMedia
+                                                                    .storagePath,
+                                                                selectedMedia
+                                                                    .bytes);
                                                         ScaffoldMessenger.of(
-                                                            context)
+                                                                context)
                                                             .hideCurrentSnackBar();
                                                         if (downloadUrl !=
                                                             null) {
                                                           setState(() =>
-                                                          uploadedFileUrl2 =
-                                                              downloadUrl);
+                                                              uploadedFileUrl2 =
+                                                                  downloadUrl);
                                                           showUploadMessage(
                                                               context,
                                                               'Success!');
@@ -255,8 +255,8 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 16, 0, 0),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 16, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -277,8 +277,8 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 12, 0, 0),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 12, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -289,72 +289,72 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                   decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        8),
+                                                        BorderRadius.circular(
+                                                            8),
                                                     border: Border.all(
                                                       color: Color(0xFFE6E6E6),
                                                     ),
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        16, 0, 0, 0),
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                16, 0, 0, 0),
                                                     child: TextFormField(
                                                       controller:
-                                                      textController1,
+                                                          textController1,
                                                       obscureText: false,
                                                       decoration:
-                                                      InputDecoration(
+                                                          InputDecoration(
                                                         labelText: '제조사',
                                                         labelStyle:
-                                                        FlutterFlowTheme
-                                                            .bodyText2
-                                                            .override(
+                                                            FlutterFlowTheme
+                                                                .bodyText2
+                                                                .override(
                                                           fontFamily:
-                                                          'tway_air medium',
+                                                              'tway_air medium',
                                                           color:
-                                                          Color(0xFF8B97A2),
+                                                              Color(0xFF8B97A2),
                                                           fontWeight:
-                                                          FontWeight.w500,
+                                                              FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
                                                         enabledBorder:
-                                                        UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
-                                                          BorderSide(
+                                                              BorderSide(
                                                             color: Color(
                                                                 0x00000000),
                                                             width: 1,
                                                           ),
                                                           borderRadius:
-                                                          const BorderRadius
-                                                              .only(
+                                                              const BorderRadius
+                                                                  .only(
                                                             topLeft:
-                                                            Radius.circular(
-                                                                4.0),
+                                                                Radius.circular(
+                                                                    4.0),
                                                             topRight:
-                                                            Radius.circular(
-                                                                4.0),
+                                                                Radius.circular(
+                                                                    4.0),
                                                           ),
                                                         ),
                                                         focusedBorder:
-                                                        UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
-                                                          BorderSide(
+                                                              BorderSide(
                                                             color: Color(
                                                                 0x00000000),
                                                             width: 1,
                                                           ),
                                                           borderRadius:
-                                                          const BorderRadius
-                                                              .only(
+                                                              const BorderRadius
+                                                                  .only(
                                                             topLeft:
-                                                            Radius.circular(
-                                                                4.0),
+                                                                Radius.circular(
+                                                                    4.0),
                                                             topRight:
-                                                            Radius.circular(
-                                                                4.0),
+                                                                Radius.circular(
+                                                                    4.0),
                                                           ),
                                                         ),
                                                       ),
@@ -362,11 +362,11 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                           .bodyText2
                                                           .override(
                                                         fontFamily:
-                                                        'tway_air medium',
+                                                            'tway_air medium',
                                                         color:
-                                                        Color(0xFF8B97A2),
+                                                            Color(0xFF8B97A2),
                                                         fontWeight:
-                                                        FontWeight.w500,
+                                                            FontWeight.w500,
                                                         useGoogleFonts: false,
                                                       ),
                                                     ),
@@ -378,8 +378,8 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 12, 0, 0),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 12, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -390,72 +390,72 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                   decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        8),
+                                                        BorderRadius.circular(
+                                                            8),
                                                     border: Border.all(
                                                       color: Color(0xFFE6E6E6),
                                                     ),
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        16, 0, 0, 0),
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                16, 0, 0, 0),
                                                     child: TextFormField(
                                                       controller:
-                                                      textController2,
+                                                          textController2,
                                                       obscureText: false,
                                                       decoration:
-                                                      InputDecoration(
+                                                          InputDecoration(
                                                         labelText: '모델명',
                                                         labelStyle:
-                                                        FlutterFlowTheme
-                                                            .bodyText2
-                                                            .override(
+                                                            FlutterFlowTheme
+                                                                .bodyText2
+                                                                .override(
                                                           fontFamily:
-                                                          'tway_air medium',
+                                                              'tway_air medium',
                                                           color:
-                                                          Color(0xFF8B97A2),
+                                                              Color(0xFF8B97A2),
                                                           fontWeight:
-                                                          FontWeight.w500,
+                                                              FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
                                                         enabledBorder:
-                                                        UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
-                                                          BorderSide(
+                                                              BorderSide(
                                                             color: Color(
                                                                 0x00000000),
                                                             width: 1,
                                                           ),
                                                           borderRadius:
-                                                          const BorderRadius
-                                                              .only(
+                                                              const BorderRadius
+                                                                  .only(
                                                             topLeft:
-                                                            Radius.circular(
-                                                                4.0),
+                                                                Radius.circular(
+                                                                    4.0),
                                                             topRight:
-                                                            Radius.circular(
-                                                                4.0),
+                                                                Radius.circular(
+                                                                    4.0),
                                                           ),
                                                         ),
                                                         focusedBorder:
-                                                        UnderlineInputBorder(
+                                                            UnderlineInputBorder(
                                                           borderSide:
-                                                          BorderSide(
+                                                              BorderSide(
                                                             color: Color(
                                                                 0x00000000),
                                                             width: 1,
                                                           ),
                                                           borderRadius:
-                                                          const BorderRadius
-                                                              .only(
+                                                              const BorderRadius
+                                                                  .only(
                                                             topLeft:
-                                                            Radius.circular(
-                                                                4.0),
+                                                                Radius.circular(
+                                                                    4.0),
                                                             topRight:
-                                                            Radius.circular(
-                                                                4.0),
+                                                                Radius.circular(
+                                                                    4.0),
                                                           ),
                                                         ),
                                                       ),
@@ -463,11 +463,11 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                           .bodyText2
                                                           .override(
                                                         fontFamily:
-                                                        'tway_air medium',
+                                                            'tway_air medium',
                                                         color:
-                                                        Color(0xFF8B97A2),
+                                                            Color(0xFF8B97A2),
                                                         fontWeight:
-                                                        FontWeight.w500,
+                                                            FontWeight.w500,
                                                         useGoogleFonts: false,
                                                       ),
                                                     ),
@@ -479,8 +479,8 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 12, 0, 0),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 12, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -491,33 +491,33 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                   decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
-                                                    BorderRadius.circular(
-                                                        8),
+                                                        BorderRadius.circular(
+                                                            8),
                                                     border: Border.all(
                                                       color: Color(0xFFE6E6E6),
                                                     ),
                                                   ),
                                                   child: Row(
                                                     mainAxisSize:
-                                                    MainAxisSize.max,
+                                                        MainAxisSize.max,
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(15, 0,
-                                                            0, 0),
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(15, 0,
+                                                                    0, 0),
                                                         child: Text(
                                                           '동영상 여부',
                                                           style:
-                                                          FlutterFlowTheme
-                                                              .bodyText1
-                                                              .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                             fontFamily:
-                                                            'tway_air medium',
+                                                                'tway_air medium',
                                                             fontWeight:
-                                                            FontWeight.w500,
+                                                                FontWeight.w500,
                                                             useGoogleFonts:
-                                                            false,
+                                                                false,
                                                           ),
                                                         ),
                                                       ),
@@ -525,18 +525,18 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                         child: SwitchListTile
                                                             .adaptive(
                                                           value:
-                                                          picturevideoValue ??=
-                                                          false,
+                                                              picturevideoValue ??=
+                                                                  false,
                                                           onChanged: (newValue) =>
                                                               setState(() =>
-                                                              picturevideoValue =
-                                                                  newValue),
+                                                                  picturevideoValue =
+                                                                      newValue),
                                                           tileColor:
-                                                          Color(0xFFF5F5F5),
+                                                              Color(0xFFF5F5F5),
                                                           dense: false,
                                                           controlAffinity:
-                                                          ListTileControlAffinity
-                                                              .trailing,
+                                                              ListTileControlAffinity
+                                                                  .trailing,
                                                         ),
                                                       ),
                                                     ],
@@ -587,12 +587,12 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                          MainAxisAlignment.center,
                                       children: [
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              10, 0, 0, 0),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10, 0, 0, 0),
                                           child: Text(
                                             '고장 부위:',
                                             style: TextStyle(
@@ -627,7 +627,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                              const BorderRadius.only(
+                                                  const BorderRadius.only(
                                                 topLeft: Radius.circular(4.0),
                                                 topRight: Radius.circular(4.0),
                                               ),
@@ -638,7 +638,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                              const BorderRadius.only(
+                                                  const BorderRadius.only(
                                                 topLeft: Radius.circular(4.0),
                                                 topRight: Radius.circular(4.0),
                                               ),
@@ -664,7 +664,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.9,
                                 height:
-                                MediaQuery.of(context).size.height * 0.2,
+                                    MediaQuery.of(context).size.height * 0.2,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                 ),
@@ -677,7 +677,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                     decoration: InputDecoration(
                                       hintText: '상세 증상',
                                       hintStyle:
-                                      FlutterFlowTheme.bodyText1.override(
+                                          FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'tway_air medium',
                                         fontWeight: FontWeight.w500,
                                         useGoogleFonts: false,
@@ -792,7 +792,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.95,
                                 height:
-                                MediaQuery.of(context).size.height * 0.05,
+                                    MediaQuery.of(context).size.height * 0.05,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
@@ -859,15 +859,15 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                             children: [
                               Padding(
                                 padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Container(
                                   width:
-                                  MediaQuery.of(context).size.width * 0.6,
+                                      MediaQuery.of(context).size.width * 0.6,
                                   height: 50,
                                   constraints: BoxConstraints(
                                     maxWidth:
-                                    MediaQuery.of(context).size.width *
-                                        0.65,
+                                        MediaQuery.of(context).size.width *
+                                            0.65,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
@@ -876,7 +876,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                   child: SwitchListTile(
                                     value: switchListTileValue ??= true,
                                     onChanged: (newValue) => setState(
-                                            () => switchListTileValue = newValue),
+                                        () => switchListTileValue = newValue),
                                     title: Text(
                                       '직접방문/ 픽업',
                                       style: FlutterFlowTheme.title3.override(
@@ -889,16 +889,16 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                     tileColor: Color(0xFFF5F5F5),
                                     dense: true,
                                     controlAffinity:
-                                    ListTileControlAffinity.leading,
+                                        ListTileControlAffinity.leading,
                                   ),
                                 ),
                               ),
                               Padding(
                                 padding:
-                                EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
                                   width:
-                                  MediaQuery.of(context).size.width * 0.35,
+                                      MediaQuery.of(context).size.width * 0.35,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Color(0xFFEEEEEE),
@@ -909,7 +909,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         final repairmentCreateData =
-                                        createRepairmentRecordData(
+                                            createRepairmentRecordData(
                                           storeidx: widget.storeidx,
                                           userid: currentUserUid,
                                           category: fixOrderRepairstoreRecord
@@ -923,7 +923,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                           address: textController5.text,
                                           status: 1,
                                           repairmentid:
-                                          '${currentUserUid};;${fixOrderRepairstoreRecord.storeidx.toString()};;${getCurrentTimestamp.toString()}',
+                                              '${currentUserUid};;${fixOrderRepairstoreRecord.storeidx.toString()};;${getCurrentTimestamp.toString()}',
                                           timestamp: getCurrentTimestamp,
                                           videoUrl: uploadedFileUrl1,
                                           select: datePicked,
@@ -949,7 +949,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                         height: 50,
                                         color: Color(0xFF4B39EF),
                                         textStyle:
-                                        FlutterFlowTheme.subtitle2.override(
+                                            FlutterFlowTheme.subtitle2.override(
                                           fontFamily: 'tway_air medium',
                                           color: Colors.white,
                                           fontSize: 16,

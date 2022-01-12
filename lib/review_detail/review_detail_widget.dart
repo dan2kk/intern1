@@ -86,42 +86,49 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
-                                      child: InkWell(
-                                        onTap: () async {
-                                          Navigator.pop(context);
-                                        },
-                                        child: Icon(
-                                          Icons.keyboard_arrow_left,
-                                          color: Colors.white,
-                                          size: 30,
+                              Expanded(
+                                child: Align(
+                                  alignment: AlignmentDirectional(0, -0.5),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 20, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10, 0, 0, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              Navigator.pop(context);
+                                            },
+                                            child: Icon(
+                                              Icons.keyboard_arrow_left,
+                                              color: Colors.white,
+                                              size: 30,
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
-                                      child: Text(
-                                        '상세 리뷰',
-                                        style:
-                                        FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'tway_air medium',
-                                          color: Colors.white,
-                                          fontSize: 25,
-                                          fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20, 0, 0, 0),
+                                          child: Text(
+                                            '상세 리뷰',
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'tway_air medium',
+                                              color: Colors.white,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.w500,
+                                              useGoogleFonts: false,
+                                            ),
+                                          ),
                                         ),
-                                      ),
+                                      ],
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ),
                             ],
@@ -178,7 +185,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                             ),
                             Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.6,
                                 height: 100,
@@ -313,7 +320,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                               queryBuilder: (repairmentRecord) =>
                                   repairmentRecord.where('repairmentid',
                                       isEqualTo:
-                                      reviewDetailReviewRecord.reviewId),
+                                          reviewDetailReviewRecord.reviewId),
                               singleRecord: true,
                             ),
                             builder: (context, snapshot) {
@@ -332,9 +339,9 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                 return Container();
                               }
                               final imageRepairmentRecord =
-                              imageRepairmentRecordList.isNotEmpty
-                                  ? imageRepairmentRecordList.first
-                                  : null;
+                                  imageRepairmentRecordList.isNotEmpty
+                                      ? imageRepairmentRecordList.first
+                                      : null;
                               return InkWell(
                                 onTap: () async {
                                   await Navigator.push(
@@ -386,8 +393,8 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                             child: Builder(
                               builder: (context) {
                                 final llll = reviewDetailReviewRecord.photoUrl
-                                    .toList()
-                                    ?.toList() ??
+                                        .toList()
+                                        ?.toList() ??
                                     [];
                                 return Container(
                                   width: double.infinity,
@@ -416,9 +423,9 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                                   context,
                                                   PageTransition(
                                                     type:
-                                                    PageTransitionType.fade,
+                                                        PageTransitionType.fade,
                                                     child:
-                                                    FlutterFlowExpandedImageView(
+                                                        FlutterFlowExpandedImageView(
                                                       image: Image.network(
                                                         llllItem,
                                                         fit: BoxFit.contain,
@@ -435,7 +442,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                                 transitionOnUserGestures: true,
                                                 child: ClipRRect(
                                                   borderRadius:
-                                                  BorderRadius.circular(20),
+                                                      BorderRadius.circular(20),
                                                   child: Image.network(
                                                     llllItem,
                                                     width: 100,
@@ -452,8 +459,8 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                         alignment: AlignmentDirectional(0, 1),
                                         child: Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 0, 0, 10),
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 0, 0, 10),
                                           child: SmoothPageIndicator(
                                             controller: pageViewController ??=
                                                 PageController(
@@ -469,7 +476,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                               pageViewController.animateToPage(
                                                 i,
                                                 duration:
-                                                Duration(milliseconds: 500),
+                                                    Duration(milliseconds: 500),
                                                 curve: Curves.ease,
                                               );
                                             },
@@ -553,15 +560,15 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                10, 0, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10, 0, 0, 0),
                                             child: Text(
                                               '${formatNumber(
                                                 reviewDetailReviewRecord
                                                     .rateAvg,
                                                 formatType: FormatType.decimal,
                                                 decimalType:
-                                                DecimalType.periodDecimal,
+                                                    DecimalType.periodDecimal,
                                               )}/5.0',
                                               style: FlutterFlowTheme.bodyText1
                                                   .override(
@@ -581,10 +588,10 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                               ),
                               Padding(
                                 padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Container(
                                   width:
-                                  MediaQuery.of(context).size.width * 0.19,
+                                      MediaQuery.of(context).size.width * 0.19,
                                   height: 100,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
@@ -597,8 +604,8 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 10, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 10, 0, 0),
                                             child: Text(
                                               '수리 만족도',
                                               style: FlutterFlowTheme.bodyText1
@@ -661,10 +668,10 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                               ),
                               Padding(
                                 padding:
-                                EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                    EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
                                   width:
-                                  MediaQuery.of(context).size.width * 0.45,
+                                      MediaQuery.of(context).size.width * 0.45,
                                   height: 100,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
@@ -678,21 +685,21 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 5, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 5, 0, 0),
                                             child: RatingBar.builder(
                                               onRatingUpdate: (newValue) =>
                                                   setState(() =>
-                                                  ratingBarValue1 =
-                                                      newValue),
+                                                      ratingBarValue1 =
+                                                          newValue),
                                               itemBuilder: (context, index) =>
                                                   Icon(
-                                                    Icons.star_rounded,
-                                                    color: Color(0xFFF6F026),
-                                                  ),
+                                                Icons.star_rounded,
+                                                color: Color(0xFFF6F026),
+                                              ),
                                               direction: Axis.horizontal,
                                               initialRating: ratingBarValue1 ??=
-                                              3,
+                                                  3,
                                               unratedColor: Color(0xFF9E9E9E),
                                               itemCount: 5,
                                               itemSize: 20,
@@ -706,21 +713,21 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 5, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 5, 0, 0),
                                             child: RatingBar.builder(
                                               onRatingUpdate: (newValue) =>
                                                   setState(() =>
-                                                  ratingBarValue2 =
-                                                      newValue),
+                                                      ratingBarValue2 =
+                                                          newValue),
                                               itemBuilder: (context, index) =>
                                                   Icon(
-                                                    Icons.star_rounded,
-                                                    color: Color(0xFFF6F026),
-                                                  ),
+                                                Icons.star_rounded,
+                                                color: Color(0xFFF6F026),
+                                              ),
                                               direction: Axis.horizontal,
                                               initialRating: ratingBarValue2 ??=
-                                              3,
+                                                  3,
                                               unratedColor: Color(0xFF9E9E9E),
                                               itemCount: 5,
                                               itemSize: 20,
@@ -734,21 +741,21 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 5, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 5, 0, 0),
                                             child: RatingBar.builder(
                                               onRatingUpdate: (newValue) =>
                                                   setState(() =>
-                                                  ratingBarValue3 =
-                                                      newValue),
+                                                      ratingBarValue3 =
+                                                          newValue),
                                               itemBuilder: (context, index) =>
                                                   Icon(
-                                                    Icons.star_rounded,
-                                                    color: Color(0xFFF6F026),
-                                                  ),
+                                                Icons.star_rounded,
+                                                color: Color(0xFFF6F026),
+                                              ),
                                               direction: Axis.horizontal,
                                               initialRating: ratingBarValue3 ??=
-                                              3,
+                                                  3,
                                               unratedColor: Color(0xFF9E9E9E),
                                               itemCount: 5,
                                               itemSize: 20,
@@ -815,7 +822,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                 ),
                               ),
                               contentPadding:
-                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             ),
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'tway_air medium',
@@ -834,54 +841,59 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         if ((reviewDetailReviewRecord.comment) != '')
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.95,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(30),
-                              border: Border.all(
-                                color: Color(0xFF3F51B5),
-                                width: 3,
+                          Align(
+                            alignment: AlignmentDirectional(0, -0.05),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.95,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(
+                                  color: Color(0xFF3F51B5),
+                                  width: 3,
+                                ),
                               ),
-                            ),
-                            child: TextFormField(
-                              controller: textController2,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                hintText: '사장님 코멘트',
-                                hintStyle: FlutterFlowTheme.bodyText1.override(
+                              child: TextFormField(
+                                controller: textController2,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  hintText: '사장님 코멘트',
+                                  hintStyle:
+                                      FlutterFlowTheme.bodyText1.override(
+                                    fontFamily: 'tway_air medium',
+                                    fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
+                                  ),
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1,
+                                    ),
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(4.0),
+                                      topRight: Radius.circular(4.0),
+                                    ),
+                                  ),
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1,
+                                    ),
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(4.0),
+                                      topRight: Radius.circular(4.0),
+                                    ),
+                                  ),
+                                  contentPadding:
+                                      EdgeInsetsDirectional.fromSTEB(
+                                          10, 0, 0, 0),
+                                ),
+                                style: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'tway_air medium',
                                   fontWeight: FontWeight.w500,
                                   useGoogleFonts: false,
                                 ),
-                                enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 1,
-                                  ),
-                                  borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(4.0),
-                                    topRight: Radius.circular(4.0),
-                                  ),
-                                ),
-                                focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0x00000000),
-                                    width: 1,
-                                  ),
-                                  borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(4.0),
-                                    topRight: Radius.circular(4.0),
-                                  ),
-                                ),
-                                contentPadding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                              ),
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'tway_air medium',
-                                fontWeight: FontWeight.w500,
-                                useGoogleFonts: false,
                               ),
                             ),
                           ),

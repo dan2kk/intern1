@@ -1,6 +1,5 @@
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -70,62 +69,109 @@ class _EventdetailWidgetState extends State<EventdetailWidget>
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Column(
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            FlutterFlowIconButton(
-                              borderColor: Colors.transparent,
-                              borderRadius: 30,
-                              borderWidth: 1,
-                              buttonSize: 60,
-                              icon: Icon(
-                                Icons.chevron_left_outlined,
-                                color: Colors.black,
-                                size: 30,
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF3F51B5),
+                            borderRadius: BorderRadius.circular(0),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: Align(
+                                      alignment: AlignmentDirectional(0, -0.5),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 20, 0, 0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(10, 0, 0, 0),
+                                              child: InkWell(
+                                                onTap: () async {
+                                                  Navigator.pop(context);
+                                                },
+                                                child: Icon(
+                                                  Icons.keyboard_arrow_left,
+                                                  color: Colors.white,
+                                                  size: 30,
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(20, 0, 0, 0),
+                                              child: Text(
+                                                '이벤트 상세',
+                                                style: FlutterFlowTheme
+                                                    .bodyText1
+                                                    .override(
+                                                  fontFamily: 'tway_air medium',
+                                                  color: Colors.white,
+                                                  fontSize: 25,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                              onPressed: () async {
-                                Navigator.pop(context);
-                              },
-                            ),
-                            Text(
-                              '이벤트 상세',
-                              style: FlutterFlowTheme.bodyText2.override(
-                                fontFamily: 'tway_air medium',
-                                color: Color(0xFF8B97A2),
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                                useGoogleFonts: false,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                              EdgeInsetsDirectional.fromSTEB(60, 0, 0, 0),
-                              child: Text(
-                                eventdetailEventsRecord.name,
-                                style: FlutterFlowTheme.title1.override(
-                                  fontFamily: 'tway_air medium',
-                                  color: Color(0xFF090F13),
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w500,
-                                  useGoogleFonts: false,
+                              Align(
+                                alignment: AlignmentDirectional(0, 0.15),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 10, 0, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    60, 0, 0, 0),
+                                            child: Text(
+                                              eventdetailEventsRecord.name,
+                                              style: FlutterFlowTheme.title1
+                                                  .override(
+                                                fontFamily: 'tway_air medium',
+                                                color: Colors.white,
+                                                fontSize: 24,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -133,22 +179,22 @@ class _EventdetailWidgetState extends State<EventdetailWidget>
                   Builder(
                     builder: (context) {
                       final listofimage = eventdetailEventsRecord.mainImage
-                          .toList()
-                          ?.toList() ??
+                              .toList()
+                              ?.toList() ??
                           [];
                       return Column(
                         mainAxisSize: MainAxisSize.max,
                         children: List.generate(listofimage.length,
-                                (listofimageIndex) {
-                              final listofimageItem = listofimage[listofimageIndex];
-                              return Image.network(
-                                listofimageItem,
-                                width: MediaQuery.of(context).size.width,
-                                height: 240,
-                                fit: BoxFit.cover,
-                              ).animated(
-                                  [animationsMap['imageOnPageLoadAnimation']]);
-                            }),
+                            (listofimageIndex) {
+                          final listofimageItem = listofimage[listofimageIndex];
+                          return Image.network(
+                            listofimageItem,
+                            width: MediaQuery.of(context).size.width,
+                            height: 240,
+                            fit: BoxFit.cover,
+                          ).animated(
+                              [animationsMap['imageOnPageLoadAnimation']]);
+                        }),
                       );
                     },
                   ),

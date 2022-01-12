@@ -81,6 +81,84 @@ class _RepairmentStoreDetailWidgetState
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF3F51B5),
+                            borderRadius: BorderRadius.circular(0),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Align(
+                                  alignment: AlignmentDirectional(0, -0.5),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 20, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10, 0, 0, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              Navigator.pop(context);
+                                            },
+                                            child: Icon(
+                                              Icons.keyboard_arrow_left,
+                                              color: Colors.white,
+                                              size: 30,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  20, 0, 0, 0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                repairmentStoreDetailRepairstoreRecord
+                                                    .name,
+                                                textAlign: TextAlign.start,
+                                                style: FlutterFlowTheme.title1
+                                                    .override(
+                                                  fontFamily: 'tway_air medium',
+                                                  color: Color(0xFFFBFBF6),
+                                                  fontSize: 26,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 Expanded(
                   child: SingleChildScrollView(
                     child: Column(
@@ -334,23 +412,6 @@ class _RepairmentStoreDetailWidgetState
                         Padding(
                           padding:
                               EdgeInsetsDirectional.fromSTEB(24, 20, 24, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                repairmentStoreDetailRepairstoreRecord.name,
-                                style: FlutterFlowTheme.title1.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF090F13),
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [

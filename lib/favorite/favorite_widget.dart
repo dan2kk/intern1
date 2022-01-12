@@ -4,7 +4,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../repairment_store_detail/repairment_store_detail_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FavoriteWidget extends StatefulWidget {
@@ -26,56 +25,71 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                    child: Row(
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF3F51B5),
+                      borderRadius: BorderRadius.circular(0),
+                    ),
+                    child: Column(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: InkWell(
-                            onTap: () async {
-                              Navigator.pop(context);
-                            },
-                            child: Icon(
-                              Icons.keyboard_arrow_left,
-                              color: Colors.black,
-                              size: 30,
+                        Expanded(
+                          child: Align(
+                            alignment: AlignmentDirectional(0, -0.5),
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10, 0, 0, 0),
+                                    child: InkWell(
+                                      onTap: () async {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Icon(
+                                        Icons.keyboard_arrow_left,
+                                        color: Colors.white,
+                                        size: 30,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20, 0, 0, 0),
+                                    child: Text(
+                                      '즐겨 찾기',
+                                      style:
+                                          FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'tway_air medium',
+                                        color: Colors.white,
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.w500,
+                                        useGoogleFonts: false,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ),
-                        Text(
-                          '즐겨찾기',
-                          style: FlutterFlowTheme.bodyText1.override(
-                            fontFamily: 'tway_air medium',
-                            color: Color(0xFF4B39EF),
-                            fontSize: 25,
-                            fontWeight: FontWeight.w500,
-                            useGoogleFonts: false,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(180, 0, 0, 0),
-                          child: FaIcon(
-                            FontAwesomeIcons.solidBell,
-                            color: Color(0xFF4B39EF),
-                            size: 24,
                           ),
                         ),
                       ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             AuthUserStreamWidget(
               child: Builder(
