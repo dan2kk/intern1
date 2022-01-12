@@ -29,7 +29,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
   String uploadedFileUrl2 = '';
   TextEditingController textController1;
   TextEditingController textController2;
-  bool picturevideoValue = false;
+  bool picturevideoValue = true;
   TextEditingController textController3;
   TextEditingController textController4;
   TextEditingController textController5;
