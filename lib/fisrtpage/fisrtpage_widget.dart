@@ -137,7 +137,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height * 0.33,
+                      height: MediaQuery.of(context).size.height * 0.20,
                       decoration: BoxDecoration(
                         color: Color(0xFF5C6EBE),
                       ),
