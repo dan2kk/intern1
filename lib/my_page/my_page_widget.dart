@@ -89,7 +89,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                       validateFileFormat(
                                           selectedMedia.storagePath, context)) {
                                     showUploadMessage(
-                                        context, 'Uploading file...',
+                                        context, '업로드 중입니다!',
                                         showLoading: true);
                                     final downloadUrl = await uploadData(
                                         selectedMedia.storagePath,
@@ -99,10 +99,10 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                     if (downloadUrl != null) {
                                       setState(
                                           () => uploadedFileUrl = downloadUrl);
-                                      showUploadMessage(context, 'Success!');
+                                      showUploadMessage(context, '업로드 성공!');
                                     } else {
                                       showUploadMessage(
-                                          context, 'Failed to upload media');
+                                          context, '아이쿠... 실패...');
                                       return;
                                     }
                                   }

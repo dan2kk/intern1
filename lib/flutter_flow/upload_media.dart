@@ -77,26 +77,26 @@ Future<SelectedMedia> selectMediaWithSourceBottomSheet({
             const Divider(),
             if (allowPhoto && allowVideo) ...[
               createUploadMediaListTile(
-                'Gallery (Photo)',
+                '갤러리(사진)',
                 MediaSource.photoGallery,
               ),
               const Divider(),
               createUploadMediaListTile(
-                'Gallery (Video)',
+                '갤러리(동영상)',
                 MediaSource.videoGallery,
               ),
             ] else if (allowPhoto)
               createUploadMediaListTile(
-                'Gallery',
+                '갤러리',
                 MediaSource.photoGallery,
               )
             else
               createUploadMediaListTile(
-                'Gallery',
+                '갤러리',
                 MediaSource.videoGallery,
               ),
             const Divider(),
-            createUploadMediaListTile('Camera', MediaSource.camera),
+            createUploadMediaListTile('카메라', MediaSource.camera),
             const Divider(),
             const SizedBox(height: 10),
           ],
