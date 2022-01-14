@@ -65,13 +65,13 @@ class _MyAppState extends State<MyApp> {
       ],
       supportedLocales: const [Locale('en', '')],
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: initialUser == null || displaySplashImage
+      home: displaySplashImage
           ? Container(
               color: Colors.transparent,
               child: Builder(
                 builder: (context) => Image.asset(
                   'assets/images/initial.png',
-                  fit: BoxFit.cover,
+                  fit: BoxFit.none,
                 ),
               ),
             )

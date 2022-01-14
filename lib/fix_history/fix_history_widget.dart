@@ -127,7 +127,7 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                       0, 15, 0, 20),
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 0.8,
+                                    MediaQuery.of(context).size.width * 0.8,
                                     height: 100,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -136,20 +136,20 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              10, 0, 0, 0),
                                           child: ClipRRect(
                                             borderRadius:
-                                                BorderRadius.circular(10),
+                                            BorderRadius.circular(10),
                                             child: Image.network(
                                               valueOrDefault(aaaaaItem.imgUrl,
-                                                "https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/assets%2Fbqllo__.png?alt=media&token=f8a92a93-3ed5-4a18-a86d-e12e988aa58c"),
+                                                  "https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/assets%2Fbqllo__.png?alt=media&token=f8a92a93-3ed5-4a18-a86d-e12e988aa58c"),
                                               width: 80,
                                               height: 80,
                                               fit: BoxFit.cover,
@@ -158,8 +158,8 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                         ),
                                         Container(
                                           width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                              .size
+                                              .width *
                                               0.2,
                                           height: 80,
                                           decoration: BoxDecoration(
@@ -167,8 +167,8 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 5, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0, 5, 0, 0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -178,7 +178,7 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                       .bodyText1
                                                       .override(
                                                     fontFamily:
-                                                        'tway_air medium',
+                                                    'tway_air medium',
                                                     color: Color(0xFF4B39EF),
                                                     fontSize: 15,
                                                     fontWeight: FontWeight.w500,
@@ -194,11 +194,11 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                         .bodyText1
                                                         .override(
                                                       fontFamily:
-                                                          'tway_air medium',
+                                                      'tway_air medium',
                                                       color: Color(0xFF4B39EF),
                                                       fontSize: 15,
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                   ),
@@ -212,11 +212,11 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                         .bodyText1
                                                         .override(
                                                       fontFamily:
-                                                          'tway_air medium',
+                                                      'tway_air medium',
                                                       color: Color(0xFF4B39EF),
                                                       fontSize: 15,
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                   ),
@@ -227,8 +227,8 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                         ),
                                         Container(
                                           width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                              .size
+                                              .width *
                                               0.35,
                                           height: 80,
                                           decoration: BoxDecoration(
@@ -236,8 +236,8 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 7, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0, 7, 0, 0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -247,7 +247,7 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                       .bodyText1
                                                       .override(
                                                     fontFamily:
-                                                        'tway_air medium',
+                                                    'tway_air medium',
                                                     color: Color(0xFF4B39EF),
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: false,
@@ -262,10 +262,10 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                         .bodyText1
                                                         .override(
                                                       fontFamily:
-                                                          'tway_air medium',
+                                                      'tway_air medium',
                                                       color: Color(0xFF4B39EF),
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                   ),
@@ -280,10 +280,10 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                         .bodyText1
                                                         .override(
                                                       fontFamily:
-                                                          'tway_air medium',
+                                                      'tway_air medium',
                                                       color: Color(0xFF4B39EF),
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                   ),
@@ -294,14 +294,14 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                         ),
                                         Container(
                                           width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
+                                              .size
+                                              .width *
                                               0.2,
                                           height: 80,
                                           decoration: BoxDecoration(
                                             color: Colors.white,
                                             borderRadius:
-                                                BorderRadius.circular(30),
+                                            BorderRadius.circular(30),
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -313,17 +313,17 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                     MaterialPageRoute(
                                                       builder: (context) =>
                                                           RepairmentDetailWidget(
-                                                        repairmentid: aaaaaItem
-                                                            .repairmentid,
-                                                      ),
+                                                            repairmentid: aaaaaItem
+                                                                .repairmentid,
+                                                          ),
                                                     ),
                                                   );
                                                 },
                                                 child: Row(
                                                   mainAxisSize:
-                                                      MainAxisSize.max,
+                                                  MainAxisSize.max,
                                                   mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                                                  MainAxisAlignment.start,
                                                   children: [
                                                     Container(
                                                       width: 20,
@@ -333,9 +333,9 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(15, 0,
-                                                                    0, 0),
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(15, 0,
+                                                            0, 0),
                                                         child: InkWell(
                                                           onTap: () async {
                                                             await Navigator
@@ -344,11 +344,11 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                               MaterialPageRoute(
                                                                 builder:
                                                                     (context) =>
-                                                                        RepairmentDetailWidget(
-                                                                  repairmentid:
+                                                                    RepairmentDetailWidget(
+                                                                      repairmentid:
                                                                       aaaaaItem
                                                                           .repairmentid,
-                                                                ),
+                                                                    ),
                                                               ),
                                                             );
                                                           },
@@ -373,12 +373,12 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                       decoration: BoxDecoration(
                                                         color: Colors.white,
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(30),
+                                                        BorderRadius
+                                                            .circular(30),
                                                       ),
                                                       child: Visibility(
                                                         visible: (aaaaaItem
-                                                                .status) ==
+                                                            .status) ==
                                                             6,
                                                         child: FFButtonWidget(
                                                           onPressed: () async {
@@ -388,39 +388,39 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                               MaterialPageRoute(
                                                                 builder:
                                                                     (context) =>
-                                                                        AddReviewWidget(
-                                                                  repairmentid:
+                                                                    AddReviewWidget(
+                                                                      repairmentid:
                                                                       aaaaaItem
                                                                           .repairmentid,
-                                                                ),
+                                                                    ),
                                                               ),
                                                             );
                                                           },
                                                           text: '리뷰 작성',
                                                           options:
-                                                              FFButtonOptions(
+                                                          FFButtonOptions(
                                                             width: 50,
                                                             height: 18,
                                                             color:
-                                                                FlutterFlowTheme
-                                                                    .primaryColor,
+                                                            FlutterFlowTheme
+                                                                .primaryColor,
                                                             textStyle:
-                                                                FlutterFlowTheme
-                                                                    .subtitle2
-                                                                    .override(
+                                                            FlutterFlowTheme
+                                                                .subtitle2
+                                                                .override(
                                                               fontFamily:
-                                                                  'tway_air medium',
+                                                              'tway_air medium',
                                                               color:
-                                                                  Colors.white,
+                                                              Colors.white,
                                                               fontSize: 13,
                                                               fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
+                                                              FontWeight
+                                                                  .w500,
                                                               useGoogleFonts:
-                                                                  false,
+                                                              false,
                                                             ),
                                                             borderSide:
-                                                                BorderSide(
+                                                            BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1,
@@ -436,10 +436,10 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                       height: 40,
                                                       decoration: BoxDecoration(
                                                         color:
-                                                            Color(0xFFEEEEEE),
+                                                        Color(0xFFEEEEEE),
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(30),
+                                                        BorderRadius
+                                                            .circular(30),
                                                       ),
                                                     ),
                                                 ],
