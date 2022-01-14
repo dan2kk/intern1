@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
     userStream = intern1FirebaseUserStream()
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
     Future.delayed(
-        Duration(seconds: 1), () => setState(() => displaySplashImage = false));
+        Duration(seconds: 3), () => setState(() => displaySplashImage = false));
   }
 
   @override
@@ -70,7 +70,7 @@ class _MyAppState extends State<MyApp> {
               color: Colors.transparent,
               child: Builder(
                 builder: (context) => Image.asset(
-                  'assets/images/initial.PNG',
+                  'assets/images/initial.png',
                   fit: BoxFit.cover,
                 ),
               ),
