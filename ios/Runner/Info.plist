@@ -88,6 +88,26 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSAppTransportSecurity</key>
+        <dict>
+            <key>NSAllowsArbitraryLoads</key>
+            <true/>
+        </dict>
+        <key>CFBundleURLTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleTypeRole</key>
+                <string>Editor</string>
+                <key>CFBundleURLName</key>
+                <string>com.example.testRobot</string> // 사용하고자 하시는 앱의 bundle url name
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>webauthcallbacks</string> // 사용하고자 하시는 앱의 bundle url scheme
+                </array>
+            </dict>
+        </array>
+        <key>NSFaceIDUsageDescription</key>
+        <string>생체인증 결제 진행시 권한이 필요합니다</string>
 
 </dict>
 </plist>

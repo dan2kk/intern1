@@ -30,9 +30,19 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Center(
-            child: LinearProgressIndicator(
-              color: Color(0xFF2163CB),
-            ),
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 20),
+                width: 300,
+                height: 20,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  child: LinearProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                        Color(0xff00ff00)),
+                    backgroundColor: Color(0xffD6D6D6),
+                  ),
+                ),
+              )
           );
         }
         List<RepairmentRecord> fixHistoryRepairmentRecordList = snapshot.data;
@@ -242,7 +252,7 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Text(
-                                                  aaaaaItem.manufacture,
+                                                  valueOrDefault(aaaaaItem.manufacture, 'NULL'),
                                                   style: FlutterFlowTheme
                                                       .bodyText1
                                                       .override(
@@ -257,7 +267,7 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(0, 10, 0, 0),
                                                   child: Text(
-                                                    aaaaaItem.model,
+                                                    valueOrDefault(aaaaaItem.model, 'NULL'),
                                                     style: FlutterFlowTheme
                                                         .bodyText1
                                                         .override(
@@ -274,8 +284,8 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(0, 10, 0, 0),
                                                   child: Text(
-                                                    aaaaaItem.timestamp
-                                                        .toString(),
+                                                    valueOrDefault(aaaaaItem.timestamp
+                                                        .toString(), "2020-01-01"),
                                                     style: FlutterFlowTheme
                                                         .bodyText1
                                                         .override(
