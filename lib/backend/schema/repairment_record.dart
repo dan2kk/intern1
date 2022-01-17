@@ -77,6 +77,9 @@ abstract class RepairmentRecord
   int get estDate;
 
   @nullable
+  String get firsttransactionid;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -97,7 +100,8 @@ abstract class RepairmentRecord
     ..repairmentid = ''
     ..videoUrl = ''
     ..comment = ''
-    ..estDate = 0;
+    ..estDate = 0
+    ..firsttransactionid = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('repairment');
@@ -141,6 +145,7 @@ Map<String, dynamic> createRepairmentRecordData({
   String videoUrl,
   String comment,
   int estDate,
+  String firsttransactionid,
 }) =>
     serializers.toFirestore(
         RepairmentRecord.serializer,
@@ -164,4 +169,5 @@ Map<String, dynamic> createRepairmentRecordData({
           ..select = select
           ..videoUrl = videoUrl
           ..comment = comment
-          ..estDate = estDate));
+          ..estDate = estDate
+          ..firsttransactionid = firsttransactionid));

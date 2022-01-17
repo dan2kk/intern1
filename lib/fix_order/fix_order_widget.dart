@@ -19,6 +19,7 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:time_picker_widget/time_picker_widget.dart';
 import '../flutter_flow/flutter_flow_video_player.dart';
 import '../flutter_flow/flutter_flow_media_display.dart';
+import '../firstpurchase/firstpurchase_widget.dart';
 
 class FixOrderWidget extends StatefulWidget {
   const FixOrderWidget({
@@ -46,6 +47,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
   bool switchListTileValue = true;
   List<int> _availableHours = [1, 4, 6, 8, 12];
   List<int> _availableMinutes = [0, 30];
+  RepairmentRecord rprf;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -1049,14 +1051,21 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                           videoUrl: uploadedFileUrl1,
                                           select: datePicked,
                                         );
+                                        final repairmentRecordReference =
+                                        RepairmentRecord.collection.doc();
                                         await RepairmentRecord.collection
                                             .doc()
                                             .set(repairmentCreateData);
+                                        rprf = RepairmentRecord
+                                            .getDocumentFromData(
+                                            repairmentCreateData,
+                                            repairmentRecordReference);
                                         await Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                OrderCompleteWidget(),
+                                                FirstpurchaseWidget(
+                                                ),
                                           ),
                                         );
                                       },
