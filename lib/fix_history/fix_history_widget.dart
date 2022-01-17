@@ -128,7 +128,7 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                 fixHistoryRepairmentRecordList?.toList() ?? [];
                             return ListView.builder(
                               padding: EdgeInsets.zero,
-                              shrinkWrap: true,
+                              shrinkWrap: false,
                               scrollDirection: Axis.vertical,
                               itemCount: aaaaa.length,
                               itemBuilder: (context, aaaaaIndex) {
@@ -286,7 +286,7 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                       .fromSTEB(0, 10, 0, 0),
                                                   child: Text(
                                                     valueOrDefault(aaaaaItem.timestamp
-                                                        .toString(), "2020-01-01"),
+                                                        .toString(), '2020-01-01'),
                                                     style: FlutterFlowTheme
                                                         .bodyText1
                                                         .override(
@@ -443,7 +443,7 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                                     ),
                                                   if ((aaaaaItem.status) == 7)
                                                     Container(
-                                                      width: 2,
+                                                      width: 100,
                                                       height: 40,
                                                       decoration: BoxDecoration(
                                                         color:
