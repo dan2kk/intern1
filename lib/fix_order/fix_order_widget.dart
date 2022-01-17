@@ -855,8 +855,26 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                 await showCustomTimePicker(
                                     context: context,
                                     initialTime: TimeOfDay(
-                                        hour: 9,
+                                        hour: 6,
                                         minute: _availableMinutes.first),
+                                    onFailValidation: (context) =>
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: new Text("알림!"),
+                                              content: new Text("30분 단위로 시간을 골라주세요!"),
+                                              actions: <Widget>[
+                                                new FlatButton(
+                                                  child: new Text("알겠습니다."),
+                                                  onPressed: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        ),
                                     selectableTimePredicate: (time) =>
                                     _availableMinutes.indexOf(time.minute) !=
                                         -1).then(
@@ -864,7 +882,10 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                         setState(() => datePicked =
                                             datePicked.add(Duration(
                                                 hours: time.hour,
-                                                minutes: time.minute))));
+                                                minutes: time.minute)
+                                            )
+                                        )
+                                );
                               },
                               child: Container(
                                 width: MediaQuery
