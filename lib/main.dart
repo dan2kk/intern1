@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intern1/store_list_new/store_list_new_widget.dart';
 import 'auth/firebase_user_provider.dart';
 import 'auth/auth_util.dart';
 
@@ -20,8 +21,6 @@ void main() async {
   await Firebase.initializeApp();
   FlutterError.onError = (FlutterErrorDetails details) {
     FlutterError.presentError(details);
-    if (kReleaseMode)
-      exit(1);
   };
   runApp(MyApp());
 }
@@ -106,7 +105,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'MainPage': MainPageWidget(),
       'Favorite': FavoriteWidget(),
-      'FixHistory': FixHistoryWidget(),
+      'FixHistory': StoreListNewWidget(),
       'MyPage': MyPageWidget(),
     };
     return Scaffold(
