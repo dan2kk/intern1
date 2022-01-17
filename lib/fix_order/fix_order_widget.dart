@@ -1064,7 +1064,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                FirstpurchaseWidget(
+                                                OrderCompleteWidget(
                                                 ),
                                           ),
                                         );

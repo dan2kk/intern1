@@ -1,10 +1,19 @@
+import 'dart:ffi';
+
 import '../backend/backend.dart';
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../order_complete/order_complete_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:bootpay_api/bootpay_api.dart';
+import 'package:bootpay_api/model/payload.dart';
+import 'package:bootpay_api/model/extra.dart';
+import 'package:bootpay_api/model/user.dart';
+import 'package:bootpay_api/model/item.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FirstpurchaseWidget extends StatefulWidget {
@@ -44,6 +53,18 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
 
   @override
   Widget build(BuildContext context) {
+    return StreamBuilder<RepairmentRecord>(
+      stream: RepairmentRecord.getDocument(widget.repairmentrf),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Center(
+            child: LinearProgressIndicator(
+              color: Color(0xFF2163CB),
+            ),
+          );
+        }
+        final firstpurchaseRepairmentRecord = snapshot.data;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: FlutterFlowTheme.tertiaryColor,
@@ -77,15 +98,15 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       Expanded(
                                         child: Align(
                                           alignment:
-                                              AlignmentDirectional(0, -0.5),
+                                          AlignmentDirectional(0, -0.5),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 20, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0, 20, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.start,
+                                              MainAxisAlignment.start,
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
@@ -110,11 +131,11 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                         .bodyText1
                                                         .override(
                                                       fontFamily:
-                                                          'tway_air medium',
+                                                      'tway_air medium',
                                                       color: Colors.white,
                                                       fontSize: 25,
                                                       fontWeight:
-                                                          FontWeight.w500,
+                                                      FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
                                                   ),
@@ -138,7 +159,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                         children: [
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.95,
                               height: 100,
@@ -157,8 +178,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
                                           child: Text(
                                             '수리 서비스 선택',
                                             style: FlutterFlowTheme.bodyText1
@@ -188,7 +209,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     },
                                     optionHeight: 25,
                                     textStyle:
-                                        FlutterFlowTheme.bodyText1.override(
+                                    FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'Playfair Display',
                                       color: Colors.black,
                                     ),
@@ -230,8 +251,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
                                           child: Text(
                                             '픽업 및 배달 정보',
                                             style: FlutterFlowTheme.bodyText1
@@ -258,7 +279,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -283,15 +304,15 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    15, 0, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                15, 0, 0, 0),
                                             child: TextFormField(
                                               controller: textController1,
                                               obscureText: false,
@@ -306,31 +327,31 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   useGoogleFonts: false,
                                                 ),
                                                 enabledBorder:
-                                                    UnderlineInputBorder(
+                                                UnderlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                  const BorderRadius.only(
                                                     topLeft:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                     topRight:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                   ),
                                                 ),
                                                 focusedBorder:
-                                                    UnderlineInputBorder(
+                                                UnderlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                  const BorderRadius.only(
                                                     topLeft:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                     topRight:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                   ),
                                                 ),
                                               ),
@@ -351,7 +372,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -376,15 +397,15 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    15, 0, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                15, 0, 0, 0),
                                             child: TextFormField(
                                               controller: textController2,
                                               obscureText: false,
@@ -399,31 +420,31 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   useGoogleFonts: false,
                                                 ),
                                                 enabledBorder:
-                                                    UnderlineInputBorder(
+                                                UnderlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                  const BorderRadius.only(
                                                     topLeft:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                     topRight:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                   ),
                                                 ),
                                                 focusedBorder:
-                                                    UnderlineInputBorder(
+                                                UnderlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                  const BorderRadius.only(
                                                     topLeft:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                     topRight:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                   ),
                                                 ),
                                               ),
@@ -454,7 +475,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           options: ['안심번호 사용'],
                                           onChanged: (value) {
                                             setState(() =>
-                                                radioButtonValue2 = value);
+                                            radioButtonValue2 = value);
                                           },
                                           optionHeight: 25,
                                           textStyle: FlutterFlowTheme.bodyText1
@@ -471,16 +492,16 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             useGoogleFonts: false,
                                           ),
                                           buttonPosition:
-                                              RadioButtonPosition.left,
+                                          RadioButtonPosition.left,
                                           direction: Axis.vertical,
                                           radioButtonColor: Colors.blue,
                                           inactiveRadioButtonColor:
-                                              Color(0x8A000000),
+                                          Color(0x8A000000),
                                           toggleable: false,
                                           horizontalAlignment:
-                                              WrapAlignment.start,
+                                          WrapAlignment.start,
                                           verticalAlignment:
-                                              WrapCrossAlignment.start,
+                                          WrapCrossAlignment.start,
                                         ),
                                       ),
                                     ],
@@ -491,14 +512,14 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
                                           child: Text(
                                             '픽업 요청 시간',
                                             style: FlutterFlowTheme.bodyText1
@@ -514,84 +535,75 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       ],
                                     ),
                                   ),
-                                  if (radioButtonValue1 == '픽업, 배송 수리(배달비 별도)')
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        if (radioButtonValue1 == '픽업, 배송 수리(배달비 별도)')
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 5, 0, 0),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                await DatePicker
-                                                    .showDateTimePicker(
-                                                  context,
-                                                  showTitleActions: true,
-                                                  onConfirm: (date) {
-                                                    setState(() =>
-                                                        datePicked = date);
-                                                  },
-                                                  currentTime:
-                                                      getCurrentTimestamp,
-                                                  minTime: getCurrentTimestamp,
-                                                );
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 5, 0, 0),
+                                        child: InkWell(
+                                          onTap: () async {
+                                            await DatePicker.showDateTimePicker(
+                                              context,
+                                              showTitleActions: true,
+                                              onConfirm: (date) {
+                                                setState(
+                                                        () => datePicked = date);
                                               },
-                                              child: Container(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    0.95,
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height *
-                                                    0.05,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0x0EEEEEEE),
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(10, 0, 0, 0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(10, 0,
-                                                                    0, 0),
-                                                        child: Text(
-                                                          dateTimeFormat(
-                                                              'M/d h:mm a',
-                                                              datePicked),
-                                                          style:
-                                                              FlutterFlowTheme
-                                                                  .bodyText1
-                                                                  .override(
-                                                            fontFamily:
-                                                                'tway_air medium',
-                                                            color: Colors.black,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                            useGoogleFonts:
-                                                                false,
-                                                          ),
-                                                        ),
+                                              currentTime: getCurrentTimestamp,
+                                              minTime: getCurrentTimestamp,
+                                            );
+                                          },
+                                          child: Container(
+                                            width: MediaQuery.of(context)
+                                                .size
+                                                .width *
+                                                0.95,
+                                            height: MediaQuery.of(context)
+                                                .size
+                                                .height *
+                                                0.05,
+                                            decoration: BoxDecoration(
+                                              color: Color(0x0EEEEEEE),
+                                              borderRadius:
+                                              BorderRadius.circular(10),
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(10, 0, 0, 0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        10, 0, 0, 0),
+                                                    child: Text(
+                                                      dateTimeFormat(
+                                                          'M/d h:mm a',
+                                                          datePicked),
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
+                                                        color: Colors.black,
+                                                        fontWeight:
+                                                        FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
-                                                    ],
+                                                    ),
                                                   ),
-                                                ),
+                                                ],
                                               ),
                                             ),
                                           ),
-                                      ],
-                                    ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),
@@ -622,8 +634,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
                                           child: Text(
                                             '요청 사항',
                                             style: FlutterFlowTheme.bodyText1
@@ -650,7 +662,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -675,15 +687,15 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    15, 0, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                15, 0, 0, 0),
                                             child: TextFormField(
                                               controller: textController3,
                                               obscureText: false,
@@ -698,31 +710,31 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   useGoogleFonts: false,
                                                 ),
                                                 enabledBorder:
-                                                    UnderlineInputBorder(
+                                                UnderlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                  const BorderRadius.only(
                                                     topLeft:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                     topRight:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                   ),
                                                 ),
                                                 focusedBorder:
-                                                    UnderlineInputBorder(
+                                                UnderlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                  const BorderRadius.only(
                                                     topLeft:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                     topRight:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                   ),
                                                 ),
                                               ),
@@ -749,7 +761,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           options: ['다음에도 사용'],
                                           onChanged: (value) {
                                             setState(() =>
-                                                radioButtonValue3 = value);
+                                            radioButtonValue3 = value);
                                           },
                                           optionHeight: 25,
                                           textStyle: FlutterFlowTheme.bodyText1
@@ -766,16 +778,16 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             useGoogleFonts: false,
                                           ),
                                           buttonPosition:
-                                              RadioButtonPosition.left,
+                                          RadioButtonPosition.left,
                                           direction: Axis.vertical,
                                           radioButtonColor: Colors.blue,
                                           inactiveRadioButtonColor:
-                                              Color(0x8A000000),
+                                          Color(0x8A000000),
                                           toggleable: false,
                                           horizontalAlignment:
-                                              WrapAlignment.start,
+                                          WrapAlignment.start,
                                           verticalAlignment:
-                                              WrapCrossAlignment.start,
+                                          WrapCrossAlignment.start,
                                         ),
                                       ),
                                     ],
@@ -786,14 +798,14 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
                                           child: Text(
                                             '배달기사님께',
                                             style: FlutterFlowTheme.bodyText1
@@ -815,15 +827,15 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Expanded(
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    15, 0, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                15, 0, 0, 0),
                                             child: TextFormField(
                                               controller: textController4,
                                               obscureText: false,
@@ -838,31 +850,31 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   useGoogleFonts: false,
                                                 ),
                                                 enabledBorder:
-                                                    UnderlineInputBorder(
+                                                UnderlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                  const BorderRadius.only(
                                                     topLeft:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                     topRight:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                   ),
                                                 ),
                                                 focusedBorder:
-                                                    UnderlineInputBorder(
+                                                UnderlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                  const BorderRadius.only(
                                                     topLeft:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                     topRight:
-                                                        Radius.circular(4.0),
+                                                    Radius.circular(4.0),
                                                   ),
                                                 ),
                                               ),
@@ -889,7 +901,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           options: ['다음에도 사용'],
                                           onChanged: (value) {
                                             setState(() =>
-                                                radioButtonValue4 = value);
+                                            radioButtonValue4 = value);
                                           },
                                           optionHeight: 25,
                                           textStyle: FlutterFlowTheme.bodyText1
@@ -906,16 +918,16 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             useGoogleFonts: false,
                                           ),
                                           buttonPosition:
-                                              RadioButtonPosition.left,
+                                          RadioButtonPosition.left,
                                           direction: Axis.vertical,
                                           radioButtonColor: Colors.blue,
                                           inactiveRadioButtonColor:
-                                              Color(0x8A000000),
+                                          Color(0x8A000000),
                                           toggleable: false,
                                           horizontalAlignment:
-                                              WrapAlignment.start,
+                                          WrapAlignment.start,
                                           verticalAlignment:
-                                              WrapCrossAlignment.start,
+                                          WrapCrossAlignment.start,
                                         ),
                                       ),
                                     ],
@@ -950,8 +962,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
                                           child: Text(
                                             '결제수단 및 할인 적용',
                                             style: FlutterFlowTheme.bodyText1
@@ -978,7 +990,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -1012,14 +1024,14 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
                                           child: Text(
                                             '딱따구리 포인트',
                                             style: FlutterFlowTheme.bodyText1
@@ -1045,14 +1057,14 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
                                           child: Text(
                                             '현급영수증',
                                             style: FlutterFlowTheme.bodyText1
@@ -1067,13 +1079,13 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              30, 0, 0, 0),
                                           child: FlutterFlowRadioButton(
                                             options: ['미친성'],
                                             onChanged: (value) {
                                               setState(() =>
-                                                  radioButtonValue5 = value);
+                                              radioButtonValue5 = value);
                                             },
                                             optionHeight: 25,
                                             textStyle: FlutterFlowTheme
@@ -1091,23 +1103,23 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               useGoogleFonts: false,
                                             ),
                                             buttonPosition:
-                                                RadioButtonPosition.left,
+                                            RadioButtonPosition.left,
                                             direction: Axis.vertical,
                                             radioButtonColor: Colors.blue,
                                             inactiveRadioButtonColor:
-                                                Color(0x8A000000),
+                                            Color(0x8A000000),
                                             toggleable: false,
                                             horizontalAlignment:
-                                                WrapAlignment.start,
+                                            WrapAlignment.start,
                                             verticalAlignment:
-                                                WrapCrossAlignment.start,
+                                            WrapCrossAlignment.start,
                                           ),
                                         ),
                                         FlutterFlowRadioButton(
                                           options: ['신청'],
                                           onChanged: (value) {
                                             setState(() =>
-                                                radioButtonValue6 = value);
+                                            radioButtonValue6 = value);
                                           },
                                           optionHeight: 25,
                                           textStyle: FlutterFlowTheme.bodyText1
@@ -1124,16 +1136,16 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             useGoogleFonts: false,
                                           ),
                                           buttonPosition:
-                                              RadioButtonPosition.left,
+                                          RadioButtonPosition.left,
                                           direction: Axis.vertical,
                                           radioButtonColor: Colors.blue,
                                           inactiveRadioButtonColor:
-                                              Color(0x8A000000),
+                                          Color(0x8A000000),
                                           toggleable: false,
                                           horizontalAlignment:
-                                              WrapAlignment.start,
+                                          WrapAlignment.start,
                                           verticalAlignment:
-                                              WrapCrossAlignment.start,
+                                          WrapCrossAlignment.start,
                                         ),
                                       ],
                                     ),
@@ -1146,8 +1158,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
                                           child: Text(
                                             'Hello World',
                                             style: FlutterFlowTheme.bodyText1,
@@ -1155,8 +1167,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              30, 0, 0, 0),
                                           child: Text(
                                             '변경',
                                             style: FlutterFlowTheme.bodyText1,
@@ -1195,8 +1207,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  15, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
                                           child: Text(
                                             '결제 금액',
                                             style: FlutterFlowTheme.bodyText1
@@ -1225,44 +1237,44 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.center,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.end,
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                          MainAxisAlignment.start,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 0, 0, 0),
-                                              child: Text(
-                                                '수리 및 진단 예약 금액',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'tway_air medium',
-                                                  color: Colors.black,
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w500,
-                                                  useGoogleFonts: false,
-                                                ),
+                                            Text(
+                                              '수리 및 진단 예약 금액',
+                                              style: FlutterFlowTheme.bodyText1
+                                                  .override(
+                                                fontFamily: 'tway_air medium',
+                                                color: Colors.black,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
                                               ),
                                             ),
                                             Align(
                                               alignment:
-                                                  AlignmentDirectional(0, 0),
+                                              AlignmentDirectional(0, 0),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(70, 0, 0, 0),
                                                 child: Text(
-                                                  'Hello World',
-                                                  textAlign: TextAlign.end,
+                                                  '30000원',
+                                                  textAlign: TextAlign.justify,
                                                   style: FlutterFlowTheme
-                                                      .bodyText1,
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                    'Playfair Display',
+                                                    color: Color(0xFF14181B),
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -1277,16 +1289,16 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.center,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                          MainAxisAlignment.start,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
@@ -1306,18 +1318,25 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             ),
                                             Align(
                                               alignment:
-                                                  AlignmentDirectional(0, 0),
+                                              AlignmentDirectional(0, 0),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(150, 0, 0, 0),
                                                 child: Text(
-                                                  'Hello World',
+                                                  '6000원',
                                                   textAlign: TextAlign.end,
                                                   style: FlutterFlowTheme
-                                                      .bodyText1,
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily: 'tway_air medium',
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
                                                 ),
                                               ),
                                             ),
+                                            )
                                           ],
                                         ),
                                       ],
@@ -1325,40 +1344,35 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 10, 0, 0),
+                                        15, 10, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                      MainAxisAlignment.center,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                      CrossAxisAlignment.center,
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                          MainAxisAlignment.center,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.center,
+                                          CrossAxisAlignment.center,
                                           children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 0, 0, 0),
-                                              child: Text(
-                                                '총 선결제금액',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'tway_air medium',
-                                                  color: Colors.black,
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w500,
-                                                  useGoogleFonts: false,
-                                                ),
+                                            Text(
+                                              '총 선결제금액',
+                                              style: FlutterFlowTheme.bodyText1
+                                                  .override(
+                                                fontFamily: 'tway_air medium',
+                                                color: Colors.black,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
                                               ),
                                             ),
                                             Align(
                                               alignment:
-                                                  AlignmentDirectional(0, 0),
+                                              AlignmentDirectional(0, 0),
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(150, 0, 0, 0),
@@ -1398,21 +1412,32 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                           color: Color(0xFF5C6EBE),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              '결제하기',
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'tway_air medium',
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                                useGoogleFonts: false,
+                        child: InkWell(
+                          onTap: () async {
+                            await
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => OrderCompleteWidget(),
                               ),
-                            ),
-                          ],
+                            );
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '결제하기',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -1422,5 +1447,54 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
             ),
           ),
         );
+      },
+    );
+  }
+  void goBootpayRequest(BuildContext context, int amount) async {
+    Payload payload = Payload();
+    payload.androidApplicationId = '61d25a79e38c300022d2d6f2';
+    payload.iosApplicationId = '61d25a79e38c300022d2d6f3';
+
+    payload.pg = 'nicepay';
+    payload.methods = ['card', 'phone', 'bank', 'easy'];
+    payload.name = '가견적서 첫결제';
+    payload.price = amount.toDouble();
+    payload.orderId = DateTime.now().millisecondsSinceEpoch.toString()+ currentUserUid;
+
+
+    User user = User();
+    user.username = currentUserDisplayName;
+    user.email = currentUserEmail;
+
+    Extra extra = Extra();
+    extra.appScheme = 'bootpaySample';
+
+    Item item1 = Item();
+    item1.itemName = "가견적& 수리예약"; // 주문정보에 담길 상품명
+    item1.unique = "Repairment First purchase"; // 해당 상품의 고유 키
+    item1.price = amount.toDouble(); // 상품의 가격
+
+    List<Item> itemList = [item1];
+
+    BootpayApi.request(
+      context,
+      payload,
+      extra: extra,
+      user: user,
+      items: itemList,
+      onDone: (String json) {
+        print('onDone: $json');
+      },
+      onReady: (String json) {
+        //flutter는 가상계좌가 발급되었을때  onReady가 호출되지 않는다. onDone에서 처리해주어야 한다.
+        print('onReady: $json');
+      },
+      onCancel: (String json) {
+        print('onCancel: $json');
+      },
+      onError: (String json) {
+        print('onError: $json');
+      },
+    );
   }
 }

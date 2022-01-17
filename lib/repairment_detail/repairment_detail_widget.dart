@@ -1,4 +1,5 @@
 import '../backend/backend.dart';
+import '../firstpurchase/firstpurchase_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_rive_controller.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -86,9 +87,9 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
           return Container();
         }
         final repairmentDetailRepairmentRecord =
-            repairmentDetailRepairmentRecordList.isNotEmpty
-                ? repairmentDetailRepairmentRecordList.first
-                : null;
+        repairmentDetailRepairmentRecordList.isNotEmpty
+            ? repairmentDetailRepairmentRecordList.first
+            : null;
         return Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
@@ -188,7 +189,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           children: [
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
                                 height: 200,
@@ -205,21 +206,21 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 30, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 30, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Container(
                                                 width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
+                                                    .size
+                                                    .width *
                                                     0.15,
                                                 height: 50,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFFEEEEEE),
                                                   borderRadius:
-                                                      BorderRadius.circular(30),
+                                                  BorderRadius.circular(30),
                                                   border: Border.all(
                                                     color: FlutterFlowTheme
                                                         .tertiaryColor,
@@ -228,7 +229,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                 ),
                                                 child: ClipRRect(
                                                   borderRadius:
-                                                      BorderRadius.circular(30),
+                                                  BorderRadius.circular(30),
                                                   child: Image.asset(
                                                     'assets/images/KakaoTalk_20220104_094352388_03.png',
                                                     width: 100,
@@ -242,15 +243,15 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                     .fromSTEB(5, 0, 0, 0),
                                                 child: Container(
                                                   width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
+                                                      .size
+                                                      .width *
                                                       0.15,
                                                   height: 50,
                                                   decoration: BoxDecoration(
                                                     color: Color(0xFFEEEEEE),
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
+                                                    BorderRadius.circular(
+                                                        30),
                                                     border: Border.all(
                                                       color: FlutterFlowTheme
                                                           .tertiaryColor,
@@ -259,8 +260,8 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                   ),
                                                   child: ClipRRect(
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
+                                                    BorderRadius.circular(
+                                                        30),
                                                     child: Image.asset(
                                                       'assets/images/KakaoTalk_20220104_094352388_02.png',
                                                       width: 100,
@@ -275,15 +276,15 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                     .fromSTEB(5, 0, 0, 0),
                                                 child: Container(
                                                   width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
+                                                      .size
+                                                      .width *
                                                       0.15,
                                                   height: 50,
                                                   decoration: BoxDecoration(
                                                     color: Color(0xFFEEEEEE),
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
+                                                    BorderRadius.circular(
+                                                        30),
                                                     border: Border.all(
                                                       color: FlutterFlowTheme
                                                           .tertiaryColor,
@@ -292,8 +293,8 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                   ),
                                                   child: ClipRRect(
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
+                                                    BorderRadius.circular(
+                                                        30),
                                                     child: Image.asset(
                                                       'assets/images/KakaoTalk_20220104_094352388.png',
                                                       width: 100,
@@ -308,15 +309,15 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                     .fromSTEB(5, 0, 0, 0),
                                                 child: Container(
                                                   width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
+                                                      .size
+                                                      .width *
                                                       0.15,
                                                   height: 50,
                                                   decoration: BoxDecoration(
                                                     color: Color(0xFFEEEEEE),
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
+                                                    BorderRadius.circular(
+                                                        30),
                                                     border: Border.all(
                                                       color: FlutterFlowTheme
                                                           .tertiaryColor,
@@ -324,8 +325,8 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                   ),
                                                   child: ClipRRect(
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
+                                                    BorderRadius.circular(
+                                                        30),
                                                     child: Image.asset(
                                                       'assets/images/KakaoTalk_20220104_094352388_05.png',
                                                       width: 100,
@@ -340,15 +341,15 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                     .fromSTEB(5, 0, 0, 0),
                                                 child: Container(
                                                   width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
+                                                      .size
+                                                      .width *
                                                       0.15,
                                                   height: 50,
                                                   decoration: BoxDecoration(
                                                     color: Color(0xFFEEEEEE),
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
+                                                    BorderRadius.circular(
+                                                        30),
                                                     border: Border.all(
                                                       color: FlutterFlowTheme
                                                           .tertiaryColor,
@@ -356,8 +357,8 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                   ),
                                                   child: ClipRRect(
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
+                                                    BorderRadius.circular(
+                                                        30),
                                                     child: Image.asset(
                                                       'assets/images/KakaoTalk_20220104_094352388_04.png',
                                                       width: 100,
@@ -372,15 +373,15 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                     .fromSTEB(5, 0, 0, 0),
                                                 child: Container(
                                                   width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
+                                                      .size
+                                                      .width *
                                                       0.15,
                                                   height: 50,
                                                   decoration: BoxDecoration(
                                                     color: Color(0xFFEEEEEE),
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
+                                                    BorderRadius.circular(
+                                                        30),
                                                     border: Border.all(
                                                       color: FlutterFlowTheme
                                                           .tertiaryColor,
@@ -388,8 +389,8 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                   ),
                                                   child: ClipRRect(
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            30),
+                                                    BorderRadius.circular(
+                                                        30),
                                                     child: Image.asset(
                                                       'assets/images/KakaoTalk_20220104_094352388_01.png',
                                                       width: 100,
@@ -416,50 +417,50 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                 ),
                                                 child: Row(
                                                   mainAxisSize:
-                                                      MainAxisSize.max,
+                                                  MainAxisSize.max,
                                                   children: [
                                                     Stack(
                                                       children: [
                                                         if ((repairmentDetailRepairmentRecord
-                                                                .status) ==
+                                                            .status) ==
                                                             1)
                                                           Text(
                                                             '수리 요청',
                                                             style:
-                                                                FlutterFlowTheme
-                                                                    .bodyText1
-                                                                    .override(
+                                                            FlutterFlowTheme
+                                                                .bodyText1
+                                                                .override(
                                                               fontFamily:
-                                                                  'tway_air medium',
+                                                              'tway_air medium',
                                                               color: Color(
                                                                   0xFF4B39EF),
                                                               fontSize: 13,
                                                               fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
+                                                              FontWeight
+                                                                  .w500,
                                                               useGoogleFonts:
-                                                                  false,
+                                                              false,
                                                             ),
                                                           ),
                                                         if ((repairmentDetailRepairmentRecord
-                                                                .status) !=
+                                                            .status) !=
                                                             1)
                                                           Text(
                                                             '수리 요청',
                                                             style:
-                                                                FlutterFlowTheme
-                                                                    .bodyText1
-                                                                    .override(
+                                                            FlutterFlowTheme
+                                                                .bodyText1
+                                                                .override(
                                                               fontFamily:
-                                                                  'tway_air medium',
+                                                              'tway_air medium',
                                                               color: FlutterFlowTheme
                                                                   .tertiaryColor,
                                                               fontSize: 13,
                                                               fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
+                                                              FontWeight
+                                                                  .w500,
                                                               useGoogleFonts:
-                                                                  false,
+                                                              false,
                                                             ),
                                                           ),
                                                       ],
@@ -479,50 +480,50 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                 ),
                                                 child: Row(
                                                   mainAxisSize:
-                                                      MainAxisSize.max,
+                                                  MainAxisSize.max,
                                                   children: [
                                                     Stack(
                                                       children: [
                                                         if ((repairmentDetailRepairmentRecord
-                                                                .status) !=
+                                                            .status) !=
                                                             2)
                                                           Text(
                                                             '견적 수락',
                                                             style:
-                                                                FlutterFlowTheme
-                                                                    .bodyText1
-                                                                    .override(
+                                                            FlutterFlowTheme
+                                                                .bodyText1
+                                                                .override(
                                                               fontFamily:
-                                                                  'tway_air medium',
+                                                              'tway_air medium',
                                                               color: FlutterFlowTheme
                                                                   .tertiaryColor,
                                                               fontSize: 13,
                                                               fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
+                                                              FontWeight
+                                                                  .w500,
                                                               useGoogleFonts:
-                                                                  false,
+                                                              false,
                                                             ),
                                                           ),
                                                         if ((repairmentDetailRepairmentRecord
-                                                                .status) ==
+                                                            .status) ==
                                                             2)
                                                           Text(
                                                             '견적 수락',
                                                             style:
-                                                                FlutterFlowTheme
-                                                                    .bodyText1
-                                                                    .override(
+                                                            FlutterFlowTheme
+                                                                .bodyText1
+                                                                .override(
                                                               fontFamily:
-                                                                  'tway_air medium',
+                                                              'tway_air medium',
                                                               color: Color(
                                                                   0xFF4B39EF),
                                                               fontSize: 13,
                                                               fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
+                                                              FontWeight
+                                                                  .w500,
                                                               useGoogleFonts:
-                                                                  false,
+                                                              false,
                                                             ),
                                                           ),
                                                       ],
@@ -545,50 +546,50 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                       .fromSTEB(15, 0, 0, 0),
                                                   child: Row(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                    MainAxisSize.max,
                                                     children: [
                                                       Stack(
                                                         children: [
                                                           if ((repairmentDetailRepairmentRecord
-                                                                  .status) ==
+                                                              .status) ==
                                                               3)
                                                             Text(
                                                               '픽업',
                                                               style:
-                                                                  FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                                 fontFamily:
-                                                                    'tway_air medium',
+                                                                'tway_air medium',
                                                                 color: Color(
                                                                     0xFF4B39EF),
                                                                 fontSize: 13,
                                                                 fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                FontWeight
+                                                                    .w500,
                                                                 useGoogleFonts:
-                                                                    false,
+                                                                false,
                                                               ),
                                                             ),
                                                           if ((repairmentDetailRepairmentRecord
-                                                                  .status) !=
+                                                              .status) !=
                                                               3)
                                                             Text(
                                                               '픽업',
                                                               style:
-                                                                  FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                                 fontFamily:
-                                                                    'tway_air medium',
+                                                                'tway_air medium',
                                                                 color: FlutterFlowTheme
                                                                     .tertiaryColor,
                                                                 fontSize: 13,
                                                                 fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                FontWeight
+                                                                    .w500,
                                                                 useGoogleFonts:
-                                                                    false,
+                                                                false,
                                                               ),
                                                             ),
                                                         ],
@@ -612,50 +613,50 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                       .fromSTEB(5, 0, 0, 0),
                                                   child: Row(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                    MainAxisSize.max,
                                                     children: [
                                                       Stack(
                                                         children: [
                                                           if ((repairmentDetailRepairmentRecord
-                                                                  .status) ==
+                                                              .status) ==
                                                               4)
                                                             Text(
                                                               '수리 진행',
                                                               style:
-                                                                  FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                                 fontFamily:
-                                                                    'tway_air medium',
+                                                                'tway_air medium',
                                                                 color: Color(
                                                                     0xFF4B39EF),
                                                                 fontSize: 13,
                                                                 fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                FontWeight
+                                                                    .w500,
                                                                 useGoogleFonts:
-                                                                    false,
+                                                                false,
                                                               ),
                                                             ),
                                                           if ((repairmentDetailRepairmentRecord
-                                                                  .status) !=
+                                                              .status) !=
                                                               4)
                                                             Text(
                                                               '수리 진행',
                                                               style:
-                                                                  FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                                 fontFamily:
-                                                                    'tway_air medium',
+                                                                'tway_air medium',
                                                                 color: FlutterFlowTheme
                                                                     .tertiaryColor,
                                                                 fontSize: 13,
                                                                 fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                FontWeight
+                                                                    .w500,
                                                                 useGoogleFonts:
-                                                                    false,
+                                                                false,
                                                               ),
                                                             ),
                                                         ],
@@ -679,50 +680,50 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                       .fromSTEB(20, 0, 0, 0),
                                                   child: Row(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                    MainAxisSize.max,
                                                     children: [
                                                       Stack(
                                                         children: [
                                                           if ((repairmentDetailRepairmentRecord
-                                                                  .status) ==
+                                                              .status) ==
                                                               5)
                                                             Text(
                                                               '배송',
                                                               style:
-                                                                  FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                                 fontFamily:
-                                                                    'tway_air medium',
+                                                                'tway_air medium',
                                                                 color: Color(
                                                                     0xFF4B39EF),
                                                                 fontSize: 13,
                                                                 fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                FontWeight
+                                                                    .w500,
                                                                 useGoogleFonts:
-                                                                    false,
+                                                                false,
                                                               ),
                                                             ),
                                                           if ((repairmentDetailRepairmentRecord
-                                                                  .status) !=
+                                                              .status) !=
                                                               5)
                                                             Text(
                                                               '배송',
                                                               style:
-                                                                  FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                                 fontFamily:
-                                                                    'tway_air medium',
+                                                                'tway_air medium',
                                                                 color: FlutterFlowTheme
                                                                     .tertiaryColor,
                                                                 fontSize: 13,
                                                                 fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                FontWeight
+                                                                    .w500,
                                                                 useGoogleFonts:
-                                                                    false,
+                                                                false,
                                                               ),
                                                             ),
                                                         ],
@@ -746,50 +747,50 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                       .fromSTEB(10, 0, 0, 0),
                                                   child: Row(
                                                     mainAxisSize:
-                                                        MainAxisSize.max,
+                                                    MainAxisSize.max,
                                                     children: [
                                                       Stack(
                                                         children: [
                                                           if ((repairmentDetailRepairmentRecord
-                                                                  .status) ==
+                                                              .status) ==
                                                               6)
                                                             Text(
                                                               '수리 완료',
                                                               style:
-                                                                  FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                                 fontFamily:
-                                                                    'tway_air medium',
+                                                                'tway_air medium',
                                                                 color: Color(
                                                                     0xFF4B39EF),
                                                                 fontSize: 13,
                                                                 fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                FontWeight
+                                                                    .w500,
                                                                 useGoogleFonts:
-                                                                    false,
+                                                                false,
                                                               ),
                                                             ),
                                                           if ((repairmentDetailRepairmentRecord
-                                                                  .status) !=
+                                                              .status) !=
                                                               6)
                                                             Text(
                                                               '수리 완료',
                                                               style:
-                                                                  FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
+                                                              FlutterFlowTheme
+                                                                  .bodyText1
+                                                                  .override(
                                                                 fontFamily:
-                                                                    'tway_air medium',
+                                                                'tway_air medium',
                                                                 color: FlutterFlowTheme
                                                                     .tertiaryColor,
                                                                 fontSize: 13,
                                                                 fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                FontWeight
+                                                                    .w500,
                                                                 useGoogleFonts:
-                                                                    false,
+                                                                false,
                                                               ),
                                                             ),
                                                         ],
@@ -850,7 +851,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -882,7 +883,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             ),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -920,7 +921,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             children: [
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Text(
                                   '견적 일시',
                                   style: FlutterFlowTheme.bodyText1.override(
@@ -946,7 +947,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -984,7 +985,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             children: [
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Text(
                                   '픽업 여부',
                                   style: FlutterFlowTheme.bodyText1.override(
@@ -1013,16 +1014,16 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             children: [
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                 child: Stack(
                                   children: [
                                     if (repairmentDetailRepairmentRecord
-                                            .pickupDirect ??
+                                        .pickupDirect ??
                                         true)
                                       Text(
                                         '픽업서비스 이용',
                                         style:
-                                            FlutterFlowTheme.bodyText1.override(
+                                        FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'tway_air medium',
                                           color: Color(0xFF2163CB),
                                           fontSize: 17,
@@ -1031,12 +1032,12 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                         ),
                                       ),
                                     if (!(repairmentDetailRepairmentRecord
-                                            .pickupDirect) ??
+                                        .pickupDirect) ??
                                         true)
                                       Text(
                                         '직접방문',
                                         style:
-                                            FlutterFlowTheme.bodyText1.override(
+                                        FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'tway_air medium',
                                           color: Color(0xFF2163CB),
                                           fontSize: 17,
@@ -1048,13 +1049,13 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                 ),
                               ),
                               if (repairmentDetailRepairmentRecord
-                                      .pickupDirect ??
+                                  .pickupDirect ??
                                   true)
                                 Align(
                                   alignment: AlignmentDirectional(0, 0),
                                   child: Text(
                                     dateTimeFormat(
-                                        'M/d H:m',
+                                        'M/d H:mm',
                                         repairmentDetailRepairmentRecord
                                             .select),
                                     style: FlutterFlowTheme.bodyText1.override(
@@ -1128,7 +1129,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             children: [
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Text(
                                   '제조사',
                                   style: FlutterFlowTheme.bodyText1.override(
@@ -1154,7 +1155,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -1188,7 +1189,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -1220,7 +1221,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             ),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -1258,7 +1259,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             children: [
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Text(
                                   '고장 부위',
                                   style: FlutterFlowTheme.bodyText1.override(
@@ -1284,7 +1285,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -1321,7 +1322,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             children: [
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Text(
                                   '상세 설명',
                                   style: FlutterFlowTheme.bodyText1.override(
@@ -1347,7 +1348,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -1380,7 +1381,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -1412,7 +1413,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             ),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -1445,7 +1446,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -1477,7 +1478,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             ),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -1510,7 +1511,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -1542,7 +1543,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             ),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -1567,60 +1568,151 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        if ((repairmentDetailRepairmentRecord.status) == 2)
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 0, 0, 20),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              decoration: BoxDecoration(
-                                color: Color(0xFF14181B),
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 4,
-                                    color: Color(0x55000000),
-                                    offset: Offset(0, 2),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              child: Padding(
+                        Stack(
+                          children: [
+                            if ((repairmentDetailRepairmentRecord.status) == 3)
+                              Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 16, 16, 16),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30,
-                                      borderWidth: 1,
-                                      buttonSize: 60,
-                                      icon: FaIcon(
-                                        FontAwesomeIcons.moneyBillWave,
-                                        color: FlutterFlowTheme.secondaryColor,
-                                        size: 30,
+                                    20, 0, 0, 20),
+                                child: InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            FirstpurchaseWidget(
+                                              repairmentrf:
+                                              repairmentDetailRepairmentRecord
+                                                  .reference,
+                                            ),
                                       ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
-                                      },
+                                    );
+                                  },
+                                  child: Container(
+                                    width:
+                                    MediaQuery.of(context).size.width * 0.9,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFF14181B),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 4,
+                                          color: Color(0x55000000),
+                                          offset: Offset(0, 2),
+                                        )
+                                      ],
+                                      borderRadius: BorderRadius.circular(16),
                                     ),
-                                    Text(
-                                      '결제하기',
-                                      textAlign: TextAlign.start,
-                                      style:
-                                          FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'tway_air medium',
-                                        color: Colors.white,
-                                        fontSize: 24,
-                                        useGoogleFonts: false,
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16, 16, 16, 16),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        children: [
+                                          FlutterFlowIconButton(
+                                            borderColor: Colors.transparent,
+                                            borderRadius: 30,
+                                            borderWidth: 1,
+                                            buttonSize: 60,
+                                            icon: FaIcon(
+                                              FontAwesomeIcons.moneyBillWave,
+                                              color: FlutterFlowTheme
+                                                  .secondaryColor,
+                                              size: 30,
+                                            ),
+                                            onPressed: () {
+                                              print('IconButton pressed ...');
+                                            },
+                                          ),
+                                          Text(
+                                            '결제하기',
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'tway_air medium',
+                                              color: Colors.white,
+                                              fontSize: 24,
+                                              useGoogleFonts: false,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
+                            if ((repairmentDetailRepairmentRecord.status) == 2)
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20, 0, 0, 20),
+                                child: InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            FirstpurchaseWidget(
+                                              repairmentrf:
+                                              repairmentDetailRepairmentRecord
+                                                  .reference,
+                                            ),
+                                      ),
+                                    );
+                                  },
+                                  child: Container(
+                                    width:
+                                    MediaQuery.of(context).size.width * 0.9,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFF14181B),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 4,
+                                          color: Color(0x55000000),
+                                          offset: Offset(0, 2),
+                                        )
+                                      ],
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16, 16, 16, 16),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        children: [
+                                          FlutterFlowIconButton(
+                                            borderColor: Colors.transparent,
+                                            borderRadius: 30,
+                                            borderWidth: 1,
+                                            buttonSize: 60,
+                                            icon: FaIcon(
+                                              FontAwesomeIcons.moneyBillWave,
+                                              color: FlutterFlowTheme
+                                                  .secondaryColor,
+                                              size: 30,
+                                            ),
+                                          ),
+                                          Text(
+                                            '결제하기',
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'tway_air medium',
+                                              color: Colors.white,
+                                              fontSize: 24,
+                                              useGoogleFonts: false,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                          ],
+                        ),
                       ],
                     ),
                 ],
