@@ -128,7 +128,7 @@ class _FixHistoryWidgetState extends State<FixHistoryWidget> {
                                 fixHistoryRepairmentRecordList?.toList() ?? [];
                             return ListView.builder(
                               padding: EdgeInsets.zero,
-                              shrinkWrap: false,
+                              shrinkWrap: true,
                               scrollDirection: Axis.vertical,
                               itemCount: aaaaa.length,
                               itemBuilder: (context, aaaaaIndex) {
