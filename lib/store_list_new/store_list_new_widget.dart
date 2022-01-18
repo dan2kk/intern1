@@ -44,7 +44,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
         return Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
-            backgroundColor: Color(0xFF5D8ADB),
+            backgroundColor: Color(0xFF21B6FF),
             automaticallyImplyLeading: false,
             leading: FlutterFlowIconButton(
               borderColor: Colors.transparent,
@@ -63,7 +63,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
             title: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
               child: Text(
-                '수리점',
+                '수리 내역',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.title1.override(
                   fontFamily: 'Lexend Deca',
@@ -92,7 +92,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                         width: MediaQuery.of(context).size.width,
                         height: 60,
                         decoration: BoxDecoration(
-                          color: Color(0xFF5D8ADB),
+                          color: Color(0xFF21B6FF),
                         ),
                       ),
                     ),

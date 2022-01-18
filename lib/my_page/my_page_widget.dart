@@ -537,7 +537,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                           color: Colors.white,
                           textStyle: TextStyle(
                             fontFamily: 'tway_air medium',
-                            color: Color(0xFF4B39EF),
+                            color: Color(0xFF21B6FF),
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
                           ),

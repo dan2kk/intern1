@@ -34,7 +34,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                     width: MediaQuery.of(context).size.width,
                     height: 100,
                     decoration: BoxDecoration(
-                      color: Color(0xFF3F51B5),
+                      color: Color(0xFF21B6FF),
                       borderRadius: BorderRadius.circular(0),
                     ),
                     child: Column(

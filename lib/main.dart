@@ -113,49 +113,49 @@ class _NavBarPageState extends State<NavBarPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
+            icon: ImageIcon(
+              AssetImage('assets/images/09.png'),
               size: 26,
             ),
-            activeIcon: Icon(
-              Icons.home,
+            activeIcon: ImageIcon(
+              AssetImage('assets/images/09.png'),
               size: 30,
             ),
             label: '메인화면',
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.star_outline,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.star_rate,
+            icon: ImageIcon(
+              AssetImage('assets/images/10.png'),
               size: 26,
+            ),
+            activeIcon: ImageIcon(
+              AssetImage('assets/images/10.png'),
+              size: 30,
             ),
             label: '즐겨찾기',
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.format_list_bulleted_outlined,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.format_list_bulleted_sharp,
+            icon: ImageIcon(
+              AssetImage('assets/images/11.png'),
               size: 26,
+            ),
+            activeIcon: ImageIcon(
+              AssetImage('assets/images/11.png'),
+              size: 30,
             ),
             label: '수리내역',
             tooltip: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person_outlined,
-              size: 24,
+            icon: ImageIcon(
+              AssetImage('assets/images/12.png'),
+              size: 26,
             ),
-            activeIcon: Icon(
-              Icons.person,
-              size: 24,
+            activeIcon: ImageIcon(
+              AssetImage('assets/images/12.png'),
+              size: 30,
             ),
             label: '마이페이지',
             tooltip: '',
@@ -163,7 +163,7 @@ class _NavBarPageState extends State<NavBarPage> {
         ],
         backgroundColor: Colors.white,
         currentIndex: tabs.keys.toList().indexOf(_currentPage),
-        selectedItemColor: Color(0xFF2163CB),
+        selectedItemColor: Color(0xFF21B6FF),
         unselectedItemColor: FlutterFlowTheme.tertiaryColor,
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
         showSelectedLabels: true,
