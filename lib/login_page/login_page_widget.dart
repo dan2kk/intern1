@@ -27,7 +27,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
         centerTitle: true,
         elevation: 4,
       ),
-      backgroundColor: Color(0xFF4450C5),
+      backgroundColor: Color(0xFF21B6FF),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * 1,
