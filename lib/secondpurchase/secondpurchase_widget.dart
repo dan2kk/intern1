@@ -4,6 +4,19 @@ import '../order_complete/order_complete_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:bootpay_api/bootpay_api.dart';
+import 'package:bootpay_api/model/payload.dart';
+import 'package:bootpay_api/model/extra.dart';
+import 'package:bootpay_api/model/user.dart';
+import 'package:bootpay_api/model/item.dart';
+import 'package:kopo/kopo.dart';
+import 'dart:ffi';
+
+import 'package:kpostal/kpostal.dart';
+import '../auth/auth_util.dart';
+
+
+
 class SecondpurchaseWidget extends StatefulWidget {
   const SecondpurchaseWidget({Key key}) : super(key: key);
 
@@ -693,6 +706,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                     ),
                     child: InkWell(
                       onTap: () async {
+                        await goBootpayRequest(context, 36000);
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
