@@ -1,9 +1,9 @@
 import 'dart:ffi';
 
 import 'package:kpostal/kpostal.dart';
+import '../auth/auth_util.dart';
 
 import '../backend/backend.dart';
-import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -11,13 +11,15 @@ import '../order_complete/order_complete_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 import 'package:bootpay_api/bootpay_api.dart';
 import 'package:bootpay_api/model/payload.dart';
 import 'package:bootpay_api/model/extra.dart';
 import 'package:bootpay_api/model/user.dart';
 import 'package:bootpay_api/model/item.dart';
 import 'package:kopo/kopo.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class FirstpurchaseWidget extends StatefulWidget {
   const FirstpurchaseWidget({
