@@ -5,6 +5,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../repairment_store_detail/repairment_store_detail_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../main_page/main_page_widget.dart';
 
 class FavoriteWidget extends StatefulWidget {
   const FavoriteWidget({Key key}) : super(key: key);
@@ -58,9 +59,8 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                       onTap: () async {
                                         Navigator.pop(context);
                                       },
-                                      child: Icon(
-                                        Icons.keyboard_arrow_left,
-                                        color: Colors.white,
+                                      child: ImageIcon(
+                                        AssetImage('assets/images/15.png'),
                                         size: 30,
                                       ),
                                     ),
