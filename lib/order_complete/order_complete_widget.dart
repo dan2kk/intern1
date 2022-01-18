@@ -36,9 +36,9 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: 100,
+                height: MediaQuery.of(context).size.height * 0.2,
                 decoration: BoxDecoration(
-                  color: Color(0xFFEEEEEE),
+                  color: Colors.white,
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
