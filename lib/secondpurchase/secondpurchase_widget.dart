@@ -2,6 +2,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../order_complete/order_complete_widget.dart';
 import 'package:flutter/material.dart';
+import '../backend/backend.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:bootpay_api/bootpay_api.dart';
@@ -35,6 +36,18 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
 
   @override
   Widget build(BuildContext context) {
+    return StreamBuilder<RepairmentRecord>(
+        stream: RepairmentRecord.getDocument(widget.repairmentrf),
+    builder: (context, snapshot) {
+    // Customize what your widget looks like when it's loading.
+    if (!snapshot.hasData) {
+    return Center(
+    child: LinearProgressIndicator(
+    color: Color(0xFF2163CB),
+    ),
+    );
+    }
+    final secondpurchaseRepairmentRecord = snapshot.data;
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFD3DDE1),
@@ -51,7 +64,10 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width,
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width,
                           height: 100,
                           decoration: BoxDecoration(
                             color: Color(0xFF21B6FF),
@@ -126,8 +142,14 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.95,
-                          height: MediaQuery.of(context).size.height * 0.05,
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width * 0.95,
+                          height: MediaQuery
+                              .of(context)
+                              .size
+                              .height * 0.05,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             borderRadius: BorderRadius.circular(10),
@@ -172,8 +194,14 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.95,
-                          height: MediaQuery.of(context).size.height * 0.35,
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width * 0.95,
+                          height: MediaQuery
+                              .of(context)
+                              .size
+                              .height * 0.35,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             borderRadius: BorderRadius.circular(10),
@@ -412,8 +440,14 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.95,
-                          height: MediaQuery.of(context).size.height * 0.25,
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width * 0.95,
+                          height: MediaQuery
+                              .of(context)
+                              .size
+                              .height * 0.25,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             borderRadius: BorderRadius.circular(10),
@@ -557,8 +591,14 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.95,
-                          height: MediaQuery.of(context).size.height * 0.3,
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width * 0.95,
+                          height: MediaQuery
+                              .of(context)
+                              .size
+                              .height * 0.3,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             borderRadius: BorderRadius.circular(10),
@@ -704,15 +744,22 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.95,
-                    height: MediaQuery.of(context).size.height * 0.1,
+                    width: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.95,
+                    height: MediaQuery
+                        .of(context)
+                        .size
+                        .height * 0.1,
                     decoration: BoxDecoration(
                       color: Color(0xFF21B6FF),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: InkWell(
                       onTap: () async {
-                        await goBootpayRequest(context, 36000);
+                        await goBootpayRequest(
+                            context, secondpurchaseRepairmentRecord.price-30000);
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -738,7 +785,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                       ),
                     ),
                   ),
-              ],
+                ],
               ),
             ),
           ],
@@ -746,6 +793,8 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
       ),
     );
   }
+    );
+}
   void goBootpayRequest(BuildContext context, int amount) async {
     Payload payload = Payload();
     payload.androidApplicationId = '61d25a79e38c300022d2d6f2';
