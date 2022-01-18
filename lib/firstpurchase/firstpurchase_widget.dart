@@ -1,5 +1,7 @@
 import 'dart:ffi';
 
+import 'package:kpostal/kpostal.dart';
+
 import '../backend/backend.dart';
 import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
@@ -14,6 +16,7 @@ import 'package:bootpay_api/model/payload.dart';
 import 'package:bootpay_api/model/extra.dart';
 import 'package:bootpay_api/model/user.dart';
 import 'package:bootpay_api/model/item.dart';
+import 'package:kopo/kopo.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FirstpurchaseWidget extends StatefulWidget {
@@ -41,7 +44,12 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   String radioButtonValue5;
   String radioButtonValue6;
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
+  String postCode = '-';
+  String address = '-';
+  String latitude = '-';
+  String longitude = '-';
+  String kakaoLatitude = '-';
+  String kakaoLongitude = '-';
   @override
   void initState() {
     super.initState();
@@ -313,58 +321,51 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             padding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 15, 0, 0, 0),
-                                            child: TextFormField(
-                                              controller: textController1,
-                                              obscureText: false,
-                                              decoration: InputDecoration(
-                                                hintText: '주소를 입력하시오',
-                                                hintStyle: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
+                                           child: InkWell(
+                                              onTap: () async {
+                                                    await Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                              builder: (_) => KpostalView(
+                                                                  useLocalServer: false, // default is false
+                                                                  localPort: 8080, // default is 8080
+                                                                  kakaoKey: '10d8be79d5abf697db85adacc1079279', // if not declared, only use platform's geocoding
+                                                                  callback: (Kpostal result){
+                                                      setState(() {
+                                                            this.postCode = result.postCode;
+                                                            this.address = result.address;
+                                                            this.latitude = result.latitude.toString();
+                                                            this.longitude = result.longitude.toString();
+                                                            this.kakaoLatitude =result.kakaoLatitude.toString();
+                                                            this.kakaoLongitude = result.kakaoLongitude.toString();
+                                                      });
+                                                      },
+                                                      ),
+                                                    ),
+                                                    );
+                                              },
+                                              child: Container(
+                                              width: MediaQuery
+                                                  .of(context)
+                                                  .size
+                                                  .width * 0.8,
+                                              height: 20,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFEEEEEE),
+                                              ),
+                                              child: Text(
+                                                valueOrDefault(address, '클릭하여 주소를 입력하시요'),
+                                                style: FlutterFlowTheme.title3.override(
                                                   fontFamily: 'tway_air medium',
-                                                  fontSize: 16,
+                                                  fontSize: 15,
                                                   fontWeight: FontWeight.w500,
                                                   useGoogleFonts: false,
                                                 ),
-                                                enabledBorder:
-                                                UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: Color(0x00000000),
-                                                    width: 1,
-                                                  ),
-                                                  borderRadius:
-                                                  const BorderRadius.only(
-                                                    topLeft:
-                                                    Radius.circular(4.0),
-                                                    topRight:
-                                                    Radius.circular(4.0),
-                                                  ),
-                                                ),
-                                                focusedBorder:
-                                                UnderlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: Color(0x00000000),
-                                                    width: 1,
-                                                  ),
-                                                  borderRadius:
-                                                  const BorderRadius.only(
-                                                    topLeft:
-                                                    Radius.circular(4.0),
-                                                    topRight:
-                                                    Radius.circular(4.0),
-                                                  ),
-                                                ),
                                               ),
-                                              style: FlutterFlowTheme.bodyText1
-                                                  .override(
-                                                fontFamily: 'tway_air medium',
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w500,
-                                                useGoogleFonts: false,
-                                              ),
-                                            ),
+                                            )
                                           ),
                                         ),
+                                        )
                                       ],
                                     ),
                                   ),
