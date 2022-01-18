@@ -40,7 +40,7 @@ class _StorelistWidgetState extends State<StorelistWidget> {
         List<RepairstoreRecord> storelistRepairstoreRecordList = snapshot.data;
         return Scaffold(
           key: scaffoldKey,
-          backgroundColor: Color(0xFF5C6EBE),
+          backgroundColor: Color(0xFF21B6FF),
           body: SafeArea(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -84,7 +84,7 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                               },
                                               child: Icon(
                                                 Icons.keyboard_arrow_left,
-                                                color: Color(0xFF3F51B5),
+                                                color: Color(0xFF21B6FF),
                                                 size: 30,
                                               ),
                                             ),
@@ -92,13 +92,13 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    20, 0, 0, 0),
+                                                    110, 0, 0, 0),
                                             child: Text(
                                               '수리 업체',
                                               style: FlutterFlowTheme.bodyText1
                                                   .override(
                                                 fontFamily: 'tway_air medium',
-                                                color: Color(0xFF3F51B5),
+                                                color: Color(0xFF21B6FF),
                                                 fontSize: 25,
                                                 fontWeight: FontWeight.w500,
                                                 useGoogleFonts: false,
@@ -292,10 +292,10 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                                       child: RatingBarIndicator(
                                                         itemBuilder:
                                                             (context, index) =>
-                                                                Icon(
-                                                          Icons.star_rounded,
+                                                                ImageIcon(
+                                                          AssetImage('assets/images/13.png'),
                                                           color:
-                                                              Color(0xFFE6E125),
+                                                              Color(0xFF21B6FF),
                                                         ),
                                                         direction:
                                                             Axis.horizontal,
