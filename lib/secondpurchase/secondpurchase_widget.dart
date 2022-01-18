@@ -18,7 +18,12 @@ import '../auth/auth_util.dart';
 
 
 class SecondpurchaseWidget extends StatefulWidget {
-  const SecondpurchaseWidget({Key key}) : super(key: key);
+  const SecondpurchaseWidget({
+    Key key,
+    this.repairmentrf,
+  }) : super(key: key);
+
+  final DocumentReference repairmentrf;
 
   @override
   _SecondpurchaseWidgetState createState() => _SecondpurchaseWidgetState();
