@@ -738,7 +738,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                       ),
                     ),
                   ),
-            )],
+              ],
               ),
             ),
           ],
