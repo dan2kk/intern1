@@ -25,6 +25,8 @@ class CouponWidget extends StatefulWidget {
 
 class _CouponWidgetState extends State<CouponWidget> {
   String radioButtonValue;
+  List<bool> radioButtonAccess = [];
+  int selected = 0;
   final riveAnimationAnimationsList = [
     'Animation 1',
   ];
@@ -169,8 +171,8 @@ class _CouponWidgetState extends State<CouponWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           4, 0, 4, 0),
                                       child: Container(
-                                    width: 55,
-                                height: 55,
+                                    width: 24,
+                                height: 24,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
                                     image: DecorationImage(
@@ -306,16 +308,15 @@ class _CouponWidgetState extends State<CouponWidget> {
                     AuthUserStreamWidget(
                       child: Builder(
                         builder: (context) {
-                          final listofcoupon =
-                              currentUserDocument?.couponHis?.toList() ?? [];
+                          final listofcoupon = currentUserDocument?.couponHis?.toList() ?? [];
+                          int select = 0;
                           return SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: List.generate(listofcoupon.length,
                                       (listofcouponIndex) {
-                                    final listofcouponItem =
-                                    listofcoupon[listofcouponIndex];
+                                    final listofcouponItem = listofcoupon[listofcouponIndex];
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 2, 0, 0),
@@ -343,6 +344,10 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                 height: 90,
                                                 decoration: BoxDecoration(
                                                   color: Colors.white,
+                                                  border: Border.all(
+                                                    width: 1,
+                                                    color: Color(0xFF21B6FF),
+                                                  ),
                                                 ),
                                                 child: Row(
                                                   mainAxisSize: MainAxisSize.max,
@@ -453,54 +458,6 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                             ),
                                                           ],
                                                         ),
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: 50,
-                                                      height: 100,
-                                                      decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                      ),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                        MainAxisSize.max,
-                                                        children: [
-                                                          if (widget.coupon ?? true)
-                                                            FlutterFlowRadioButton(
-                                                              options: [''],
-                                                              onChanged: (value) {
-                                                                setState(() =>
-                                                                radioButtonValue =
-                                                                    value);
-                                                              },
-                                                              optionHeight: 25,
-                                                              textStyle:
-                                                              FlutterFlowTheme
-                                                                  .bodyText1
-                                                                  .override(
-                                                                fontFamily:
-                                                                'Playfair Display',
-                                                                color: Colors.black,
-                                                              ),
-                                                              buttonPosition:
-                                                              RadioButtonPosition
-                                                                  .right,
-                                                              direction:
-                                                              Axis.vertical,
-                                                              radioButtonColor:
-                                                              Colors.blue,
-                                                              inactiveRadioButtonColor:
-                                                              FlutterFlowTheme
-                                                                  .tertiaryColor,
-                                                              toggleable: false,
-                                                              horizontalAlignment:
-                                                              WrapAlignment
-                                                                  .start,
-                                                              verticalAlignment:
-                                                              WrapCrossAlignment
-                                                                  .center,
-                                                            ),
-                                                        ],
                                                       ),
                                                     ),
                                                   ],
