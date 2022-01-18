@@ -94,7 +94,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                               width: MediaQuery.of(context).size.width,
                               height: 100,
                               decoration: BoxDecoration(
-                                color: Color(0xFF3F51B5),
+                                color: Color(0xFF21B6FF),
                                 borderRadius: BorderRadius.circular(0),
                               ),
                               child: Column(
@@ -1412,8 +1412,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                         width: MediaQuery.of(context).size.width * 0.95,
                         height: MediaQuery.of(context).size.height * 0.1,
                         decoration: BoxDecoration(
-                          color: Color(0xFF5C6EBE),
-                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xFF21B6FF),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                         child: InkWell(
                           onTap: () async {
