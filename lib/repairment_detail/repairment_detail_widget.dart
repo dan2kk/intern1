@@ -1,3 +1,5 @@
+import 'package:intern1/secondpurchase/secondpurchase_widget.dart';
+
 import '../backend/backend.dart';
 import '../firstpurchase/firstpurchase_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
@@ -1580,7 +1582,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            FirstpurchaseWidget(
+                                            SecondpurchaseWidget(
                                               repairmentrf:
                                               repairmentDetailRepairmentRecord
                                                   .reference,
