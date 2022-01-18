@@ -555,7 +555,7 @@ class _RepairmentStoreDetailWidgetState
                   padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
                   child: InkWell(
                     onTap: () async {
-                      if ((currentUserUid) == '') {
+                      if((currentUserUid) == '') {
                         await Navigator.push(
                           context,
                           PageTransition(
@@ -566,14 +566,16 @@ class _RepairmentStoreDetailWidgetState
                           ),
                         );
                       }
-                      await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => FixOrderWidget(
-                            storeidx: widget.stidx,
+                      if((currentUserUid)!= ''){
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FixOrderWidget(
+                              storeidx: widget.stidx,
+                            ),
                           ),
-                        ),
-                      );
+                        );
+                      }
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.9,

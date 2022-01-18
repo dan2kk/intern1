@@ -118,11 +118,19 @@ class _CouponWidgetState extends State<CouponWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           4, 0, 4, 0),
-                                      child: Icon(
-                                        Icons.eight_k_plus,
-                                        color: Color(0xFF95A1AC),
-                                        size: 24,
-                                      ),
+                                      child: Container(
+                                    width: 55,
+                                height: 55,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                          'assets/images/17.png'),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    shape: BoxShape.rectangle
+                                ),
+                              ),
                                     ),
                                     Expanded(
                                       child: Padding(
