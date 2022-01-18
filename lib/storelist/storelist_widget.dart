@@ -57,7 +57,7 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                             width: MediaQuery.of(context).size.width,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: Color(0xFFFFFFFF),
                               borderRadius: BorderRadius.circular(0),
                             ),
                             child: Column(
@@ -82,11 +82,19 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                               onTap: () async {
                                                 Navigator.pop(context);
                                               },
-                                              child: Icon(
-                                                Icons.keyboard_arrow_left,
-                                                color: Color(0xFF21B6FF),
-                                                size: 30,
+                                              child: Container(
+                                              width: 55,
+                                              height: 55,
+                                              decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(20),
+                                                  image: DecorationImage(
+                                                    image: AssetImage(
+                                                        'assets/images/16.png'),
+                                                    fit: BoxFit.fill,
+                                                  ),
+                                                  shape: BoxShape.rectangle
                                               ),
+                                            ),
                                             ),
                                           ),
                                           Padding(

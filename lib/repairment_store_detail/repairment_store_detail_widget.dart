@@ -123,7 +123,6 @@ class _RepairmentStoreDetailWidgetState
                                           },
                                           child: ImageIcon(
                                             AssetImage('assets/images/16.png'),
-                                            color: Colors.white,
                                             size: 30,
                                           ),
                                         ),

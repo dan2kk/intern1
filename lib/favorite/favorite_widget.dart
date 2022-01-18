@@ -57,12 +57,26 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                         10, 0, 0, 0),
                                     child: InkWell(
                                       onTap: () async {
-                                        Navigator.pop(context);
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => MainPageWidget(),
+                                          ),
+                                        );
                                       },
-                                      child: ImageIcon(
-                                        AssetImage('assets/images/15.png'),
-                                        size: 30,
-                                      ),
+                                        child: Container(
+                                          width: 55,
+                                          height: 55,
+                                          decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(20),
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    'assets/images/16.png'),
+                                                fit: BoxFit.fill,
+                                              ),
+                                              shape: BoxShape.rectangle
+                                          ),
+                                        ),
                                     ),
                                   ),
                                   Padding(
