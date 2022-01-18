@@ -16,9 +16,9 @@ class SettingsWidget extends StatefulWidget {
 }
 
 class _SettingsWidgetState extends State<SettingsWidget> {
-  bool switchListTileValue1 =true ;
-  bool switchListTileValue2 =true ;
-  bool switchListTileValue3 =true ;
+  bool switchListTileValue1;
+  bool switchListTileValue2;
+  bool switchListTileValue3;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -46,7 +46,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             width: MediaQuery.of(context).size.width,
                             height: 100,
                             decoration: BoxDecoration(
-                              color: Color(0xFF3F51B5),
+                              color: Color(0xFF21B6FF),
                               borderRadius: BorderRadius.circular(0),
                             ),
                             child: Column(
@@ -171,10 +171,10 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             () => switchListTileValue1 = newValue),
                                     title: Text(
                                       '푸쉬 설정',
-                                      style: GoogleFonts.getFont(
-                                        'Lexend Deca',
-                                        color: Color(0xFF3F51B5),
-                                        fontWeight: FontWeight.w600,
+                                      style: TextStyle(
+                                        fontFamily: 'tway_air medium',
+                                        color: Color(0xFF21B6FF),
+                                        fontWeight: FontWeight.w500,
                                         fontSize: 17,
                                       ),
                                     ),
@@ -189,8 +189,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         fontStyle: FontStyle.normal,
                                       ),
                                     ),
-                                    activeColor: Color(0xFF4B39EF),
-                                    activeTrackColor: Color(0xFF3B2DB6),
+                                    activeColor: Color(0xFF21B6FF),
+                                    activeTrackColor: Color(0xFF21B6FF),
                                     dense: false,
                                     controlAffinity:
                                     ListTileControlAffinity.trailing,
@@ -231,7 +231,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     '이메일 알람',
                                     style: TextStyle(
                                       fontFamily: 'tway_air medium',
-                                      color: Color(0xFF3F51B5),
+                                      color: Color(0xFF21B6FF),
                                       fontWeight: FontWeight.w500,
                                       fontSize: 17,
                                     ),
@@ -245,8 +245,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                       fontSize: 14,
                                     ),
                                   ),
-                                  activeColor: Color(0xFF4B39EF),
-                                  activeTrackColor: Color(0xFF3B2DB6),
+                                  activeColor: Color(0xFF21B6FF),
+                                  activeTrackColor: Color(0xFF21B6FF),
                                   dense: false,
                                   controlAffinity:
                                   ListTileControlAffinity.trailing,
@@ -291,7 +291,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     '위치 설정',
                                     style: GoogleFonts.getFont(
                                       'Lexend Deca',
-                                      color: Color(0xFF3F51B5),
+                                      color: Color(0xFF21B6FF),
                                       fontWeight: FontWeight.w600,
                                       fontSize: 17,
                                     ),
@@ -305,8 +305,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                       fontSize: 14,
                                     ),
                                   ),
-                                  activeColor: Color(0xFF4B39EF),
-                                  activeTrackColor: Color(0xFF3B2DB6),
+                                  activeColor: Color(0xFF21B6FF),
+                                  activeTrackColor: Color(0xFF21B6FF),
                                   dense: false,
                                   controlAffinity:
                                   ListTileControlAffinity.trailing,
@@ -341,7 +341,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   options: FFButtonOptions(
                     width: 190,
                     height: 50,
-                    color: Color(0xFF4B39EF),
+                    color: Color(0xFF21B6FF),
                     textStyle: TextStyle(
                       fontFamily: 'tway_air medium',
                       color: Colors.white,

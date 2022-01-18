@@ -436,7 +436,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                               'tway_air medium',
                                                               color: Color(
                                                                   0xFF4B39EF),
-                                                              fontSize: 13,
+                                                              fontSize: 11,
                                                               fontWeight:
                                                               FontWeight
                                                                   .w500,
@@ -457,7 +457,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                               'tway_air medium',
                                                               color: FlutterFlowTheme
                                                                   .tertiaryColor,
-                                                              fontSize: 13,
+                                                              fontSize: 11,
                                                               fontWeight:
                                                               FontWeight
                                                                   .w500,
@@ -499,7 +499,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                               'tway_air medium',
                                                               color: FlutterFlowTheme
                                                                   .tertiaryColor,
-                                                              fontSize: 13,
+                                                              fontSize: 11,
                                                               fontWeight:
                                                               FontWeight
                                                                   .w500,
@@ -520,7 +520,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                               'tway_air medium',
                                                               color: Color(
                                                                   0xFF4B39EF),
-                                                              fontSize: 13,
+                                                              fontSize: 11,
                                                               fontWeight:
                                                               FontWeight
                                                                   .w500,
@@ -565,7 +565,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                                 'tway_air medium',
                                                                 color: Color(
                                                                     0xFF4B39EF),
-                                                                fontSize: 13,
+                                                                fontSize: 11,
                                                                 fontWeight:
                                                                 FontWeight
                                                                     .w500,
@@ -586,7 +586,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                                 'tway_air medium',
                                                                 color: FlutterFlowTheme
                                                                     .tertiaryColor,
-                                                                fontSize: 13,
+                                                                fontSize: 11,
                                                                 fontWeight:
                                                                 FontWeight
                                                                     .w500,
@@ -603,9 +603,9 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
+                                                  .fromSTEB(30, 0, 0, 0),
                                               child: Container(
-                                                width: 50,
+                                                width: 70,
                                                 height: 50,
                                                 decoration: BoxDecoration(
                                                   color: Color(0x00FFFFFF),
@@ -632,7 +632,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                                 'tway_air medium',
                                                                 color: Color(
                                                                     0xFF4B39EF),
-                                                                fontSize: 13,
+                                                                fontSize: 11,
                                                                 fontWeight:
                                                                 FontWeight
                                                                     .w500,
@@ -653,7 +653,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                                 'tway_air medium',
                                                                 color: FlutterFlowTheme
                                                                     .tertiaryColor,
-                                                                fontSize: 13,
+                                                                fontSize: 11,
                                                                 fontWeight:
                                                                 FontWeight
                                                                     .w500,
@@ -670,7 +670,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
+                                                  .fromSTEB(0, 0, 0, 0),
                                               child: Container(
                                                 width: 50,
                                                 height: 50,
@@ -699,7 +699,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                                 'tway_air medium',
                                                                 color: Color(
                                                                     0xFF4B39EF),
-                                                                fontSize: 13,
+                                                                fontSize: 11,
                                                                 fontWeight:
                                                                 FontWeight
                                                                     .w500,
@@ -720,7 +720,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                                 'tway_air medium',
                                                                 color: FlutterFlowTheme
                                                                     .tertiaryColor,
-                                                                fontSize: 13,
+                                                                fontSize: 11,
                                                                 fontWeight:
                                                                 FontWeight
                                                                     .w500,
@@ -737,9 +737,9 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
+                                                  .fromSTEB(00, 0, 0, 0),
                                               child: Container(
-                                                width: 50,
+                                                width: 70,
                                                 height: 50,
                                                 decoration: BoxDecoration(
                                                   color: Color(0x00FFFFFF),
@@ -766,7 +766,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                                 'tway_air medium',
                                                                 color: Color(
                                                                     0xFF4B39EF),
-                                                                fontSize: 13,
+                                                                fontSize: 11,
                                                                 fontWeight:
                                                                 FontWeight
                                                                     .w500,
@@ -787,7 +787,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                                 'tway_air medium',
                                                                 color: FlutterFlowTheme
                                                                     .tertiaryColor,
-                                                                fontSize: 13,
+                                                                fontSize: 11,
                                                                 fontWeight:
                                                                 FontWeight
                                                                     .w500,
@@ -865,7 +865,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF4B39EF),
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
@@ -894,7 +894,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF4B39EF),
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
@@ -929,7 +929,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'tway_air medium',
                                     color: Color(0xFF4B39EF),
-                                    fontSize: 19,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
@@ -942,7 +942,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
                         child: Container(
-                          width: 150,
+                          width: 200,
                           height: 50,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.secondaryColor,
@@ -959,7 +959,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'tway_air medium',
                                     color: Color(0xFF4B39EF),
-                                    fontSize: 19,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
@@ -993,7 +993,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'tway_air medium',
                                     color: Color(0xFF4B39EF),
-                                    fontSize: 19,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
@@ -1028,7 +1028,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                         FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'tway_air medium',
                                           color: Color(0xFF2163CB),
-                                          fontSize: 17,
+                                          fontSize: 16,
                                           fontWeight: FontWeight.w500,
                                           useGoogleFonts: false,
                                         ),
@@ -1042,7 +1042,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                         FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'tway_air medium',
                                           color: Color(0xFF2163CB),
-                                          fontSize: 17,
+                                          fontSize: 16,
                                           fontWeight: FontWeight.w500,
                                           useGoogleFonts: false,
                                         ),
@@ -1084,7 +1084,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'tway_air medium',
                             color: Color(0xFF4B39EF),
-                            fontSize: 19,
+                            fontSize: 16,
                             fontWeight: FontWeight.w500,
                             useGoogleFonts: false,
                           ),
@@ -1137,7 +1137,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'tway_air medium',
                                     color: Color(0xFF4B39EF),
-                                    fontSize: 19,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
@@ -1166,7 +1166,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'tway_air medium',
                                     color: Color(0xFF4B39EF),
-                                    fontSize: 19,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
@@ -1203,7 +1203,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF4B39EF),
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
@@ -1232,7 +1232,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF4B39EF),
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
@@ -1267,7 +1267,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'tway_air medium',
                                     color: Color(0xFF4B39EF),
-                                    fontSize: 19,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
@@ -1296,7 +1296,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'tway_air medium',
                                     color: Color(0xFF4B39EF),
-                                    fontSize: 19,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
@@ -1330,7 +1330,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'tway_air medium',
                                     color: Color(0xFF4B39EF),
-                                    fontSize: 19,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
@@ -1359,7 +1359,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   style: FlutterFlowTheme.bodyText1.override(
                                     fontFamily: 'tway_air medium',
                                     color: Color(0xFF4B39EF),
-                                    fontSize: 19,
+                                    fontSize: 16,
                                     fontWeight: FontWeight.w500,
                                     useGoogleFonts: false,
                                   ),
@@ -1376,7 +1376,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 100,
+                          width: 150,
                           height: 50,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.secondaryColor,
@@ -1395,7 +1395,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF4B39EF),
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
@@ -1424,7 +1424,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF4B39EF),
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
@@ -1441,7 +1441,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 100,
+                          width: 150,
                           height: 50,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.secondaryColor,
@@ -1460,7 +1460,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF4B39EF),
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
@@ -1471,9 +1471,9 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Container(
-                            width: 100,
+                            width: 150,
                             height: 50,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.secondaryColor,
@@ -1489,7 +1489,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF4B39EF),
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
@@ -1506,7 +1506,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 100,
+                          width: 150,
                           height: 50,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.secondaryColor,
@@ -1525,7 +1525,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF4B39EF),
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
@@ -1536,9 +1536,9 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Container(
-                            width: 100,
+                            width: 150,
                             height: 50,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.secondaryColor,
@@ -1554,7 +1554,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF4B39EF),
-                                      fontSize: 19,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w500,
                                       useGoogleFonts: false,
                                     ),
@@ -1631,7 +1631,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                 .override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.white,
-                                              fontSize: 24,
+                                              fontSize: 16,
                                               useGoogleFonts: false,
                                             ),
                                           ),
@@ -1700,7 +1700,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                 .override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.white,
-                                              fontSize: 24,
+                                              fontSize: 18,
                                               useGoogleFonts: false,
                                             ),
                                           ),

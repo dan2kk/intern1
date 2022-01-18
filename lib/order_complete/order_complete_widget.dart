@@ -119,78 +119,73 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
-                        child: Container(
-                          width: 120,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFEEEEEE),
-                          ),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'MainPage'),
-                                ),
-                              );
-                            },
-                            text: '메인 화면',
-                            options: FFButtonOptions(
-                              height: 30,
-                              color: Color(0xFF21B6FF),
-                              textStyle: TextStyle(
-                                fontFamily: 'tway_air medium',
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 17,
+                      Container(
+                        width: 120,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFEEEEEE),
+                        ),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    NavBarPage(initialPage: 'MainPage'),
                               ),
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1,
-                              ),
-                              borderRadius: 12,
+                            );
+                          },
+                          text: '메인 화면',
+                          options: FFButtonOptions(
+                            height: 30,
+                            color: Color(0xFF21B6FF),
+                            textStyle: TextStyle(
+                              fontFamily: 'tway_air medium',
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 17,
                             ),
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1,
+                            ),
+                            borderRadius: 12,
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(35, 0, 0, 0),
-                        child: Container(
-                          width: 120,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFEEEEEE),
-                          ),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'MyPage'),
-                                ),
-                              );
-                            },
-                            text: '마이 페이지',
-                            options: FFButtonOptions(
-                              height: 30,
-                              color: Color(0xFF21B6FF),
-                              textStyle: TextStyle(
-                                fontFamily: 'tway_air medium',
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 17,
+                      Container(
+                        width: 120,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFEEEEEE),
+                        ),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    NavBarPage(initialPage: 'MyPage'),
                               ),
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1,
-                              ),
-                              borderRadius: 12,
+                            );
+                          },
+                          text: '마이 페이지',
+                          options: FFButtonOptions(
+                            height: 30,
+                            color: Color(0xFF21B6FF),
+                            textStyle: TextStyle(
+                              fontFamily: 'tway_air medium',
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 17,
                             ),
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1,
+                            ),
+                            borderRadius: 12,
                           ),
                         ),
                       ),
