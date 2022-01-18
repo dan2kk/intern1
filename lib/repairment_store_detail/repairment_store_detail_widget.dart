@@ -94,7 +94,7 @@ class _RepairmentStoreDetailWidgetState
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        width: MediaQuery.of(context).size.width,
+                        width: MediaQuery.of(context).size.width*0.98,
                         height: 100,
                         decoration: BoxDecoration(
                           color: Color(0xFF21B6FF),

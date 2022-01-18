@@ -19,7 +19,7 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.secondaryColor,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -28,7 +28,7 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0, 220, 0, 0),
               child: Icon(
                 Icons.check_circle,
-                color: Color(0xFF4B39EF),
+                color: Color(0xFF21B6FF),
                 size: 70,
               ),
             ),
@@ -36,9 +36,9 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: 100,
+                height: MediaQuery.of(context).size.height * 0.2,
                 decoration: BoxDecoration(
-                  color: Color(0xFFEEEEEE),
+                  color: Colors.white,
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
@@ -50,25 +50,33 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
                           width: MediaQuery.of(context).size.width,
                           height: MediaQuery.of(context).size.height * 0.08,
                           decoration: BoxDecoration(
-                            color: Color(0xFFEEEEEE),
+                            color: Colors.white,
                           ),
-                          child: Padding(
-                            padding:
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                            child: Text(
-                              '문의하신 내용이 정상적으로 접수되었습니다',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18,
+                                child: Text(
+                                  '문의하신 내용이 정상적으로 접수되었습니다',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'tway_air medium',
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                  ),
+                                ),
                               ),
-                            ),
+                            ],
                           ),
                         ),
                       ],
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width,
@@ -76,22 +84,26 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
                           constraints: BoxConstraints(
                             maxWidth: MediaQuery.of(context).size.width,
                             maxHeight:
-                                MediaQuery.of(context).size.height * 0.05,
+                            MediaQuery.of(context).size.height * 0.05,
                           ),
                           decoration: BoxDecoration(
-                            color: Color(0xFFEEEEEE),
+                            color: Colors.white,
                           ),
-                          child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
-                            child: Text(
-                              '담당자가 검토 후 신속하게 연락드리겠습니다',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.bodyText1.override(
-                                fontFamily: 'Playfair Display',
-                                fontSize: 15,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '담당자가 검토 후 신속하게 연락드리겠습니다',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
                               ),
-                            ),
+                            ],
                           ),
                         ),
                       ],
@@ -129,10 +141,11 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
                             text: '메인 화면',
                             options: FFButtonOptions(
                               height: 30,
-                              color: Color(0xFF4B39EF),
+                              color: Color(0xFF21B6FF),
                               textStyle: TextStyle(
+                                fontFamily: 'tway_air medium',
                                 color: Colors.white,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                                 fontSize: 17,
                               ),
                               borderSide: BorderSide(
@@ -165,10 +178,11 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
                             text: '마이 페이지',
                             options: FFButtonOptions(
                               height: 30,
-                              color: Color(0xFF4B39EF),
+                              color: Color(0xFF21B6FF),
                               textStyle: TextStyle(
+                                fontFamily: 'tway_air medium',
                                 color: Colors.white,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                                 fontSize: 17,
                               ),
                               borderSide: BorderSide(

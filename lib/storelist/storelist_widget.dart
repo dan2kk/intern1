@@ -132,7 +132,7 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                       alignment: AlignmentDirectional(0, 0),
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.9,
-                        height: MediaQuery.of(context).size.height * 1,
+                        height: MediaQuery.of(context).size.height * 0.8,
                         child: Stack(
                           children: [
                             Align(
