@@ -26,6 +26,12 @@ class _$CouponRecordSerializer implements StructuredSerializer<CouponRecord> {
         ..add('amount')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.maxamount;
+    if (value != null) {
+      result
+        ..add('maxamount')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.expireDate;
     if (value != null) {
       result
@@ -101,6 +107,10 @@ class _$CouponRecordSerializer implements StructuredSerializer<CouponRecord> {
           result.amount = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'maxamount':
+          result.maxamount = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'expire_date':
           result.expireDate = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
@@ -146,6 +156,8 @@ class _$CouponRecord extends CouponRecord {
   @override
   final int amount;
   @override
+  final int maxamount;
+  @override
   final DateTime expireDate;
   @override
   final DateTime earnedDate;
@@ -167,6 +179,7 @@ class _$CouponRecord extends CouponRecord {
 
   _$CouponRecord._(
       {this.amount,
+      this.maxamount,
       this.expireDate,
       this.earnedDate,
       this.couponNum,
@@ -189,6 +202,7 @@ class _$CouponRecord extends CouponRecord {
     if (identical(other, this)) return true;
     return other is CouponRecord &&
         amount == other.amount &&
+        maxamount == other.maxamount &&
         expireDate == other.expireDate &&
         earnedDate == other.earnedDate &&
         couponNum == other.couponNum &&
@@ -208,7 +222,9 @@ class _$CouponRecord extends CouponRecord {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, amount.hashCode),
+                                $jc(
+                                    $jc($jc(0, amount.hashCode),
+                                        maxamount.hashCode),
                                     expireDate.hashCode),
                                 earnedDate.hashCode),
                             couponNum.hashCode),
@@ -223,6 +239,7 @@ class _$CouponRecord extends CouponRecord {
   String toString() {
     return (newBuiltValueToStringHelper('CouponRecord')
           ..add('amount', amount)
+          ..add('maxamount', maxamount)
           ..add('expireDate', expireDate)
           ..add('earnedDate', earnedDate)
           ..add('couponNum', couponNum)
@@ -242,6 +259,10 @@ class CouponRecordBuilder
   int _amount;
   int get amount => _$this._amount;
   set amount(int amount) => _$this._amount = amount;
+
+  int _maxamount;
+  int get maxamount => _$this._maxamount;
+  set maxamount(int maxamount) => _$this._maxamount = maxamount;
 
   DateTime _expireDate;
   DateTime get expireDate => _$this._expireDate;
@@ -284,6 +305,7 @@ class CouponRecordBuilder
     final $v = _$v;
     if ($v != null) {
       _amount = $v.amount;
+      _maxamount = $v.maxamount;
       _expireDate = $v.expireDate;
       _earnedDate = $v.earnedDate;
       _couponNum = $v.couponNum;
@@ -313,6 +335,7 @@ class CouponRecordBuilder
     final _$result = _$v ??
         new _$CouponRecord._(
             amount: amount,
+            maxamount: maxamount,
             expireDate: expireDate,
             earnedDate: earnedDate,
             couponNum: couponNum,

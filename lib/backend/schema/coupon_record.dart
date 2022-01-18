@@ -14,6 +14,9 @@ abstract class CouponRecord
   int get amount;
 
   @nullable
+  int get maxamount;
+
+  @nullable
   @BuiltValueField(wireName: 'expire_date')
   DateTime get expireDate;
 
@@ -43,6 +46,7 @@ abstract class CouponRecord
 
   static void _initializeBuilder(CouponRecordBuilder builder) => builder
     ..amount = 0
+    ..maxamount = 0
     ..couponNum = ''
     ..explain = ''
     ..used = false
@@ -72,6 +76,7 @@ abstract class CouponRecord
 
 Map<String, dynamic> createCouponRecordData({
   int amount,
+  int maxamount,
   DateTime expireDate,
   DateTime earnedDate,
   String couponNum,
@@ -84,6 +89,7 @@ Map<String, dynamic> createCouponRecordData({
         CouponRecord.serializer,
         CouponRecord((c) => c
           ..amount = amount
+          ..maxamount = maxamount
           ..expireDate = expireDate
           ..earnedDate = earnedDate
           ..couponNum = couponNum
