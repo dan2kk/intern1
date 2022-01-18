@@ -1596,7 +1596,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                       boxShadow: [
                                         BoxShadow(
                                           blurRadius: 4,
-                                          color: Color(0x55000000),
+                                          color: Color(0xFF21B6FF),
                                           offset: Offset(0, 2),
                                         )
                                       ],
@@ -1621,12 +1621,9 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                   .secondaryColor,
                                               size: 30,
                                             ),
-                                            onPressed: () {
-                                              print('IconButton pressed ...');
-                                            },
                                           ),
                                           Text(
-                                            '결제하기',
+                                            '2차 견적서 확인후 결제하기',
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.bodyText1
                                                 .override(
@@ -1695,7 +1692,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                             ),
                                           ),
                                           Text(
-                                            '결제하기',
+                                            '1차 가견적서 결제하기',
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.bodyText1
                                                 .override(
