@@ -7,6 +7,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kpostal/kpostal.dart';
 
 class FirstpurchaseWidget extends StatefulWidget {
   const FirstpurchaseWidget({
@@ -35,6 +36,12 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   String radioButtonValue6;
   String dropDownValue1;
   String dropDownValue2;
+  String postCode = '-';
+  String address = '';
+  String latitude = '-';
+  String longitude = '-';
+  String kakaoLatitude = '-';
+  String kakaoLongitude = '-';
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -340,74 +347,51 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               Expanded(
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(15, 0, 0, 0),
-                                                  child: TextFormField(
-                                                    controller: textController1,
-                                                    obscureText: false,
-                                                    decoration: InputDecoration(
-                                                      hintText: '주소를 입력하시오',
-                                                      hintStyle:
-                                                      FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                        'tway_air medium',
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                        FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
-                                                      enabledBorder:
-                                                      UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                          Color(0x00000000),
-                                                          width: 1,
-                                                        ),
-                                                        borderRadius:
-                                                        const BorderRadius
-                                                            .only(
-                                                          topLeft:
-                                                          Radius.circular(
-                                                              4.0),
-                                                          topRight:
-                                                          Radius.circular(
-                                                              4.0),
-                                                        ),
-                                                      ),
-                                                      focusedBorder:
-                                                      UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                          Color(0x00000000),
-                                                          width: 1,
-                                                        ),
-                                                        borderRadius:
-                                                        const BorderRadius
-                                                            .only(
-                                                          topLeft:
-                                                          Radius.circular(
-                                                              4.0),
-                                                          topRight:
-                                                          Radius.circular(
-                                                              4.0),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
-                                                      fontFamily:
-                                                      'tway_air medium',
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                      FontWeight.w500,
-                                                      useGoogleFonts: false,
-                                                    ),
-                                                  ),
+                                                      .fromSTEB(10, 0, 0, 0),
+                                                  child: InkWell(
+                                            onTap: () async {
+          await Navigator.push(
+          context,
+          MaterialPageRoute(
+          builder: (_) => KpostalView(
+          useLocalServer: false, // default is false
+          localPort: 8080, // default is 8080
+          kakaoKey: '10d8be79d5abf697db85adacc1079279', // if not declared, only use platform's geocoding
+          callback: (Kpostal result){
+          setState(() {
+          this.postCode = result.postCode;
+          this.address = result.address;
+          this.latitude = result.latitude.toString();
+          this.longitude = result.longitude.toString();
+          this.kakaoLatitude =result.kakaoLatitude.toString();
+          this.kakaoLongitude = result.kakaoLongitude.toString();
+          });
+          },
+          ),
+          ),
+          );
+          },
+            child: Container(
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width * 0.8,
+              height: 30,
+              decoration: BoxDecoration(
+                color: Color(0xFFEEEEEE),
+                  borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                valueOrDefault(address, '클릭하여 주소를 입력하시요'),
+                style: FlutterFlowTheme.title3.override(
+                  fontFamily: 'tway_air medium',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  useGoogleFonts: false,
+                ),
                                                 ),
                                               ),
-                                            ],
+                                              )))],
                                           ),
                                         ),
                                         Padding(
@@ -969,7 +953,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                         dropDownValue1 = newValue;});
                                                     },
                                                     items: <String>['잘 수리해주길 부탁드립니다! :)', '딱따구리만의 서비스가 혹시 있을까요?', '예민한 친구입니다. 소중하게 다뤄주세요', '수리하기 전에 전화 부탁드립니다!',
-                                                      '요청사항 없음', '직접 입력']
+                                                      '요청사항 없음', '직접 입력                                                      ']
                                                         .map<DropdownMenuItem<String>>((String value) {
                                                       return DropdownMenuItem<String>(
                                                         value: value,
@@ -1107,7 +1091,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                         dropDownValue2 = newValue;});
                                                     },
                                                     items: <String>['조심히 안전하게 와주세요 :)', '문앞에 두고 벨 눌러주세요', '벨 누르지 말고 노크해주세요', '도착하기 전에 전화해주세요',
-                                                      '요청사항 없음', '직접 입력']
+                                                      '요청사항 없음', '직접 입력                                                      ']
                                                         .map<DropdownMenuItem<String>>((String value) {
                                                       return DropdownMenuItem<String>(
                                                         value: value,
