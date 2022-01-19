@@ -1,8 +1,3 @@
-import 'dart:ffi';
-
-import 'package:kpostal/kpostal.dart';
-import '../auth/auth_util.dart';
-
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -12,14 +7,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import 'package:bootpay_api/bootpay_api.dart';
-import 'package:bootpay_api/model/payload.dart';
-import 'package:bootpay_api/model/extra.dart';
-import 'package:bootpay_api/model/user.dart';
-import 'package:bootpay_api/model/item.dart';
-import 'package:kopo/kopo.dart';
-
 
 class FirstpurchaseWidget extends StatefulWidget {
   const FirstpurchaseWidget({
@@ -38,20 +25,16 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   String radioButtonValue2;
   TextEditingController textController1;
   TextEditingController textController2;
+  TextEditingController textController3;
   String radioButtonValue1;
   String radioButtonValue3;
-  TextEditingController textController3;
   TextEditingController textController4;
+  TextEditingController textController5;
   String radioButtonValue4;
   String radioButtonValue5;
   String radioButtonValue6;
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  String postCode = '-';
-  String address = '-';
-  String latitude = '-';
-  String longitude = '-';
-  String kakaoLatitude = '-';
-  String kakaoLongitude = '-';
+
   @override
   void initState() {
     super.initState();
@@ -59,6 +42,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
     textController2 = TextEditingController();
     textController3 = TextEditingController();
     textController4 = TextEditingController();
+    textController5 = TextEditingController();
   }
 
   @override
@@ -77,7 +61,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
         final firstpurchaseRepairmentRecord = snapshot.data;
         return Scaffold(
           key: scaffoldKey,
-          backgroundColor: FlutterFlowTheme.tertiaryColor,
+          backgroundColor: Color(0xFFD3DDE1),
           body: SafeArea(
             child: Stack(
               children: [
@@ -195,7 +179,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             style: FlutterFlowTheme.bodyText1
                                                 .override(
                                               fontFamily: 'tway_air medium',
-                                              color: Color(0xFF5C6EBE),
+                                              color: Colors.black,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500,
                                               useGoogleFonts: false,
@@ -268,7 +252,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             style: FlutterFlowTheme.bodyText1
                                                 .override(
                                               fontFamily: 'tway_air medium',
-                                              color: Color(0xFF5C6EBE),
+                                              color: Colors.black,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500,
                                               useGoogleFonts: false,
@@ -323,76 +307,60 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             padding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 15, 0, 0, 0),
-                                           child: InkWell(
-                                              onTap: () async {
-                                                    await Navigator.push(
-                                                        context,
-                                                        MaterialPageRoute(
-                                                              builder: (_) => KpostalView(
-                                                                  useLocalServer: false, // default is false
-                                                                  localPort: 8080, // default is 8080
-                                                                  kakaoKey: '10d8be79d5abf697db85adacc1079279', // if not declared, only use platform's geocoding
-                                                                  callback: (Kpostal result){
-                                                      setState(() {
-                                                            this.postCode = result.postCode;
-                                                            this.address = result.address;
-                                                            this.latitude = result.latitude.toString();
-                                                            this.longitude = result.longitude.toString();
-                                                            this.kakaoLatitude =result.kakaoLatitude.toString();
-                                                            this.kakaoLongitude = result.kakaoLongitude.toString();
-                                                      });
-                                                      },
-                                                      ),
-                                                    ),
-                                                    );
-                                              },
-                                              child: Container(
-                                              width: MediaQuery
-                                                  .of(context)
-                                                  .size
-                                                  .width * 0.8,
-                                              height: 20,
-                                              decoration: BoxDecoration(
-                                                color: Color(0xFFEEEEEE),
-                                              ),
-                                              child: Text(
-                                                valueOrDefault(address, '클릭하여 주소를 입력하시요'),
-                                                style: FlutterFlowTheme.title3.override(
+                                            child: TextFormField(
+                                              controller: textController1,
+                                              obscureText: false,
+                                              decoration: InputDecoration(
+                                                hintText: '주소를 입력하시오',
+                                                hintStyle: FlutterFlowTheme
+                                                    .bodyText1
+                                                    .override(
                                                   fontFamily: 'tway_air medium',
-                                                  fontSize: 15,
+                                                  fontSize: 16,
                                                   fontWeight: FontWeight.w500,
                                                   useGoogleFonts: false,
                                                 ),
+                                                enabledBorder:
+                                                UnderlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                  const BorderRadius.only(
+                                                    topLeft:
+                                                    Radius.circular(4.0),
+                                                    topRight:
+                                                    Radius.circular(4.0),
+                                                  ),
+                                                ),
+                                                focusedBorder:
+                                                UnderlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                  const BorderRadius.only(
+                                                    topLeft:
+                                                    Radius.circular(4.0),
+                                                    topRight:
+                                                    Radius.circular(4.0),
+                                                  ),
+                                                ),
                                               ),
-                                            )
+                                              style: FlutterFlowTheme.bodyText1
+                                                  .override(
+                                                fontFamily: 'tway_air medium',
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                        )
                                       ],
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            15, 0, 0, 0),
-                                        child: Text(
-                                          '연락처',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
-                                            fontFamily: 'tway_air medium',
-                                            color: Colors.black,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500,
-                                            useGoogleFonts: false,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -411,6 +379,105 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 15, 0, 0, 0),
                                             child: TextFormField(
                                               controller: textController2,
+                                              obscureText: false,
+                                              decoration: InputDecoration(
+                                                hintText: '상세 주소를 입력하시오',
+                                                hintStyle: FlutterFlowTheme
+                                                    .bodyText1
+                                                    .override(
+                                                  fontFamily: 'tway_air medium',
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
+                                                ),
+                                                enabledBorder:
+                                                UnderlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                  const BorderRadius.only(
+                                                    topLeft:
+                                                    Radius.circular(4.0),
+                                                    topRight:
+                                                    Radius.circular(4.0),
+                                                  ),
+                                                ),
+                                                focusedBorder:
+                                                UnderlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1,
+                                                  ),
+                                                  borderRadius:
+                                                  const BorderRadius.only(
+                                                    topLeft:
+                                                    Radius.circular(4.0),
+                                                    topRight:
+                                                    Radius.circular(4.0),
+                                                  ),
+                                                ),
+                                              ),
+                                              style: FlutterFlowTheme.bodyText1
+                                                  .override(
+                                                fontFamily: 'tway_air medium',
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
+                                          child: Text(
+                                            '연락처',
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'tway_air medium',
+                                              color: Colors.black,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              useGoogleFonts: false,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 5, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.center,
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                15, 0, 0, 0),
+                                            child: TextFormField(
+                                              controller: textController3,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 hintText: '전화번호를 입력하시오',
@@ -700,7 +767,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             EdgeInsetsDirectional.fromSTEB(
                                                 15, 0, 0, 0),
                                             child: TextFormField(
-                                              controller: textController3,
+                                              controller: textController4,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 hintText: '요청사항을 입력하시오',
@@ -840,7 +907,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             EdgeInsetsDirectional.fromSTEB(
                                                 15, 0, 0, 0),
                                             child: TextFormField(
-                                              controller: textController4,
+                                              controller: textController5,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 hintText: '요청사항을 입력하시오',
@@ -995,29 +1062,74 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     crossAxisAlignment:
                                     CrossAxisAlignment.center,
                                     children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            15, 0, 0, 0),
-                                        child: Text(
-                                          '할인쿠폰',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
-                                            fontFamily: 'tway_air medium',
-                                            color: Colors.black,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w500,
-                                            useGoogleFonts: false,
+                                      Container(
+                                        width:
+                                        MediaQuery.of(context).size.width *
+                                            0.45,
+                                        height:
+                                        MediaQuery.of(context).size.height *
+                                            0.03,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFEEEEEE),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              1, 0, 0, 0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(15, 0, 0, 0),
+                                                child: Text(
+                                                  '할인쿠폰',
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                    'tway_air medium',
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'Hello World',
-                                        style: FlutterFlowTheme.bodyText1,
-                                      ),
-                                      Icon(
-                                        Icons.keyboard_arrow_right,
-                                        color: Colors.black,
-                                        size: 24,
+                                      Container(
+                                        width:
+                                        MediaQuery.of(context).size.width *
+                                            0.45,
+                                        height:
+                                        MediaQuery.of(context).size.height *
+                                            0.03,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFEEEEEE),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              1, 0, 0, 0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                'Hello World',
+                                                style:
+                                                FlutterFlowTheme.bodyText1,
+                                              ),
+                                              Icon(
+                                                Icons.keyboard_arrow_right,
+                                                color: Colors.black,
+                                                size: 24,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -1326,20 +1438,13 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(150, 0, 0, 0),
                                                 child: Text(
-                                                  '6000원',
+                                                  radioButtonValue1,
                                                   textAlign: TextAlign.end,
                                                   style: FlutterFlowTheme
-                                                      .bodyText1
-                                                      .override(
-                                                    fontFamily: 'tway_air medium',
-                                                    color: Colors.black,
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.w500,
-                                                    useGoogleFonts: false,
+                                                      .bodyText1,
                                                 ),
                                               ),
                                             ),
-                                            )
                                           ],
                                         ),
                                       ],
@@ -1413,11 +1518,10 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                         height: MediaQuery.of(context).size.height * 0.1,
                         decoration: BoxDecoration(
                           color: Color(0xFF21B6FF),
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         child: InkWell(
                           onTap: () async {
-                            await goBootpayRequest(context, 36000);
                             await Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -1450,53 +1554,6 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
             ),
           ),
         );
-      },
-    );
-  }
-  void goBootpayRequest(BuildContext context, int amount) async {
-    Payload payload = Payload();
-    payload.androidApplicationId = '61d25a79e38c300022d2d6f2';
-    payload.iosApplicationId = '61d25a79e38c300022d2d6f3';
-
-    payload.pg = 'nicepay';
-    payload.methods = ['card', 'phone', 'bank', 'easy'];
-    payload.name = '가견적서 첫결제';
-    payload.price = amount.toDouble();
-    payload.orderId = DateTime.now().millisecondsSinceEpoch.toString()+ currentUserUid;
-
-
-    User user = User();
-    user.username = currentUserDisplayName;
-    user.email = currentUserEmail;
-
-    Extra extra = Extra();
-    extra.appScheme = 'bootpaySample';
-
-    Item item1 = Item();
-    item1.itemName = "가견적& 수리예약"; // 주문정보에 담길 상품명
-    item1.unique = "Repairment First purchase"; // 해당 상품의 고유 키
-    item1.price = amount.toDouble(); // 상품의 가격
-
-    List<Item> itemList = [item1];
-
-    BootpayApi.request(
-      context,
-      payload,
-      extra: extra,
-      user: user,
-      items: itemList,
-      onDone: (String json) {
-        print('onDone: $json');
-      },
-      onReady: (String json) {
-        //flutter는 가상계좌가 발급되었을때  onReady가 호출되지 않는다. onDone에서 처리해주어야 한다.
-        print('onReady: $json');
-      },
-      onCancel: (String json) {
-        print('onCancel: $json');
-      },
-      onError: (String json) {
-        print('onError: $json');
       },
     );
   }
