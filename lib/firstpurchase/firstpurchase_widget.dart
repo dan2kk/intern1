@@ -978,7 +978,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 0, 0, 0),
+                                                  .fromSTEB(15, 5, 0, 0),
                                               child: FlutterFlowRadioButton(
                                                 options: ['다음에도 사용'],
                                                 onChanged: (value) {
@@ -1117,7 +1117,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 0, 0, 0),
+                                                  .fromSTEB(15, 5, 0, 0),
                                               child: FlutterFlowRadioButton(
                                                 options: ['다음에도 사용'],
                                                 onChanged: (value) {
@@ -1913,7 +1913,11 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                           ],
                         ),
                       ),
-                      Container(
+                      Padding(
+                        padding:
+                        EdgeInsetsDirectional.fromSTEB(
+                            0, 10, 0, 0),
+                        child:Container(
                         width: MediaQuery.of(context).size.width,
                         height: 100,
                         decoration: BoxDecoration(
@@ -1967,7 +1971,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                           ),
                         ),
                       ),
-                    ],
+                      )],
                   ),
                 ),
               ],
