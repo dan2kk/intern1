@@ -141,29 +141,26 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(60, 0, 0, 0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.1,
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF5F5F5),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FaIcon(
-                              FontAwesomeIcons.solidCircle,
-                              color: Color(0xFFD3DDE1),
-                              size: 24,
-                            ),
-                          ],
-                        ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF5F5F5),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.solidCircle,
+                            color: Color(0xFFD3DDE1),
+                            size: 24,
+                          ),
+                        ],
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: InkWell(
                         onTap: () async {
                           await Navigator.push(
@@ -195,29 +192,26 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(60, 0, 0, 0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.1,
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF5F5F5),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FaIcon(
-                              FontAwesomeIcons.solidCircle,
-                              color: Color(0xFFD3DDE1),
-                              size: 24,
-                            ),
-                          ],
-                        ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF5F5F5),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.solidCircle,
+                            color: Color(0xFFD3DDE1),
+                            size: 24,
+                          ),
+                        ],
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: Text(
                         '픽업 (수리점으로 이동',
                         style: FlutterFlowTheme.bodyText1.override(
@@ -237,29 +231,26 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(60, 0, 0, 0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.1,
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF5F5F5),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FaIcon(
-                              FontAwesomeIcons.solidCircle,
-                              color: Color(0xFFD3DDE1),
-                              size: 24,
-                            ),
-                          ],
-                        ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF5F5F5),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.solidCircle,
+                            color: Color(0xFFD3DDE1),
+                            size: 24,
+                          ),
+                        ],
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: Text(
                         '견적서 발송',
                         style: FlutterFlowTheme.bodyText1.override(
@@ -279,25 +270,22 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(60, 0, 0, 0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.1,
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF5F5F5),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FaIcon(
-                              FontAwesomeIcons.solidCircle,
-                              color: Color(0xFFD3DDE1),
-                              size: 24,
-                            ),
-                          ],
-                        ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF5F5F5),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.solidCircle,
+                            color: Color(0xFFD3DDE1),
+                            size: 24,
+                          ),
+                        ],
                       ),
                     ),
                     Padding(
@@ -321,25 +309,22 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(60, 0, 0, 0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.1,
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF5F5F5),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FaIcon(
-                              FontAwesomeIcons.solidCircle,
-                              color: Color(0xFFD3DDE1),
-                              size: 24,
-                            ),
-                          ],
-                        ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF5F5F5),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.solidCircle,
+                            color: Color(0xFFD3DDE1),
+                            size: 24,
+                          ),
+                        ],
                       ),
                     ),
                     Padding(
@@ -363,25 +348,22 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(60, 0, 0, 0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.1,
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF5F5F5),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FaIcon(
-                              FontAwesomeIcons.solidCircle,
-                              color: Color(0xFFD3DDE1),
-                              size: 24,
-                            ),
-                          ],
-                        ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF5F5F5),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.solidCircle,
+                            color: Color(0xFFD3DDE1),
+                            size: 24,
+                          ),
+                        ],
                       ),
                     ),
                     Padding(
@@ -405,25 +387,22 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(60, 0, 0, 0),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.1,
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF5F5F5),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FaIcon(
-                              FontAwesomeIcons.solidCircle,
-                              color: Color(0xFFD3DDE1),
-                              size: 24,
-                            ),
-                          ],
-                        ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.05,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF5F5F5),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.solidCircle,
+                            color: Color(0xFFD3DDE1),
+                            size: 24,
+                          ),
+                        ],
                       ),
                     ),
                     Padding(
