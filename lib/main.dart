@@ -15,7 +15,7 @@ import 'fix_history/fix_history_widget.dart';
 import 'my_page/my_page_widget.dart';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
-
+11
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
