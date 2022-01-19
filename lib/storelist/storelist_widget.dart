@@ -1,5 +1,5 @@
 import '../backend/backend.dart';
-import '../f_ix_history/f_ix_history_widget.dart';
+import '../fix_history/fix_history_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../repairment_store_detail/repairment_store_detail_widget.dart';
@@ -112,15 +112,18 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                             EdgeInsetsDirectional.fromSTEB(
                                                 100, 0, 0, 0),
                                             child: InkWell(
-                                              onTap: () async {
+                                              /*onTap: () async {
                                                 await Navigator.push(
                                                   context,
                                                   MaterialPageRoute(
                                                     builder: (context) =>
-                                                        FIxHistoryWidget(),
+                                                        RepairmentStoreDetailWidget(stdix: ),
                                                   ),
                                                 );
+
+
                                               },
+                                              */
                                               child: Image.network(
                                                 'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/%EC%B9%B4%ED%8A%B8%EC%9D%B4%EB%AF%B8%EC%A7%80.JPG?alt=media&token=762b88d6-10cb-40b3-8887-96b58272d81a',
                                                 width: 35,
