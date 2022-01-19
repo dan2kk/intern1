@@ -5,7 +5,6 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../repairment_store_detail/repairment_store_detail_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../main_page/main_page_widget.dart';
 
 class FavoriteWidget extends StatefulWidget {
   const FavoriteWidget({Key key}) : super(key: key);
@@ -21,7 +20,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFF5F5F5),
+      backgroundColor: Color(0xFFD3DDE1),
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -48,7 +47,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                             alignment: AlignmentDirectional(0, -0.5),
                             child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -57,26 +56,13 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                         10, 0, 0, 0),
                                     child: InkWell(
                                       onTap: () async {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => MainPageWidget(),
-                                          ),
-                                        );
+                                        Navigator.pop(context);
                                       },
-                                        child: Container(
-                                          width: 55,
-                                          height: 55,
-                                          decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(20),
-                                              image: DecorationImage(
-                                                image: AssetImage(
-                                                    'assets/images/16.png'),
-                                                fit: BoxFit.fill,
-                                              ),
-                                              shape: BoxShape.rectangle
-                                          ),
-                                        ),
+                                      child: Icon(
+                                        Icons.keyboard_arrow_left,
+                                        color: Colors.white,
+                                        size: 30,
+                                      ),
                                     ),
                                   ),
                                   Padding(
@@ -85,7 +71,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                     child: Text(
                                       '즐겨 찾기',
                                       style:
-                                          FlutterFlowTheme.bodyText1.override(
+                                      FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'tway_air medium',
                                         color: Colors.white,
                                         fontSize: 25,
@@ -139,9 +125,9 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                               return Container();
                             }
                             final rowRepairstoreRecord =
-                                rowRepairstoreRecordList.isNotEmpty
-                                    ? rowRepairstoreRecordList.first
-                                    : null;
+                            rowRepairstoreRecordList.isNotEmpty
+                                ? rowRepairstoreRecordList.first
+                                : null;
                             return InkWell(
                               onTap: () async {
                                 await Navigator.push(
@@ -149,114 +135,160 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                   MaterialPageRoute(
                                     builder: (context) =>
                                         RepairmentStoreDetailWidget(
-                                      stidx: lllllItem,
-                                    ),
+                                          stidx: lllllItem,
+                                        ),
                                   ),
                                 );
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
-                                    child: Container(
-                                      width: 100,
-                                      height: 100,
-                                      decoration: BoxDecoration(
-                                        color: Color(0xFFEEEEEE),
-                                        borderRadius: BorderRadius.circular(30),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 0, 0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(30),
-                                          child: Image.network(
-                                            rowRepairstoreRecord.imgUrl1,
-                                            width: 100,
-                                            height: 100,
-                                            fit: BoxFit.cover,
+                                  Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFEEEEEE),
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width *
+                                              0.3,
+                                          height: 100,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFEEEEEE),
+                                            borderRadius:
+                                            BorderRadius.circular(30),
+                                          ),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                            BorderRadius.circular(30),
+                                            child: Image.network(
+                                              rowRepairstoreRecord.imgUrl1,
+                                              width: 100,
+                                              height: 100,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
-                                      ),
+                                        Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width *
+                                              0.65,
+                                          height: 100,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFEEEEEE),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                            children: [
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                MainAxisAlignment
+                                                    .spaceEvenly,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        0, 5, 0, 0),
+                                                    child: Text(
+                                                      '업체명: ',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
+                                                        color: Colors.black,
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                        FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        5, 5, 0, 0),
+                                                    child: Text(
+                                                      '카테고리: ',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
+                                                        color: Colors.black,
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                        FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        0, 5, 0, 0),
+                                                    child: Text(
+                                                      '수리 품목:',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
+                                                        color: Colors.black,
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                        FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                MainAxisAlignment
+                                                    .spaceEvenly,
+                                                children: [
+                                                  Text(
+                                                    rowRepairstoreRecord.name,
+                                                    style: FlutterFlowTheme
+                                                        .bodyText1,
+                                                  ),
+                                                  Text(
+                                                    rowRepairstoreRecord
+                                                        .category,
+                                                    style: FlutterFlowTheme
+                                                        .bodyText1,
+                                                  ),
+                                                  Text(
+                                                    rowRepairstoreRecord.breif,
+                                                    style: FlutterFlowTheme
+                                                        .bodyText1,
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 5, 0, 0),
-                                            child: Text(
-                                              '업체명: ',
-                                              style: FlutterFlowTheme.bodyText1
-                                                  .override(
-                                                fontFamily: 'tway_air medium',
-                                                color: Color(0xFF4450C5),
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w500,
-                                                useGoogleFonts: false,
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    5, 5, 0, 0),
-                                            child: Text(
-                                              '카테고리: ',
-                                              style: FlutterFlowTheme.bodyText1
-                                                  .override(
-                                                fontFamily: 'tway_air medium',
-                                                color: Color(0xFF4450C5),
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w500,
-                                                useGoogleFonts: false,
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 5, 0, 0),
-                                            child: Text(
-                                              '수리 품목:',
-                                              style: FlutterFlowTheme.bodyText1
-                                                  .override(
-                                                fontFamily: 'tway_air medium',
-                                                color: Color(0xFF4450C5),
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w500,
-                                                useGoogleFonts: false,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            rowRepairstoreRecord.name,
-                                            style: FlutterFlowTheme.bodyText1,
-                                          ),
-                                          Text(
-                                            rowRepairstoreRecord.category,
-                                            style: FlutterFlowTheme.bodyText1,
-                                          ),
-                                          Text(
-                                            rowRepairstoreRecord.breif,
-                                            style: FlutterFlowTheme.bodyText1,
-                                          ),
-                                        ],
-                                      ),
-                                    ],
                                   ),
                                 ],
                               ),
