@@ -747,74 +747,44 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         ),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 5, 0, 0),
+                                              padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                               child: InkWell(
                                                 onTap: () async {
-                                                  await DatePicker
-                                                      .showDateTimePicker(
+                                                  await DatePicker.showDateTimePicker(
                                                     context,
                                                     showTitleActions: true,
                                                     onConfirm: (date) {
-                                                      setState(() =>
-                                                      datePicked = date);
+                                                      setState(() => datePicked = date);
                                                     },
-                                                    currentTime:
-                                                    getCurrentTimestamp,
-                                                    minTime:
-                                                    getCurrentTimestamp,
+                                                    currentTime: getCurrentTimestamp,
+                                                    minTime: getCurrentTimestamp,
                                                   );
                                                 },
                                                 child: Container(
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.95,
-                                                  height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                      0.05,
+                                                  width: MediaQuery.of(context).size.width * 0.9,
+                                                  height: MediaQuery.of(context).size.height * 0.06,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x0EEEEEEE),
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        10),
+                                                    color: Color(0xFFD3DDE1),
+                                                    borderRadius: BorderRadius.circular(20),
                                                   ),
                                                   child: Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        10, 0, 0, 0),
+                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                                     child: Row(
-                                                      mainAxisSize:
-                                                      MainAxisSize.max,
+                                                      mainAxisSize: MainAxisSize.max,
                                                       children: [
                                                         Padding(
-                                                          padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(10,
-                                                              0, 0, 0),
+                                                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                                           child: Text(
-                                                            dateTimeFormat(
-                                                                'M/d h:mm a',
-                                                                datePicked),
-                                                            style:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
-                                                              color:
-                                                              Colors.black,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
+                                                            dateTimeFormat('M/d h:mm a', datePicked),
+                                                            style: FlutterFlowTheme.bodyText1.override(
+                                                              fontFamily: 'tway_air medium',
+                                                              color: FlutterFlowTheme.tertiaryColor,
+                                                              fontSize: 16,
+                                                              fontWeight: FontWeight.w500,
+                                                              useGoogleFonts: false,
                                                             ),
                                                           ),
                                                         ),
