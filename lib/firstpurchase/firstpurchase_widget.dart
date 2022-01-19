@@ -978,7 +978,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 0, 0, 0),
+                                                  .fromSTEB(15, 5, 0, 0),
                                               child: FlutterFlowRadioButton(
                                                 options: ['다음에도 사용'],
                                                 onChanged: (value) {
@@ -1117,7 +1117,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 0, 0, 0),
+                                                  .fromSTEB(15, 5, 0, 0),
                                               child: FlutterFlowRadioButton(
                                                 options: ['다음에도 사용'],
                                                 onChanged: (value) {
@@ -1575,7 +1575,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     width: MediaQuery.of(context).size.width *
                                         0.95,
                                     height: MediaQuery.of(context).size.height *
-                                        0.3,
+                                        0.4,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFF5F5F5),
                                       borderRadius: BorderRadius.circular(10),
@@ -1881,7 +1881,11 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                           ],
                         ),
                       ),
-                      Container(
+                      Padding(
+                        padding:
+                        EdgeInsetsDirectional.fromSTEB(
+                            0, 10, 0, 0),
+                        child:Container(
                         width: MediaQuery.of(context).size.width,
                         height: 100,
                         decoration: BoxDecoration(
@@ -1935,7 +1939,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                           ),
                         ),
                       ),
-                    ],
+                      )],
                   ),
                 ),
               ],
