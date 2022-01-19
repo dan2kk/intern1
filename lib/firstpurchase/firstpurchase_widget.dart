@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kpostal/kpostal.dart';
+import 'package:time_picker_widget/time_picker_widget.dart';
 
 class FirstpurchaseWidget extends StatefulWidget {
   const FirstpurchaseWidget({
@@ -23,6 +24,7 @@ class FirstpurchaseWidget extends StatefulWidget {
 
 class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   DateTime datePicked;
+  TimeOfDay timePicked;
   String radioButtonValue2;
   TextEditingController textController1;
   TextEditingController textController2;
@@ -42,6 +44,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   String longitude = '-';
   String kakaoLatitude = '-';
   String kakaoLongitude = '-';
+  List<int> _availableMinutes = [0, 30];
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -672,7 +675,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                               child: InkWell(
                                                 onTap: () async {
-                                                  await DatePicker.showDateTimePicker(
+                                                  await DatePicker.showDatePicker(
                                                     context,
                                                     showTitleActions: true,
                                                     onConfirm: (date) {
@@ -680,28 +683,75 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                     },
                                                     currentTime: getCurrentTimestamp,
                                                     minTime: getCurrentTimestamp,
+                                                    maxTime: getCurrentTimestamp.add(
+                                                        const Duration(days: 30)),
+                                                    locale: LocaleType.ko,
+                                                  );
+                                                  await showCustomTimePicker(
+                                                      context: context,
+                                                      initialTime: TimeOfDay(
+                                                          hour: 6,
+                                                          minute: _availableMinutes.first),
+                                                      onFailValidation: (context) =>
+                                                          showDialog(
+                                                            context: context,
+                                                            builder: (BuildContext context) {
+                                                              return AlertDialog(
+                                                                title: new Text("알림!"),
+                                                                content: new Text("30분 단위로 시간을 골라주세요!"),
+                                                                actions: <Widget>[
+                                                                  new FlatButton(
+                                                                    child: new Text("알겠습니다."),
+                                                                    onPressed: () {
+                                                                      Navigator.of(context).pop();
+                                                                    },
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          ),
+                                                      selectableTimePredicate: (time) =>
+                                                      _availableMinutes.indexOf(time.minute) !=
+                                                          -1).then(
+                                                          (time) =>
+                                                          setState(() => datePicked =
+                                                              datePicked.add(Duration(
+                                                                  hours: time.hour,
+                                                                  minutes: time.minute)
+                                                              )
+                                                          )
                                                   );
                                                 },
                                                 child: Container(
-                                                  width: MediaQuery.of(context).size.width * 0.9,
-                                                  height: MediaQuery.of(context).size.height * 0.06,
+                                                  width: MediaQuery
+                                                      .of(context)
+                                                      .size
+                                                      .width * 0.95,
+                                                  height:
+                                                  MediaQuery
+                                                      .of(context)
+                                                      .size
+                                                      .height * 0.05,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0xFFD3DDE1),
-                                                    borderRadius: BorderRadius.circular(20),
+                                                    color: Colors.white,
+                                                    borderRadius: BorderRadius.circular(10),
                                                   ),
                                                   child: Padding(
-                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                                        10, 0, 0, 0),
                                                     child: Row(
                                                       mainAxisSize: MainAxisSize.max,
                                                       children: [
                                                         Padding(
-                                                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                              10, 0, 0, 0),
                                                           child: Text(
-                                                            dateTimeFormat('M/d h:mm a', datePicked),
-                                                            style: FlutterFlowTheme.bodyText1.override(
+                                                            dateTimeFormat(
+                                                                'y년 M월 dd일 a h:mm', datePicked),
+                                                            style: FlutterFlowTheme.bodyText1
+                                                                .override(
                                                               fontFamily: 'tway_air medium',
-                                                              color: FlutterFlowTheme.tertiaryColor,
-                                                              fontSize: 16,
+                                                              color: Colors.black,
                                                               fontWeight: FontWeight.w500,
                                                               useGoogleFonts: false,
                                                             ),
@@ -1316,7 +1366,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                           .fromSTEB(
                                                           15, 0, 0, 0),
                                                       child: Text(
-                                                        '현급영수증',
+                                                        '현금영수증',
                                                         style: FlutterFlowTheme
                                                             .bodyText1
                                                             .override(
@@ -1571,6 +1621,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 child: Row(
                                                   mainAxisSize:
                                                   MainAxisSize.max,
+                                                  mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
                                                     Text(
                                                       '30,000원',
@@ -1625,11 +1676,68 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                           15, 0, 0, 0),
                                                       child: Text(
                                                         '픽업 배달료',
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily:
-                                                          'tway_air medium',
+                                                        style: FlutterFlowTheme.bodyText1.override(
+                                                          fontFamily: 'tway_air medium',
+                                                          color: Colors.black,
+                                                          fontSize: 16,
+                                                          fontWeight: FontWeight.w500,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                width: MediaQuery.of(context).size.width * 0.3,
+                                                height: MediaQuery.of(context).size.height * 0.06,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFF5F5F5),
+                                                ),
+                                                child: Row(
+                                                  mainAxisSize: MainAxisSize.max,
+                                                  mainAxisAlignment: MainAxisAlignment.end,
+                                                  children: [
+                                                    Padding(
+                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
+                                                      child: Text(
+                                                        '6,000원',
+                                                        style: FlutterFlowTheme.bodyText1.override(
+                                                          fontFamily: 'tway_air medium',
+                                                          fontSize: 16,
+                                                          fontWeight: FontWeight.w500,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                          child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                          Container(
+                          width: MediaQuery.of(context).size.width * 0.65,
+                          height: MediaQuery.of(context).size.height * 0.06,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFF5F5F5),
+                          ),
+                          child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                          Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                          child: Text(
+                            '할인 금액',
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'tway_air medium',
                                                           color: Colors.black,
                                                           fontSize: 16,
                                                           fontWeight:
@@ -1656,6 +1764,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 child: Row(
                                                   mainAxisSize:
                                                   MainAxisSize.max,
+                                                  mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
                                                     Text(
                                                       '6,000원',
@@ -1741,6 +1850,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 child: Row(
                                                   mainAxisSize:
                                                   MainAxisSize.max,
+                                                  mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
                                                     Text(
                                                       '36,000원',

@@ -121,9 +121,18 @@ class _RepairmentStoreDetailWidgetState
                                           onTap: () async {
                                             Navigator.pop(context);
                                           },
-                                          child: ImageIcon(
-                                            AssetImage('assets/images/16.png'),
-                                            size: 30,
+                                          child: Container(
+                                            width: 55,
+                                            height: 55,
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(20),
+                                                image: DecorationImage(
+                                                  image: AssetImage(
+                                                      'assets/images/16.png'),
+                                                  fit: BoxFit.fill,
+                                                ),
+                                                shape: BoxShape.rectangle
+                                            ),
                                           ),
                                         ),
                                       ),
