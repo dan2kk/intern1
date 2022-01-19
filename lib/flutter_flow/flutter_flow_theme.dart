@@ -41,8 +41,8 @@ class FlutterFlowTheme {
       );
   static TextStyle get bodyText1 => GoogleFonts.getFont(
         'Playfair Display',
-        color: tertiaryColor,
-        fontWeight: FontWeight.normal,
+        color: Colors.black87,
+        fontWeight: FontWeight.w500,
         fontSize: 14,
       );
   static TextStyle get bodyText2 => GoogleFonts.getFont(

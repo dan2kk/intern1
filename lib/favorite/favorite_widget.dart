@@ -142,12 +142,19 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width,
+                                    width: MediaQuery.of(context).size.width * 0.95,
                                     height: 100,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFEEEEEE),
+                                      border: Border.all(
+                                        width: 1,
+                                        color: Colors.black87,
+                                      ),
+                                        borderRadius:
+                                        BorderRadius.circular(20),
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -161,7 +168,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                               0.3,
                                           height: 100,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFFEEEEEE),
+                                            color: Color(0xFFFFFFFF),
                                             borderRadius:
                                             BorderRadius.circular(30),
                                           ),
@@ -180,10 +187,11 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                           width: MediaQuery.of(context)
                                               .size
                                               .width *
-                                              0.65,
+                                              0.60,
                                           height: 100,
                                           decoration: BoxDecoration(
                                             color: Color(0xFFEEEEEE),
+                                            borderRadius: BorderRadius.circular(20),
                                           ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
