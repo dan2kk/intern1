@@ -523,145 +523,64 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 5, 0, 0),
+                                          padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment: CrossAxisAlignment.center,
                                             children: [
                                               Container(
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.8,
-                                                height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                    0.06,
+                                                width: MediaQuery.of(context).size.width * 0.9,
+                                                height: MediaQuery.of(context).size.height * 0.06,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xFFF5F5F5),
+                                                  color: Color(0x4B21B6FF),
+                                                  borderRadius: BorderRadius.circular(20),
                                                 ),
                                                 child: Row(
-                                                  mainAxisSize:
-                                                  MainAxisSize.max,
+                                                  mainAxisSize: MainAxisSize.max,
                                                   children: [
                                                     Expanded(
                                                       child: Padding(
-                                                        padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(15, 0,
-                                                            0, 0),
+                                                        padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
                                                         child: TextFormField(
-                                                          controller:
-                                                          textController3,
+                                                          controller: textController3,
                                                           obscureText: false,
-                                                          decoration:
-                                                          InputDecoration(
-                                                            hintText:
-                                                            '전화번호를 입력하시오',
-                                                            hintStyle:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
+                                                          decoration: InputDecoration(
+                                                            hintText: '전화번호를 입력하시오',
+                                                            hintStyle: FlutterFlowTheme.bodyText1.override(
+                                                              fontFamily: 'tway_air medium',
                                                               fontSize: 16,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
+                                                              fontWeight: FontWeight.w500,
+                                                              useGoogleFonts: false,
                                                             ),
-                                                            enabledBorder:
-                                                            UnderlineInputBorder(
-                                                              borderSide:
-                                                              BorderSide(
-                                                                color: Color(
-                                                                    0x00000000),
+                                                            enabledBorder: UnderlineInputBorder(
+                                                              borderSide: BorderSide(
+                                                                color: Color(0x00000000),
                                                                 width: 1,
                                                               ),
-                                                              borderRadius:
-                                                              const BorderRadius
-                                                                  .only(
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                    4.0),
-                                                                topRight: Radius
-                                                                    .circular(
-                                                                    4.0),
+                                                              borderRadius: const BorderRadius.only(
+                                                                topLeft: Radius.circular(4.0),
+                                                                topRight: Radius.circular(4.0),
                                                               ),
                                                             ),
-                                                            focusedBorder:
-                                                            UnderlineInputBorder(
-                                                              borderSide:
-                                                              BorderSide(
-                                                                color: Color(
-                                                                    0x00000000),
+                                                            focusedBorder: UnderlineInputBorder(
+                                                              borderSide: BorderSide(
+                                                                color: Color(0x00000000),
                                                                 width: 1,
                                                               ),
-                                                              borderRadius:
-                                                              const BorderRadius
-                                                                  .only(
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                    4.0),
-                                                                topRight: Radius
-                                                                    .circular(
-                                                                    4.0),
+                                                              borderRadius: const BorderRadius.only(
+                                                                topLeft: Radius.circular(4.0),
+                                                                topRight: Radius.circular(4.0),
                                                               ),
                                                             ),
                                                           ),
-                                                          style:
-                                                          FlutterFlowTheme
-                                                              .bodyText1
-                                                              .override(
-                                                            fontFamily:
-                                                            'tway_air medium',
+                                                          style: FlutterFlowTheme.bodyText1.override(
+                                                            fontFamily: 'tway_air medium',
                                                             fontSize: 16,
-                                                            fontWeight:
-                                                            FontWeight.w500,
-                                                            useGoogleFonts:
-                                                            false,
+                                                            fontWeight: FontWeight.w500,
+                                                            useGoogleFonts: false,
                                                           ),
                                                         ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Container(
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.15,
-                                                height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                    0.06,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFF5F5F5),
-                                                ),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                  MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      '변경',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                        'tway_air medium',
-                                                        fontSize: 15,
-                                                        fontWeight:
-                                                        FontWeight.w500,
-                                                        useGoogleFonts: false,
                                                       ),
                                                     ),
                                                   ],
@@ -747,74 +666,44 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         ),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 5, 0, 0),
+                                              padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                               child: InkWell(
                                                 onTap: () async {
-                                                  await DatePicker
-                                                      .showDateTimePicker(
+                                                  await DatePicker.showDateTimePicker(
                                                     context,
                                                     showTitleActions: true,
                                                     onConfirm: (date) {
-                                                      setState(() =>
-                                                      datePicked = date);
+                                                      setState(() => datePicked = date);
                                                     },
-                                                    currentTime:
-                                                    getCurrentTimestamp,
-                                                    minTime:
-                                                    getCurrentTimestamp,
+                                                    currentTime: getCurrentTimestamp,
+                                                    minTime: getCurrentTimestamp,
                                                   );
                                                 },
                                                 child: Container(
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.95,
-                                                  height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                      0.05,
+                                                  width: MediaQuery.of(context).size.width * 0.9,
+                                                  height: MediaQuery.of(context).size.height * 0.06,
                                                   decoration: BoxDecoration(
-                                                    color: Color(0x0EEEEEEE),
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        10),
+                                                    color: Color(0xFFD3DDE1),
+                                                    borderRadius: BorderRadius.circular(20),
                                                   ),
                                                   child: Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        10, 0, 0, 0),
+                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                                     child: Row(
-                                                      mainAxisSize:
-                                                      MainAxisSize.max,
+                                                      mainAxisSize: MainAxisSize.max,
                                                       children: [
                                                         Padding(
-                                                          padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(10,
-                                                              0, 0, 0),
+                                                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                                           child: Text(
-                                                            dateTimeFormat(
-                                                                'M/d h:mm a',
-                                                                datePicked),
-                                                            style:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
-                                                              color:
-                                                              Colors.black,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
+                                                            dateTimeFormat('M/d h:mm a', datePicked),
+                                                            style: FlutterFlowTheme.bodyText1.override(
+                                                              fontFamily: 'tway_air medium',
+                                                              color: FlutterFlowTheme.tertiaryColor,
+                                                              fontSize: 16,
+                                                              fontWeight: FontWeight.w500,
+                                                              useGoogleFonts: false,
                                                             ),
                                                           ),
                                                         ),
