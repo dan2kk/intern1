@@ -15,14 +15,13 @@ class StorelistWidget extends StatefulWidget {
   }) : super(key: key);
 
   final String category;
-
   @override
   _StorelistWidgetState createState() => _StorelistWidgetState();
 }
 
 class _StorelistWidgetState extends State<StorelistWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
+  Map<String, String> mapForCategory = {'mobile_phone': '스마트폰', 'electronics': '컴퓨터', 'luxury': '명품', 'transportation' : '운송수단'};
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<List<RepairstoreRecord>>(
@@ -51,7 +50,7 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
+                      scrollDirection: Axis.vertical,
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -96,7 +95,7 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                             EdgeInsetsDirectional.fromSTEB(
                                                 20, 0, 0, 0),
                                             child: Text(
-                                              widget.category,
+                                              mapForCategory[widget.category],
                                               style: FlutterFlowTheme.bodyText1
                                                   .override(
                                                 fontFamily: 'tway_air medium',
