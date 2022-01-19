@@ -376,7 +376,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => CouponWidget(),
+                                  builder: (context) => CouponWidget(coupon : 0),
                                 ),
                               );
                             },

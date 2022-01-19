@@ -17,7 +17,7 @@ class CouponWidget extends StatefulWidget {
     this.coupon,
   }) : super(key: key);
 
-  final bool coupon;
+  final int coupon;
 
   @override
   _CouponWidgetState createState() => _CouponWidgetState();
@@ -27,6 +27,9 @@ class _CouponWidgetState extends State<CouponWidget> {
   String radioButtonValue;
   List<bool> radioButtonAccess = [];
   int selected = 0;
+  List<double> border = [];
+  List<int> chooseColor = [];
+  List<Color> color = [Color(0xFF000000),Color(0xFF21B6FF)];
   final riveAnimationAnimationsList = [
     'Animation 1',
   ];
@@ -106,18 +109,26 @@ class _CouponWidgetState extends State<CouponWidget> {
                                           onTap: () async {
                                             Navigator.pop(context);
                                           },
-                                          child: Icon(
-                                            Icons.keyboard_arrow_left,
-                                            color: Color(0xFF21B6FF),
-                                            size: 30,
+                                          child: Container(
+                                            width: 50,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(20),
+                                                image: DecorationImage(
+                                                  image: AssetImage(
+                                                      'assets/images/16.png'),
+                                                  fit: BoxFit.fill,
+                                                ),
+                                                shape: BoxShape.rectangle
+                                            ),
                                           ),
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 0, 0),
+                                            MediaQuery.of(context).size.width*0.25, 0, 0, 0),
                                         child: Text(
-                                          '상세 리뷰',
+                                          '쿠폰 현황',
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
                                             fontFamily: 'tway_air medium',
@@ -269,15 +280,10 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                 },
                                               );
                                             }
-                                            if ((couponCouponRecord.uid) ==
-                                                '') {
-                                              final couponUpdateData =
-                                              createCouponRecordData(
-                                                uid: currentUserUid,
-                                              );
-                                              await couponCouponRecord.reference
-                                                  .update(couponUpdateData);
-                                            } else {
+                                            if ((couponCouponRecord.uid) == '') {
+                                              final couponUpdateData = createCouponRecordData(uid: currentUserUid,);
+                                              await couponCouponRecord.reference.update(couponUpdateData);}
+                                            else {
                                               return;
                                             }
                                             final usersUpdateData = {
@@ -317,9 +323,11 @@ class _CouponWidgetState extends State<CouponWidget> {
                               children: List.generate(listofcoupon.length,
                                       (listofcouponIndex) {
                                     final listofcouponItem = listofcoupon[listofcouponIndex];
+                                    chooseColor.add(0);
+                                    border.add(1);
                                     return Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 2, 0, 0),
+                                          0, 10, 0, 0),
                                       child: StreamBuilder<CouponRecord>(
                                         stream: CouponRecord.getDocument(
                                             listofcouponItem),
@@ -336,17 +344,19 @@ class _CouponWidgetState extends State<CouponWidget> {
                                               snapshot.data;
                                           return Row(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment: MainAxisAlignment.center,
                                             children: [
-                                              Container(
+                                              InkWell(
+                                              child: Container(
                                                 width: MediaQuery.of(context)
                                                     .size
-                                                    .width,
+                                                    .width * 0.95,
                                                 height: 90,
                                                 decoration: BoxDecoration(
                                                   color: Colors.white,
                                                   border: Border.all(
-                                                    width: 1,
-                                                    color: Color(0xFF21B6FF),
+                                                    width: border[listofcouponIndex],
+                                                    color: color[chooseColor[listofcouponIndex]],
                                                   ),
                                                 ),
                                                 child: Row(
@@ -358,7 +368,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                       children: [
                                                         Container(
                                                           width: 100,
-                                                          height: 90,
+                                                          height: 80,
                                                           child:
                                                           RiveAnimation.asset(
                                                             'assets/rive_animations/1435-2808-scrolling-letter.riv',
@@ -416,7 +426,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                               MainAxisSize.max,
                                                               children: [
                                                                 Text(
-                                                                  '${dateTimeFormat('d/M/y', storeListViewCouponRecord.expireDate)}일 까지 사용가능',
+                                                                  '${dateTimeFormat('y년 M월 d', storeListViewCouponRecord.expireDate)}일 까지 사용가능',
                                                                   style:
                                                                   FlutterFlowTheme
                                                                       .bodyText2
@@ -463,6 +473,21 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                   ],
                                                 ),
                                               ),
+                                              onTap: () async {
+                                                if(widget.coupon == 1){
+                                                  setState(() {
+                                                    for(int i=0; i<listofcoupon.length;i++){
+                                                      border[i] = 1;
+                                                      chooseColor[i] = 0;
+                                                    }
+                                                    border[listofcouponIndex] = 5;
+                                                    chooseColor[listofcouponIndex] = 1;
+                                                    selected = listofcouponIndex;
+                                                  });
+                                                  print(selected);
+                                                }
+                                              }
+                                              ),
                                             ],
                                           );
                                         },
@@ -474,6 +499,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                         },
                       ),
                     ),
+                    if(widget.coupon == 1)
                     Container(
                       width: MediaQuery.of(context).size.width,
                       height: 100,
@@ -487,7 +513,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () {
-                              print('Button pressed ...');
+
                             },
                             text: '쿠폰 적용하기',
                             options: FFButtonOptions(
