@@ -158,7 +158,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                               width: MediaQuery.of(context).size.width * 0.95,
                               height: 100,
                               decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
+                                color: Color(0xFFF5F5F5),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Column(
@@ -231,7 +231,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                               width: MediaQuery.of(context).size.width * 0.95,
                               height: MediaQuery.of(context).size.height * 0.5,
                               decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
+                                color: Color(0xFFF5F5F5),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Column(
@@ -368,11 +368,24 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                      MainAxisAlignment.center,
                                       crossAxisAlignment:
                                       CrossAxisAlignment.center,
                                       children: [
-                                        Expanded(
+                                        Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width *
+                                              0.9,
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height *
+                                              0.06,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x4B21B6FF),
+                                            borderRadius:
+                                            BorderRadius.circular(20),
+                                          ),
                                           child: Padding(
                                             padding:
                                             EdgeInsetsDirectional.fromSTEB(
@@ -690,7 +703,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                               width: MediaQuery.of(context).size.width * 0.95,
                               height: MediaQuery.of(context).size.height * 0.5,
                               decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
+                                color: Color(0xFFF5F5F5),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Column(
@@ -757,11 +770,24 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                      MainAxisAlignment.center,
                                       crossAxisAlignment:
                                       CrossAxisAlignment.center,
                                       children: [
-                                        Expanded(
+                                        Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width *
+                                              0.9,
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height *
+                                              0.06,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x4B21B6FF),
+                                            borderRadius:
+                                            BorderRadius.circular(20),
+                                          ),
                                           child: Padding(
                                             padding:
                                             EdgeInsetsDirectional.fromSTEB(
@@ -897,11 +923,24 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                      MainAxisAlignment.center,
                                       crossAxisAlignment:
                                       CrossAxisAlignment.center,
                                       children: [
-                                        Expanded(
+                                        Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width *
+                                              0.9,
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height *
+                                              0.06,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x4B21B6FF),
+                                            borderRadius:
+                                            BorderRadius.circular(20),
+                                          ),
                                           child: Padding(
                                             padding:
                                             EdgeInsetsDirectional.fromSTEB(
@@ -1018,7 +1057,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                               width: MediaQuery.of(context).size.width * 0.95,
                               height: MediaQuery.of(context).size.height * 0.5,
                               decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
+                                color: Color(0xFFF5F5F5),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Column(
@@ -1070,7 +1109,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         MediaQuery.of(context).size.height *
                                             0.03,
                                         decoration: BoxDecoration(
-                                          color: Color(0xFFEEEEEE),
+                                          color: Color(0xFFF5F5F5),
                                         ),
                                         child: Padding(
                                           padding:
@@ -1108,7 +1147,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         MediaQuery.of(context).size.height *
                                             0.03,
                                         decoration: BoxDecoration(
-                                          color: Color(0xFFEEEEEE),
+                                          color: Color(0xFFF5F5F5),
                                         ),
                                         child: Padding(
                                           padding:
@@ -1308,7 +1347,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                               width: MediaQuery.of(context).size.width * 0.95,
                               height: MediaQuery.of(context).size.height * 0.35,
                               decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
+                                color: Color(0xFFF5F5F5),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Column(
@@ -1438,7 +1477,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(150, 0, 0, 0),
                                                 child: Text(
-                                                  radioButtonValue1,
+                                                  '6000원',
                                                   textAlign: TextAlign.end,
                                                   style: FlutterFlowTheme
                                                       .bodyText1,
