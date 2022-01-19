@@ -1522,44 +1522,31 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             ],
                                           ),
                                         ),
+                                        // Generated code for this Row Widget...
                                         Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 10, 0, 0),
+                                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment: MainAxisAlignment.center,
                                             children: [
                                               Container(
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.7,
-                                                height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                    0.06,
+                                                width: MediaQuery.of(context).size.width * 0.9,
+                                                height: MediaQuery.of(context).size.height * 0.06,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xFFF5F5F5),
+                                                  color: Color(0x4B21B6FF),
+                                                  borderRadius: BorderRadius.circular(20),
                                                 ),
                                                 child: Row(
-                                                  mainAxisSize:
-                                                  MainAxisSize.max,
+                                                  mainAxisSize: MainAxisSize.max,
                                                   children: [
                                                     Padding(
-                                                      padding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          15, 0, 0, 0),
+                                                      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
                                                       child: Text(
                                                         'Hello World',
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily:
-                                                          'tway_air medium',
+                                                        style: FlutterFlowTheme.bodyText1.override(
+                                                          fontFamily: 'tway_air medium',
                                                           fontSize: 16,
-                                                          fontWeight:
-                                                          FontWeight.w500,
+                                                          fontWeight: FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
                                                       ),
@@ -1567,43 +1554,10 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   ],
                                                 ),
                                               ),
-                                              Container(
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.25,
-                                                height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                    0.06,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFF5F5F5),
-                                                ),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                  MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                                  children: [
-                                                    Text(
-                                                      '변경',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                        'tway_air medium',
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                        FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
                                             ],
                                           ),
-                                        ),
+                                        )
+                                        ,
                                       ],
                                     ),
                                   ),
@@ -1630,16 +1584,22 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 10, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(15, 0, 0, 0),
                                                 child: Text(
                                                   '결제 금액',
-                                                  style: FlutterFlowTheme.bodyText1.override(
-                                                    fontFamily: 'tway_air medium',
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                    'tway_air medium',
                                                     color: Color(0xFF5C6EBE),
                                                     fontSize: 16,
                                                     fontWeight: FontWeight.w500,
@@ -1658,30 +1618,48 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           color: Colors.black,
                                         ),
                                         Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 10, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.center,
                                             children: [
                                               Container(
-                                                width: MediaQuery.of(context).size.width * 0.65,
-                                                height: MediaQuery.of(context).size.height * 0.06,
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                    0.65,
+                                                height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                    0.06,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFFF5F5F5),
                                                 ),
                                                 child: Row(
-                                                  mainAxisSize: MainAxisSize.max,
+                                                  mainAxisSize:
+                                                  MainAxisSize.max,
                                                   children: [
                                                     Padding(
-                                                      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                                                      padding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          15, 0, 0, 0),
                                                       child: Text(
                                                         '수리 및 진단 예약 금액',
-                                                        style: FlutterFlowTheme.bodyText1.override(
-                                                          fontFamily: 'tway_air medium',
+                                                        style: FlutterFlowTheme
+                                                            .bodyText1
+                                                            .override(
+                                                          fontFamily:
+                                                          'tway_air medium',
                                                           color: Colors.black,
                                                           fontSize: 16,
-                                                          fontWeight: FontWeight.w500,
+                                                          fontWeight:
+                                                          FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
                                                       ),
@@ -1690,25 +1668,32 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 ),
                                               ),
                                               Container(
-                                                width: MediaQuery.of(context).size.width * 0.3,
-                                                height: MediaQuery.of(context).size.height * 0.06,
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                    0.3,
+                                                height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                    0.06,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFFF5F5F5),
                                                 ),
                                                 child: Row(
-                                                  mainAxisSize: MainAxisSize.max,
-                                                  mainAxisAlignment: MainAxisAlignment.end,
+                                                  mainAxisSize:
+                                                  MainAxisSize.max,
                                                   children: [
-                                                    Padding(
-                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                                                      child: Text(
-                                                        '30,000원',
-                                                        style: FlutterFlowTheme.bodyText1.override(
-                                                          fontFamily: 'tway_air medium',
-                                                          fontSize: 16,
-                                                          fontWeight: FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
+                                                    Text(
+                                                      '30,000원',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                        FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                     ),
                                                   ],
@@ -1718,30 +1703,48 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 10, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.center,
                                             children: [
                                               Container(
-                                                width: MediaQuery.of(context).size.width * 0.65,
-                                                height: MediaQuery.of(context).size.height * 0.06,
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                    0.65,
+                                                height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                    0.06,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFFF5F5F5),
                                                 ),
                                                 child: Row(
-                                                  mainAxisSize: MainAxisSize.max,
+                                                  mainAxisSize:
+                                                  MainAxisSize.max,
                                                   children: [
                                                     Padding(
-                                                      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                                                      padding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          15, 0, 0, 0),
                                                       child: Text(
                                                         '픽업 배달료',
-                                                        style: FlutterFlowTheme.bodyText1.override(
-                                                          fontFamily: 'tway_air medium',
+                                                        style: FlutterFlowTheme
+                                                            .bodyText1
+                                                            .override(
+                                                          fontFamily:
+                                                          'tway_air medium',
                                                           color: Colors.black,
                                                           fontSize: 16,
-                                                          fontWeight: FontWeight.w500,
+                                                          fontWeight:
+                                                          FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
                                                       ),
@@ -1750,25 +1753,32 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 ),
                                               ),
                                               Container(
-                                                width: MediaQuery.of(context).size.width * 0.3,
-                                                height: MediaQuery.of(context).size.height * 0.06,
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                    0.3,
+                                                height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                    0.06,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFFF5F5F5),
                                                 ),
                                                 child: Row(
-                                                  mainAxisSize: MainAxisSize.max,
-                                                  mainAxisAlignment: MainAxisAlignment.end,
+                                                  mainAxisSize:
+                                                  MainAxisSize.max,
                                                   children: [
-                                                    Padding(
-                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                                                      child: Text(
-                                                        '6,000원',
-                                                        style: FlutterFlowTheme.bodyText1.override(
-                                                          fontFamily: 'tway_air medium',
-                                                          fontSize: 16,
-                                                          fontWeight: FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
+                                                    Text(
+                                                      '6,000원',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                        FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                     ),
                                                   ],
@@ -1778,97 +1788,48 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0, 10, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.center,
                                             children: [
                                               Container(
-                                                width: MediaQuery.of(context).size.width * 0.65,
-                                                height: MediaQuery.of(context).size.height * 0.06,
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                    0.65,
+                                                height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                    0.06,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFFF5F5F5),
                                                 ),
                                                 child: Row(
-                                                  mainAxisSize: MainAxisSize.max,
+                                                  mainAxisSize:
+                                                  MainAxisSize.max,
                                                   children: [
                                                     Padding(
-                                                      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-                                                      child: Text(
-                                                        '할인 금액',
-                                                        style: FlutterFlowTheme.bodyText1.override(
-                                                          fontFamily: 'tway_air medium',
-                                                          color: Colors.black,
-                                                          fontSize: 16,
-                                                          fontWeight: FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                              Container(
-                                                width: MediaQuery.of(context).size.width * 0.3,
-                                                height: MediaQuery.of(context).size.height * 0.06,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFF5F5F5),
-                                                ),
-                                                child: Row(
-                                                  mainAxisSize: MainAxisSize.max,
-                                                  mainAxisAlignment: MainAxisAlignment.end,
-                                                  children: [
-                                                    Padding(
-                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                                                      child: Text(
-                                                        '',
-                                                        style: FlutterFlowTheme.bodyText1.override(
-                                                          fontFamily: 'tway_air medium',
-                                                          fontSize: 16,
-                                                          fontWeight: FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Divider(
-                                          height: 30,
-                                          thickness: 1,
-                                          indent: 15,
-                                          endIndent: 15,
-                                          color: Colors.black,
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                width: MediaQuery.of(context).size.width * 0.65,
-                                                height: MediaQuery.of(context).size.height * 0.06,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFF5F5F5),
-                                                ),
-                                                child: Row(
-                                                  mainAxisSize: MainAxisSize.max,
-                                                  children: [
-                                                    Padding(
-                                                      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                                                      padding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          15, 0, 0, 0),
                                                       child: Text(
                                                         '총 선결제금액',
-                                                        style: FlutterFlowTheme.bodyText1.override(
-                                                          fontFamily: 'tway_air medium',
+                                                        style: FlutterFlowTheme
+                                                            .bodyText1
+                                                            .override(
+                                                          fontFamily:
+                                                          'tway_air medium',
                                                           color: Colors.black,
                                                           fontSize: 16,
-                                                          fontWeight: FontWeight.w500,
+                                                          fontWeight:
+                                                          FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
                                                       ),
@@ -1877,25 +1838,32 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 ),
                                               ),
                                               Container(
-                                                width: MediaQuery.of(context).size.width * 0.3,
-                                                height: MediaQuery.of(context).size.height * 0.06,
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                    0.3,
+                                                height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                    0.06,
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFFF5F5F5),
                                                 ),
                                                 child: Row(
-                                                  mainAxisSize: MainAxisSize.max,
-                                                  mainAxisAlignment: MainAxisAlignment.end,
+                                                  mainAxisSize:
+                                                  MainAxisSize.max,
                                                   children: [
-                                                    Padding(
-                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                                                      child: Text(
-                                                        '36,000원',
-                                                        style: FlutterFlowTheme.bodyText1.override(
-                                                          fontFamily: 'tway_air medium',
-                                                          fontSize: 16,
-                                                          fontWeight: FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
+                                                    Text(
+                                                      '36,000원',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
+                                                        fontSize: 16,
+                                                        fontWeight:
+                                                        FontWeight.w500,
+                                                        useGoogleFonts: false,
                                                       ),
                                                     ),
                                                   ],
