@@ -93,7 +93,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 );
                               },
                               child: Container(
-                                width: MediaQuery.of(context).size.width * 0.8,
+                                width: MediaQuery.of(context).size.width * 0.75,
                                 height: 55,
                                 decoration: BoxDecoration(
                                   color: Color(0xFF2BD31A),
@@ -166,7 +166,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 );
                               },
                               child: Container(
-                                width: MediaQuery.of(context).size.width * 0.8,
+                                width: MediaQuery.of(context).size.width * 0.75,
                                 height: 55,
                                 decoration: BoxDecoration(
                                   color: Color(0xFF4450C5),
@@ -268,7 +268,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 );
                               },
                               child: Container(
-                                width: MediaQuery.of(context).size.width * 0.8,
+                                width: MediaQuery.of(context).size.width * 0.75,
                                 height: 55,
                                 decoration: BoxDecoration(
                                   color: Color(0xFFF6F026),
@@ -345,7 +345,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   },
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 0.8,
+                                        MediaQuery.of(context).size.width * 0.75,
                                     height: 55,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFFBFBF6),
