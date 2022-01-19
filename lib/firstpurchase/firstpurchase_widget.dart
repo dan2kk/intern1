@@ -33,6 +33,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   String radioButtonValue4;
   String radioButtonValue5;
   String radioButtonValue6;
+  String dropDownValue1;
+  String dropDownValue2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -952,75 +954,41 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(15, 0, 0, 0),
-                                                  child: TextFormField(
-                                                    controller: textController4,
-                                                    obscureText: false,
-                                                    decoration: InputDecoration(
-                                                      hintText: '요청사항을 입력하시오',
-                                                      hintStyle:
-                                                      FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                        'tway_air medium',
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                        FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
-                                                      enabledBorder:
-                                                      UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                          Color(0x00000000),
-                                                          width: 1,
-                                                        ),
-                                                        borderRadius:
-                                                        const BorderRadius
-                                                            .only(
-                                                          topLeft:
-                                                          Radius.circular(
-                                                              4.0),
-                                                          topRight:
-                                                          Radius.circular(
-                                                              4.0),
-                                                        ),
-                                                      ),
-                                                      focusedBorder:
-                                                      UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                          Color(0x00000000),
-                                                          width: 1,
-                                                        ),
-                                                        borderRadius:
-                                                        const BorderRadius
-                                                            .only(
-                                                          topLeft:
-                                                          Radius.circular(
-                                                              4.0),
-                                                          topRight:
-                                                          Radius.circular(
-                                                              4.0),
-                                                        ),
-                                                      ),
+                                                  child: DropdownButton<String>(
+                                                    value: dropDownValue1,
+                                                    icon: const Icon(Icons.arrow_downward),
+                                                    elevation: 24,
+                                                    style: const TextStyle(color: Colors.black87),
+                                                    underline: Container(
+                                                      width: MediaQuery.of(context).size.width * 0.9,
+                                                      height: 2,
+                                                      color: Color(0xFF21B6FF),
                                                     ),
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
-                                                      fontFamily:
-                                                      'tway_air medium',
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                      FontWeight.w500,
-                                                      useGoogleFonts: false,
-                                                    ),
+                                                    onChanged: (String newValue) {
+                                                      setState(() {
+                                                        dropDownValue1 = newValue;});
+                                                    },
+                                                    items: <String>['잘 수리해주길 부탁드립니다! :)', '딱따구리만의 서비스가 혹시 있을까요?', '예민한 친구입니다. 소중하게 다뤄주세요', '수리하기 전에 전화 부탁드립니다!',
+                                                      '요청사항 없음', '직접 입력']
+                                                        .map<DropdownMenuItem<String>>((String value) {
+                                                      return DropdownMenuItem<String>(
+                                                        value: value,
+                                                        child: Text(valueOrDefault(value, '선택해 주세요'),
+                                                          style: FlutterFlowTheme.bodyText1
+                                                              .override(
+                                                            fontFamily: 'tway_air medium',
+                                                            color: Colors.black,
+                                                            fontSize: 18,
+                                                            fontWeight: FontWeight.w500,
+                                                            useGoogleFonts: false,
+                                                          ),),
+                                                      );
+                                                    }).toList(),
                                                   ),
                                                 ),
-                                              ),
-                                            ],
-                                          ),
                                         ),
+                                              ], ),
+                                          ),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -1124,69 +1092,36 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(15, 0, 0, 0),
-                                                  child: TextFormField(
-                                                    controller: textController5,
-                                                    obscureText: false,
-                                                    decoration: InputDecoration(
-                                                      hintText: '요청사항을 입력하시오',
-                                                      hintStyle:
-                                                      FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                        'tway_air medium',
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                        FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
-                                                      enabledBorder:
-                                                      UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                          Color(0x00000000),
-                                                          width: 1,
-                                                        ),
-                                                        borderRadius:
-                                                        const BorderRadius
-                                                            .only(
-                                                          topLeft:
-                                                          Radius.circular(
-                                                              4.0),
-                                                          topRight:
-                                                          Radius.circular(
-                                                              4.0),
-                                                        ),
-                                                      ),
-                                                      focusedBorder:
-                                                      UnderlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                          Color(0x00000000),
-                                                          width: 1,
-                                                        ),
-                                                        borderRadius:
-                                                        const BorderRadius
-                                                            .only(
-                                                          topLeft:
-                                                          Radius.circular(
-                                                              4.0),
-                                                          topRight:
-                                                          Radius.circular(
-                                                              4.0),
-                                                        ),
-                                                      ),
+                                                  child: DropdownButton<String>(
+                                                    value: dropDownValue2,
+                                                    icon: const Icon(Icons.arrow_downward),
+                                                    elevation: 24,
+                                                    style: const TextStyle(color: Colors.black87),
+                                                    underline: Container(
+                                                      width: MediaQuery.of(context).size.width * 0.9,
+                                                      height: 2,
+                                                      color: Color(0xFF21B6FF),
                                                     ),
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
-                                                      fontFamily:
-                                                      'tway_air medium',
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                      FontWeight.w500,
-                                                      useGoogleFonts: false,
-                                                    ),
+                                                    onChanged: (String newValue) {
+                                                      setState(() {
+                                                        dropDownValue2 = newValue;});
+                                                    },
+                                                    items: <String>['조심히 안전하게 와주세요 :)', '문앞에 두고 벨 눌러주세요', '벨 누르지 말고 노크해주세요', '도착하기 전에 전화해주세요',
+                                                      '요청사항 없음', '직접 입력']
+                                                        .map<DropdownMenuItem<String>>((String value) {
+                                                      return DropdownMenuItem<String>(
+                                                        value: value,
+                                                        child: Text(valueOrDefault(value, '선택해 주세요'),
+                                                          style: FlutterFlowTheme.bodyText1
+                                                              .override(
+                                                            fontFamily: 'tway_air medium',
+                                                            color: Colors.black,
+                                                            fontSize: 18,
+                                                            fontWeight: FontWeight.w500,
+                                                            useGoogleFonts: false,
+                                                          ),),
+                                                      );
+                                                    }).toList(),
                                                   ),
                                                 ),
                                               ),
