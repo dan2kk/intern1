@@ -24,7 +24,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 1,
           decoration: BoxDecoration(
-            color: Color(0xFF5C6EBE),
+            color: Color(0xFF21B6FF),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -38,7 +38,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 0.33,
                       decoration: BoxDecoration(
-                        color: Color(0xFF5C6EBE),
+                        color: Color(0xFF21B6FF),
                       ),
                       child: Align(
                         alignment: AlignmentDirectional(0, 0.1),
@@ -76,7 +76,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 0.33,
                       decoration: BoxDecoration(
-                        color: Color(0xFF5C6EBE),
+                        color: Color(0xFF21B6FF),
                       ),
                       child: Align(
                         alignment: AlignmentDirectional(0, -0.85),
@@ -139,7 +139,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 0.33,
                       decoration: BoxDecoration(
-                        color: Color(0xFF5C6EBE),
+                        color: Color(0xFF21B6FF),
                       ),
                       child: Align(
                         alignment: AlignmentDirectional(0, -1),

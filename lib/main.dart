@@ -74,9 +74,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
             )
-          : currentUser.loggedIn
-              ? NavBarPage()
-              : FisrtpageWidget(),
+          : FisrtpageWidget(),
     );
   }
 }
