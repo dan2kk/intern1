@@ -428,40 +428,25 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                                 Text(
                                                                   '${dateTimeFormat('y년 M월 d', storeListViewCouponRecord.expireDate)}일 까지 사용가능',
                                                                   style:
-                                                                  FlutterFlowTheme
-                                                                      .bodyText2
-                                                                      .override(
-                                                                    fontFamily:
-                                                                    'Lexend Deca',
-                                                                    color: Color(
-                                                                        0xFF8B97A2),
+                                                                  FlutterFlowTheme.bodyText2.override(
+                                                                    fontFamily: 'Lexend Deca',
+                                                                    color: Color(0xFF8B97A2),
                                                                     fontSize: 14,
-                                                                    fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
+                                                                    fontWeight: FontWeight.normal,
                                                                   ),
                                                                 ),
                                                               ],
                                                             ),
                                                             Row(
-                                                              mainAxisSize:
-                                                              MainAxisSize.max,
+                                                              mainAxisSize: MainAxisSize.max,
                                                               children: [
                                                                 Text(
-                                                                  storeListViewCouponRecord
-                                                                      .couponNum,
-                                                                  style:
-                                                                  FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
-                                                                    fontFamily:
-                                                                    'Lexend Deca',
-                                                                    color: Color(
-                                                                        0xFF4B39EF),
+                                                                  storeListViewCouponRecord.couponNum,
+                                                                  style: FlutterFlowTheme.bodyText1.override(
+                                                                    fontFamily: 'Lexend Deca',
+                                                                    color: Color(0xFF4B39EF),
                                                                     fontSize: 14,
-                                                                    fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                    fontWeight: FontWeight.w500,
                                                                   ),
                                                                 ),
                                                               ],
