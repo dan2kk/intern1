@@ -43,22 +43,22 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.45,
-                          height: 35,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                          ),
-                          child: Align(
-                            alignment: AlignmentDirectional(0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                if ((currentUserUid) == '')
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        30, 0, 0, 0),
-                                    child: InkWell(
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.35,
+                            height: 35,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                            ),
+                            child: Align(
+                              alignment: AlignmentDirectional(0, 0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  if ((currentUserUid) == '')
+                                    InkWell(
                                       onTap: () async {
                                         await Navigator.push(
                                           context,
@@ -78,64 +78,66 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         ),
                                       ),
                                     ),
-                                  ),
-                                if ((currentUserUid) != '')
-                                  InkWell(
-                                    onTap: () async {
-                                      await Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              NavBarPage(initialPage: 'MyPage'),
+                                  if ((currentUserUid) != '')
+                                    InkWell(
+                                      onTap: () async {
+                                        await Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => NavBarPage(
+                                                initialPage: 'MyPage'),
+                                          ),
+                                        );
+                                      },
+                                      child: Text(
+                                        '마이페이지',
+                                        style:
+                                        FlutterFlowTheme.bodyText1.override(
+                                          fontFamily: 'tway_air medium',
+                                          color: Color(0xFF21B6FF),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: false,
                                         ),
-                                      );
-                                    },
-                                    child: Text(
-                                      '마이페이지',
-                                      style:
-                                      FlutterFlowTheme.bodyText1.override(
-                                        fontFamily: 'tway_air medium',
-                                        color: Color(0xFF21B6FF),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                        useGoogleFonts: false,
                                       ),
                                     ),
-                                  ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ),
                         Container(
-                          width: MediaQuery.of(context).size.width * 0.55,
+                          width: MediaQuery.of(context).size.width * 0.33,
+                          height: 35,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                          ),
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.31,
                           height: 35,
                           decoration: BoxDecoration(
                             color: Colors.white,
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                                child: InkWell(
-                                  onTap: () async {
-                                    await Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            FIxHistoryWidget(),
-                                      ),
-                                    );
-                                  },
-                                  child: Image.network(
-                                    'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/%EC%B9%B4%ED%8A%B8%EC%9D%B4%EB%AF%B8%EC%A7%80.JPG?alt=media&token=762b88d6-10cb-40b3-8887-96b58272d81a',
-                                    width: 35,
-                                    height: 35,
-                                    fit: BoxFit.cover,
-                                  ),
+                              InkWell(
+                                onTap: () async {
+                                  await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => FIxHistoryWidget(),
+                                    ),
+                                  );
+                                },
+                                child: Image.network(
+                                  'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/%EC%B9%B4%ED%8A%B8%EC%9D%B4%EB%AF%B8%EC%A7%80.JPG?alt=media&token=762b88d6-10cb-40b3-8887-96b58272d81a',
+                                  width: 35,
+                                  height: 35,
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                             ],
@@ -391,7 +393,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   .fromSTEB(10, 0, 0, 0),
                                               child: Text(
                                                 valueOrDefault<String>(
-                                                  '${(pageViewIndex+1).toString()} / ${pageViewEventsRecordList.length} 모두보기',
+                                                  '${pageViewIndex.toString()} / 5 모두보기',
                                                   '0 / 0 모두보기',
                                                 ),
                                                 style: FlutterFlowTheme
@@ -476,14 +478,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                 .size
                                                 .width *
                                                 0.48,
-                                            height: MediaQuery.of(context)
-                                                .size
-                                                .height *
-                                                0.25,
+                                            height: 200,
                                             decoration: BoxDecoration(
                                               color: Color(0xFFEEEEEE),
-                                                borderRadius: BorderRadius.circular(20),
-                                                shape: BoxShape.rectangle,
                                             ),
                                             child: InkWell(
                                               onTap: () async {
@@ -514,10 +511,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                 .size
                                                 .width *
                                                 0.48,
-                                            height: MediaQuery.of(context)
-                                                .size
-                                                .height *
-                                                0.25,
+                                            height: 200,
                                             decoration: BoxDecoration(
                                               color: Color(0xFFEEEEEE),
                                             ),
@@ -559,14 +553,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   .size
                                                   .width *
                                                   0.24,
-                                              height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                                  0.125,
+                                              height: 100,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
-                                                borderRadius: BorderRadius.circular(20),
-                                                shape: BoxShape.rectangle,
                                               ),
                                               child: InkWell(
                                                 onTap: () async {
@@ -598,14 +587,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   .size
                                                   .width *
                                                   0.24,
-                                              height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                                  0.125,
+                                              height: 100,
                                               decoration: BoxDecoration(
-                                                  color: Color(0xFFEEEEEE),
-                                                  borderRadius: BorderRadius.circular(20),
-                                                  shape: BoxShape.rectangle,
+                                                color: Color(0xFFEEEEEE),
                                               ),
                                               child: Image.asset(
                                                 'assets/images/u84op_.png',
@@ -624,14 +608,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   .size
                                                   .width *
                                                   0.24,
-                                              height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                                  0.125,
+                                              height: 100,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
-                                                borderRadius: BorderRadius.circular(20),
-                                                shape: BoxShape.rectangle,
                                               ),
                                               child: InkWell(
                                                 onTap: () async {
@@ -663,14 +642,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   .size
                                                   .width *
                                                   0.24,
-                                              height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                                  0.125,
+                                              height: 100,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
-                                                borderRadius: BorderRadius.circular(20),
-                                                shape: BoxShape.rectangle,
                                               ),
                                               child: InkWell(
                                                 onTap: () async {
