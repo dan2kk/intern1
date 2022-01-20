@@ -187,7 +187,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                           .hideCurrentSnackBar();
                                                       if (downloadUrl != null) {
                                                         setState(() =>
-                                                        uploadedFileUrl2 =
+                                                        uploadedFileUrl1 =
                                                             downloadUrl);
                                                         showUploadMessage(
                                                             context,
@@ -202,7 +202,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                   },
                                                   child: Image.network(
                                                     valueOrDefault<String>(
-                                                      uploadedFileUrl2,
+                                                      uploadedFileUrl1,
                                                       'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2Fvideo%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=1efb466d-2eda-4241-b72c-25a918947d38',
                                                     ),
                                                     width: 100,
@@ -247,7 +247,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                         if (downloadUrl !=
                                                             null) {
                                                           setState(() =>
-                                                          uploadedFileUrl1 =
+                                                          uploadedFileUrl2 =
                                                               downloadUrl);
                                                           showUploadMessage(
                                                               context,
@@ -262,7 +262,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                     },
                                                     child: Image.network(
                                                       valueOrDefault<String>(
-                                                        uploadedFileUrl1,
+                                                        uploadedFileUrl2,
                                                         'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2F%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=2e283c3a-2d59-4fe8-b97b-2a78784687e9',
                                                       ),
                                                       width: 100,

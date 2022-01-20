@@ -46,7 +46,10 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   String kakaoLongitude = '-';
   List<int> _availableMinutes = [0, 30];
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
+  int defaultPrice = 30000;
+  int shipmentPrice = 6000;
+  int discountAll = 0;
+  int finalPrice = 36000;
   @override
   void initState() {
     super.initState();
@@ -1624,7 +1627,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
                                                     Text(
-                                                      '30,000원',
+                                                      defaultPrice.toString() +'원',
                                                       style: FlutterFlowTheme
                                                           .bodyText1
                                                           .override(
@@ -1701,7 +1704,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                     Padding(
                                                       padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
                                                       child: Text(
-                                                        '6,000원',
+                                                        shipmentPrice.toString()+'원',
                                                         style: FlutterFlowTheme.bodyText1.override(
                                                           fontFamily: 'tway_air medium',
                                                           fontSize: 16,
@@ -1716,28 +1719,28 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             ],
                                           ),
                                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                          child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                          Container(
-                          width: MediaQuery.of(context).size.width * 0.65,
-                          height: MediaQuery.of(context).size.height * 0.06,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFF5F5F5),
-                          ),
-                          child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                          Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-                          child: Text(
-                            '할인 금액',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'tway_air medium',
+                                        Padding(
+                                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            children: [
+                                              Container(
+                                                width: MediaQuery.of(context).size.width * 0.65,
+                                                height: MediaQuery.of(context).size.height * 0.06,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFF5F5F5),
+                                                ),
+                                                child: Row(
+                                                  mainAxisSize: MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                                                      child: Text(
+                                                        '할인 금액',
+                                                        style: FlutterFlowTheme.bodyText1.override(
+                                                          fontFamily: 'tway_air medium',
                                                           color: Colors.black,
                                                           fontSize: 16,
                                                           fontWeight:
@@ -1767,7 +1770,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
                                                     Text(
-                                                      '6,000원',
+                                                      discountAll.toString()+' 원',
                                                       style: FlutterFlowTheme
                                                           .bodyText1
                                                           .override(
@@ -1853,7 +1856,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
                                                     Text(
-                                                      '36,000원',
+                                                      finalPrice.toString()+' 원',
                                                       style: FlutterFlowTheme
                                                           .bodyText1
                                                           .override(
