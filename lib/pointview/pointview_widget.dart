@@ -204,7 +204,7 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 8, 0, 12),
                         child: Text(
-                          'This Month',
+                          '이번달',
                           style: FlutterFlowTheme.bodyText2.override(
                             fontFamily: 'Lexend Deca',
                             color: Color(0xFF8B97A2),
@@ -218,8 +218,7 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                   AuthUserStreamWidget(
                     child: Builder(
                       builder: (context) {
-                        final listofhistory =
-                            currentUserDocument?.pointHis?.toList() ?? [];
+                        final listofhistory = currentUserDocument?.pointHis?.reversed.toList() ?? [];
                         return SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -266,27 +265,13 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                 children: [
                                                   Stack(
                                                     children: [
-                                                      if ((rowPointsRecord
-                                                              .amount) >
-                                                          0)
+                                                      if ((rowPointsRecord.amount) > 0)
                                                         Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  0, 0),
+                                                          alignment: AlignmentDirectional(0, 0),
                                                           child: Container(
-                                                            width: MediaQuery.of(
-                                                                        context)
-                                                                    .size
-                                                                    .width *
-                                                                0.2,
-                                                            height: MediaQuery.of(
-                                                                        context)
-                                                                    .size
-                                                                    .height *
-                                                                0.1,
-                                                            child: RiveAnimation
-                                                                .asset(
-                                                              'assets/rive_animations/368-694-checkmark-icon.riv',
+                                                            width: MediaQuery.of(context).size.width * 0.2,
+                                                            height: MediaQuery.of(context).size.height * 0.1,
+                                                            child: RiveAnimation.asset('assets/rive_animations/368-694-checkmark-icon.riv',
                                                               artboard:
                                                                   'Artboard',
                                                               fit: BoxFit.cover,
@@ -295,32 +280,17 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      if ((rowPointsRecord
-                                                              .amount) <=
-                                                          0)
+                                                      if ((rowPointsRecord.amount) <= 0)
                                                         Align(
                                                           alignment:
-                                                              AlignmentDirectional(
-                                                                  0, 0),
+                                                              AlignmentDirectional(0, 0),
                                                           child: Container(
-                                                            width: MediaQuery.of(
-                                                                        context)
-                                                                    .size
-                                                                    .width *
-                                                                0.2,
-                                                            height: MediaQuery.of(
-                                                                        context)
-                                                                    .size
-                                                                    .height *
-                                                                0.1,
-                                                            child: RiveAnimation
-                                                                .asset(
-                                                              'assets/rive_animations/369-695-error-icon.riv',
-                                                              artboard:
-                                                                  'Artboard',
+                                                            width: MediaQuery.of(context).size.width * 0.2,
+                                                            height: MediaQuery.of(context).size.height * 0.1,
+                                                            child: RiveAnimation.asset('assets/rive_animations/369-695-error-icon.riv',
+                                                              artboard: 'Artboard',
                                                               fit: BoxFit.cover,
-                                                              controllers:
-                                                                  riveAnimationControllers2,
+                                                              controllers: riveAnimationControllers2,
                                                             ),
                                                           ),
                                                         ),
@@ -336,46 +306,26 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
+                                                    mainAxisSize: MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        formatNumber(
-                                                          rowPointsRecord
-                                                              .amount,
-                                                          formatType: FormatType
-                                                              .decimal,
-                                                        ),
-                                                        style: FlutterFlowTheme
-                                                            .subtitle1
-                                                            .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color:
-                                                              Color(0xFF15212B),
+                                                        formatNumber(rowPointsRecord.amount, formatType: FormatType.decimal,),
+                                                        style: FlutterFlowTheme.subtitle1.override(
+                                                          fontFamily: 'Lexend Deca',
+                                                          color: Color(0xFF15212B),
                                                           fontSize: 18,
-                                                          fontWeight:
-                                                              FontWeight.w500,
+                                                          fontWeight: FontWeight.w500,
                                                         ),
                                                       ),
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
-                                                                  0.7, 0),
-                                                          child: Text(
-                                                            dateTimeFormat(
-                                                                'yMd',
-                                                                rowPointsRecord
-                                                                    .earnedDate),
-                                                            textAlign:
-                                                                TextAlign.end,
+                                                              AlignmentDirectional(0.7, 0),
+                                                          child: Text(dateTimeFormat('y년 MM월 dd일', rowPointsRecord.earnedDate),
+                                                            textAlign: TextAlign.end,
                                                             style: TextStyle(
-                                                              color: Color(
-                                                                  0xFF57636C),
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
+                                                              color: Color(0xFF57636C),
+                                                              fontWeight: FontWeight.w500,
                                                               fontSize: 10,
                                                             ),
                                                           ),
@@ -393,21 +343,12 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(0,
                                                                       4, 4, 0),
-                                                          child: Text(
-                                                            rowPointsRecord
-                                                                .reason,
-                                                            style:
-                                                                FlutterFlowTheme
-                                                                    .bodyText2
-                                                                    .override(
-                                                              fontFamily:
-                                                                  'Lexend Deca',
-                                                              color: Color(
-                                                                  0xFF8B97A2),
+                                                          child: Text(rowPointsRecord.reason,
+                                                            style: FlutterFlowTheme.bodyText2.override(
+                                                              fontFamily: 'Lexend Deca',
+                                                              color: Color(0xFF8B97A2),
                                                               fontSize: 12,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
+                                                              fontWeight: FontWeight.normal,
                                                             ),
                                                           ),
                                                         ),
@@ -415,21 +356,13 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                       Expanded(
                                                         child: Align(
                                                           alignment:
-                                                              AlignmentDirectional(
-                                                                  0.7, 0),
-                                                          child: Text(
-                                                            dateTimeFormat(
-                                                                'yMd',
-                                                                rowPointsRecord
-                                                                    .expireDate),
-                                                            textAlign:
-                                                                TextAlign.end,
+                                                              AlignmentDirectional(0.7, 0),
+                                                          child: Text(dateTimeFormat('y년 MM월 dd일',
+                                                                rowPointsRecord.expireDate),
+                                                            textAlign: TextAlign.end,
                                                             style: TextStyle(
-                                                              color: Color(
-                                                                  0xFF57636C),
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
+                                                              color: Color(0xFF57636C),
+                                                              fontWeight: FontWeight.w500,
                                                               fontSize: 10,
                                                             ),
                                                           ),

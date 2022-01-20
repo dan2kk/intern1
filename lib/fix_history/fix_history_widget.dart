@@ -83,8 +83,7 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                         scrollDirection: Axis.vertical,
                         itemCount: listofhistory.length,
                         itemBuilder: (context, listofhistoryIndex) {
-                          final listofhistoryItem =
-                          listofhistory[listofhistoryIndex];
+                          final listofhistoryItem = listofhistory[listofhistoryIndex];
                           return Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
