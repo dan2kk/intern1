@@ -973,6 +973,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                         ),
                         child: InkWell(
                           onTap: () async {
+                            await goBootpayRequest(context, 2500000);
                             await Navigator.push(
                               context,
                               MaterialPageRoute(
