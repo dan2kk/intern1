@@ -393,7 +393,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   .fromSTEB(10, 0, 0, 0),
                                               child: Text(
                                                 valueOrDefault<String>(
-                                                  '${pageViewIndex.toString()} / 5 모두보기',
+                                                  '${(pageViewIndex+1).toString()} / ${(pageViewEventsRecordList.length).toString()} 모두보기',
                                                   '0 / 0 모두보기',
                                                 ),
                                                 style: FlutterFlowTheme
