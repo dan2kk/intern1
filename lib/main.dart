@@ -105,7 +105,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'MainPage': MainPageWidget(),
       'Favorite': FavoriteWidget(),
-      'FixHistory': StoreListNewWidget(),
+      'FixHistory': FIxHistoryWidget(),
       'MyPage': MyPageWidget(),
     };
     return Scaffold(

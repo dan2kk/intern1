@@ -101,11 +101,19 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
               onTap: () async {
                 Navigator.pop(context);
               },
-              child: Icon(
-                Icons.arrow_back,
-                color: Colors.black,
-                size: 24,
-              ),
+              child: Container(
+                width: 55,
+                height: 55,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'assets/images/16.png'),
+                      fit: BoxFit.fill,
+                    ),
+                    shape: BoxShape.rectangle
+                ),
+              )
             ),
             title: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(55, 0, 0, 0),

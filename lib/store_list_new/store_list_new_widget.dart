@@ -1,5 +1,6 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
+import '../main.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -12,10 +13,8 @@ import 'package:google_fonts/google_fonts.dart';
 class StoreListNewWidget extends StatefulWidget {
   const StoreListNewWidget({
     Key key,
-    this.category,
   }) : super(key: key);
 
-  final String category;
 
   @override
   _StoreListNewWidgetState createState() => _StoreListNewWidgetState();
@@ -51,14 +50,30 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
               borderRadius: 30,
               borderWidth: 1,
               buttonSize: 60,
-              icon: Icon(
-                Icons.chevron_left,
-                color: FlutterFlowTheme.secondaryColor,
-                size: 30,
+              icon: Container(
+              width: 55,
+              height: 55,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'assets/images/16.png'),
+                    fit: BoxFit.fill,
+                  ),
+                  shape: BoxShape.rectangle
               ),
-              onPressed: () {
-                print('IconButton pressed ...');
-              },
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                PageTransition(
+                  type: PageTransitionType.rightToLeft,
+                  duration: Duration(milliseconds: 300),
+                  reverseDuration: Duration(milliseconds: 300),
+                  child: NavBarPage(initialPage: 'MainPage'),
+                ),
+              );
+            },
             ),
             title: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
@@ -103,15 +118,12 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                     child: Builder(
                       builder: (context) {
-                        final listofstore =
-                            storeListNewRepairmentRecordList?.toList() ?? [];
+                        final listofhistory = storeListNewRepairmentRecordList?.toList() ?? [];
                         return SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
-                            children: List.generate(listofstore.length,
-                                    (listofstoreIndex) {
-                                  final listofstoreItem =
-                                  listofstore[listofstoreIndex];
+                            children: List.generate(listofhistory.length, (listofhistoryIndex) {
+                                  final listofhistoryItem = listofhistory[listofhistoryIndex];
                                   return Padding(
                                     padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
@@ -143,7 +155,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                                               MaterialPageRoute(
                                                 builder: (context) =>
                                                     RepairmentStoreDetailWidget(
-                                                      stidx: listofstoreItem.storeidx,
+                                                      stidx: listofhistoryItem.storeidx,
                                                     ),
                                               ),
                                             );
@@ -160,7 +172,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                                                   children: [
                                                     Expanded(
                                                       child: Text(
-                                                        listofstoreItem.model,
+                                                        listofhistoryItem.model,
                                                         style: FlutterFlowTheme
                                                             .title1
                                                             .override(
@@ -189,7 +201,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                                                   children: [
                                                     Expanded(
                                                       child: Text(
-                                                        listofstoreItem.brokenPart,
+                                                        listofhistoryItem.brokenPart,
                                                         style: FlutterFlowTheme
                                                             .bodyText2
                                                             .override(
@@ -221,7 +233,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                                                               builder: (context) =>
                                                                   RepairmentDetailWidget(
                                                                     repairmentid:
-                                                                    listofstoreItem
+                                                                    listofhistoryItem
                                                                         .repairmentid,
                                                                   ),
                                                             ),

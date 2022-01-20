@@ -126,7 +126,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            FixHistoryWidget(),
+                                            FIxHistoryWidget(),
                                       ),
                                     );
                                   },
