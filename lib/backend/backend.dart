@@ -189,6 +189,9 @@ Future maybeCreateUser(User user) async {
     uid: user.uid,
     phoneNumber: user.phoneNumber,
     createdTime: getCurrentTimestamp,
+    emailalarm: true,
+    locationsetting: true,
+    pushalarm: true,
   );
 
   await userRecord.set(userData);
