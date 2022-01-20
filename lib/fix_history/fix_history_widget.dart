@@ -196,23 +196,45 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width *
-                                                0.95,
-                                            height: MediaQuery.of(context)
-                                                .size
-                                                .height *
-                                                0.13,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFFEEEEEE),
-                                              borderRadius:
-                                              BorderRadius.circular(20),
+                                          Padding(
+                                            padding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                10, 0, 0, 0),
+                                            child: Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                                  0.3,
+                                              height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                                  0.13,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFEEEEEE),
+                                                borderRadius:
+                                                BorderRadius.circular(20),
+                                              ),
+                                              child: Image.network(
+                                                listofhistoryItem.imgUrl,
+                                                width: 100,
+                                                height: 100,
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(20, 0, 0, 0),
+                                          ),
+                                          Padding(
+                                            padding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                7, 0, 0, 0),
+                                            child: Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                                  0.6,
+                                              height: 100,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFEEEEEE),
+                                              ),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
