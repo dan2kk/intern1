@@ -289,7 +289,7 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: Text(
                         '수리 진행',
                         style: FlutterFlowTheme.bodyText1.override(
@@ -328,7 +328,7 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: Text(
                         '수리 완료',
                         style: FlutterFlowTheme.bodyText1.override(
