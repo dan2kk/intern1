@@ -5,6 +5,12 @@ import '../order_complete/order_complete_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../auth/auth_util.dart';
+import 'package:bootpay_api/bootpay_api.dart';
+import 'package:bootpay_api/model/payload.dart';
+import 'package:bootpay_api/model/extra.dart';
+import 'package:bootpay_api/model/user.dart';
+import 'package:bootpay_api/model/item.dart';
 
 class SecondpurchaseWidget extends StatefulWidget {
   const SecondpurchaseWidget({
@@ -999,6 +1005,53 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
             ),
           ),
         );
+      },
+    );
+  }
+void goBootpayRequest(BuildContext context, int amount) async {
+    Payload payload = Payload();
+    payload.androidApplicationId = '61d25a79e38c300022d2d6f2';
+    payload.iosApplicationId = '61d25a79e38c300022d2d6f3';
+
+    payload.pg = 'nicepay';
+    payload.methods = ['card', 'phone', 'bank', 'easy'];
+    payload.name = '가견적서 첫결제';
+    payload.price = amount.toDouble();
+    payload.orderId = DateTime.now().millisecondsSinceEpoch.toString()+ currentUserUid;
+
+
+    User user = User();
+    user.username = currentUserDisplayName;
+    user.email = currentUserEmail;
+
+    Extra extra = Extra();
+    extra.appScheme = 'bootpaySample';
+
+    Item item1 = Item();
+    item1.itemName = "가견적& 수리예약"; // 주문정보에 담길 상품명
+    item1.unique = "Repairment First purchase"; // 해당 상품의 고유 키
+    item1.price = amount.toDouble(); // 상품의 가격
+
+    List<Item> itemList = [item1];
+
+    BootpayApi.request(
+      context,
+      payload,
+      extra: extra,
+      user: user,
+      items: itemList,
+      onDone: (String json) {
+        print('onDone: $json');
+      },
+      onReady: (String json) {
+        //flutter는 가상계좌가 발급되었을때  onReady가 호출되지 않는다. onDone에서 처리해주어야 한다.
+        print('onReady: $json');
+      },
+      onCancel: (String json) {
+        print('onCancel: $json');
+      },
+      onError: (String json) {
+        print('onError: $json');
       },
     );
   }
