@@ -24,7 +24,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 1,
           decoration: BoxDecoration(
-            color: Color(0xFF21B6FF),
+            color: Colors.white,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -38,7 +38,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 0.33,
                       decoration: BoxDecoration(
-                        color: Color(0xFF21B6FF),
+                        color: Colors.white,
                       ),
                       child: Align(
                         alignment: AlignmentDirectional(0, 0.1),
@@ -53,7 +53,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontFamily: 'tway_air medium',
-                                  color: FlutterFlowTheme.secondaryColor,
+                                  color: Color(0xFF21B6FF),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 15,
                                 ),
@@ -76,7 +76,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height * 0.33,
                       decoration: BoxDecoration(
-                        color: Color(0xFF21B6FF),
+                        color: Colors.white,
                       ),
                       child: Align(
                         alignment: AlignmentDirectional(0, -0.85),
@@ -89,7 +89,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'tway_air medium',
-                                color: FlutterFlowTheme.secondaryColor,
+                                color: Color(0xFF21B6FF),
                                 fontWeight: FontWeight.w500,
                                 fontSize: 50,
                               ),
@@ -117,7 +117,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                   },
                   child: Icon(
                     Icons.keyboard_arrow_up_rounded,
-                    color: FlutterFlowTheme.tertiaryColor,
+                    color: Color(0xFF21B6FF),
                     size: 30,
                   ),
                 ),
@@ -137,9 +137,9 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height * 0.33,
+                      height: MediaQuery.of(context).size.height * 0.1,
                       decoration: BoxDecoration(
-                        color: Color(0xFF21B6FF),
+                        color: Colors.white,
                       ),
                       child: Align(
                         alignment: AlignmentDirectional(0, -1),
@@ -155,7 +155,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                                     type: PageTransitionType.bottomToTop,
                                     duration: Duration(milliseconds: 300),
                                     reverseDuration:
-                                        Duration(milliseconds: 300),
+                                    Duration(milliseconds: 300),
                                     child: NavBarPage(initialPage: 'MainPage'),
                                   ),
                                 );
@@ -164,6 +164,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                                 '수리 시작하기',
                                 style: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'tway_air medium',
+                                  color: Color(0xFF21B6FF),
                                   fontWeight: FontWeight.w500,
                                   useGoogleFonts: false,
                                 ),
