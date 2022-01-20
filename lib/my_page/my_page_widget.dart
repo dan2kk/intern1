@@ -1,12 +1,13 @@
 import '../auth/auth_util.dart';
 import '../backend/firebase_storage/storage.dart';
 import '../coupon/coupon_widget.dart';
+import '../fix_history/fix_history_widget.dart';
 import '../fisrtpage/fisrtpage_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
-import '../main.dart';
+import '../pointview/pointview_widget.dart';
 import '../settings/settings_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -57,21 +58,13 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                             children: [
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 30, 0, 0),
-                                child: Container(
-                                  width: 55,
-                                  height: 55,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/16.png'),
-                                      fit: BoxFit.fill,
-                                    ),
-                                    shape: BoxShape.rectangle
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                child: Icon(
+                                  Icons.keyboard_arrow_left,
+                                  color: Colors.black,
+                                  size: 30,
                                 ),
                               ),
-                              )
                             ],
                           ),
                         ),
@@ -83,12 +76,12 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 10, 10, 0),
+                            EdgeInsetsDirectional.fromSTEB(0, 10, 10, 0),
                             child: AuthUserStreamWidget(
                               child: InkWell(
                                 onTap: () async {
                                   final selectedMedia =
-                                      await selectMediaWithSourceBottomSheet(
+                                  await selectMediaWithSourceBottomSheet(
                                     context: context,
                                     allowPhoto: true,
                                     allowVideo: true,
@@ -97,7 +90,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                       validateFileFormat(
                                           selectedMedia.storagePath, context)) {
                                     showUploadMessage(
-                                        context, '업로드 중입니다!',
+                                        context, 'Uploading file...',
                                         showLoading: true);
                                     final downloadUrl = await uploadData(
                                         selectedMedia.storagePath,
@@ -106,11 +99,11 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                         .hideCurrentSnackBar();
                                     if (downloadUrl != null) {
                                       setState(
-                                          () => uploadedFileUrl = downloadUrl);
-                                      showUploadMessage(context, '업로드 성공!');
+                                              () => uploadedFileUrl = downloadUrl);
+                                      showUploadMessage(context, 'Success!');
                                     } else {
                                       showUploadMessage(
-                                          context, '아이쿠... 실패...');
+                                          context, 'Failed to upload media');
                                       return;
                                     }
                                   }
@@ -137,7 +130,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                         children: [
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 8, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 8, 0, 0),
                             child: AuthUserStreamWidget(
                               child: Text(
                                 currentUserDisplayName,
@@ -160,7 +153,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                         children: [
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Text(
                               currentUserUid,
                               style: FlutterFlowTheme.bodyText1.override(
@@ -226,7 +219,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                         '계정 설정',
                         style: TextStyle(
                           fontFamily: 'tway_air medium',
-                          color: Color(0xFF5C6EBE),
+                          color: Colors.black,
                           fontWeight: FontWeight.w500,
                           fontSize: 17,
                         ),
@@ -260,8 +253,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                             await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>
-                                    NavBarPage(initialPage: 'FixHistory'),
+                                builder: (context) => FIxHistoryWidget(),
                               ),
                             );
                           },
@@ -270,12 +262,12 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                             children: [
                               Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
                                 child: Text(
                                   '수리 내역',
                                   style: TextStyle(
                                     fontFamily: 'tway_air medium',
-                                    color: Color(0xFF5C6EBE),
+                                    color: Colors.black,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 17,
                                   ),
@@ -332,7 +324,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                     '설정',
                                     style: TextStyle(
                                       fontFamily: 'tway_air medium',
-                                      color: Color(0xFF5C6EBE),
+                                      color: Colors.black,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 17,
                                     ),
@@ -376,7 +368,9 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => CouponWidget(coupon : 0),
+                                  builder: (context) => CouponWidget(
+                                    coupon: 0,
+                                  ),
                                 ),
                               );
                             },
@@ -390,7 +384,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                     '쿠폰 내역',
                                     style: TextStyle(
                                       fontFamily: 'tway_air medium',
-                                      color: Color(0xFF5C6EBE),
+                                      color: Colors.black,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 17,
                                     ),
@@ -434,8 +428,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'Favorite'),
+                                  builder: (context) => PointviewWidget(),
                                 ),
                               );
                             },
@@ -446,10 +439,10 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       24, 0, 0, 0),
                                   child: Text(
-                                    '즐겨찾기',
+                                    '포인트',
                                     style: TextStyle(
                                       fontFamily: 'tway_air medium',
-                                      color: Color(0xFF5C6EBE),
+                                      color: Colors.black,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 17,
                                     ),
@@ -467,54 +460,6 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                 ),
                               ],
                             ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 0.95,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                            shape: BoxShape.rectangle,
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
-                                child: Text(
-                                  '비밀번호 변경',
-                                  style: TextStyle(
-                                    fontFamily: 'tway_air medium',
-                                    color: Color(0xFF5C6EBE),
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 17,
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Align(
-                                  alignment: AlignmentDirectional(0.9, 0),
-                                  child: Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: Color(0xFF95A1AC),
-                                    size: 18,
-                                  ),
-                                ),
-                              ),
-                            ],
                           ),
                         ),
                       ),
@@ -535,7 +480,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                             MaterialPageRoute(
                               builder: (context) => FisrtpageWidget(),
                             ),
-                            (r) => false,
+                                (r) => false,
                           );
                         },
                         text: 'Log Out',
@@ -545,7 +490,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                           color: Colors.white,
                           textStyle: TextStyle(
                             fontFamily: 'tway_air medium',
-                            color: Color(0xFF21B6FF),
+                            color: Colors.black,
                             fontWeight: FontWeight.w500,
                             fontSize: 14,
                           ),
