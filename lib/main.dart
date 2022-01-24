@@ -12,6 +12,7 @@ import 'flutter_flow/flutter_flow_theme.dart';
 import 'main_page/main_page_widget.dart';
 import 'favorite/favorite_widget.dart';
 import 'fix_history/fix_history_widget.dart';
+import 'login_page/login_page_widget.dart';
 import 'my_page/my_page_widget.dart';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
@@ -163,7 +164,20 @@ class _NavBarPageState extends State<NavBarPage> {
         currentIndex: tabs.keys.toList().indexOf(_currentPage),
         selectedItemColor: Color(0xFF21B6FF),
         unselectedItemColor: FlutterFlowTheme.tertiaryColor,
-        onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
+        onTap: (i) => setState(() => {
+          if(i == 2){
+            if(currentUserUid == ''){
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginPageWidget()))
+            },
+            if(currentUserUid != ''){
+              _currentPage = tabs.keys.toList()[i]
+            }
+          }
+          else{
+            _currentPage = tabs.keys.toList()[i]
+          }
+        }) ,
         showSelectedLabels: true,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
