@@ -127,7 +127,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'tway_air medium',
-                        color: FlutterFlowTheme.secondaryColor,
+                        color: Color(0xFF21B6FF),
                         fontSize: 25,
                         fontWeight: FontWeight.w500,
                         useGoogleFonts: false,
