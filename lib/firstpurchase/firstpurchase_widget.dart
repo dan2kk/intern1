@@ -203,22 +203,16 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 10, 0, 0),
+                                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(15, 0, 0, 0),
+                                                padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
                                                 child: Text(
                                                   '수리 서비스 선택',
-                                                  style: FlutterFlowTheme
-                                                      .bodyText1
-                                                      .override(
-                                                    fontFamily:
-                                                    'tway_air medium',
+                                                  style: FlutterFlowTheme.bodyText1.override(
+                                                    fontFamily: 'tway_air medium',
                                                     color: Colors.black,
                                                     fontSize: 16,
                                                     fontWeight: FontWeight.w500,
@@ -236,32 +230,37 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           endIndent: 15,
                                           color: Colors.black,
                                         ),
-                                        FlutterFlowRadioButton(
-                                          options: [
-                                            '픽업, 배송 수리(배달비 별도)',
-                                            '방문수리(예약)'
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            FlutterFlowRadioButton(
+                                              options: ['픽업, 배송 수리(배달비 별도)', '방문수리(예약)'],
+                                              onChanged: (value) {
+                                                setState(() => radioButtonValue1 = value);
+                                              },
+                                              optionHeight: 25,
+                                              textStyle: FlutterFlowTheme.bodyText1.override(
+                                                fontFamily: 'tway_air medium',
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
+                                              ),
+                                              selectedTextStyle: FlutterFlowTheme.bodyText1.override(
+                                                fontFamily: 'tway_air medium',
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w500,
+                                                useGoogleFonts: false,
+                                              ),
+                                              buttonPosition: RadioButtonPosition.left,
+                                              direction: Axis.horizontal,
+                                              radioButtonColor: Colors.blue,
+                                              inactiveRadioButtonColor: Color(0x8A000000),
+                                              toggleable: false,
+                                              horizontalAlignment: WrapAlignment.start,
+                                              verticalAlignment: WrapCrossAlignment.start,
+                                            ),
                                           ],
-                                          onChanged: (value) {
-                                            setState(() =>
-                                            radioButtonValue1 = value);
-                                          },
-                                          optionHeight: 25,
-                                          textStyle: FlutterFlowTheme.bodyText1
-                                              .override(
-                                            fontFamily: 'Playfair Display',
-                                            color: Colors.black,
-                                          ),
-                                          buttonPosition:
-                                          RadioButtonPosition.left,
-                                          direction: Axis.horizontal,
-                                          radioButtonColor: Colors.blue,
-                                          inactiveRadioButtonColor:
-                                          Color(0x8A000000),
-                                          toggleable: false,
-                                          horizontalAlignment:
-                                          WrapAlignment.start,
-                                          verticalAlignment:
-                                          WrapCrossAlignment.start,
                                         ),
                                       ],
                                     ),
@@ -350,7 +349,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         Padding(
                                           padding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 5, 0, 0),
+                                              15, 10, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -390,16 +389,16 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                   .of(context)
                   .size
                   .width * 0.8,
-              height: 30,
+              height: 25,
               decoration: BoxDecoration(
-                color: Color(0xFFEEEEEE),
+                color: Color(0xf5f5f5),
                   borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
-                valueOrDefault(address, '클릭하여 주소를 입력하시요'),
+                valueOrDefault(address, '주소 찾기'),
                 style: FlutterFlowTheme.title3.override(
                   fontFamily: 'tway_air medium',
-                  fontSize: 16,
+                  fontSize: 13,
                   fontWeight: FontWeight.w500,
                   useGoogleFonts: false,
                 ),
@@ -411,7 +410,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         Padding(
                                           padding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 5, 0, 0),
+                                              0, 0, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -440,14 +439,14 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                     controller: textController2,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      hintText: '상세 주소를 입력하시오',
+                                                      hintText: '상세 주소 입력',
                                                       hintStyle:
                                                       FlutterFlowTheme
                                                           .bodyText1
                                                           .override(
                                                         fontFamily:
                                                         'tway_air medium',
-                                                        fontSize: 16,
+                                                        fontSize: 13,
                                                         fontWeight:
                                                         FontWeight.w500,
                                                         useGoogleFonts: false,
@@ -518,7 +517,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(15, 0, 0, 0),
+                                                    .fromSTEB(15, 10, 0, 0),
                                                 child: Text(
                                                   '연락처',
                                                   style: FlutterFlowTheme
@@ -560,10 +559,10 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                           controller: textController3,
                                                           obscureText: false,
                                                           decoration: InputDecoration(
-                                                            hintText: '전화번호를 입력하시오',
+                                                            hintText: '전화번호 입력',
                                                             hintStyle: FlutterFlowTheme.bodyText1.override(
                                                               fontFamily: 'tway_air medium',
-                                                              fontSize: 16,
+                                                              fontSize: 13,
                                                               fontWeight: FontWeight.w500,
                                                               useGoogleFonts: false,
                                                             ),
@@ -608,7 +607,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(15, 0, 0, 0),
+                                                  .fromSTEB(15, 5, 0, 0),
                                               child: FlutterFlowRadioButton(
                                                 options: ['안심번호 사용'],
                                                 onChanged: (value) {
@@ -628,6 +627,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 FlutterFlowTheme.bodyText1
                                                     .override(
                                                   fontFamily: 'tway_air medium',
+                                                  fontSize: 13,
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w500,
                                                   useGoogleFonts: false,
@@ -650,7 +650,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         Padding(
                                           padding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 10, 0, 0),
+                                              0, 20, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -737,15 +737,15 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   width: MediaQuery
                                                       .of(context)
                                                       .size
-                                                      .width * 0.95,
+                                                      .width * 0.90,
                                                   height:
                                                   MediaQuery
                                                       .of(context)
                                                       .size
-                                                      .height * 0.05,
+                                                      .height * 0.06,
                                                   decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    borderRadius: BorderRadius.circular(10),
+                                                    color: Color(0x4b21b6ff),
+                                                    borderRadius: BorderRadius.circular(30),
                                                   ),
                                                   child: Padding(
                                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -793,7 +793,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     width: MediaQuery.of(context).size.width *
                                         0.95,
                                     height: MediaQuery.of(context).size.height *
-                                        0.5,
+                                        0.45,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFF5F5F5),
                                       borderRadius: BorderRadius.circular(10),
@@ -863,7 +863,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         Padding(
                                           padding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 5, 0, 0),
+                                              0, 10, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -912,7 +912,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                               .override(
                                                             fontFamily: 'tway_air medium',
                                                             color: Colors.black,
-                                                            fontSize: 18,
+                                                            fontSize: 13,
                                                             fontWeight: FontWeight.w500,
                                                             useGoogleFonts: false,
                                                           ),),
@@ -980,7 +980,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(15, 0, 0, 0),
+                                                    .fromSTEB(15, 10, 0, 0),
                                                 child: Text(
                                                   '배달기사님께',
                                                   style: FlutterFlowTheme
@@ -1001,7 +1001,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         Padding(
                                           padding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              0, 5, 0, 0),
+                                              0, 15, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1050,7 +1050,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                               .override(
                                                             fontFamily: 'tway_air medium',
                                                             color: Colors.black,
-                                                            fontSize: 18,
+                                                            fontSize: 13,
                                                             fontWeight: FontWeight.w500,
                                                             useGoogleFonts: false,
                                                           ),),
@@ -1506,7 +1506,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                         'Hello World',
                                                         style: FlutterFlowTheme.bodyText1.override(
                                                           fontFamily: 'tway_air medium',
-                                                          fontSize: 16,
+                                                          fontSize: 13,
                                                           fontWeight: FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
