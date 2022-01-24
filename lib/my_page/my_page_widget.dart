@@ -10,7 +10,7 @@ import '../flutter_flow/upload_media.dart';
 import '../pointview/pointview_widget.dart';
 import '../settings/settings_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../login_page/login_page_widget.dart';
 
 class MyPageWidget extends StatefulWidget {
   const MyPageWidget({Key key}) : super(key: key);
@@ -22,7 +22,9 @@ class MyPageWidget extends StatefulWidget {
 class _MyPageWidgetState extends State<MyPageWidget> {
   String uploadedFileUrl = '';
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
+  Future onGoBack(dynamic value) {
+    setState(() {});
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -250,12 +252,17 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                         ),
                         child: InkWell(
                           onTap: () async {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => FIxHistoryWidget(),
-                              ),
-                            );
+                            if(currentUserUid == ''){
+                              Navigator.push(context, MaterialPageRoute(builder:(context) => LoginPageWidget())).then(onGoBack);
+                            }
+                            if(currentUserUid != ''){
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FIxHistoryWidget(),
+                                ),
+                              );
+                            }
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -307,12 +314,14 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                           ),
                           child: InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
+                              if(currentUserUid == ''){
+                                Navigator.push(context, MaterialPageRoute(builder:(context) => LoginPageWidget())).then(onGoBack);
+                              }
+                              if(currentUserUid != ''){
+                                await     Navigator.push(context, MaterialPageRoute(
                                   builder: (context) => SettingsWidget(),
-                                ),
-                              );
+                                ));
+                              }
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -365,14 +374,19 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                           ),
                           child: InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => CouponWidget(
-                                    coupon: 0,
+                              if(currentUserUid == ''){
+                                Navigator.push(context, MaterialPageRoute(builder:(context) => LoginPageWidget())).then(onGoBack);
+                              }
+                              if(currentUserUid != ''){
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => CouponWidget(
+                                      coupon: 0,
+                                    ),
                                   ),
-                                ),
-                              );
+                                );
+                              }
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -425,12 +439,18 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                           ),
                           child: InkWell(
                             onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => PointviewWidget(),
-                                ),
-                              );
+                              if(currentUserUid == ''){
+                                Navigator.push(context, MaterialPageRoute(builder:(context) => LoginPageWidget())).then(onGoBack);
+                              }
+                              if(currentUserUid != ''){
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => PointviewWidget(),
+                                  ),
+                                );
+                              }
+                              else return;
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,

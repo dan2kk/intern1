@@ -83,14 +83,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 if (user == null) {
                                   return;
                                 }
-                                await Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => NavBarPage(
-                                        initialPage: 'MainPage'),
-                                  ),
-                                      (r) => false,
-                                );
+                                await Navigator.of(context).pop(true);
                               },
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.75,
@@ -156,14 +149,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 if (user == null) {
                                   return;
                                 }
-                                await Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        NavBarPage(initialPage: 'MainPage'),
-                                  ),
-                                  (r) => false,
-                                );
+                                await Navigator.pop(context);
                               },
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.75,
@@ -182,14 +168,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       if (user == null) {
                                         return;
                                       }
-                                      await Navigator.pushAndRemoveUntil(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => NavBarPage(
-                                              initialPage: 'MainPage'),
-                                        ),
-                                        (r) => false,
-                                      );
+                                      await Navigator.of(context).pop(true);
                                     },
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -258,14 +237,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 if (user == null) {
                                   return;
                                 }
-                                await Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => NavBarPage(
-                                        initialPage: 'MainPage'),
-                                  ),
-                                      (r) => false,
-                                );
+                                await Navigator.of(context).pop(true);
                               },
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.75,
@@ -334,14 +306,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     if (user == null) {
                                       return;
                                     }
-                                    await Navigator.pushAndRemoveUntil(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            NavBarPage(initialPage: 'MainPage'),
-                                      ),
-                                      (r) => false,
-                                    );
+                                    await Navigator.of(context).pop(true);
                                   },
                                   child: Container(
                                     width:
@@ -364,14 +329,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           if (user == null) {
                                             return;
                                           }
-                                          await Navigator.pushAndRemoveUntil(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => NavBarPage(
-                                                  initialPage: 'MainPage'),
-                                            ),
-                                            (r) => false,
-                                          );
+                                          await Navigator.pop(context);
                                         },
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
