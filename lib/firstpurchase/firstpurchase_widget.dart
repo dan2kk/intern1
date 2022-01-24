@@ -108,71 +108,50 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       color: Color(0xFF21B6FF),
                                       borderRadius: BorderRadius.circular(0),
                                     ),
-                                    child: Column(
+                                    child: // Generated code for this Column Widget...
+                                    Column(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Expanded(
                                               child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0, -0.5),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 20, 0, 0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(10, 0,
-                                                            0, 0),
-                                                        child: InkWell(
-                                                          onTap: () async {
-                                                            Navigator.pop(
-                                                                context);
-                                                          },
-                                                          child: Icon(
-                                                            Icons
-                                                                .keyboard_arrow_left,
-                                                            color: Colors.white,
-                                                            size: 30,
-                                                          ),
+                                                alignment: AlignmentDirectional(0, -0.5),
+                                                child: Row(
+                                                  mainAxisSize: MainAxisSize.max,
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                                  children: [
+                                                    Padding(
+                                                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                      child: InkWell(
+                                                        onTap: () async {
+                                                          Navigator.pop(context);
+                                                        },
+                                                        child: Icon(
+                                                          Icons.keyboard_arrow_left,
+                                                          color: Colors.white,
+                                                          size: 30,
                                                         ),
                                                       ),
-                                                      Padding(
-                                                        padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(20, 0,
-                                                            0, 0),
-                                                        child: Text(
-                                                          '수리신청 및 결제',
-                                                          style:
-                                                          FlutterFlowTheme
-                                                              .bodyText1
-                                                              .override(
-                                                            fontFamily:
-                                                            'tway_air medium',
-                                                            color: Colors.white,
-                                                            fontSize: 25,
-                                                            fontWeight:
-                                                            FontWeight.w500,
-                                                            useGoogleFonts:
-                                                            false,
-                                                          ),
+                                                    ),
+                                                    Padding(
+                                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                                      child: Text(
+                                                        '수리신청 및 결제',
+                                                        style: FlutterFlowTheme.bodyText1.override(
+                                                          fontFamily: 'tway_air medium',
+                                                          color: Colors.white,
+                                                          fontSize: 25,
+                                                          fontWeight: FontWeight.w500,
+                                                          useGoogleFonts: false,
                                                         ),
                                                       ),
-                                                    ],
-                                                  ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
                                             ),
