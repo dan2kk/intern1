@@ -1345,7 +1345,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                     .height *
                                                     0.06,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xFF21B6FF),
+                                                  color: Color(0xFFFFFFFF),
                                                 ),
                                                 child: InkWell(
                                                   onTap: () async {
