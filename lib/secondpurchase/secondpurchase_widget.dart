@@ -65,7 +65,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                               ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
@@ -73,51 +73,38 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                     children: [
                                       Expanded(
                                         child: Align(
-                                          alignment:
-                                          AlignmentDirectional(0, -0.5),
-                                          child: Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 20, 0, 0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(10, 0, 0, 0),
-                                                  child: InkWell(
-                                                    onTap: () async {
-                                                      Navigator.pop(context);
-                                                    },
-                                                    child: Icon(
-                                                      Icons.keyboard_arrow_left,
-                                                      color: Colors.white,
-                                                      size: 30,
-                                                    ),
+                                          alignment: AlignmentDirectional(0, -0.5),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                child: InkWell(
+                                                  onTap: () async {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: Icon(
+                                                    Icons.keyboard_arrow_left,
+                                                    color: Colors.white,
+                                                    size: 30,
                                                   ),
                                                 ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(20, 0, 0, 0),
-                                                  child: Text(
-                                                    '추가견적 확인',
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
-                                                      fontFamily:
-                                                      'tway_air medium',
-                                                      color: Colors.white,
-                                                      fontSize: 25,
-                                                      fontWeight:
-                                                      FontWeight.w500,
-                                                      useGoogleFonts: false,
-                                                    ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                                child: Text(
+                                                  '추가견적 확인',
+                                                  style: FlutterFlowTheme.bodyText1.override(
+                                                    fontFamily: 'tway_air medium',
+                                                    color: Colors.white,
+                                                    fontSize: 25,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
                                                   ),
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       ),
