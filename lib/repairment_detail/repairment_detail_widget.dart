@@ -127,7 +127,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.bodyText1.override(
                         fontFamily: 'tway_air medium',
-                        color: Color(0xFF3F51B5),
+                        color: FlutterFlowTheme.secondaryColor,
                         fontSize: 25,
                         fontWeight: FontWeight.w500,
                         useGoogleFonts: false,
@@ -678,76 +678,9 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 0, 0),
+                                                  .fromSTEB(10, 0, 0, 0),
                                               child: Container(
                                                 width: 50,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0x00FFFFFF),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(20, 0, 0, 0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
-                                                    children: [
-                                                      Stack(
-                                                        children: [
-                                                          if ((repairmentDetailRepairmentRecord
-                                                              .status) ==
-                                                              5)
-                                                            Text(
-                                                              '배송',
-                                                              style:
-                                                              FlutterFlowTheme
-                                                                  .bodyText1
-                                                                  .override(
-                                                                fontFamily:
-                                                                'tway_air medium',
-                                                                color: Color(
-                                                                    0xFF4B39EF),
-                                                                fontSize: 11,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w500,
-                                                                useGoogleFonts:
-                                                                false,
-                                                              ),
-                                                            ),
-                                                          if ((repairmentDetailRepairmentRecord
-                                                              .status) !=
-                                                              5)
-                                                            Text(
-                                                              '배송',
-                                                              style:
-                                                              FlutterFlowTheme
-                                                                  .bodyText1
-                                                                  .override(
-                                                                fontFamily:
-                                                                'tway_air medium',
-                                                                color: FlutterFlowTheme
-                                                                    .tertiaryColor,
-                                                                fontSize: 11,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w500,
-                                                                useGoogleFonts:
-                                                                false,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(00, 0, 0, 0),
-                                              child: Container(
-                                                width: 70,
                                                 height: 50,
                                                 decoration: BoxDecoration(
                                                   color: Color(0x00FFFFFF),
@@ -773,8 +706,8 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                                 fontFamily:
                                                                 'tway_air medium',
                                                                 color: Color(
-                                                                    0xFF4B39EF),
-                                                                fontSize: 11,
+                                                                    0xFF21B6FF),
+                                                                fontSize: 13,
                                                                 fontWeight:
                                                                 FontWeight
                                                                     .w500,
@@ -795,7 +728,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                                 'tway_air medium',
                                                                 color: FlutterFlowTheme
                                                                     .tertiaryColor,
-                                                                fontSize: 11,
+                                                                fontSize: 13,
                                                                 fontWeight:
                                                                 FontWeight
                                                                     .w500,
@@ -828,297 +761,127 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(10, 10, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: Text(
-                            '현재 진행 상태',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'tway_air medium',
-                              color: Color(0xFF4B39EF),
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                              useGoogleFonts: false,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          width: 70,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.secondaryColor,
-                          ),
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
-                                  child: Text(
-                                    '주소',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF4B39EF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(100, 0, 0, 0),
-                          child: Container(
-                            width: 120,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.secondaryColor,
-                            ),
-                            child: Padding(
-                              padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    repairmentDetailRepairmentRecord.address,
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF4B39EF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        width: 100,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.secondaryColor,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                child: Text(
-                                  '견적 일시',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'tway_air medium',
-                                    color: Color(0xFF4B39EF),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
-                        child: Container(
-                          width: 200,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.secondaryColor,
-                          ),
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  repairmentDetailRepairmentRecord.timestamp
-                                      .toString(),
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'tway_air medium',
-                                    color: Color(0xFF4B39EF),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        width: 120,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.secondaryColor,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                child: Text(
-                                  '픽업 여부',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'tway_air medium',
-                                    color: Color(0xFF4B39EF),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 10),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 0.4,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.secondaryColor,
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                child: Stack(
-                                  children: [
-                                    if (repairmentDetailRepairmentRecord
-                                        .pickupDirect ??
-                                        true)
-                                      Text(
-                                        '픽업서비스 이용',
-                                        style:
-                                        FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'tway_air medium',
-                                          color: Color(0xFF2163CB),
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
-                                        ),
-                                      ),
-                                    if (!(repairmentDetailRepairmentRecord
-                                        .pickupDirect) ??
-                                        true)
-                                      Text(
-                                        '직접방문',
-                                        style:
-                                        FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'tway_air medium',
-                                          color: Color(0xFF2163CB),
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
-                                        ),
-                                      ),
-                                  ],
-                                ),
-                              ),
-                              if (repairmentDetailRepairmentRecord
-                                  .pickupDirect ??
-                                  true)
-                                Align(
-                                  alignment: AlignmentDirectional(0, 0),
-                                  child: Text(
-                                    dateTimeFormat(
-                                        'M/d H:mm',
-                                        repairmentDetailRepairmentRecord
-                                            .select),
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air semibold',
-                                      color: Color(0xFF2163CB),
-                                      fontSize: 16,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                        child: Text(
-                          '상품 사진',
+                        Text(
+                          '현재 진행 상태',
                           style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'tway_air medium',
-                            color: Color(0xFF4B39EF),
-                            fontSize: 16,
+                            color: Colors.black,
+                            fontSize: 20,
                             fontWeight: FontWeight.w500,
                             useGoogleFonts: false,
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(80, 0, 0, 0),
-                        child: Container(
-                          width: 100,
-                          height: 100,
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
                           decoration: BoxDecoration(
-                            color: Color(0xFFEEEEEE),
+                            color: FlutterFlowTheme.secondaryColor,
                           ),
-                          child: Stack(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Align(
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Image.network(
-                                  repairmentDetailRepairmentRecord.imgUrl,
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.cover,
+                              Text(
+                                '주소',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
                                 ),
                               ),
                             ],
                           ),
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                repairmentDetailRepairmentRecord.address,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.secondaryColor,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '견적 일시',
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'tway_air medium',
+                                color: Colors.black,
+                                fontSize: 19,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: false,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.secondaryColor,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              repairmentDetailRepairmentRecord.timestamp
+                                  .toString(),
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'tway_air medium',
+                                color: Colors.black,
+                                fontSize: 17,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: false,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -1127,127 +890,260 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        width: 120,
+                        width: MediaQuery.of(context).size.width * 0.5,
                         height: 50,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.secondaryColor,
                         ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                child: Text(
-                                  '제조사',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'tway_air medium',
-                                    color: Color(0xFF4B39EF),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '픽업 여부',
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'tway_air medium',
+                                color: Colors.black,
+                                fontSize: 19,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: false,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
-                        child: Container(
-                          width: 150,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.secondaryColor,
-                          ),
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Row(
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.secondaryColor,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Column(
                               mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  repairmentDetailRepairmentRecord.manufacture,
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'tway_air medium',
-                                    color: Color(0xFF4B39EF),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 10, 0, 0),
+                                  child: Stack(
+                                    children: [
+                                      if (repairmentDetailRepairmentRecord
+                                          .pickupDirect ??
+                                          true)
+                                        Text(
+                                          '픽업서비스 이용',
+                                          style: FlutterFlowTheme.bodyText1
+                                              .override(
+                                            fontFamily: 'tway_air medium',
+                                            color: Colors.black,
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
+                                          ),
+                                        ),
+                                      if (!(repairmentDetailRepairmentRecord
+                                          .pickupDirect) ??
+                                          true)
+                                        Text(
+                                          '직접방문',
+                                          style: FlutterFlowTheme.bodyText1
+                                              .override(
+                                            fontFamily: 'tway_air medium',
+                                            color: Colors.black,
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
+                                          ),
+                                        ),
+                                    ],
                                   ),
                                 ),
+                                if (repairmentDetailRepairmentRecord
+                                    .pickupDirect ??
+                                    true)
+                                  Align(
+                                    alignment: AlignmentDirectional(0, 0),
+                                    child: Text(
+                                      dateTimeFormat(
+                                          'M/d H:mm',
+                                          repairmentDetailRepairmentRecord
+                                              .select),
+                                      style:
+                                      FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'tway_air medium',
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        useGoogleFonts: false,
+                                      ),
+                                    ),
+                                  ),
                               ],
                             ),
-                          ),
+                          ],
                         ),
                       ),
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(1, 0, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 100,
+                          width: MediaQuery.of(context).size.width * 0.5,
                           height: 50,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.secondaryColor,
                           ),
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
-                                  child: Text(
-                                    '모델명',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF4B39EF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '상품 사진',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.secondaryColor,
-                            ),
-                            child: Padding(
-                              padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    repairmentDetailRepairmentRecord.model,
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF4B39EF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ],
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.network(
+                                repairmentDetailRepairmentRecord.imgUrl,
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.cover,
                               ),
-                            ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '제조사',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                repairmentDetailRepairmentRecord.manufacture,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '모델명',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                repairmentDetailRepairmentRecord.model,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -1257,61 +1153,49 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        width: 100,
+                        width: MediaQuery.of(context).size.width * 0.5,
                         height: 50,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.secondaryColor,
                         ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                child: Text(
-                                  '고장 부위',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'tway_air medium',
-                                    color: Color(0xFF4B39EF),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '고장 부위',
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'tway_air medium',
+                                color: Colors.black,
+                                fontSize: 19,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: false,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
-                        child: Container(
-                          width: 100,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.secondaryColor,
-                          ),
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  repairmentDetailRepairmentRecord.brokenPart,
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'tway_air medium',
-                                    color: Color(0xFF4B39EF),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ],
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.secondaryColor,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              repairmentDetailRepairmentRecord.brokenPart,
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'tway_air medium',
+                                color: Colors.black,
+                                fontSize: 19,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: false,
+                              ),
                             ),
-                          ),
+                          ],
                         ),
                       ),
                     ],
@@ -1320,61 +1204,49 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Container(
-                        width: 100,
+                        width: MediaQuery.of(context).size.width * 0.5,
                         height: 50,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.secondaryColor,
                         ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                child: Text(
-                                  '상세 설명',
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'tway_air medium',
-                                    color: Color(0xFF4B39EF),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '상세 설명',
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'tway_air medium',
+                                color: Colors.black,
+                                fontSize: 19,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: false,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
-                        child: Container(
-                          width: 100,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.secondaryColor,
-                          ),
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  repairmentDetailRepairmentRecord.symptom,
-                                  style: FlutterFlowTheme.bodyText1.override(
-                                    fontFamily: 'tway_air medium',
-                                    color: Color(0xFF4B39EF),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    useGoogleFonts: false,
-                                  ),
-                                ),
-                              ],
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.5,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.secondaryColor,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              repairmentDetailRepairmentRecord.symptom,
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'tway_air medium',
+                                color: Colors.black,
+                                fontSize: 19,
+                                fontWeight: FontWeight.w500,
+                                useGoogleFonts: false,
+                              ),
                             ),
-                          ),
+                          ],
                         ),
                       ),
                     ],
@@ -1384,62 +1256,49 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 150,
+                          width: MediaQuery.of(context).size.width * 0.5,
                           height: 50,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.secondaryColor,
                           ),
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
-                                  child: Text(
-                                    '수리점 코멘트',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF4B39EF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '수리점 코멘트',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.secondaryColor,
-                            ),
-                            child: Padding(
-                              padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    repairmentDetailRepairmentRecord.comment,
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF4B39EF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ],
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                repairmentDetailRepairmentRecord.comment,
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
                               ),
-                            ),
+                            ],
                           ),
                         ),
                       ],
@@ -1449,62 +1308,103 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 150,
+                          width: MediaQuery.of(context).size.width * 0.5,
                           height: 50,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.secondaryColor,
                           ),
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
-                                  child: Text(
-                                    '예상 수리기간',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF4B39EF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '예상 수리기간',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                          child: Container(
-                            width: 150,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.secondaryColor,
-                            ),
-                            child: Padding(
-                              padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    '${repairmentDetailRepairmentRecord.estDate.toString()}일 소요 예정',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF4B39EF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ],
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '${repairmentDetailRepairmentRecord.estDate.toString()}일 소요 예정',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
                               ),
-                            ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+
+                  if ((repairmentDetailRepairmentRecord.status) >= 2)
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '수리점 코멘트',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Hello World',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -1514,62 +1414,49 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: 150,
+                          width: MediaQuery.of(context).size.width * 0.5,
                           height: 50,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.secondaryColor,
                           ),
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
-                                  child: Text(
-                                    '비용',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF4B39EF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '비용',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                          child: Container(
-                            width: 150,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.secondaryColor,
-                            ),
-                            child: Padding(
-                              padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    '${repairmentDetailRepairmentRecord.price.toString()}원 예정',
-                                    style: FlutterFlowTheme.bodyText1.override(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF4B39EF),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      useGoogleFonts: false,
-                                    ),
-                                  ),
-                                ],
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.5,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.secondaryColor,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '${repairmentDetailRepairmentRecord.price.toString()}원 예정',
+                                style: FlutterFlowTheme.bodyText1.override(
+                                  fontFamily: 'tway_air medium',
+                                  color: Colors.black,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
+                                ),
                               ),
-                            ),
+                            ],
                           ),
                         ),
                       ],
@@ -1602,7 +1489,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     width:
                                     MediaQuery.of(context).size.width * 0.9,
                                     decoration: BoxDecoration(
-                                      color: Color(0xFF14181B),
+                                      color: Color(0x21b6ff),
                                       boxShadow: [
                                         BoxShadow(
                                           blurRadius: 4,
@@ -1671,7 +1558,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     width:
                                     MediaQuery.of(context).size.width * 0.9,
                                     decoration: BoxDecoration(
-                                      color: Color(0xFF14181B),
+                                      color: Color(0xFF21b6ff),
                                       boxShadow: [
                                         BoxShadow(
                                           blurRadius: 4,
