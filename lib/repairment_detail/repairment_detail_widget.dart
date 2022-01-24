@@ -1489,11 +1489,11 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     width:
                                     MediaQuery.of(context).size.width * 0.9,
                                     decoration: BoxDecoration(
-                                      color: Color(0x21b6ff),
+                                      color: Color(0xFF21b6ff),
                                       boxShadow: [
                                         BoxShadow(
                                           blurRadius: 4,
-                                          color: Color(0xFF21B6FF),
+                                          color: Color(0x55000000),
                                           offset: Offset(0, 2),
                                         )
                                       ],
