@@ -32,6 +32,7 @@ class CouponWidget extends StatefulWidget {
 class _CouponWidgetState extends State<CouponWidget> {
   String radioButtonValue;
   List<bool> radioButtonAccess = [];
+  CouponRecord selectedCoupon;
   int selected = 0;
   List<double> border = [];
   List<int> chooseColor = [];
@@ -474,6 +475,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                       border[listofcouponIndex] = 5;
                                                       chooseColor[listofcouponIndex] = 1;
                                                       selected = listofcouponIndex;
+                                                      selectedCoupon = storeListViewCouponRecord;
                                                     });
                                                     print(selected);
                                                   }
@@ -519,6 +521,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () {
+                              Navigator.pop(context, selectedCoupon.amount);
                             },
                             text: '쿠폰 적용하기',
                             options: FFButtonOptions(

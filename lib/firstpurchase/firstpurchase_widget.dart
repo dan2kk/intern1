@@ -1216,7 +1216,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   MainAxisSize.max,
                                                   children: [
                                                     Text(
-                                                      'Hello World',
+                                                      '할인금액: $discountCoupon원',
                                                       style: FlutterFlowTheme
                                                           .bodyText1
                                                           .override(
@@ -1232,7 +1232,21 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   onTap: () async {
                                                     final result = await Navigator.push(context,
                                                       MaterialPageRoute(builder: (context) => CouponWidget(coupon: 1,category: firstpurchaseRepairmentRecord.category, idx: firstpurchaseRepairmentRecord.storeidx)),);
-
+                                                    if(0 <= result && result <= 100){
+                                                      await setState(() {
+                                                        discountCoupon = (defaultPrice * result /100).toInt();
+                                                        discountAll = discountCoupon;
+                                                        finalPrice = defaultPrice + shipmentPrice-discountAll;
+                                                      });
+                                                    }
+                                                    else{
+                                                      await setState(() {
+                                                        discountCoupon = result;
+                                                        if(discountCoupon > defaultPrice) discountAll = defaultPrice;
+                                                        else discountAll = discountCoupon;
+                                                        finalPrice = defaultPrice + shipmentPrice-discountAll;
+                                                      });
+                                                    }
                                                   },
                                                   child: Icon(
                                                       Icons
@@ -1314,7 +1328,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   MainAxisSize.max,
                                                   children: [
                                                     Text(
-                                                      'Hello World',
+                                                      '사용 포인트: $discountPoint',
                                                       style: FlutterFlowTheme
                                                           .bodyText1
                                                           .override(
