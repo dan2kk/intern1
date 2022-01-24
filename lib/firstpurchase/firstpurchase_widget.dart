@@ -1,4 +1,5 @@
 import 'package:intern1/coupon/coupon_widget.dart';
+import 'package:intern1/pointview/pointview_widget.dart';
 
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
@@ -1157,7 +1158,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                                  0.65,
+                                                  0.60,
                                               height: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -1200,7 +1201,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                                  0.3,
+                                                  0.35,
                                               height: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -1211,6 +1212,15 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(1, 0, 0, 0),
+                                                child: InkWell(
+                                                  onTap: () async {
+                                                    await Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) => CouponWidget(),
+                                                      ),
+                                                    );
+                                                  },
                                                 child: Row(
                                                   mainAxisSize:
                                                   MainAxisSize.max,
@@ -1259,8 +1269,10 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                     ),
                                               ),
                                             ),
+                                              ),
                                           ],
-                                        ),
+
+                      ),
                                         Padding(
                                           padding:
                                           EdgeInsetsDirectional.fromSTEB(
@@ -1276,7 +1288,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                    0.65,
+                                                    0.6,
                                                 height: MediaQuery.of(context)
                                                     .size
                                                     .height *
@@ -1315,7 +1327,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                    0.3,
+                                                    0.35,
                                                 height: MediaQuery.of(context)
                                                     .size
                                                     .height *
@@ -1323,6 +1335,15 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 decoration: BoxDecoration(
                                                   color: Color(0xFFF5F5F5),
                                                 ),
+                                                child: InkWell(
+                                                  onTap: () async {
+                                                    await Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) => PointviewWidget(),
+                                                      ),
+                                                    );
+                                                  },
                                                 child: Row(
                                                   mainAxisSize:
                                                   MainAxisSize.max,
@@ -1343,7 +1364,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   ],
                                                 ),
                                               ),
-                                            ],
+                                              ),
+                                              ],
                                           ),
                                         ),
                                         Padding(
