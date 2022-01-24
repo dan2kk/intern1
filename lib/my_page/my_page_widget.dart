@@ -30,7 +30,8 @@ class _MyPageWidgetState extends State<MyPageWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF1F4F8),
-      body: Column(
+      body: SafeArea(
+        child:Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -529,6 +530,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
             ),
           ),
         ],
+      ),
       ),
     );
   }
