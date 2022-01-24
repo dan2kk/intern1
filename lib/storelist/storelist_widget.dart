@@ -15,13 +15,14 @@ class StorelistWidget extends StatefulWidget {
   }) : super(key: key);
 
   final String category;
+
   @override
   _StorelistWidgetState createState() => _StorelistWidgetState();
 }
 
 class _StorelistWidgetState extends State<StorelistWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  Map<String, String> mapForCategory = {'mobile_phone': '스마트폰', 'electronics': '컴퓨터', 'luxury': '명품', 'transportation' : '운송수단'};
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<List<RepairstoreRecord>>(
@@ -50,98 +51,86 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
+                      scrollDirection: Axis.horizontal,
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(0),
+                              ),
+                              child: Align(
+                                alignment: AlignmentDirectional(0, -0.5),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 20, 0, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10, 0, 0, 0),
+                                        child: InkWell(
+                                          onTap: () async {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Icon(
+                                            Icons.keyboard_arrow_left,
+                                            color: Color(0xFF21B6FF),
+                                            size: 30,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20, 0, 0, 0),
+                                        child: Text(
+                                          widget.category,
+                                          style: FlutterFlowTheme.bodyText1
+                                              .override(
+                                            fontFamily: 'tway_air medium',
+                                            color: Color(0xFF21B6FF),
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                           Container(
-                            width: MediaQuery.of(context).size.width,
+                            width: MediaQuery.of(context).size.width * 0.2,
                             height: 100,
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(0),
                             ),
-                            child: Column(
+                            child: Row(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Expanded(
-                                  child: Align(
-                                    alignment: AlignmentDirectional(0, -0.5),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 20, 0, 0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                10, 0, 0, 0),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                Navigator.pop(context);
-                                              },
-                                              child: Container(
-                                                width: 55,
-                                                height: 55,
-                                                decoration: BoxDecoration(
-                                                    borderRadius: BorderRadius.circular(20),
-                                                    image: DecorationImage(
-                                                      image: AssetImage(
-                                                          'assets/images/16.png'),
-                                                      fit: BoxFit.fill,
-                                                    ),
-                                                    shape: BoxShape.rectangle
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                20, 0, 0, 0),
-                                            child: Text(
-                                              mapForCategory[widget.category],
-                                              style: FlutterFlowTheme.bodyText1
-                                                  .override(
-                                                fontFamily: 'tway_air medium',
-                                                color: Color(0xFF21B6FF),
-                                                fontSize: 25,
-                                                fontWeight: FontWeight.w500,
-                                                useGoogleFonts: false,
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                100, 0, 0, 0),
-                                            child: InkWell(
-                                              /*onTap: () async {
-                                                await Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        RepairmentStoreDetailWidget(stdix: ),
-                                                  ),
-                                                );
-
-
-                                              },
-                                              */
-                                              child: Image.network(
-                                                'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/%EC%B9%B4%ED%8A%B8%EC%9D%B4%EB%AF%B8%EC%A7%80.JPG?alt=media&token=762b88d6-10cb-40b3-8887-96b58272d81a',
-                                                width: 35,
-                                                height: 35,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            FIxHistoryWidget(),
                                       ),
-                                    ),
+                                    );
+                                  },
+                                  child: Image.network(
+                                    'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/%EC%B9%B4%ED%8A%B8%EC%9D%B4%EB%AF%B8%EC%A7%80.JPG?alt=media&token=762b88d6-10cb-40b3-8887-96b58272d81a',
+                                    width: 35,
+                                    height: 35,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                               ],
