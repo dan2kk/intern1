@@ -39,7 +39,7 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
         return Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
-            backgroundColor: Color(0xFFf5f5f5),
+            backgroundColor: Color(0xFFF5F5F5),
             automaticallyImplyLeading: false,
             leading: FlutterFlowIconButton(
               borderColor: Colors.transparent,
@@ -68,7 +68,7 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
             actions: [],
             centerTitle: true,
           ),
-          backgroundColor: Color(0xFFf5f5f5),
+          backgroundColor: Color(0xFFF5F5F5),
           body: SafeArea(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -96,7 +96,7 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                                   width:
                                   MediaQuery.of(context).size.width * 0.95,
                                   height:
-                                  MediaQuery.of(context).size.height * 0.2,
+                                  MediaQuery.of(context).size.height * 0.3,
                                   decoration: BoxDecoration(
                                     color: Color(0xFFEEEEEE),
                                     borderRadius: BorderRadius.circular(20),
@@ -154,200 +154,207 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                                           ),
                                         ],
                                       ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width *
-                                                0.22,
-                                            height: MediaQuery.of(context)
-                                                .size
-                                                .height *
-                                                0.05,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFFF5F5F5),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  blurRadius: 0.1,
-                                                  color: Colors.black,
-                                                  offset: Offset(0.1, 0.1),
-                                                  spreadRadius: 0.1,
-                                                )
-                                              ],
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              border: Border.all(
-                                                color: Color(0xFF21B6FF),
-                                                width: 1,
-                                              ),
-                                            ),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                await Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        AddReviewWidget(
-                                                          repairmentid:
-                                                          listofhistoryItem
-                                                              .repairmentid,
-                                                        ),
-                                                  ),
-                                                );
-                                              },
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    '리뷰 쓰기',
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
-                                                      fontFamily:
-                                                      'tway_air medium',
-                                                      color: Colors.black,
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                      FontWeight.w500,
-                                                      useGoogleFonts: false,
-                                                    ),
-                                                  ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0, 50, 0, 0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                                  0.22,
+                                              height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                                  0.05,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFF5F5F5),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 0.1,
+                                                    color: Colors.black,
+                                                    offset: Offset(0.1, 0.1),
+                                                    spreadRadius: 0.1,
+                                                  )
                                                 ],
+                                                borderRadius:
+                                                BorderRadius.circular(10),
+                                                border: Border.all(
+                                                  color: Color(0xFF21B6FF),
+                                                  width: 1,
+                                                ),
                                               ),
-                                            ),
-                                          ),
-                                          Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width *
-                                                0.22,
-                                            height: MediaQuery.of(context)
-                                                .size
-                                                .height *
-                                                0.05,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFFF5F5F5),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  blurRadius: 0.1,
-                                                  color: Colors.black,
-                                                  offset: Offset(0.1, 0.1),
-                                                  spreadRadius: 0.1,
-                                                )
-                                              ],
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              border: Border.all(
-                                                color: Color(0xFF21B6FF),
-                                                width: 1,
-                                              ),
-                                            ),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                await Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        RepairmentDetailWidget(
-                                                          repairmentid:
-                                                          listofhistoryItem
-                                                              .repairmentid,
-                                                        ),
-                                                  ),
-                                                );
-                                              },
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    '주문 상세',
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
-                                                      fontFamily:
-                                                      'tway_air medium',
-                                                      color: Colors.black,
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                      FontWeight.w500,
-                                                      useGoogleFonts: false,
+                                              child: InkWell(
+                                                onTap: () async {
+                                                  await Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          AddReviewWidget(
+                                                            repairmentid:
+                                                            listofhistoryItem
+                                                                .repairmentid,
+                                                          ),
                                                     ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                          Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width *
-                                                0.22,
-                                            height: MediaQuery.of(context)
-                                                .size
-                                                .height *
-                                                0.05,
-                                            decoration: BoxDecoration(
-                                              color: Color(0xFFF5F5F5),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  blurRadius: 0.1,
-                                                  color: Colors.black,
-                                                  offset: Offset(0.1, 0.1),
-                                                  spreadRadius: 0.1,
-                                                )
-                                              ],
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              border: Border.all(
-                                                color: Color(0xFF21B6FF),
-                                                width: 1,
-                                              ),
-                                            ),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                await Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        RepairmentStoreDetailWidget(
-                                                          stidx: listofhistoryItem
-                                                              .storeidx,
-                                                        ),
-                                                  ),
-                                                );
-                                              },
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    '가게 보기',
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
-                                                      fontFamily:
-                                                      'tway_air medium',
-                                                      color: Colors.black,
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                      FontWeight.w500,
-                                                      useGoogleFonts: false,
+                                                  );
+                                                },
+                                                child: Row(
+                                                  mainAxisSize:
+                                                  MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      '리뷰 쓰기',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
+                                                        color: Colors.black,
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                        FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
                                                     ),
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                                  0.22,
+                                              height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                                  0.05,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFF5F5F5),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 0.1,
+                                                    color: Colors.black,
+                                                    offset: Offset(0.1, 0.1),
+                                                    spreadRadius: 0.1,
+                                                  )
+                                                ],
+                                                borderRadius:
+                                                BorderRadius.circular(10),
+                                                border: Border.all(
+                                                  color: Color(0xFF21B6FF),
+                                                  width: 1,
+                                                ),
+                                              ),
+                                              child: InkWell(
+                                                onTap: () async {
+                                                  await Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          RepairmentDetailWidget(
+                                                            repairmentid:
+                                                            listofhistoryItem
+                                                                .repairmentid,
+                                                          ),
+                                                    ),
+                                                  );
+                                                },
+                                                child: Row(
+                                                  mainAxisSize:
+                                                  MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      '주문 상세',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
+                                                        color: Colors.black,
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                        FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                                  0.22,
+                                              height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                                  0.05,
+                                              decoration: BoxDecoration(
+                                                color: Color(0xFFF5F5F5),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 0.1,
+                                                    color: Colors.black,
+                                                    offset: Offset(0.1, 0.1),
+                                                    spreadRadius: 0.1,
+                                                  )
+                                                ],
+                                                borderRadius:
+                                                BorderRadius.circular(10),
+                                                border: Border.all(
+                                                  color: Color(0xFF21B6FF),
+                                                  width: 1,
+                                                ),
+                                              ),
+                                              child: InkWell(
+                                                onTap: () async {
+                                                  await Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          RepairmentStoreDetailWidget(
+                                                            stidx: listofhistoryItem
+                                                                .storeidx,
+                                                          ),
+                                                    ),
+                                                  );
+                                                },
+                                                child: Row(
+                                                  mainAxisSize:
+                                                  MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      '가게 보기',
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
+                                                        color: Colors.black,
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                        FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ],
                                   ),
