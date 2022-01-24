@@ -23,15 +23,17 @@ class FirstpurchaseWidget extends StatefulWidget {
   const FirstpurchaseWidget({
     Key key,
     this.repairmentrf,
+    this.onSubmit
   }) : super(key: key);
 
   final DocumentReference repairmentrf;
-
+  final ValueChanged<int> onSubmit;
   @override
   _FirstpurchaseWidgetState createState() => _FirstpurchaseWidgetState();
 }
 
 class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
+  TextEditingController controller;
   DateTime datePicked;
   TimeOfDay timePicked;
   String radioButtonValue2;
@@ -62,6 +64,17 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   int discountCoupon = 0;
   int discountPoint = 0;
   int pointHave = currentUserDocument.point ?? 0;
+  bool _submitted = false;
+  final _formKey = GlobalKey<FormState>();
+  void _submit() {
+    // set this variable to true when we try to submit
+    setState(() => _submitted = true);
+    if (_formKey.currentState.validate() == null) {
+      _formKey.currentState.save();
+      widget.onSubmit(discountPoint);
+      Navigator.of(context).pop();
+    }
+  }
   @override
   void initState() {
     super.initState();
@@ -70,9 +83,61 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
     textController3 = TextEditingController();
     textController4 = TextEditingController();
     textController5 = TextEditingController();
+    controller = TextEditingController();
   }
-
   @override
+  Future<String> openDialog() =>showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: new Text("포인트 사용"),
+        content: new Text("사용할 포인트를 입력해 주세요!\n 현재 포인트: $pointHave"),
+        actions: <Widget>[
+          Form(
+            key: _formKey,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                TextFormField(
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person),
+                  hintText: '보유한 포인트내에서 입력',
+                  labelText: '포인트 *',
+                ),
+                keyboardType: TextInputType.number,
+                autovalidateMode: _submitted
+                    ? AutovalidateMode.onUserInteraction
+                    : AutovalidateMode.disabled,
+                controller: controller,
+                validator: (value) {
+                  if(value == null|| value.isEmpty){
+                    return '빈칸일수는 없습니다!';
+                  }
+                  if(int.parse(value) > pointHave){
+                    return '가진 포인트보다 더 많이 사용할수는 없습니다';
+                  }
+                  if(int.parse(value) > defaultPrice + shipmentPrice - discountCoupon){
+                    return '최종가격보다 더 많이 사용할수는 없습니다';
+                  }
+                  return null;
+                },
+                onChanged: (value) => setState(()  => {
+                  discountPoint = int.parse(value),
+                  discountAll = discountCoupon + discountPoint,
+                  finalPrice = defaultPrice + shipmentPrice - discountAll,
+                }),
+              ),
+                FlatButton(
+                  child: new Text("적용"),
+                  onPressed: (discountPoint != 0) ?  null : _submit,
+                )],
+            )
+          )
+        ],
+      ));
+  void submit(){
+    Navigator.of(context).pop();
+  }
   Widget build(BuildContext context) {
     return StreamBuilder<RepairmentRecord>(
       stream: RepairmentRecord.getDocument(widget.repairmentrf),
@@ -1349,37 +1414,12 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 ),
                                                 child: InkWell(
                                                   onTap: () async {
-                                                    final pointToUse = showDialog(
-                                                      context: context,
-                                                      builder: (BuildContext context) => AlertDialog(
-                                                        title: new Text("포인트 사용"),
-                                                        content:
-                                                        new Text("사용할 포인트를 입력해 주세요!\n 현재 포인트: $pointHave"),
-                                                        actions: <Widget>[
-                                                          new TextFormField(
-                                                            decoration: const InputDecoration(
-                                                              icon: Icon(Icons.person),
-                                                              hintText: '보유한 포인트내에서 입력',
-                                                              labelText: '포인트 *',
-                                                            ),
-                                                            keyboardType: TextInputType.number,
-                                                            onSaved: (String value) {
-                                                              // This optional block of code can be used to run
-                                                              // code when the user saves the form.
-                                                            },
-                                                            validator: (String value) {
-                                                              return (value != null && int.parse(value) > pointHave) ? '보유한 포인트 내에서만 사용하십시요' : null;
-                                                            },
-                                                          ),
-                                                          new FlatButton(
-                                                            child: new Text("사용"),
-                                                            onPressed: () {
-                                                              Navigator.of(context).pop();
-                                                            },
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    );
+                                                    final pointString = await openDialog();
+                                                    setState(() {
+                                                      discountPoint = int.parse(pointString);
+                                                      discountAll = discountCoupon + discountPoint;
+                                                      finalPrice = defaultPrice + shipmentPrice - discountAll;
+                                                    });
                                                   },
                                                 child: Row(
                                                   mainAxisSize:
