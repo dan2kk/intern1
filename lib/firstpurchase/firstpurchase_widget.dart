@@ -58,6 +58,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   int shipmentPrice = 6000;
   int discountAll = 0;
   int finalPrice = 36000;
+  int discountCoupon = 0;
+  int discountPoint = 0;
   @override
   void initState() {
     super.initState();
@@ -1249,13 +1251,9 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                     ),
                                                 InkWell(
                                                   onTap: () async {
-                                                    await Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            CouponWidget(),
-                                                      ),
-                                                    );
+                                                    final result = await Navigator.push(context,
+                                                      MaterialPageRoute(builder: (context) => CouponWidget(coupon: 1,category: firstpurchaseRepairmentRecord.category, idx: firstpurchaseRepairmentRecord.storeidx)),);
+
                                                   },
                                                   child: Icon(
                                                       Icons

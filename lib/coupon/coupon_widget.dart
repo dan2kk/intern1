@@ -17,9 +17,13 @@ class CouponWidget extends StatefulWidget {
   const CouponWidget({
     Key key,
     this.coupon,
+    this.category,
+    this.idx,
   }) : super(key: key);
 
   final int coupon;
+  final String category;
+  final int idx;
 
   @override
   _CouponWidgetState createState() => _CouponWidgetState();
@@ -342,8 +346,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                                               ),
                                             );
                                           }
-                                          final storeListViewCouponRecord =
-                                              snapshot.data;
+                                          final storeListViewCouponRecord = snapshot.data;
                                           return Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment: MainAxisAlignment.center,
@@ -462,16 +465,32 @@ class _CouponWidgetState extends State<CouponWidget> {
                                               ),
                                               onTap: () async {
                                                 if(widget.coupon == 1){
-                                                  setState(() {
-                                                    for(int i=0; i<listofcoupon.length;i++){
-                                                      border[i] = 1;
-                                                      chooseColor[i] = 0;
-                                                    }
-                                                    border[listofcouponIndex] = 5;
-                                                    chooseColor[listofcouponIndex] = 1;
-                                                    selected = listofcouponIndex;
-                                                  });
-                                                  print(selected);
+                                                  if(!storeListViewCouponRecord.used){
+                                                    setState(() {
+                                                      for(int i=0; i<listofcoupon.length;i++){
+                                                        border[i] = 1;
+                                                        chooseColor[i] = 0;
+                                                      }
+                                                      border[listofcouponIndex] = 5;
+                                                      chooseColor[listofcouponIndex] = 1;
+                                                      selected = listofcouponIndex;
+                                                    });
+                                                    print(selected);
+                                                  }
+                                                  else{
+                                                    return AlertDialog(
+                                                      title: new Text("주의!"),
+                                                      content: new Text("이미 사용한 쿠폰입니다!"),
+                                                      actions: <Widget>[
+                                                        new FlatButton(
+                                                          child: new Text("알겠습니다."),
+                                                          onPressed: () {
+                                                            Navigator.of(context).pop();
+                                                          },
+                                                        ),
+                                                      ],
+                                                    );
+                                                  }
                                                 }
                                               }
                                               ),
@@ -500,7 +519,6 @@ class _CouponWidgetState extends State<CouponWidget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () {
-
                             },
                             text: '쿠폰 적용하기',
                             options: FFButtonOptions(
