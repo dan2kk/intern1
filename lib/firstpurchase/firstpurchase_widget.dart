@@ -61,6 +61,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   int finalPrice = 36000;
   int discountCoupon = 0;
   int discountPoint = 0;
+  int pointHave = currentUserDocument.point ?? 0;
   @override
   void initState() {
     super.initState();
@@ -1214,12 +1215,23 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                     .fromSTEB(1, 0, 0, 0),
                                                 child: InkWell(
                                                   onTap: () async {
-                                                    await Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) => CouponWidget(),
-                                                      ),
-                                                    );
+                                                    final result = await Navigator.push(context,
+                                                      MaterialPageRoute(builder: (context) => CouponWidget(coupon: 1,category: firstpurchaseRepairmentRecord.category, idx: firstpurchaseRepairmentRecord.storeidx)),);
+                                                    if(0 <= result && result <= 100){
+                                                      await setState(() {
+                                                        discountCoupon = (defaultPrice * result /100).toInt();
+                                                        discountAll = discountCoupon;
+                                                        finalPrice = defaultPrice + shipmentPrice-discountAll;
+                                                      });
+                                                    }
+                                                    else{
+                                                      await setState(() {
+                                                        discountCoupon = result;
+                                                        if(discountCoupon > defaultPrice) discountAll = defaultPrice;
+                                                        else discountAll = discountCoupon;
+                                                        finalPrice = defaultPrice + shipmentPrice-discountAll;
+                                                      });
+                                                    }
                                                   },
                                                 child: Row(
                                                   mainAxisSize:
@@ -1333,14 +1345,39 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                     .height *
                                                     0.06,
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xFFF5F5F5),
+                                                  color: Color(0xFF21B6FF),
                                                 ),
                                                 child: InkWell(
                                                   onTap: () async {
-                                                    await Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) => PointviewWidget(),
+                                                    final pointToUse = showDialog(
+                                                      context: context,
+                                                      builder: (BuildContext context) => AlertDialog(
+                                                        title: new Text("포인트 사용"),
+                                                        content:
+                                                        new Text("사용할 포인트를 입력해 주세요!\n 현재 포인트: $pointHave"),
+                                                        actions: <Widget>[
+                                                          new TextFormField(
+                                                            decoration: const InputDecoration(
+                                                              icon: Icon(Icons.person),
+                                                              hintText: '보유한 포인트내에서 입력',
+                                                              labelText: '포인트 *',
+                                                            ),
+                                                            keyboardType: TextInputType.number,
+                                                            onSaved: (String value) {
+                                                              // This optional block of code can be used to run
+                                                              // code when the user saves the form.
+                                                            },
+                                                            validator: (String value) {
+                                                              return (value != null && int.parse(value) > pointHave) ? '보유한 포인트 내에서만 사용하십시요' : null;
+                                                            },
+                                                          ),
+                                                          new FlatButton(
+                                                            child: new Text("사용"),
+                                                            onPressed: () {
+                                                              Navigator.of(context).pop();
+                                                            },
+                                                          ),
+                                                        ],
                                                       ),
                                                     );
                                                   },
