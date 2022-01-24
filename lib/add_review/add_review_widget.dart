@@ -64,9 +64,9 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
           return Container();
         }
         final addReviewRepairmentRecord =
-            addReviewRepairmentRecordList.isNotEmpty
-                ? addReviewRepairmentRecordList.first
-                : null;
+        addReviewRepairmentRecordList.isNotEmpty
+            ? addReviewRepairmentRecordList.first
+            : null;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: Color(0xFFF5F5F5),
@@ -170,7 +170,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                         children: [
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
                             child: Container(
                               width: 100,
                               height: 100,
@@ -187,7 +187,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                           ),
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
                             child: Container(
                               width: 100,
                               height: 100,
@@ -269,7 +269,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                             InkWell(
                               onTap: () async {
                                 final selectedMedia =
-                                    await selectMediaWithSourceBottomSheet(
+                                await selectMediaWithSourceBottomSheet(
                                   context: context,
                                   allowPhoto: true,
                                 );
@@ -286,7 +286,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                       .hideCurrentSnackBar();
                                   if (downloadUrl != null) {
                                     setState(
-                                        () => uploadedFileUrl1 = downloadUrl);
+                                            () => uploadedFileUrl1 = downloadUrl);
                                     showUploadMessage(context, 'Success!');
                                   } else {
                                     showUploadMessage(
@@ -308,7 +308,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               child: InkWell(
                                 onTap: () async {
                                   final selectedMedia =
-                                      await selectMediaWithSourceBottomSheet(
+                                  await selectMediaWithSourceBottomSheet(
                                     context: context,
                                     allowPhoto: false,
                                     allowVideo: true,
@@ -326,7 +326,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                         .hideCurrentSnackBar();
                                     if (downloadUrl != null) {
                                       setState(
-                                          () => uploadedFileUrl2 = downloadUrl);
+                                              () => uploadedFileUrl2 = downloadUrl);
                                       showUploadMessage(context, 'Success!');
                                     } else {
                                       showUploadMessage(
@@ -539,7 +539,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                           ),
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: TextFormField(
                               controller: textController,
                               obscureText: false,
@@ -572,7 +572,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                   ),
                                 ),
                                 contentPadding:
-                                    EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                               ),
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'tway_air medium',
@@ -608,13 +608,13 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                             'photo_url': [uploadedFileUrl1],
                           };
                           final reviewRecordReference =
-                              ReviewRecord.collection.doc();
+                          ReviewRecord.collection.doc();
                           await reviewRecordReference.set(reviewCreateData);
                           rrrr = ReviewRecord.getDocumentFromData(
                               reviewCreateData, reviewRecordReference);
 
                           final repairmentUpdateData =
-                              createRepairmentRecordData(
+                          createRepairmentRecordData(
                             status: 7,
                           );
                           await addReviewRepairmentRecord.reference
@@ -627,7 +627,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                             reason: '리뷰 작성으로 인한 포인트 적립',
                           );
                           final pointsRecordReference =
-                              PointsRecord.collection.doc();
+                          PointsRecord.collection.doc();
                           await pointsRecordReference.set(pointsCreateData);
                           aaaaaa = PointsRecord.getDocumentFromData(
                               pointsCreateData, pointsRecordReference);
@@ -635,7 +635,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                           final usersUpdateData = {
                             'point': FieldValue.increment(500),
                             'point_his':
-                                FieldValue.arrayUnion([aaaaaa.reference]),
+                            FieldValue.arrayUnion([aaaaaa.reference]),
                           };
                           await currentUserReference.update(usersUpdateData);
                           await Navigator.push(
