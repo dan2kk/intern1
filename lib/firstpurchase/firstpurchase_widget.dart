@@ -1697,7 +1697,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                           .fromSTEB(
                                                           15, 0, 0, 0),
                                                       child: Text(
-                                                        '픽업 배달료',
+                                                        '픽업 배달료', 
                                                         style: FlutterFlowTheme.bodyText1.override(
                                                           fontFamily: 'tway_air medium',
                                                           color: Colors.black,
