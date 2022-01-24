@@ -95,7 +95,7 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                                   width:
                                   MediaQuery.of(context).size.width * 0.95,
                                   height:
-                                  MediaQuery.of(context).size.height * 0.25,
+                                  MediaQuery.of(context).size.height * 0.27,
                                   decoration: BoxDecoration(
                                     color: Color(0xFFEEEEEE),
                                     borderRadius: BorderRadius.circular(20),
@@ -104,7 +104,7 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                                     ),
                                   ),
                                   child: Column(
-                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                     children: [
@@ -115,7 +115,7 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                                             width: MediaQuery.of(context)
                                                 .size
                                                 .width *
-                                                0.7,
+                                                0.8,
                                             height: MediaQuery.of(context)
                                                 .size
                                                 .height *
@@ -153,7 +153,7 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                                             width: MediaQuery.of(context)
                                                 .size
                                                 .width *
-                                                0.25,
+                                                0.1,
                                             height: MediaQuery.of(context)
                                                 .size
                                                 .height *
@@ -240,18 +240,21 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                                                 crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                                 children: [
-                                                  Text(
+                                                  Padding(
+                                                    padding: EdgeInsetsDirectional.fromSTEB(10,10, 0, 0),
+                                                    child : Text(
                                                     listofhistoryItem.symptom,
                                                     style: FlutterFlowTheme
                                                         .bodyText1
                                                         .override(
                                                       fontFamily:
                                                       'tway_air medium',
-                                                      fontSize: 18,
+                                                      fontSize: 15,
                                                       fontWeight:
                                                       FontWeight.w500,
                                                       useGoogleFonts: false,
                                                     ),
+                                                  ),
                                                   ),
                                                 ],
                                               ),
