@@ -1,3 +1,5 @@
+import 'package:intern1/coupon/coupon_widget.dart';
+
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -1245,14 +1247,25 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                     ),
-                                                    Icon(
+                                                InkWell(
+                                                  onTap: () async {
+                                                    await Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            CouponWidget(),
+                                                      ),
+                                                    );
+                                                  },
+                                                  child: Icon(
                                                       Icons
                                                           .keyboard_arrow_right,
                                                       color: Colors.black,
                                                       size: 24,
                                                     ),
-                                                  ],
                                                 ),
+                                                ],
+                                                    ),
                                               ),
                                             ),
                                           ],
@@ -1394,7 +1407,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(30, 0, 0, 0),
+                                                    .fromSTEB(10, 0, 0, 0),
                                                 child: FlutterFlowRadioButton(
                                                   options: ['미친성'],
                                                   onChanged: (value) {
