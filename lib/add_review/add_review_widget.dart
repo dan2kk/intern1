@@ -1,9 +1,11 @@
+import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/upload_media.dart';
 import '../review_added_c_o_m_p_l_e_t_e/review_added_c_o_m_p_l_e_t_e_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,7 +26,7 @@ class AddReviewWidget extends StatefulWidget {
 class _AddReviewWidgetState extends State<AddReviewWidget> {
   String uploadedFileUrl1 = '';
   String uploadedFileUrl2 = '';
-  bool picturevideoValue = false;
+  bool picturevideoValue=false;
   double ratingBarValue1;
   double ratingBarValue2;
   double ratingBarValue3;
@@ -644,6 +646,24 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                     ReviewAddedCOMPLETEWidget(),
                               ),
                             );
+                            final reviewCreateData = {
+                              ...createReviewRecordData(
+                                storeidx: addReviewRepairmentRecord.storeidx,
+                                uid: addReviewRepairmentRecord.userid,
+                                review: textController.text,
+                                uName: currentUserDisplayName,
+                                timestamp: getCurrentTimestamp,
+                                rateAvg: ratingBarValue1,
+                                reviewId: currentUserUid,
+                                rate1: ratingBarValue1,
+                                rate2: ratingBarValue2,
+                                rate3: ratingBarValue3,
+                              ),
+                              'photo_url': uploadedFileUrl1,
+                            };
+                            await ReviewRecord.collection
+                                .doc()
+                                .set(reviewCreateData);
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
