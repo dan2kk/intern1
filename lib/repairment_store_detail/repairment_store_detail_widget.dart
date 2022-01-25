@@ -525,10 +525,11 @@ class _RepairmentStoreDetailWidgetState
                               Text(
                                 '업체 상세설명',
                                 style: FlutterFlowTheme.bodyText2.override(
-                                  fontFamily: 'Lexend Deca',
+                                  fontFamily: 'tway_air medium',
                                   color: Color(0xFF262D34),
                                   fontSize: 12,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w500,
+                                  useGoogleFonts: false,
                                 ),
                               ),
                             ],
@@ -542,15 +543,17 @@ class _RepairmentStoreDetailWidgetState
                               Expanded(
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 24),
+                                      0, 10, 0, 24),
                                   child: Text(
                                     repairmentStoreDetailRepairstoreRecord
                                         .explain,
-                                    style: FlutterFlowTheme.bodyText2.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF8B97A2),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.normal,
+                                    style: FlutterFlowTheme.bodyText1.override(
+                                      fontFamily: 'tway_air medium',
+                                      color: Color(0xFF8b97a2),
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w500,
+                                      useGoogleFonts: false,
+                                      lineHeight: 1.5,
                                     ),
                                   ),
                                 ),
