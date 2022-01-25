@@ -26,7 +26,7 @@ class AddReviewWidget extends StatefulWidget {
 class _AddReviewWidgetState extends State<AddReviewWidget> {
   String uploadedFileUrl1 = '';
   String uploadedFileUrl2 = '';
-  bool picturevideoValue=false;
+  bool picturevideoValue;
   double ratingBarValue1;
   double ratingBarValue2;
   double ratingBarValue3;
@@ -77,6 +77,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width,
@@ -85,57 +87,43 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                             color: Color(0xFF21B6FF),
                             borderRadius: BorderRadius.circular(0),
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: Align(
-                                  alignment: AlignmentDirectional(0, -0.5),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 20, 0, 0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              10, 0, 0, 0),
-                                          child: InkWell(
-                                            onTap: () async {
-                                              Navigator.pop(context);
-                                            },
-                                            child: Icon(
-                                              Icons.keyboard_arrow_left,
-                                              color: Colors.white,
-                                              size: 30,
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              20, 0, 0, 0),
-                                          child: Text(
-                                            '리뷰 작성',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'tway_air medium',
-                                              color: Colors.white,
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.w500,
-                                              useGoogleFonts: false,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                          child: Align(
+                            alignment: AlignmentDirectional(0, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      10, 0, 0, 0),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Icon(
+                                      Icons.keyboard_arrow_left,
+                                      color: Colors.white,
+                                      size: 30,
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 0, 0, 0),
+                                  child: Text(
+                                    '리뷰 작성',
+                                    style: FlutterFlowTheme.bodyText1.override(
+                                      fontFamily: 'tway_air medium',
+                                      color: Colors.white,
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.w500,
+                                      useGoogleFonts: false,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -264,62 +252,25 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFEEEEEE),
-                        ),
-                        child: Stack(
-                          children: [
-                            if (!(picturevideoValue) ?? true)
-                              InkWell(
-                                onTap: () async {
-                                  final selectedMedia =
-                                  await selectMediaWithSourceBottomSheet(
-                                    context: context,
-                                    allowPhoto: true,
-                                  );
-                                  if (selectedMedia != null &&
-                                      validateFileFormat(
-                                          selectedMedia.storagePath, context)) {
-                                    showUploadMessage(
-                                        context, 'Uploading file...',
-                                        showLoading: true);
-                                    final downloadUrl = await uploadData(
-                                        selectedMedia.storagePath,
-                                        selectedMedia.bytes);
-                                    ScaffoldMessenger.of(context)
-                                        .hideCurrentSnackBar();
-                                    if (downloadUrl != null) {
-                                      setState(
-                                              () => uploadedFileUrl1 = downloadUrl);
-                                      showUploadMessage(context, 'Success!');
-                                    } else {
-                                      showUploadMessage(
-                                          context, 'Failed to upload media');
-                                      return;
-                                    }
-                                  }
-                                },
-                                child: Image.network(
-                                  'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2F%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=2e283c3a-2d59-4fe8-b97b-2a78784687e9',
-                                  width: 100,
-                                  height: 100,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            if (picturevideoValue ?? true)
-                              Align(
-                                alignment: AlignmentDirectional(0, 0),
-                                child: InkWell(
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
+                        child: Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                          ),
+                          child: Stack(
+                            children: [
+                              if (!(picturevideoValue) ?? true)
+                                InkWell(
                                   onTap: () async {
                                     final selectedMedia =
                                     await selectMediaWithSourceBottomSheet(
                                       context: context,
-                                      allowPhoto: false,
-                                      allowVideo: true,
+                                      allowPhoto: true,
                                     );
                                     if (selectedMedia != null &&
                                         validateFileFormat(
@@ -335,7 +286,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                           .hideCurrentSnackBar();
                                       if (downloadUrl != null) {
                                         setState(() =>
-                                        uploadedFileUrl2 = downloadUrl);
+                                        uploadedFileUrl1 = downloadUrl);
                                         showUploadMessage(context, 'Success!');
                                       } else {
                                         showUploadMessage(
@@ -345,19 +296,62 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                     }
                                   },
                                   child: Image.network(
-                                    'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2Fvideo%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=1efb466d-2eda-4241-b72c-25a918947d38',
+                                    'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2F%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=2e283c3a-2d59-4fe8-b97b-2a78784687e9',
                                     width: 100,
                                     height: 100,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
-                              ),
-                          ],
+                              if (picturevideoValue ?? true)
+                                Align(
+                                  alignment: AlignmentDirectional(0, 0),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      final selectedMedia =
+                                      await selectMediaWithSourceBottomSheet(
+                                        context: context,
+                                        allowPhoto: false,
+                                        allowVideo: true,
+                                      );
+                                      if (selectedMedia != null &&
+                                          validateFileFormat(
+                                              selectedMedia.storagePath,
+                                              context)) {
+                                        showUploadMessage(
+                                            context, 'Uploading file...',
+                                            showLoading: true);
+                                        final downloadUrl = await uploadData(
+                                            selectedMedia.storagePath,
+                                            selectedMedia.bytes);
+                                        ScaffoldMessenger.of(context)
+                                            .hideCurrentSnackBar();
+                                        if (downloadUrl != null) {
+                                          setState(() =>
+                                          uploadedFileUrl2 = downloadUrl);
+                                          showUploadMessage(
+                                              context, 'Success!');
+                                        } else {
+                                          showUploadMessage(context,
+                                              'Failed to upload media');
+                                          return;
+                                        }
+                                      }
+                                    },
+                                    child: Image.network(
+                                      'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2Fvideo%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=1efb466d-2eda-4241-b72c-25a918947d38',
+                                      width: 100,
+                                      height: 100,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
                         ),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 40, 0),
                           child: SwitchListTile.adaptive(
                             value: picturevideoValue ??= false,
                             onChanged: (newValue) =>
