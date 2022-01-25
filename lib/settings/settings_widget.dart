@@ -41,7 +41,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Container(
-                          width: MediaQuery.of(context).size.width * 1.99,
+                          width: MediaQuery.of(context).size.width * 0.99,
                           height: 100,
                           decoration: BoxDecoration(
                             color: Color(0xFF21B6FF),
