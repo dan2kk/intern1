@@ -1,3 +1,5 @@
+import 'package:intern1/pointview/pointview_widget.dart';
+
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -12,7 +14,12 @@ import 'package:bootpay_api/model/extra.dart';
 import 'package:bootpay_api/model/user.dart';
 import 'package:bootpay_api/model/item.dart';
 
+import 'package:intern1/coupon/coupon_widget.dart';
+import '../flutter_flow/flutter_flow_radio_button.dart';
+
+
 class SecondpurchaseWidget extends StatefulWidget {
+
   const SecondpurchaseWidget({
     Key key,
     this.repairmentrf,
@@ -25,6 +32,8 @@ class SecondpurchaseWidget extends StatefulWidget {
 }
 
 class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
+  String radioButtonValue1;
+  String radioButtonValue2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -641,6 +650,420 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                                   secondpurchaseRepairmentRecord
                                                       .price
                                                       .toString(),
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                    'tway_air medium',
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.95,
+                              height: MediaQuery.of(context).size.height * 0.4,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF5F5F5),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
+                                          child: Text(
+                                            '결제수단 및 할인 적용',
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'tway_air medium',
+                                              color: Color(0xFF5C6EBE),
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              useGoogleFonts: false,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Divider(
+                                    height: 30,
+                                    thickness: 1,
+                                    indent: 15,
+                                    endIndent: 15,
+                                    color: Colors.black,
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        width:
+                                        MediaQuery.of(context).size.width *
+                                            0.6,
+                                        height:
+                                        MediaQuery.of(context).size.height *
+                                            0.06,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFF5F5F5),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              1, 0, 0, 0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(15, 0, 0, 0),
+                                                child: Text(
+                                                  '할인쿠폰',
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                    'tway_air medium',
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        width:
+                                        MediaQuery.of(context).size.width *
+                                            0.35,
+                                        height:
+                                        MediaQuery.of(context).size.height *
+                                            0.06,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFF5F5F5),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              1, 0, 0, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              await Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      CouponWidget(),
+                                                ),
+                                              );
+                                            },
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Text(
+                                                  'Hello World',
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                    'tway_air medium',
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
+                                                  ),
+                                                ),
+                                                Icon(
+                                                  Icons.keyboard_arrow_right,
+                                                  color: Colors.black,
+                                                  size: 30,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width *
+                                              0.6,
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height *
+                                              0.06,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFF5F5F5),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(15, 0, 0, 0),
+                                                child: Text(
+                                                  '딱따구리 포인트',
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                    'tway_air medium',
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width *
+                                              0.35,
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height *
+                                              0.06,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFF5F5F5),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0, 3, 0, 0),
+                                            child: InkWell(
+                                              onTap: () async {
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        PointviewWidget(),
+                                                  ),
+                                                );
+                                              },
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    'Hello World',
+                                                    style: FlutterFlowTheme
+                                                        .bodyText1
+                                                        .override(
+                                                      fontFamily:
+                                                      'tway_air medium',
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                      FontWeight.w500,
+                                                      useGoogleFonts: false,
+                                                    ),
+                                                  ),
+                                                  Icon(
+                                                    Icons.keyboard_arrow_right,
+                                                    color: Colors.black,
+                                                    size: 30,
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width *
+                                              0.5,
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height *
+                                              0.06,
+                                          decoration: BoxDecoration(
+                                            color: Color(0xFFF5F5F5),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(15, 0, 0, 0),
+                                                child: Text(
+                                                  '현급영수증',
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                    'tway_air medium',
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              10, 0, 0, 0),
+                                          child: FlutterFlowRadioButton(
+                                            options: ['미친성'],
+                                            onChanged: (value) {
+                                              setState(() =>
+                                              radioButtonValue1 = value);
+                                            },
+                                            optionHeight: 25,
+                                            textStyle: FlutterFlowTheme
+                                                .bodyText1
+                                                .override(
+                                              fontFamily: 'Playfair Display',
+                                              color: Colors.black,
+                                            ),
+                                            selectedTextStyle: FlutterFlowTheme
+                                                .bodyText1
+                                                .override(
+                                              fontFamily: 'tway_air medium',
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w500,
+                                              useGoogleFonts: false,
+                                            ),
+                                            buttonPosition:
+                                            RadioButtonPosition.left,
+                                            direction: Axis.vertical,
+                                            radioButtonColor: Colors.blue,
+                                            inactiveRadioButtonColor:
+                                            Color(0x8A000000),
+                                            toggleable: false,
+                                            horizontalAlignment:
+                                            WrapAlignment.start,
+                                            verticalAlignment:
+                                            WrapCrossAlignment.start,
+                                          ),
+                                        ),
+                                        FlutterFlowRadioButton(
+                                          options: ['신청'],
+                                          onChanged: (value) {
+                                            setState(() =>
+                                            radioButtonValue2 = value);
+                                          },
+                                          optionHeight: 25,
+                                          textStyle: FlutterFlowTheme.bodyText1
+                                              .override(
+                                            fontFamily: 'Playfair Display',
+                                            color: Colors.black,
+                                          ),
+                                          selectedTextStyle: FlutterFlowTheme
+                                              .bodyText1
+                                              .override(
+                                            fontFamily: 'tway_air medium',
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
+                                          ),
+                                          buttonPosition:
+                                          RadioButtonPosition.left,
+                                          direction: Axis.vertical,
+                                          radioButtonColor: Colors.blue,
+                                          inactiveRadioButtonColor:
+                                          Color(0x8A000000),
+                                          toggleable: false,
+                                          horizontalAlignment:
+                                          WrapAlignment.start,
+                                          verticalAlignment:
+                                          WrapCrossAlignment.start,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width *
+                                              0.9,
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height *
+                                              0.06,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x4B21B6FF),
+                                            borderRadius:
+                                            BorderRadius.circular(20),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(15, 0, 0, 0),
+                                                child: Text(
+                                                  'Hello World',
                                                   style: FlutterFlowTheme
                                                       .bodyText1
                                                       .override(
