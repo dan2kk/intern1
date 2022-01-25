@@ -34,6 +34,12 @@ class SecondpurchaseWidget extends StatefulWidget {
 class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
   String radioButtonValue1;
   String radioButtonValue2;
+  int defaultPrice = 30000;
+  int shipmentPrice = 6000;
+  int discountAll = 0;
+  int finalPrice = 36000;
+  int discountCoupon = 0;
+  int discountPoint = 0;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -723,30 +729,35 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                   ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.start,
                                     crossAxisAlignment:
                                     CrossAxisAlignment.center,
                                     children: [
                                       Container(
-                                        width:
-                                        MediaQuery.of(context).size.width *
-                                            0.6,
-                                        height:
-                                        MediaQuery.of(context).size.height *
+                                        width: MediaQuery.of(context)
+                                            .size
+                                            .width *
+                                            0.60,
+                                        height: MediaQuery.of(context)
+                                            .size
+                                            .height *
                                             0.06,
                                         decoration: BoxDecoration(
                                           color: Color(0xFFF5F5F5),
                                         ),
                                         child: Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              1, 0, 0, 0),
+                                          padding: EdgeInsetsDirectional
+                                              .fromSTEB(1, 0, 0, 0),
                                           child: Row(
-                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisSize:
+                                            MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(15, 0, 0, 0),
+                                                padding:
+                                                EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                    15, 0, 0, 0),
                                                 child: Text(
                                                   '할인쿠폰',
                                                   style: FlutterFlowTheme
@@ -756,7 +767,8 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                                     'tway_air medium',
                                                     color: Colors.black,
                                                     fontSize: 16,
-                                                    fontWeight: FontWeight.w500,
+                                                    fontWeight:
+                                                    FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                                 ),
@@ -766,48 +778,83 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                         ),
                                       ),
                                       Container(
-                                        width:
-                                        MediaQuery.of(context).size.width *
+                                        width: MediaQuery.of(context)
+                                            .size
+                                            .width *
                                             0.35,
-                                        height:
-                                        MediaQuery.of(context).size.height *
+                                        height: MediaQuery.of(context)
+                                            .size
+                                            .height *
                                             0.06,
                                         decoration: BoxDecoration(
                                           color: Color(0xFFF5F5F5),
                                         ),
                                         child: Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              1, 0, 0, 0),
+                                          padding: EdgeInsetsDirectional
+                                              .fromSTEB(1, 0, 0, 0),
                                           child: InkWell(
                                             onTap: () async {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      CouponWidget(),
-                                                ),
-                                              );
+                                              final result = await Navigator.push(context,
+                                                MaterialPageRoute(builder: (context) => CouponWidget(coupon: 1,category: secondpurchaseRepairmentRecord.category, idx: secondpurchaseRepairmentRecord.storeidx)),);
+                                              if(0 <= result && result <= 100){
+                                                await setState(() {
+                                                  discountCoupon = (defaultPrice * result /100).toInt();
+                                                  discountAll = discountCoupon;
+                                                  finalPrice = defaultPrice + shipmentPrice-discountAll;
+                                                });
+                                              }
+                                              else{
+                                                await setState(() {
+                                                  discountCoupon = result;
+                                                  if(discountCoupon > defaultPrice) discountAll = defaultPrice;
+                                                  else discountAll = discountCoupon;
+                                                  finalPrice = defaultPrice + shipmentPrice-discountAll;
+                                                });
+                                              }
                                             },
                                             child: Row(
-                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisSize:
+                                              MainAxisSize.max,
                                               children: [
                                                 Text(
-                                                  'Hello World',
+                                                  '할인금액: $discountCoupon원',
                                                   style: FlutterFlowTheme
                                                       .bodyText1
                                                       .override(
                                                     fontFamily:
                                                     'tway_air medium',
                                                     fontSize: 16,
-                                                    fontWeight: FontWeight.w500,
+                                                    fontWeight:
+                                                    FontWeight.w500,
                                                     useGoogleFonts: false,
                                                   ),
                                                 ),
-                                                Icon(
-                                                  Icons.keyboard_arrow_right,
-                                                  color: Colors.black,
-                                                  size: 30,
+                                                InkWell(
+                                                  onTap: () async {
+                                                    final result = await Navigator.push(context,
+                                                      MaterialPageRoute(builder: (context) => CouponWidget(coupon: 1,category: secondpurchaseRepairmentRecord.category, idx: secondpurchaseRepairmentRecord.storeidx)),);
+                                                    if(0 <= result && result <= 100){
+                                                      await setState(() {
+                                                        discountCoupon = (defaultPrice * result /100).toInt();
+                                                        discountAll = discountCoupon;
+                                                        finalPrice = defaultPrice + shipmentPrice-discountAll;
+                                                      });
+                                                    }
+                                                    else{
+                                                      await setState(() {
+                                                        discountCoupon = result;
+                                                        if(discountCoupon > defaultPrice) discountAll = defaultPrice;
+                                                        else discountAll = discountCoupon;
+                                                        finalPrice = defaultPrice + shipmentPrice-discountAll;
+                                                      });
+                                                    }
+                                                  },
+                                                  child: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_right,
+                                                    color: Colors.black,
+                                                    size: 24,
+                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -815,6 +862,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                         ),
                                       ),
                                     ],
+
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
