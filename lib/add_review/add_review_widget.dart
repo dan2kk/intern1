@@ -647,7 +647,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 rate2: ratingBarValue2,
                                 rate3: ratingBarValue3,
                               ),
-                              'photo_url': uploadedFileUrl1,
+                              'photo_url': [valueOrDefault(uploadedFileUrl1,'-')],
                             };
                             await ReviewRecord.collection
                                 .doc()

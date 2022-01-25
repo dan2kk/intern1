@@ -69,6 +69,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   int numofCon = 0;
   bool _submitted = false;
   final _formKey = GlobalKey<FormState>();
+  DocumentReference<CouponRecord> a;
   void _submit() {
     // set this variable to true when we try to submit
     if (_formKey.currentState.validate()) {
@@ -1884,8 +1885,46 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              StreamBuilder<RepairmentRecord>(
-                                stream: RepairmentRecord.getDocument(widget.repairmentrf),
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.95,
+                                height:
+                                MediaQuery.of(context).size.height * 0.1,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFF21B6FF),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: InkWell(
+                                  onTap: () async {
+                                    await goBootpayRequest(context, finalPrice);
+                                    await
+                                    await Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            OrderCompleteWidget(),
+                                      ), (route) => false);
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        '결제하기',
+                                        style:
+                                        FlutterFlowTheme.bodyText1.override(
+                                          fontFamily: 'tway_air medium',
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w500,
+                                          useGoogleFonts: false,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              StreamBuilder<CouponRecord>(
+                                stream: CouponRecord.getDocument(widget.repairmentrf),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {
@@ -1903,8 +1942,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                       color: Color(0xFF21B6FF),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: StreamBuilder<RepairmentRecord>(
-                                      stream: RepairmentRecord.getDocument(widget.repairmentrf),
+                                    child: StreamBuilder<CouponRecord>(
+                                      stream: CouponRecord.getDocument(widget.repairmentrf),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
@@ -1917,12 +1956,12 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         final rowRepairmentRecord = snapshot.data;
                                         return InkWell(
                                           onTap: () async {
-                                            await Navigator.push(
+                                            await goBootpayRequest(context, finalPrice);
+                                            await Navigator.pushAndRemoveUntil(
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) => OrderCompleteWidget(),
-                                              ),
-                                            );
+                                              ),(route) => false);
                                           },
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
