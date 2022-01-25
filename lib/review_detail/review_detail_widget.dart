@@ -23,9 +23,6 @@ class ReviewDetailWidget extends StatefulWidget {
 
 class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
   PageController pageViewController;
-  double ratingBarValue1;
-  double ratingBarValue2;
-  double ratingBarValue3;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -681,23 +678,18 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                             padding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0, 5, 0, 0),
-                                            child: RatingBar.builder(
-                                              onRatingUpdate: (newValue) =>
-                                                  setState(() =>
-                                                  ratingBarValue1 =
-                                                      newValue),
+                                            child: RatingBarIndicator(
                                               itemBuilder: (context, index) =>
                                                   FaIcon(
                                                     FontAwesomeIcons.hammer,
                                                     color: Color(0xFF21B6FF),
                                                   ),
                                               direction: Axis.horizontal,
-                                              initialRating: ratingBarValue1 ??=
-                                              3,
+                                              rating: reviewDetailReviewRecord
+                                                  .rate1,
                                               unratedColor: Color(0xFF9E9E9E),
                                               itemCount: 5,
                                               itemSize: 20,
-                                              glowColor: Color(0xFF21B6FF),
                                             ),
                                           ),
                                         ],
@@ -709,23 +701,18 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                             padding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0, 5, 0, 0),
-                                            child: RatingBar.builder(
-                                              onRatingUpdate: (newValue) =>
-                                                  setState(() =>
-                                                  ratingBarValue2 =
-                                                      newValue),
+                                            child: RatingBarIndicator(
                                               itemBuilder: (context, index) =>
                                                   FaIcon(
                                                     FontAwesomeIcons.hammer,
                                                     color: Color(0xFF21B6FF),
                                                   ),
                                               direction: Axis.horizontal,
-                                              initialRating: ratingBarValue2 ??=
-                                              3,
+                                              rating: reviewDetailReviewRecord
+                                                  .rate2,
                                               unratedColor: Color(0xFF9E9E9E),
                                               itemCount: 5,
                                               itemSize: 20,
-                                              glowColor: Color(0xFF21B6FF),
                                             ),
                                           ),
                                         ],
@@ -737,23 +724,18 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                             padding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0, 5, 0, 0),
-                                            child: RatingBar.builder(
-                                              onRatingUpdate: (newValue) =>
-                                                  setState(() =>
-                                                  ratingBarValue3 =
-                                                      newValue),
+                                            child: RatingBarIndicator(
                                               itemBuilder: (context, index) =>
                                                   FaIcon(
                                                     FontAwesomeIcons.hammer,
                                                     color: Color(0xFF21B6FF),
                                                   ),
                                               direction: Axis.horizontal,
-                                              initialRating: ratingBarValue3 ??=
-                                              3,
+                                              rating: reviewDetailReviewRecord
+                                                  .rate3,
                                               unratedColor: Color(0xFF9E9E9E),
                                               itemCount: 5,
                                               itemSize: 20,
-                                              glowColor: Color(0xFF21B6FF),
                                             ),
                                           ),
                                         ],
@@ -817,7 +799,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           10, 0, 0, 0),
                                       child: Text(
-                                        'Hello World',
+                                        reviewDetailReviewRecord.review,
                                         style:
                                         FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'tway_air medium',
