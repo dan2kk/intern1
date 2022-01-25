@@ -40,8 +40,71 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
   int finalPrice = 36000;
   int discountCoupon = 0;
   int discountPoint = 0;
+  int pointHave = currentUserDocument.point ?? 0;
+  String input = '';
+  bool _submitted = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController controller;
+  void _submit() {
+    // set this variable to true when we try to submit
+    if (_formKey.currentState.validate()) {
+      _formKey.currentState.save();
+      discountPoint = int.parse(input);
+      discountAll = discountCoupon + discountPoint;
+      finalPrice = defaultPrice + shipmentPrice - discountAll;
+      setState(() => _submitted = true);
+      Navigator.pop(context);
+      print('1');
+    }
+  }
+  Future<String> openDialog() =>showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: new Text("포인트 사용"),
+        content: new Text("사용할 포인트를 입력해 주세요!\n 현재 포인트: $pointHave"),
+        actions: <Widget>[
+          Form(
+              key: _formKey,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  TextFormField(
+                    decoration: const InputDecoration(
+                      icon: Icon(Icons.card_giftcard_sharp),
+                      hintText: '보유한 포인트내에서 입력',
+                      labelText: '포인트 *',
+                    ),
+                    keyboardType: TextInputType.number,
+                    autovalidateMode: _submitted
+                        ? AutovalidateMode.onUserInteraction
+                        : AutovalidateMode.disabled,
+                    controller: controller,
+                    validator: (value) {
+                      if(value == null|| value.isEmpty){
+                        return '빈칸일수는 없습니다!';
+                      }
+                      if(int.parse(value) > pointHave){
+                        return '가진 포인트보다 더 많이 사용할수는 없습니다';
+                      }
+                      if(int.parse(value) > defaultPrice + shipmentPrice - discountCoupon){
+                        return '최종가격보다 더 많이 사용할수는 없습니다';
+                      }
+                      return null;
+                    },
+                    onChanged: (value) => setState(()  => {
+                      input = value,
+                    }),
+                  ),
+                  FlatButton(
+                    child: new Text("적용"),
+                    onPressed: input.isEmpty ? _submit : null,
+                  )],
+              )
+          )
+        ],
+      ));
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<RepairmentRecord>(
