@@ -31,12 +31,12 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
   String uploadedFileUrl2 = '';
   TextEditingController textController1;
   TextEditingController textController2;
-  bool picturevideoValue;
+  bool picturevideoValue = false;
   TextEditingController textController3;
   TextEditingController textController4;
   TextEditingController textController5;
   RepairmentRecord rprf;
-  bool switchListTileValue;
+  bool switchListTileValue = false;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
