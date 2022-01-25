@@ -35,82 +35,78 @@ class _SettingsWidgetState extends State<SettingsWidget> {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(2, 0, 0, 0),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width*0.99,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: Color(0xFF21B6FF),
-                              borderRadius: BorderRadius.circular(0),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Expanded(
-                                  child: Align(
-                                    alignment: AlignmentDirectional(0, -0.5),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 20, 0, 0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                10, 0, 0, 0),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                Navigator.pop(context);
-                                              },
-                                              child: Icon(
-                                                Icons.keyboard_arrow_left,
-                                                color: Colors.white,
-                                                size: 30,
-                                              ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: MediaQuery.of(context).size.width * 1.99,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: Color(0xFF21B6FF),
+                            borderRadius: BorderRadius.circular(0),
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Align(
+                                  alignment: AlignmentDirectional(0, -0.5),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 20, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              10, 0, 0, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              Navigator.pop(context);
+                                            },
+                                            child: Icon(
+                                              Icons.keyboard_arrow_left,
+                                              color: Colors.white,
+                                              size: 30,
                                             ),
                                           ),
-                                          Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                20, 0, 0, 0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Text(
-                                                  '알람 설정',
-                                                  textAlign: TextAlign.start,
-                                                  style: FlutterFlowTheme.title1
-                                                      .override(
-                                                    fontFamily:
-                                                    'tway_air medium',
-                                                    color: Color(0xFFFBFBF6),
-                                                    fontSize: 25,
-                                                    fontWeight: FontWeight.w500,
-                                                    useGoogleFonts: false,
-                                                  ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              20, 0, 0, 0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                '알람 설정',
+                                                textAlign: TextAlign.start,
+                                                style: FlutterFlowTheme.title1
+                                                    .override(
+                                                  fontFamily: 'tway_air medium',
+                                                  color: Color(0xFFFBFBF6),
+                                                  fontSize: 25,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
                                                 ),
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -205,129 +201,136 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                   ),
                 ],
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height * 0.12,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          if (currentUserDocument?.emailalarm ?? true)
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height * 0.12,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
                             Expanded(
                               child: AuthUserStreamWidget(
-                                child: SwitchListTile.adaptive(
-                                  value: switchListTileValue2 ??=
-                                      currentUserDocument?.emailalarm,
-                                  onChanged: (newValue) => setState(
-                                          () => switchListTileValue2 = newValue),
-                                  title: Text(
-                                    '이메일 알람',
-                                    style: TextStyle(
-                                      fontFamily: 'tway_air medium',
-                                      color: Color(0xFF21B6FF),
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 17,
-                                    ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(2),
+                                    bottomRight: Radius.circular(2),
+                                    topLeft: Radius.circular(0),
+                                    topRight: Radius.circular(2),
                                   ),
-                                  subtitle: Text(
-                                    '마케팅 팀으로부터 새로운 기능에 대한 이메일 알림을 받으십시오.',
-                                    style: GoogleFonts.getFont(
-                                      'Lexend Deca',
-                                      color: Color(0xFF8B97A2),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14,
+                                  child: SwitchListTile.adaptive(
+                                    value: switchListTileValue2 ??=
+                                        currentUserDocument?.locationsetting,
+                                    onChanged: (newValue) => setState(
+                                            () => switchListTileValue2 = newValue),
+                                    title: Text(
+                                      '위치 설정',
+                                      style: GoogleFonts.getFont(
+                                        'Lexend Deca',
+                                        color: Color(0xFF21B6FF),
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 17,
+                                      ),
                                     ),
+                                    subtitle: Text(
+                                      '사용자의 위치를 추적할 수 있습니다. 이렇게 하면 지출 내역을 추적하고 안전하게 보호할 수 있습니다.',
+                                      style: GoogleFonts.getFont(
+                                        'Lexend Deca',
+                                        color: Color(0xFF8B97A2),
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                    activeColor: Color(0xFF21B6FF),
+                                    activeTrackColor: Color(0xFF21B6FF),
+                                    dense: false,
+                                    controlAffinity:
+                                    ListTileControlAffinity.trailing,
                                   ),
-                                  activeColor: Color(0xFF21B6FF),
-                                  activeTrackColor: Color(0xFF21B6FF),
-                                  dense: false,
-                                  controlAffinity:
-                                  ListTileControlAffinity.trailing,
                                 ),
                               ),
                             ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height * 0.12,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: AuthUserStreamWidget(
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(2),
-                                  bottomRight: Radius.circular(2),
-                                  topLeft: Radius.circular(0),
-                                  topRight: Radius.circular(2),
-                                ),
-                                child: SwitchListTile.adaptive(
-                                  value: switchListTileValue3 ??=
-                                      currentUserDocument?.locationsetting,
-                                  onChanged: (newValue) => setState(
-                                          () => switchListTileValue3 = newValue),
-                                  title: Text(
-                                    '위치 설정',
-                                    style: GoogleFonts.getFont(
-                                      'Lexend Deca',
-                                      color: Color(0xFF21B6FF),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 17,
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height * 0.12,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            if (currentUserDocument?.emailalarm ?? true)
+                              Expanded(
+                                child: AuthUserStreamWidget(
+                                  child: SwitchListTile.adaptive(
+                                    value: switchListTileValue3 ??=
+                                        currentUserDocument?.emailalarm,
+                                    onChanged: (newValue) => setState(
+                                            () => switchListTileValue3 = newValue),
+                                    title: Text(
+                                      '이메일 알람',
+                                      style: TextStyle(
+                                        fontFamily: 'tway_air medium',
+                                        color: Color(0xFF21B6FF),
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 17,
+                                      ),
                                     ),
-                                  ),
-                                  subtitle: Text(
-                                    '사용자의 위치를 추적할 수 있습니다. 이렇게 하면 지출 내역을 추적하고 안전하게 보호할 수 있습니다.',
-                                    style: GoogleFonts.getFont(
-                                      'Lexend Deca',
-                                      color: Color(0xFF8B97A2),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14,
+                                    subtitle: Text(
+                                      '마케팅 팀으로부터 새로운 기능에 대한 이메일 알림을 받으십시오.',
+                                      style: GoogleFonts.getFont(
+                                        'Lexend Deca',
+                                        color: Color(0xFF8B97A2),
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14,
+                                      ),
                                     ),
+                                    activeColor: Color(0xFF21B6FF),
+                                    activeTrackColor: Color(0xFF21B6FF),
+                                    dense: false,
+                                    controlAffinity:
+                                    ListTileControlAffinity.trailing,
                                   ),
-                                  activeColor: Color(0xFF21B6FF),
-                                  activeTrackColor: Color(0xFF21B6FF),
-                                  dense: false,
-                                  controlAffinity:
-                                  ListTileControlAffinity.trailing,
                                 ),
                               ),
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 25, 0, 0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     final usersUpdateData = createUsersRecordData(
-                      locationsetting: switchListTileValue3,
+                      locationsetting: switchListTileValue2,
                       pushalarm: switchListTileValue1,
-                      emailalarm: switchListTileValue2,
+                      emailalarm: switchListTileValue3,
                     );
                     await currentUserReference.update(usersUpdateData);
                     await Navigator.push(

@@ -79,7 +79,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                           ),
                           child: Padding(
                             padding:
-                            EdgeInsetsDirectional.fromSTEB(0, 10, 10, 0),
+                            EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                             child: AuthUserStreamWidget(
                               child: InkWell(
                                 onTap: () async {
@@ -117,7 +117,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                     currentUserPhoto,
                                     width: 100,
                                     height: 100,
-                                    fit: BoxFit.cover,
+                                    fit: BoxFit.fill,
                                   ),
                                 ),
                               ),
