@@ -26,7 +26,7 @@ class AddReviewWidget extends StatefulWidget {
 class _AddReviewWidgetState extends State<AddReviewWidget> {
   String uploadedFileUrl1 = '';
   String uploadedFileUrl2 = '';
-  bool picturevideoValue= false;
+  bool picturevideoValue = false;
   double ratingBarValue1;
   double ratingBarValue2;
   double ratingBarValue3;
@@ -633,22 +633,16 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                         ),
                         child: InkWell(
                           onTap: () async {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    ReviewAddedCOMPLETEWidget(),
-                              ),
-                            );
                             final reviewCreateData = {
                               ...createReviewRecordData(
                                 storeidx: addReviewRepairmentRecord.storeidx,
-                                uid: addReviewRepairmentRecord.userid,
+                                uid: currentUserUid,
                                 review: textController.text,
-                                uName: currentUserDisplayName,
+                                uName: currentUserUid,
                                 timestamp: getCurrentTimestamp,
                                 rateAvg: ratingBarValue1,
-                                reviewId: currentUserUid,
+                                reviewId:
+                                '${currentUserUid}${dateTimeFormat('d/M/y', getCurrentTimestamp)}',
                                 rate1: ratingBarValue1,
                                 rate2: ratingBarValue2,
                                 rate3: ratingBarValue3,
@@ -658,6 +652,13 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                             await ReviewRecord.collection
                                 .doc()
                                 .set(reviewCreateData);
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    ReviewAddedCOMPLETEWidget(),
+                              ),
+                            );
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
