@@ -78,7 +78,6 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                     builder: (context) {
                       final listofhistory =
                           fIxHistoryRepairmentRecordList?.toList() ?? [];
-                      listofhistory.sort((b, a) => a.timestamp.compareTo(b.timestamp));
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
@@ -110,30 +109,41 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                                     mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            2, 0, 0, 0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(20, 0, 0, 0),
-                                              child: Text(
-                                                listofhistoryItem.manufacture,
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'tway_air medium',
-                                                  color: Colors.black,
-                                                  fontSize: 22,
-                                                  fontWeight: FontWeight.w500,
-                                                  useGoogleFonts: false,
+                                      Align(
+                                        alignment: AlignmentDirectional(0, 0),
+                                        child: Padding(
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              2, 0, 0, 0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(20, 0, 0, 0),
+                                                child: Text(
+                                                  listofhistoryItem.manufacture,
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                    'tway_air medium',
+                                                    color: Colors.black,
+                                                    fontSize: 22,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
+                                      ),
+                                      Divider(
+                                        thickness: 1.5,
+                                        indent: 15,
+                                        endIndent: 15,
+                                        color: Color(0xFF21B6FF),
                                       ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
