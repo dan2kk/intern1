@@ -1884,43 +1884,67 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.95,
-                                height:
-                                MediaQuery.of(context).size.height * 0.1,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF21B6FF),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: InkWell(
-                                  onTap: () async {
-                                    await goBootpayRequest(context, finalPrice);
-                                    await Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            OrderCompleteWidget(),
+                              StreamBuilder<RepairmentRecord>(
+                                stream: RepairmentRecord.getDocument(widget.repairmentrf),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: LinearProgressIndicator(
+                                        color: Color(0xFF2163CB),
                                       ),
                                     );
-                                  },
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '결제하기',
-                                        style:
-                                        FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'tway_air medium',
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                  }
+                                  final containerRepairmentRecord = snapshot.data;
+                                  return Container(
+                                    width: MediaQuery.of(context).size.width * 0.95,
+                                    height: MediaQuery.of(context).size.height * 0.1,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFF21B6FF),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: StreamBuilder<RepairmentRecord>(
+                                      stream: RepairmentRecord.getDocument(widget.repairmentrf),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: LinearProgressIndicator(
+                                              color: Color(0xFF2163CB),
+                                            ),
+                                          );
+                                        }
+                                        final rowRepairmentRecord = snapshot.data;
+                                        return InkWell(
+                                          onTap: () async {
+                                            await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => OrderCompleteWidget(),
+                                              ),
+                                            );
+                                          },
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                '결제하기',
+                                                style: FlutterFlowTheme.bodyText1.override(
+                                                  fontFamily: 'tway_air medium',
+                                                  color: Colors.white,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  );
+                                },
                               ),
                             ],
                           ),
