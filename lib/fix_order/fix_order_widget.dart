@@ -121,102 +121,78 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Align(
-                          alignment: AlignmentDirectional(0, 0),
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                            child: Container(
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Container(
                               width: MediaQuery.of(context).size.width * 0.9,
-                              height: MediaQuery.of(context).size.height * 0.7,
+                              height: MediaQuery.of(context).size.height * 0.03,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
-                                shape: BoxShape.rectangle,
                               ),
-                              child: Stack(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 20, 0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                      children: [
-                                        Stack(
-                                          children: [
-                                            if (picturevideoValue ?? true)
-                                              Align(
-                                                alignment:
-                                                AlignmentDirectional(0, 0),
-                                                child: InkWell(
-                                                  onTap: () async {
-                                                    final selectedMedia =
-                                                    await selectMediaWithSourceBottomSheet(
-                                                      context: context,
-                                                      allowPhoto: false,
-                                                      allowVideo: true,
-                                                    );
-                                                    if (selectedMedia != null &&
-                                                        validateFileFormat(
-                                                            selectedMedia
-                                                                .storagePath,
-                                                            context)) {
-                                                      showUploadMessage(context,
-                                                          'Uploading file...',
-                                                          showLoading: true);
-                                                      final downloadUrl =
-                                                      await uploadData(
-                                                          selectedMedia
-                                                              .storagePath,
-                                                          selectedMedia
-                                                              .bytes);
-                                                      ScaffoldMessenger.of(
-                                                          context)
-                                                          .hideCurrentSnackBar();
-                                                      if (downloadUrl != null) {
-                                                        setState(() =>
-                                                        uploadedFileUrl1 =
-                                                            downloadUrl);
-                                                        showUploadMessage(
-                                                            context,
-                                                            'Success!');
-                                                      } else {
-                                                        showUploadMessage(
-                                                            context,
-                                                            'Failed to upload media');
-                                                        return;
-                                                      }
-                                                    }
-                                                  },
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
-                                                      uploadedFileUrl2,
-                                                      'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2Fvideo%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=1efb466d-2eda-4241-b72c-25a918947d38',
-                                                    ),
-                                                    width: 100,
-                                                    height: 100,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                              ),
-                                            if (!(picturevideoValue) ?? true)
-                                              Align(
-                                                alignment:
-                                                AlignmentDirectional(0, 0),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 10, 0, 0),
+                                        25, 0, 0, 0),
+                                    child: Text(
+                                      '사진 첨부',
+                                      style:
+                                      FlutterFlowTheme.bodyText1.override(
+                                        fontFamily: 'tway_air medium',
+                                        fontSize: 13,
+                                        color: Color(
+                                            0xFF8B97A2),
+                                        fontWeight: FontWeight.w500,
+                                        useGoogleFonts: false,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0, 0),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                height:
+                                MediaQuery.of(context).size.height * 0.7,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                  shape: BoxShape.rectangle,
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20, 0, 20, 0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.stretch,
+                                        children: [
+                                          Stack(
+                                            children: [
+                                              if (picturevideoValue ?? true)
+                                                Align(
+                                                  alignment:
+                                                  AlignmentDirectional(
+                                                      0, 0),
                                                   child: InkWell(
                                                     onTap: () async {
                                                       final selectedMedia =
                                                       await selectMediaWithSourceBottomSheet(
                                                         context: context,
-                                                        allowPhoto: true,
+                                                        allowPhoto: false,
+                                                        allowVideo: true,
                                                       );
                                                       if (selectedMedia !=
                                                           null &&
@@ -240,7 +216,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                         if (downloadUrl !=
                                                             null) {
                                                           setState(() =>
-                                                          uploadedFileUrl2 =
+                                                          uploadedFileUrl1 =
                                                               downloadUrl);
                                                           showUploadMessage(
                                                               context,
@@ -255,8 +231,8 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                     },
                                                     child: Image.network(
                                                       valueOrDefault<String>(
-                                                        uploadedFileUrl1,
-                                                        'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2F%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=2e283c3a-2d59-4fe8-b97b-2a78784687e9',
+                                                        uploadedFileUrl2,
+                                                        'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2Fvideo%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=1efb466d-2eda-4241-b72c-25a918947d38',
                                                       ),
                                                       width: 100,
                                                       height: 100,
@@ -264,335 +240,415 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                            if ((uploadedFileUrl2) != '')
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 10, 0, 0),
-                                                child: FlutterFlowMediaDisplay(
-                                                  path: uploadedFileUrl2,
-                                                  imageBuilder: (path) =>
-                                                      Image.network(
-                                                        path,
+                                              if (!(picturevideoValue) ?? true)
+                                                Align(
+                                                  alignment:
+                                                  AlignmentDirectional(
+                                                      0, 0),
+                                                  child: Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        0, 10, 0, 0),
+                                                    child: InkWell(
+                                                      onTap: () async {
+                                                        final selectedMedia =
+                                                        await selectMediaWithSourceBottomSheet(
+                                                          context: context,
+                                                          allowPhoto: true,
+                                                        );
+                                                        if (selectedMedia !=
+                                                            null &&
+                                                            validateFileFormat(
+                                                                selectedMedia
+                                                                    .storagePath,
+                                                                context)) {
+                                                          showUploadMessage(
+                                                              context,
+                                                              'Uploading file...',
+                                                              showLoading:
+                                                              true);
+                                                          final downloadUrl =
+                                                          await uploadData(
+                                                              selectedMedia
+                                                                  .storagePath,
+                                                              selectedMedia
+                                                                  .bytes);
+                                                          ScaffoldMessenger.of(
+                                                              context)
+                                                              .hideCurrentSnackBar();
+                                                          if (downloadUrl !=
+                                                              null) {
+                                                            setState(() =>
+                                                            uploadedFileUrl2 =
+                                                                downloadUrl);
+                                                            showUploadMessage(
+                                                                context,
+                                                                'Success!');
+                                                          } else {
+                                                            showUploadMessage(
+                                                                context,
+                                                                'Failed to upload media');
+                                                            return;
+                                                          }
+                                                        }
+                                                      },
+                                                      child: Image.network(
+                                                        valueOrDefault<String>(
+                                                          uploadedFileUrl1,
+                                                          'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2F%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=2e283c3a-2d59-4fe8-b97b-2a78784687e9',
+                                                        ),
                                                         width: 100,
                                                         height: 100,
                                                         fit: BoxFit.cover,
                                                       ),
-                                                  videoPlayerBuilder: (path) =>
-                                                      FlutterFlowVideoPlayer(
-                                                        path: path,
-                                                        width: 300,
-                                                        autoPlay: false,
-                                                        looping: true,
-                                                        showControls: true,
-                                                        allowFullScreen: true,
-                                                        allowPlaybackSpeedMenu:
-                                                        false,
-                                                      ),
-                                                ),
-                                              ),
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 16, 0, 0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Text(
-                                                '고장 제품 정보:',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
-                                                  fontFamily: 'tway_air medium',
-                                                  color: Color(0xFF21B6FF),
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500,
-                                                  useGoogleFonts: false,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 12, 0, 0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Expanded(
-                                                child: Container(
-                                                  width: 330,
-                                                  height: 40,
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        8),
-                                                    border: Border.all(
-                                                      color: Color(0xFFE6E6E6),
                                                     ),
                                                   ),
+                                                ),
+                                              if ((uploadedFileUrl2) != '')
+                                                Align(
+                                                  alignment:
+                                                  AlignmentDirectional(
+                                                      0, -20.85),
                                                   child: Padding(
                                                     padding:
                                                     EdgeInsetsDirectional
                                                         .fromSTEB(
-                                                        16, 0, 0, 0),
-                                                    child: TextFormField(
-                                                      controller:
-                                                      textController1,
-                                                      obscureText: false,
-                                                      decoration:
-                                                      InputDecoration(
-                                                        labelText: '제조사',
-                                                        labelStyle:
-                                                        FlutterFlowTheme
-                                                            .bodyText2
-                                                            .override(
-                                                          fontFamily:
-                                                          'tway_air medium',
-                                                          color:
-                                                          Color(0xFF8B97A2),
-                                                          fontWeight:
-                                                          FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                        enabledBorder:
-                                                        UnderlineInputBorder(
-                                                          borderSide:
-                                                          BorderSide(
-                                                            color: Color(
-                                                                0x00000000),
-                                                            width: 1,
+                                                        0, 10, 0, 0),
+                                                    child:
+                                                    FlutterFlowMediaDisplay(
+                                                      path: uploadedFileUrl2,
+                                                      imageBuilder: (path) =>
+                                                          Image.network(
+                                                            path,
+                                                            width: 100,
+                                                            height: 100,
+                                                            fit: BoxFit.cover,
                                                           ),
-                                                          borderRadius:
-                                                          const BorderRadius
-                                                              .only(
-                                                            topLeft:
-                                                            Radius.circular(
-                                                                4.0),
-                                                            topRight:
-                                                            Radius.circular(
-                                                                4.0),
+                                                      videoPlayerBuilder: (path) =>
+                                                          FlutterFlowVideoPlayer(
+                                                            path: path,
+                                                            width: 300,
+                                                            autoPlay: false,
+                                                            looping: true,
+                                                            showControls: true,
+                                                            allowFullScreen: true,
+                                                            allowPlaybackSpeedMenu:
+                                                            false,
                                                           ),
-                                                        ),
-                                                        focusedBorder:
-                                                        UnderlineInputBorder(
-                                                          borderSide:
-                                                          BorderSide(
-                                                            color: Color(
-                                                                0x00000000),
-                                                            width: 1,
-                                                          ),
-                                                          borderRadius:
-                                                          const BorderRadius
-                                                              .only(
-                                                            topLeft:
-                                                            Radius.circular(
-                                                                4.0),
-                                                            topRight:
-                                                            Radius.circular(
-                                                                4.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                          .bodyText2
-                                                          .override(
-                                                        fontFamily:
-                                                        'tway_air medium',
-                                                        color:
-                                                        Color(0xFF8B97A2),
-                                                        fontWeight:
-                                                        FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
                                             ],
                                           ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 12, 0, 0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Expanded(
-                                                child: Container(
-                                                  width: 330,
-                                                  height: 40,
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        8),
-                                                    border: Border.all(
-                                                      color: Color(0xFFE6E6E6),
-                                                    ),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        16, 0, 0, 0),
-                                                    child: TextFormField(
-                                                      controller:
-                                                      textController2,
-                                                      obscureText: false,
-                                                      decoration:
-                                                      InputDecoration(
-                                                        labelText: '모델명',
-                                                        labelStyle:
-                                                        FlutterFlowTheme
-                                                            .bodyText2
-                                                            .override(
-                                                          fontFamily:
-                                                          'tway_air medium',
-                                                          color:
-                                                          Color(0xFF8B97A2),
-                                                          fontWeight:
-                                                          FontWeight.w500,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                        enabledBorder:
-                                                        UnderlineInputBorder(
-                                                          borderSide:
-                                                          BorderSide(
-                                                            color: Color(
-                                                                0x00000000),
-                                                            width: 1,
-                                                          ),
-                                                          borderRadius:
-                                                          const BorderRadius
-                                                              .only(
-                                                            topLeft:
-                                                            Radius.circular(
-                                                                4.0),
-                                                            topRight:
-                                                            Radius.circular(
-                                                                4.0),
-                                                          ),
-                                                        ),
-                                                        focusedBorder:
-                                                        UnderlineInputBorder(
-                                                          borderSide:
-                                                          BorderSide(
-                                                            color: Color(
-                                                                0x00000000),
-                                                            width: 1,
-                                                          ),
-                                                          borderRadius:
-                                                          const BorderRadius
-                                                              .only(
-                                                            topLeft:
-                                                            Radius.circular(
-                                                                4.0),
-                                                            topRight:
-                                                            Radius.circular(
-                                                                4.0),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      style: FlutterFlowTheme
-                                                          .bodyText2
-                                                          .override(
-                                                        fontFamily:
-                                                        'tway_air medium',
-                                                        color:
-                                                        Color(0xFF8B97A2),
-                                                        fontWeight:
-                                                        FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
-                                                    ),
+                                          Padding(
+                                            padding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0, 16, 0, 0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Text(
+                                                  '고장 제품 정보:',
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                    'tway_air medium',
+                                                    color: Color(0xFF21B6FF),
+                                                    fontSize: 15,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
                                                   ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 12, 0, 0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Expanded(
-                                                child: Container(
-                                                  width: 330,
-                                                  height: 60,
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        8),
-                                                    border: Border.all(
-                                                      color: Color(0xFFE6E6E6),
+                                          Padding(
+                                            padding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0, 12, 0, 0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Expanded(
+                                                  child: Container(
+                                                    width: 330,
+                                                    height: 40,
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.white,
+                                                      borderRadius:
+                                                      BorderRadius.circular(
+                                                          8),
+                                                      border: Border.all(
+                                                        color:
+                                                        Color(0xFFE6E6E6),
+                                                      ),
                                                     ),
-                                                  ),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(15, 0,
-                                                            0, 0),
-                                                        child: Text(
-                                                          '동영상 여부',
-                                                          style:
+                                                    child: Padding(
+                                                      padding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          16, 0, 0, 0),
+                                                      child: TextFormField(
+                                                        controller:
+                                                        textController1,
+                                                        obscureText: false,
+                                                        decoration:
+                                                        InputDecoration(
+                                                          labelText: '제조사',
+                                                          labelStyle:
                                                           FlutterFlowTheme
-                                                              .bodyText1
+                                                              .bodyText2
                                                               .override(
                                                             fontFamily:
                                                             'tway_air medium',
+                                                            color: Color(
+                                                                0xFF8B97A2),
                                                             fontWeight:
                                                             FontWeight.w500,
                                                             useGoogleFonts:
                                                             false,
                                                           ),
+                                                          enabledBorder:
+                                                          UnderlineInputBorder(
+                                                            borderSide:
+                                                            BorderSide(
+                                                              color: Color(
+                                                                  0x00000000),
+                                                              width: 1,
+                                                            ),
+                                                            borderRadius:
+                                                            const BorderRadius
+                                                                .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                  4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                  4.0),
+                                                            ),
+                                                          ),
+                                                          focusedBorder:
+                                                          UnderlineInputBorder(
+                                                            borderSide:
+                                                            BorderSide(
+                                                              color: Color(
+                                                                  0x00000000),
+                                                              width: 1,
+                                                            ),
+                                                            borderRadius:
+                                                            const BorderRadius
+                                                                .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                  4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                  4.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        style: FlutterFlowTheme
+                                                            .bodyText2
+                                                            .override(
+                                                          fontFamily:
+                                                          'tway_air medium',
+                                                          color:
+                                                          Color(0xFF8B97A2),
+                                                          fontWeight:
+                                                          FontWeight.w500,
+                                                          useGoogleFonts: false,
                                                         ),
                                                       ),
-                                                      Expanded(
-                                                        child: SwitchListTile
-                                                            .adaptive(
-                                                          value:
-                                                          picturevideoValue ??=
-                                                          false,
-                                                          onChanged: (newValue) =>
-                                                              setState(() =>
-                                                              picturevideoValue =
-                                                                  newValue),
-                                                          tileColor:
-                                                          Color(0xFFF5F5F5),
-                                                          dense: false,
-                                                          controlAffinity:
-                                                          ListTileControlAffinity
-                                                              .trailing,
-                                                        ),
-                                                      ),
-                                                    ],
+                                                    ),
                                                   ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                          Padding(
+                                            padding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0, 12, 0, 0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Expanded(
+                                                  child: Container(
+                                                    width: 330,
+                                                    height: 40,
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.white,
+                                                      borderRadius:
+                                                      BorderRadius.circular(
+                                                          8),
+                                                      border: Border.all(
+                                                        color:
+                                                        Color(0xFFE6E6E6),
+                                                      ),
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                          16, 0, 0, 0),
+                                                      child: TextFormField(
+                                                        controller:
+                                                        textController2,
+                                                        obscureText: false,
+                                                        decoration:
+                                                        InputDecoration(
+                                                          labelText: '모델명',
+                                                          labelStyle:
+                                                          FlutterFlowTheme
+                                                              .bodyText2
+                                                              .override(
+                                                            fontFamily:
+                                                            'tway_air medium',
+                                                            color: Color(
+                                                                0xFF8B97A2),
+                                                            fontWeight:
+                                                            FontWeight.w500,
+                                                            useGoogleFonts:
+                                                            false,
+                                                          ),
+                                                          enabledBorder:
+                                                          UnderlineInputBorder(
+                                                            borderSide:
+                                                            BorderSide(
+                                                              color: Color(
+                                                                  0x00000000),
+                                                              width: 1,
+                                                            ),
+                                                            borderRadius:
+                                                            const BorderRadius
+                                                                .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                  4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                  4.0),
+                                                            ),
+                                                          ),
+                                                          focusedBorder:
+                                                          UnderlineInputBorder(
+                                                            borderSide:
+                                                            BorderSide(
+                                                              color: Color(
+                                                                  0x00000000),
+                                                              width: 1,
+                                                            ),
+                                                            borderRadius:
+                                                            const BorderRadius
+                                                                .only(
+                                                              topLeft: Radius
+                                                                  .circular(
+                                                                  4.0),
+                                                              topRight: Radius
+                                                                  .circular(
+                                                                  4.0),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        style: FlutterFlowTheme
+                                                            .bodyText2
+                                                            .override(
+                                                          fontFamily:
+                                                          'tway_air medium',
+                                                          color:
+                                                          Color(0xFF8B97A2),
+                                                          fontWeight:
+                                                          FontWeight.w500,
+                                                          useGoogleFonts: false,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0, 12, 0, 0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Expanded(
+                                                  child: Container(
+                                                    width: 330,
+                                                    height: 60,
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.white,
+                                                      borderRadius:
+                                                      BorderRadius.circular(
+                                                          8),
+                                                      border: Border.all(
+                                                        color:
+                                                        Color(0xFFE6E6E6),
+                                                      ),
+                                                    ),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                      MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(15,
+                                                              0, 0, 0),
+                                                          child: Text(
+                                                            '동영상 여부',
+                                                            style:
+                                                            FlutterFlowTheme
+                                                                .bodyText1
+                                                                .override(
+                                                              fontFamily:
+                                                              'tway_air medium',
+                                                              fontWeight:
+                                                              FontWeight
+                                                                  .w500,
+                                                              useGoogleFonts:
+                                                              false,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        Expanded(
+                                                          child: SwitchListTile
+                                                              .adaptive(
+                                                            value:
+                                                            picturevideoValue ??=
+                                                            false,
+                                                            onChanged: (newValue) =>
+                                                                setState(() =>
+                                                                picturevideoValue =
+                                                                    newValue),
+                                                            tileColor: Color(
+                                                                0xFFF5F5F5),
+                                                            dense: false,
+                                                            controlAffinity:
+                                                            ListTileControlAffinity
+                                                                .trailing,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
                       ],
                     ),
