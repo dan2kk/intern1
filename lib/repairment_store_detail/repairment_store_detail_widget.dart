@@ -60,9 +60,16 @@ class _RepairmentStoreDetailWidgetState
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Center(
-            child: LinearProgressIndicator(
-              color: Color(0xFF2163CB),
-            ),
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.1,
+                child: RiveAnimation.asset(
+                  'assets/rive_animations/loading.riv',
+                  artboard: 'New Artboard',
+                  fit: BoxFit.cover,
+                  controllers: riveAnimationControllers,
+                ),
+              )
           );
         }
         List<RepairstoreRecord> repairmentStoreDetailRepairstoreRecordList =

@@ -64,15 +64,18 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   int discountCoupon = 0;
   int discountPoint = 0;
   int pointHave = currentUserDocument.point ?? 0;
+  String input;
   bool _submitted = false;
   final _formKey = GlobalKey<FormState>();
   void _submit() {
     // set this variable to true when we try to submit
     setState(() => _submitted = true);
-    if (_formKey.currentState.validate() == null) {
+    if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
       widget.onSubmit(discountPoint);
-      Navigator.of(context).pop();
+      discountPoint = int.parse(input);
+      discountAll = discountCoupon + discountPoint;
+      finalPrice = defaultPrice + shipmentPrice - discountAll;
     }
   }
   @override
@@ -100,7 +103,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
               children: [
                 TextFormField(
                 decoration: const InputDecoration(
-                  icon: Icon(Icons.person),
+                  icon: Icon(Icons.card_giftcard_sharp),
                   hintText: '보유한 포인트내에서 입력',
                   labelText: '포인트 *',
                 ),
@@ -122,22 +125,17 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                   return null;
                 },
                 onChanged: (value) => setState(()  => {
-                  discountPoint = int.parse(value),
-                  discountAll = discountCoupon + discountPoint,
-                  finalPrice = defaultPrice + shipmentPrice - discountAll,
+                  input = value,
                 }),
               ),
                 FlatButton(
                   child: new Text("적용"),
-                  onPressed: (discountPoint != 0) ?  null : _submit,
+                  onPressed: input.isEmpty ? _submit : null,
                 )],
             )
           )
         ],
       ));
-  void submit(){
-    Navigator.of(context).pop();
-  }
   Widget build(BuildContext context) {
     return StreamBuilder<RepairmentRecord>(
       stream: RepairmentRecord.getDocument(widget.repairmentrf),
