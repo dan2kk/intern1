@@ -235,19 +235,13 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                                 onTap: () async {
                                                   await Navigator.push(
                                                     context,
-                                                    PageTransition(
-                                                      type: PageTransitionType
-                                                          .leftToRight,
-                                                      duration: Duration(
-                                                          milliseconds: 300),
-                                                      reverseDuration: Duration(
-                                                          milliseconds: 300),
-                                                      child:
-                                                      RepairmentStoreDetailWidget(
-                                                        stidx:
-                                                        listViewRepairstoreRecord
-                                                            .idx,
-                                                      ),
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          RepairmentStoreDetailWidget(
+                                                            stidx:
+                                                            listViewRepairstoreRecord
+                                                                .idx,
+                                                          ),
                                                     ),
                                                   );
                                                 },
