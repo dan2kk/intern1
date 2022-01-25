@@ -378,18 +378,36 @@ class _RepairmentStoreDetailWidgetState
                           ),
                         ),
                         Padding(
-                          padding:
-                          EdgeInsetsDirectional.fromSTEB(24, 20, 24, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Text(
-                                repairmentStoreDetailRepairstoreRecord.address,
-                                style: FlutterFlowTheme.bodyText2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color: Color(0xFF8B97A2),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.normal,
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: MediaQuery.of(context).size.height * 0.03,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                                        child: Text(
+                                          repairmentStoreDetailRepairstoreRecord.address,
+                                          style: FlutterFlowTheme.bodyText2.override(
+                                            fontFamily: 'tway_air medium',
+                                            color: Color(0xFF8B97A2),
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w500,
+                                            useGoogleFonts: false,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
@@ -484,7 +502,7 @@ class _RepairmentStoreDetailWidgetState
                                                 .override(
                                               fontFamily: 'tway_air medium',
                                               color: Color(0xFF8B97A2),
-                                              fontSize: 15,
+                                              fontSize: 12,
                                               fontWeight: FontWeight.w500,
                                               useGoogleFonts: false,
                                             ),
