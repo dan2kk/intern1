@@ -13,7 +13,7 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 class BoxedReturns{
-  final DocumentReference<CouponRecord> a;
+  final String a;
   final int b;
   final int c;
   BoxedReturns(this.a, this.b, this.c);
@@ -526,7 +526,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                         children: [
                           FFButtonWidget(
                             onPressed: () {
-                              Navigator.pop(context, new BoxedReturns(selectedCoupon.reference, selectedCoupon.amount, selectedCoupon.maxamount));
+                              Navigator.pop(context, new BoxedReturns(selectedCoupon.couponNum, selectedCoupon.amount, selectedCoupon.maxamount));
                             },
                             text: '쿠폰 적용하기',
                             options: FFButtonOptions(

@@ -76,8 +76,8 @@ class _FIxHistoryWidgetState extends State<FIxHistoryWidget> {
                 Expanded(
                   child: Builder(
                     builder: (context) {
-                      final listofhistory =
-                          fIxHistoryRepairmentRecordList?.toList() ?? [];
+                      final listofhistory = fIxHistoryRepairmentRecordList?.toList() ?? [];
+                      listofhistory.sort((b, a) =>(a.timestamp.compareTo(b.timestamp)));
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
