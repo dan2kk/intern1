@@ -142,19 +142,12 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width * 0.95,
+                                    width: MediaQuery.of(context).size.width,
                                     height: 100,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFEEEEEE),
-                                      border: Border.all(
-                                        width: 1,
-                                        color: Colors.black87,
-                                      ),
-                                        borderRadius:
-                                        BorderRadius.circular(20),
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -168,7 +161,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                               0.3,
                                           height: 100,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFFFFFFFF),
+                                            color: Color(0xFFEEEEEE),
                                             borderRadius:
                                             BorderRadius.circular(30),
                                           ),
@@ -187,20 +180,17 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                           width: MediaQuery.of(context)
                                               .size
                                               .width *
-                                              0.60,
+                                              0.65,
                                           height: 100,
                                           decoration: BoxDecoration(
                                             color: Color(0xFFEEEEEE),
-                                            borderRadius: BorderRadius.circular(20),
                                           ),
-                                          child: Row(
+                                          child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                             MainAxisAlignment.spaceEvenly,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment.center,
                                             children: [
-                                              Column(
+                                              Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
                                                 MainAxisAlignment
@@ -210,85 +200,242 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                                     padding:
                                                     EdgeInsetsDirectional
                                                         .fromSTEB(
-                                                        0, 5, 0, 0),
-                                                    child: Text(
-                                                      '업체명: ',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                        'tway_air medium',
-                                                        color: Colors.black,
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                        FontWeight.w500,
-                                                        useGoogleFonts: false,
+                                                        5, 0, 0, 0),
+                                                    child: Container(
+                                                      width:
+                                                      MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                          0.15,
+                                                      height: 30,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                        Color(0xFFEEEEEE),
+                                                      ),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                        MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            '업체명: ',
+                                                            style:
+                                                            FlutterFlowTheme
+                                                                .bodyText1
+                                                                .override(
+                                                              fontFamily:
+                                                              'tway_air medium',
+                                                              color:
+                                                              Colors.black,
+                                                              fontSize: 13,
+                                                              fontWeight:
+                                                              FontWeight
+                                                                  .w500,
+                                                              useGoogleFonts:
+                                                              false,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                   ),
-                                                  Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        5, 5, 0, 0),
-                                                    child: Text(
-                                                      '카테고리: ',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                        'tway_air medium',
-                                                        color: Colors.black,
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                        FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
+                                                  Container(
+                                                    width:
+                                                    MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                        0.35,
+                                                    height: 30,
+                                                    decoration: BoxDecoration(
+                                                      color: Color(0xFFEEEEEE),
                                                     ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        0, 5, 0, 0),
-                                                    child: Text(
-                                                      '수리 품목:',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
-                                                        fontFamily:
-                                                        'tway_air medium',
-                                                        color: Colors.black,
-                                                        fontSize: 16,
-                                                        fontWeight:
-                                                        FontWeight.w500,
-                                                        useGoogleFonts: false,
-                                                      ),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                      MainAxisSize.max,
+                                                      children: [
+                                                        Text(
+                                                          rowRepairstoreRecord
+                                                              .name,
+                                                          style:
+                                                          FlutterFlowTheme
+                                                              .bodyText1
+                                                              .override(
+                                                            fontFamily:
+                                                            'tway_air medium',
+                                                            fontSize: 13,
+                                                            fontWeight:
+                                                            FontWeight.w500,
+                                                            useGoogleFonts:
+                                                            false,
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
                                                 ],
                                               ),
-                                              Column(
+                                              Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
                                                 MainAxisAlignment
                                                     .spaceEvenly,
                                                 children: [
-                                                  Text(
-                                                    rowRepairstoreRecord.name,
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1,
+                                                  Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        5, 0, 0, 0),
+                                                    child: Container(
+                                                      width:
+                                                      MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                          0.15,
+                                                      height: 30,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                        Color(0xFFEEEEEE),
+                                                      ),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                        MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            '카테고리: ',
+                                                            style:
+                                                            FlutterFlowTheme
+                                                                .bodyText1
+                                                                .override(
+                                                              fontFamily:
+                                                              'tway_air medium',
+                                                              color:
+                                                              Colors.black,
+                                                              fontSize: 13,
+                                                              fontWeight:
+                                                              FontWeight
+                                                                  .w500,
+                                                              useGoogleFonts:
+                                                              false,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
                                                   ),
-                                                  Text(
-                                                    rowRepairstoreRecord
-                                                        .category,
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1,
+                                                  Container(
+                                                    width:
+                                                    MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                        0.35,
+                                                    height: 30,
+                                                    decoration: BoxDecoration(
+                                                      color: Color(0xFFEEEEEE),
+                                                    ),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                      MainAxisSize.max,
+                                                      children: [
+                                                        Text(
+                                                          rowRepairstoreRecord
+                                                              .category,
+                                                          style:
+                                                          FlutterFlowTheme
+                                                              .bodyText1
+                                                              .override(
+                                                            fontFamily:
+                                                            'tway_air medium',
+                                                            fontSize: 13,
+                                                            fontWeight:
+                                                            FontWeight.w500,
+                                                            useGoogleFonts:
+                                                            false,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
-                                                  Text(
-                                                    rowRepairstoreRecord.breif,
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1,
+                                                ],
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                MainAxisAlignment
+                                                    .spaceEvenly,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        5, 0, 0, 0),
+                                                    child: Container(
+                                                      width:
+                                                      MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                          0.15,
+                                                      height: 30,
+                                                      decoration: BoxDecoration(
+                                                        color:
+                                                        Color(0xFFEEEEEE),
+                                                      ),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                        MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            '수리품목:',
+                                                            style:
+                                                            FlutterFlowTheme
+                                                                .bodyText1
+                                                                .override(
+                                                              fontFamily:
+                                                              'tway_air medium',
+                                                              color:
+                                                              Colors.black,
+                                                              fontSize: 13,
+                                                              fontWeight:
+                                                              FontWeight
+                                                                  .w500,
+                                                              useGoogleFonts:
+                                                              false,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    width:
+                                                    MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                        0.35,
+                                                    height: 30,
+                                                    decoration: BoxDecoration(
+                                                      color: Color(0xFFEEEEEE),
+                                                    ),
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                      MainAxisSize.max,
+                                                      children: [
+                                                        Text(
+                                                          rowRepairstoreRecord
+                                                              .breif,
+                                                          style:
+                                                          FlutterFlowTheme
+                                                              .bodyText1
+                                                              .override(
+                                                            fontFamily:
+                                                            'tway_air medium',
+                                                            fontSize: 13,
+                                                            fontWeight:
+                                                            FontWeight.w500,
+                                                            useGoogleFonts:
+                                                            false,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
                                                 ],
                                               ),
