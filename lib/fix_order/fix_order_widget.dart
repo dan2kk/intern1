@@ -161,7 +161,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.9,
                                 height:
-                                MediaQuery.of(context).size.height * 0.7,
+                                MediaQuery.of(context).size.height * 0.5,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),

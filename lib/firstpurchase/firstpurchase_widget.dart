@@ -1886,7 +1886,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                width: MediaQuery.of(context).size.width * 0.95,
+                                width: MediaQuery.of(context).size.width*0,
                                 height:
                                 MediaQuery.of(context).size.height * 0.1,
                                 decoration: BoxDecoration(
