@@ -198,8 +198,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding:
-                              EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
                                 height: 200,
@@ -207,551 +206,380 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   color: Color(0x00FFFFFF),
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5, 0, 0, 0),
-                                  child: SingleChildScrollView(
-                                    child: Column(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Container(
+                                            width: MediaQuery.of(context).size.width * 0.15,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFEEEEEE),
+                                              borderRadius: BorderRadius.circular(30),
+                                              border: Border.all(
+                                                color: FlutterFlowTheme.tertiaryColor,
+                                                width: 2,
+                                              ),
+                                            ),
+                                            child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(30),
+                                              child: Image.asset(
+                                                'assets/images/KakaoTalk_20220104_094352388_03.png',
+                                                width: 100,
+                                                height: 100,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: MediaQuery.of(context).size.width * 0.15,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFEEEEEE),
+                                              borderRadius: BorderRadius.circular(30),
+                                              border: Border.all(
+                                                color: FlutterFlowTheme.tertiaryColor,
+                                                width: 2,
+                                              ),
+                                            ),
+                                            child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(30),
+                                              child: Image.asset(
+                                                'assets/images/KakaoTalk_20220104_094352388_02.png',
+                                                width: 100,
+                                                height: 100,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: MediaQuery.of(context).size.width * 0.15,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFEEEEEE),
+                                              borderRadius: BorderRadius.circular(30),
+                                              border: Border.all(
+                                                color: FlutterFlowTheme.tertiaryColor,
+                                                width: 2,
+                                              ),
+                                            ),
+                                            child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(30),
+                                              child: Image.asset(
+                                                'assets/images/KakaoTalk_20220104_094352388.png',
+                                                width: 100,
+                                                height: 100,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: MediaQuery.of(context).size.width * 0.15,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFEEEEEE),
+                                              borderRadius: BorderRadius.circular(30),
+                                              border: Border.all(
+                                                color: FlutterFlowTheme.tertiaryColor,
+                                              ),
+                                            ),
+                                            child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(30),
+                                              child: Image.asset(
+                                                'assets/images/KakaoTalk_20220104_094352388_05.png',
+                                                width: 100,
+                                                height: 100,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: MediaQuery.of(context).size.width * 0.15,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFEEEEEE),
+                                              borderRadius: BorderRadius.circular(30),
+                                              border: Border.all(
+                                                color: FlutterFlowTheme.tertiaryColor,
+                                              ),
+                                            ),
+                                            child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(30),
+                                              child: Image.asset(
+                                                'assets/images/KakaoTalk_20220104_094352388_04.png',
+                                                width: 100,
+                                                height: 100,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            width: MediaQuery.of(context).size.width * 0.15,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFFEEEEEE),
+                                              borderRadius: BorderRadius.circular(30),
+                                              border: Border.all(
+                                                color: FlutterFlowTheme.tertiaryColor,
+                                              ),
+                                            ),
+                                            child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(30),
+                                              child: Image.asset(
+                                                'assets/images/KakaoTalk_20220104_094352388_01.png',
+                                                width: 100,
+                                                height: 100,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Row(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0, 30, 0, 0),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width * 0.15,
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x00FFFFFF),
+                                          ),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Container(
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.15,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFEEEEEE),
-                                                  borderRadius:
-                                                  BorderRadius.circular(30),
-                                                  border: Border.all(
-                                                    color: FlutterFlowTheme
-                                                        .tertiaryColor,
-                                                    width: 2,
-                                                  ),
-                                                ),
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                  BorderRadius.circular(30),
-                                                  child: Image.asset(
-                                                    'assets/images/KakaoTalk_20220104_094352388_03.png',
-                                                    width: 100,
-                                                    height: 100,
-                                                    fit: BoxFit.cover,
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(5, 0, 0, 0),
-                                                child: Container(
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.15,
-                                                  height: 50,
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFEEEEEE),
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        30),
-                                                    border: Border.all(
-                                                      color: FlutterFlowTheme
-                                                          .tertiaryColor,
-                                                      width: 2,
+                                              Stack(
+                                                children: [
+                                                  if ((repairmentDetailRepairmentRecord.status) == 1)
+                                                    Text(
+                                                      '수리 요청',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: Color(0xFF21B6FF),
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
                                                     ),
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        30),
-                                                    child: Image.asset(
-                                                      'assets/images/KakaoTalk_20220104_094352388_02.png',
-                                                      width: 100,
-                                                      height: 100,
-                                                      fit: BoxFit.cover,
+                                                  if ((repairmentDetailRepairmentRecord.status) != 1)
+                                                    Text(
+                                                      '수리 요청',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: FlutterFlowTheme.tertiaryColor,
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
                                                     ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(5, 0, 0, 0),
-                                                child: Container(
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.15,
-                                                  height: 50,
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFEEEEEE),
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        30),
-                                                    border: Border.all(
-                                                      color: FlutterFlowTheme
-                                                          .tertiaryColor,
-                                                      width: 2,
-                                                    ),
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        30),
-                                                    child: Image.asset(
-                                                      'assets/images/KakaoTalk_20220104_094352388.png',
-                                                      width: 100,
-                                                      height: 100,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(5, 0, 0, 0),
-                                                child: Container(
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.15,
-                                                  height: 50,
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFEEEEEE),
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        30),
-                                                    border: Border.all(
-                                                      color: FlutterFlowTheme
-                                                          .tertiaryColor,
-                                                    ),
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        30),
-                                                    child: Image.asset(
-                                                      'assets/images/KakaoTalk_20220104_094352388_05.png',
-                                                      width: 100,
-                                                      height: 100,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(5, 0, 0, 0),
-                                                child: Container(
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.15,
-                                                  height: 50,
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFEEEEEE),
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        30),
-                                                    border: Border.all(
-                                                      color: FlutterFlowTheme
-                                                          .tertiaryColor,
-                                                    ),
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        30),
-                                                    child: Image.asset(
-                                                      'assets/images/KakaoTalk_20220104_094352388_04.png',
-                                                      width: 100,
-                                                      height: 100,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(5, 0, 0, 0),
-                                                child: Container(
-                                                  width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.15,
-                                                  height: 50,
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFEEEEEE),
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        30),
-                                                    border: Border.all(
-                                                      color: FlutterFlowTheme
-                                                          .tertiaryColor,
-                                                    ),
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                    BorderRadius.circular(
-                                                        30),
-                                                    child: Image.asset(
-                                                      'assets/images/KakaoTalk_20220104_094352388_01.png',
-                                                      width: 100,
-                                                      height: 100,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
+                                                ],
                                               ),
                                             ],
                                           ),
                                         ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5, 0, 0, 0),
-                                              child: Container(
-                                                width: 50,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0x00FFFFFF),
-                                                ),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                  MainAxisSize.max,
-                                                  children: [
-                                                    Stack(
-                                                      children: [
-                                                        if ((repairmentDetailRepairmentRecord
-                                                            .status) ==
-                                                            1)
-                                                          Text(
-                                                            '수리 요청',
-                                                            style:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
-                                                              color: Color(
-                                                                  0xFF4B39EF),
-                                                              fontSize: 11,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
-                                                            ),
-                                                          ),
-                                                        if ((repairmentDetailRepairmentRecord
-                                                            .status) !=
-                                                            1)
-                                                          Text(
-                                                            '수리 요청',
-                                                            style:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
-                                                              color: FlutterFlowTheme
-                                                                  .tertiaryColor,
-                                                              fontSize: 11,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
-                                                            ),
-                                                          ),
-                                                      ],
+                                        Container(
+                                          width: MediaQuery.of(context).size.width * 0.15,
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x00EEEEEE),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Stack(
+                                                children: [
+                                                  if ((repairmentDetailRepairmentRecord.status) != 2)
+                                                    Text(
+                                                      '견적 수락',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: FlutterFlowTheme.tertiaryColor,
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
                                                     ),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
-                                              child: Container(
-                                                width: 50,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0x00EEEEEE),
-                                                ),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                  MainAxisSize.max,
-                                                  children: [
-                                                    Stack(
-                                                      children: [
-                                                        if ((repairmentDetailRepairmentRecord
-                                                            .status) !=
-                                                            2)
-                                                          Text(
-                                                            '견적 수락',
-                                                            style:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
-                                                              color: FlutterFlowTheme
-                                                                  .tertiaryColor,
-                                                              fontSize: 11,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
-                                                            ),
-                                                          ),
-                                                        if ((repairmentDetailRepairmentRecord
-                                                            .status) ==
-                                                            2)
-                                                          Text(
-                                                            '견적 수락',
-                                                            style:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
-                                                              color: Color(
-                                                                  0xFF4B39EF),
-                                                              fontSize: 11,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
-                                                            ),
-                                                          ),
-                                                      ],
+                                                  if ((repairmentDetailRepairmentRecord.status) == 2)
+                                                    Text(
+                                                      '견적 수락',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: Color(0xFF21B6FF),
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
                                                     ),
-                                                  ],
-                                                ),
+                                                ],
                                               ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
-                                              child: Container(
-                                                width: 50,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0x00FFFFFF),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(15, 0, 0, 0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
-                                                    children: [
-                                                      Stack(
-                                                        children: [
-                                                          if ((repairmentDetailRepairmentRecord
-                                                              .status) ==
-                                                              3)
-                                                            Text(
-                                                              '픽업',
-                                                              style:
-                                                              FlutterFlowTheme
-                                                                  .bodyText1
-                                                                  .override(
-                                                                fontFamily:
-                                                                'tway_air medium',
-                                                                color: Color(
-                                                                    0xFF4B39EF),
-                                                                fontSize: 11,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w500,
-                                                                useGoogleFonts:
-                                                                false,
-                                                              ),
-                                                            ),
-                                                          if ((repairmentDetailRepairmentRecord
-                                                              .status) !=
-                                                              3)
-                                                            Text(
-                                                              '픽업',
-                                                              style:
-                                                              FlutterFlowTheme
-                                                                  .bodyText1
-                                                                  .override(
-                                                                fontFamily:
-                                                                'tway_air medium',
-                                                                color: FlutterFlowTheme
-                                                                    .tertiaryColor,
-                                                                fontSize: 11,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w500,
-                                                                useGoogleFonts:
-                                                                false,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(30, 0, 0, 0),
-                                              child: Container(
-                                                width: 70,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0x00FFFFFF),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(5, 0, 0, 0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
-                                                    children: [
-                                                      Stack(
-                                                        children: [
-                                                          if ((repairmentDetailRepairmentRecord
-                                                              .status) ==
-                                                              4)
-                                                            Text(
-                                                              '수리 진행',
-                                                              style:
-                                                              FlutterFlowTheme
-                                                                  .bodyText1
-                                                                  .override(
-                                                                fontFamily:
-                                                                'tway_air medium',
-                                                                color: Color(
-                                                                    0xFF4B39EF),
-                                                                fontSize: 11,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w500,
-                                                                useGoogleFonts:
-                                                                false,
-                                                              ),
-                                                            ),
-                                                          if ((repairmentDetailRepairmentRecord
-                                                              .status) !=
-                                                              4)
-                                                            Text(
-                                                              '수리 진행',
-                                                              style:
-                                                              FlutterFlowTheme
-                                                                  .bodyText1
-                                                                  .override(
-                                                                fontFamily:
-                                                                'tway_air medium',
-                                                                color: FlutterFlowTheme
-                                                                    .tertiaryColor,
-                                                                fontSize: 11,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w500,
-                                                                useGoogleFonts:
-                                                                false,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
-                                              child: Container(
-                                                width: 50,
-                                                height: 50,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0x00FFFFFF),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(10, 0, 0, 0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
-                                                    children: [
-                                                      Stack(
-                                                        children: [
-                                                          if ((repairmentDetailRepairmentRecord
-                                                              .status) ==
-                                                              6)
-                                                            Text(
-                                                              '수리 완료',
-                                                              style:
-                                                              FlutterFlowTheme
-                                                                  .bodyText1
-                                                                  .override(
-                                                                fontFamily:
-                                                                'tway_air medium',
-                                                                color: Color(
-                                                                    0xFF21B6FF),
-                                                                fontSize: 13,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w500,
-                                                                useGoogleFonts:
-                                                                false,
-                                                              ),
-                                                            ),
-                                                          if ((repairmentDetailRepairmentRecord
-                                                              .status) !=
-                                                              6)
-                                                            Text(
-                                                              '수리 완료',
-                                                              style:
-                                                              FlutterFlowTheme
-                                                                  .bodyText1
-                                                                  .override(
-                                                                fontFamily:
-                                                                'tway_air medium',
-                                                                color: FlutterFlowTheme
-                                                                    .tertiaryColor,
-                                                                fontSize: 13,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .w500,
-                                                                useGoogleFonts:
-                                                                false,
-                                                              ),
-                                                            ),
-                                                        ],
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [],
+                                        Container(
+                                          width: MediaQuery.of(context).size.width * 0.15,
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x00FFFFFF),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Stack(
+                                                children: [
+                                                  if ((repairmentDetailRepairmentRecord.status) == 3)
+                                                    Text(
+                                                      '픽업',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: Color(0xFF21B6FF),
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                  if ((repairmentDetailRepairmentRecord.status) != 3)
+                                                    Text(
+                                                      '픽업',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: FlutterFlowTheme.tertiaryColor,
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width * 0.15,
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x00FFFFFF),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Stack(
+                                                children: [
+                                                  if ((repairmentDetailRepairmentRecord.status) == 4)
+                                                    Text(
+                                                      '수리 진행',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: Color(0xFF21B6FF),
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                  if ((repairmentDetailRepairmentRecord.status) != 4)
+                                                    Text(
+                                                      '수리 진행',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: FlutterFlowTheme.tertiaryColor,
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width * 0.15,
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x00FFFFFF),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Stack(
+                                                children: [
+                                                  if ((repairmentDetailRepairmentRecord.status) == 5)
+                                                    Text(
+                                                      '배송',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: Color(0xFF21B6FF),
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                  if ((repairmentDetailRepairmentRecord.status) != 5)
+                                                    Text(
+                                                      '배송',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: FlutterFlowTheme.tertiaryColor,
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          width: MediaQuery.of(context).size.width * 0.15,
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            color: Color(0x00FFFFFF),
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Stack(
+                                                children: [
+                                                  if ((repairmentDetailRepairmentRecord.status) == 6)
+                                                    Text(
+                                                      '수리 완료',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: Color(0xFF21B6FF),
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                  if ((repairmentDetailRepairmentRecord.status) != 6)
+                                                    Text(
+                                                      '수리 완료',
+                                                      style: FlutterFlowTheme.bodyText1.override(
+                                                        fontFamily: 'tway_air medium',
+                                                        color: FlutterFlowTheme.tertiaryColor,
+                                                        fontSize: 13,
+                                                        fontWeight: FontWeight.w500,
+                                                        useGoogleFonts: false,
+                                                      ),
+                                                    ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
-                                  ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -1470,7 +1298,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             if ((repairmentDetailRepairmentRecord.status) == 3)
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 0, 20),
+                                    20, 20, 0, 20),
                                 child: InkWell(
                                   onTap: () async {
                                     await Navigator.push(
@@ -1539,7 +1367,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             if ((repairmentDetailRepairmentRecord.status) == 2)
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 0, 20),
+                                    20, 20, 0, 20),
                                 child: InkWell(
                                   onTap: () async {
                                     await Navigator.push(
