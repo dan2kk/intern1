@@ -1,25 +1,17 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
+import '../firstpurchase/firstpurchase_widget.dart';
+import '../flutter_flow/flutter_flow_media_display.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_video_player.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/upload_media.dart';
-import '../order_complete/order_complete_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
-import 'dart:async';
-import 'dart:math' as math;
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:time_picker_widget/time_picker_widget.dart';
-import '../flutter_flow/flutter_flow_video_player.dart';
-import '../flutter_flow/flutter_flow_media_display.dart';
-import '../firstpurchase/firstpurchase_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FixOrderWidget extends StatefulWidget {
   const FixOrderWidget({
@@ -35,20 +27,16 @@ class FixOrderWidget extends StatefulWidget {
 
 class _FixOrderWidgetState extends State<FixOrderWidget> {
   DateTime datePicked;
-  TimeOfDay timePicked;
   String uploadedFileUrl1 = '';
   String uploadedFileUrl2 = '';
   TextEditingController textController1;
   TextEditingController textController2;
-  bool picturevideoValue = true;
+  bool picturevideoValue;
   TextEditingController textController3;
   TextEditingController textController4;
   TextEditingController textController5;
-  bool switchListTileValue = true;
-  List<int> _availableHours = [1, 4, 6, 8, 12];
-  List<int> _availableMinutes = [0, 30];
   RepairmentRecord rprf;
-
+  bool switchListTileValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -85,39 +73,50 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
             : null;
         return Scaffold(
           key: scaffoldKey,
-          appBar: AppBar(
-            backgroundColor: Color(0x00F6F1F1),
-            automaticallyImplyLeading: false,
-            leading: InkWell(
-              onTap: () async {
-                Navigator.pop(context);
-              },
-              child: Icon(
-                Icons.arrow_back_ios_outlined,
-                color: Colors.black,
-                size: 24,
-              ),
-            ),
-            title: Text(
-              '견적문의',
-              style: FlutterFlowTheme.bodyText1.override(
-                fontFamily: 'tway_air medium',
-                color: Color(0xFF3F51B5),
-                fontSize: 36,
-                fontWeight: FontWeight.w500,
-                useGoogleFonts: false,
-              ),
-            ),
-            actions: [],
-            centerTitle: true,
-            elevation: 4,
-          ),
           backgroundColor: Color(0xFFEEEEEE),
           body: SafeArea(
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF21B6FF),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(25, 0, 0, 0),
+                          child: InkWell(
+                            onTap: () async {
+                              Navigator.pop(context);
+                            },
+                            child: Icon(
+                              Icons.arrow_back_ios_outlined,
+                              color: Colors.white,
+                              size: 25,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                          child: Text(
+                            '견적문의',
+                            style: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'tway_air medium',
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500,
+                              useGoogleFonts: false,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                     child: Row(
@@ -127,16 +126,10 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                           alignment: AlignmentDirectional(0, 0),
                           child: Padding(
                             padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                            EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                             child: Container(
-                              width: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .width * 0.9,
-                              height: MediaQuery
-                                  .of(context)
-                                  .size
-                                  .height * 0.5,
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              height: MediaQuery.of(context).size.height * 0.7,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
@@ -156,7 +149,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                       children: [
                                         Stack(
                                           children: [
-                                            if (picturevideoValue && (uploadedFileUrl2 == ''))
+                                            if (picturevideoValue ?? true)
                                               Align(
                                                 alignment:
                                                 AlignmentDirectional(0, 0),
@@ -174,7 +167,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                                 .storagePath,
                                                             context)) {
                                                       showUploadMessage(context,
-                                                          '동영상을 업로드 중입니다!',
+                                                          'Uploading file...',
                                                           showLoading: true);
                                                       final downloadUrl =
                                                       await uploadData(
@@ -191,18 +184,18 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                             downloadUrl);
                                                         showUploadMessage(
                                                             context,
-                                                            '동영상 업로드 성공!');
+                                                            'Success!');
                                                       } else {
                                                         showUploadMessage(
                                                             context,
-                                                            '동영상 업로드 실패..');
+                                                            'Failed to upload media');
                                                         return;
                                                       }
                                                     }
                                                   },
                                                   child: Image.network(
                                                     valueOrDefault<String>(
-                                                      uploadedFileUrl1,
+                                                      uploadedFileUrl2,
                                                       'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2Fvideo%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=1efb466d-2eda-4241-b72c-25a918947d38',
                                                     ),
                                                     width: 100,
@@ -233,7 +226,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                               context)) {
                                                         showUploadMessage(
                                                             context,
-                                                            '사진을 업로드 중입니다!',
+                                                            'Uploading file...',
                                                             showLoading: true);
                                                         final downloadUrl =
                                                         await uploadData(
@@ -251,18 +244,18 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                               downloadUrl);
                                                           showUploadMessage(
                                                               context,
-                                                              '사진 업로드 성공!');
+                                                              'Success!');
                                                         } else {
                                                           showUploadMessage(
                                                               context,
-                                                              '사진 업로드 실패..');
+                                                              'Failed to upload media');
                                                           return;
                                                         }
                                                       }
                                                     },
                                                     child: Image.network(
                                                       valueOrDefault<String>(
-                                                        uploadedFileUrl2,
+                                                        uploadedFileUrl1,
                                                         'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2F%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=2e283c3a-2d59-4fe8-b97b-2a78784687e9',
                                                       ),
                                                       width: 100,
@@ -272,7 +265,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            if ((picturevideoValue) &&(uploadedFileUrl2 != ''))
+                                            if ((uploadedFileUrl2) != '')
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(0, 10, 0, 0),
@@ -313,7 +306,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                     .bodyText1
                                                     .override(
                                                   fontFamily: 'tway_air medium',
-                                                  color: Color(0xFF3F51B5),
+                                                  color: Color(0xFF21B6FF),
                                                   fontSize: 15,
                                                   fontWeight: FontWeight.w500,
                                                   useGoogleFonts: false,
@@ -332,7 +325,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                               Expanded(
                                                 child: Container(
                                                   width: 330,
-                                                  height: 60,
+                                                  height: 40,
                                                   decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -534,7 +527,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                               Expanded(
                                                 child: Container(
                                                   width: 330,
-                                                  height: 70,
+                                                  height: 60,
                                                   decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -552,7 +545,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                         padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(15, 0,
-                                                            0, 10),
+                                                            0, 0),
                                                         child: Text(
                                                           '동영상 여부',
                                                           style:
@@ -574,8 +567,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                           value:
                                                           picturevideoValue ??=
                                                           false,
-                                                          onChanged: (
-                                                              newValue) =>
+                                                          onChanged: (newValue) =>
                                                               setState(() =>
                                                               picturevideoValue =
                                                                   newValue),
@@ -608,10 +600,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                     child: Container(
-                      width: MediaQuery
-                          .of(context)
-                          .size
-                          .width * 0.95,
+                      width: MediaQuery.of(context).size.width * 0.95,
                       height: 250,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -625,10 +614,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
-                                width: MediaQuery
-                                    .of(context)
-                                    .size
-                                    .width * 0.95,
+                                width: MediaQuery.of(context).size.width * 0.95,
                                 height: 50,
                                 decoration: BoxDecoration(
                                   color: Color(0xFFEEEEEE),
@@ -651,7 +637,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                             '고장 부위:',
                                             style: TextStyle(
                                               fontFamily: 'tway_air medium',
-                                              color: Color(0xFF3F51B5),
+                                              color: Color(0xFF21B6FF),
                                               fontWeight: FontWeight.w500,
                                               fontSize: 16,
                                             ),
@@ -716,15 +702,9 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Container(
-                                width: MediaQuery
-                                    .of(context)
-                                    .size
-                                    .width * 0.9,
+                                width: MediaQuery.of(context).size.width * 0.9,
                                 height:
-                                MediaQuery
-                                    .of(context)
-                                    .size
-                                    .height * 0.2,
+                                MediaQuery.of(context).size.height * 0.2,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                 ),
@@ -781,10 +761,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                       child: Container(
-                        width: MediaQuery
-                            .of(context)
-                            .size
-                            .width * 0.95,
+                        width: MediaQuery.of(context).size.width * 0.95,
                         height: 70,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -842,7 +819,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                             child: InkWell(
                               onTap: () async {
-                                await DatePicker.showDatePicker(
+                                await DatePicker.showDateTimePicker(
                                   context,
                                   showTitleActions: true,
                                   onConfirm: (date) {
@@ -850,55 +827,12 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                   },
                                   currentTime: getCurrentTimestamp,
                                   minTime: getCurrentTimestamp,
-                                  maxTime: getCurrentTimestamp.add(
-                                      const Duration(days: 30)),
-                                  locale: LocaleType.ko,
-                                );
-                                await showCustomTimePicker(
-                                    context: context,
-                                    initialTime: TimeOfDay(
-                                        hour: 6,
-                                        minute: _availableMinutes.first),
-                                    onFailValidation: (context) =>
-                                        showDialog(
-                                          context: context,
-                                          builder: (BuildContext context) {
-                                            return AlertDialog(
-                                              title: new Text("알림!"),
-                                              content: new Text("30분 단위로 시간을 골라주세요!"),
-                                              actions: <Widget>[
-                                                new FlatButton(
-                                                  child: new Text("알겠습니다."),
-                                                  onPressed: () {
-                                                    Navigator.of(context).pop();
-                                                  },
-                                                ),
-                                              ],
-                                            );
-                                          },
-                                        ),
-                                    selectableTimePredicate: (time) =>
-                                    _availableMinutes.indexOf(time.minute) !=
-                                        -1).then(
-                                        (time) =>
-                                        setState(() => datePicked =
-                                            datePicked.add(Duration(
-                                                hours: time.hour,
-                                                minutes: time.minute)
-                                            )
-                                        )
                                 );
                               },
                               child: Container(
-                                width: MediaQuery
-                                    .of(context)
-                                    .size
-                                    .width * 0.95,
+                                width: MediaQuery.of(context).size.width * 0.95,
                                 height:
-                                MediaQuery
-                                    .of(context)
-                                    .size
-                                    .height * 0.05,
+                                MediaQuery.of(context).size.height * 0.05,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
@@ -917,7 +851,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
                                             fontFamily: 'tway_air medium',
-                                            color: Color(0xFF323BD3),
+                                            color: Color(0xFF21B6FF),
                                             fontSize: 16,
                                             fontWeight: FontWeight.w500,
                                             useGoogleFonts: false,
@@ -929,7 +863,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                             10, 0, 0, 0),
                                         child: Text(
                                           dateTimeFormat(
-                                              'y/M/d a h:m', datePicked),
+                                              'M/d h:mm a', datePicked),
                                           style: FlutterFlowTheme.bodyText1
                                               .override(
                                             fontFamily: 'tway_air medium',
@@ -954,10 +888,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          width: MediaQuery
-                              .of(context)
-                              .size
-                              .width,
+                          width: MediaQuery.of(context).size.width,
                           height: 100,
                           decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
@@ -971,17 +902,11 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                 EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Container(
                                   width:
-                                  MediaQuery
-                                      .of(context)
-                                      .size
-                                      .width * 0.6,
+                                  MediaQuery.of(context).size.width * 0.6,
                                   height: 50,
                                   constraints: BoxConstraints(
                                     maxWidth:
-                                    MediaQuery
-                                        .of(context)
-                                        .size
-                                        .width *
+                                    MediaQuery.of(context).size.width *
                                         0.65,
                                   ),
                                   decoration: BoxDecoration(
@@ -989,11 +914,9 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: SwitchListTile(
-                                    value: switchListTileValue ??= true,
-                                    onChanged: (newValue) =>
-                                        setState(
-                                                () =>
-                                            switchListTileValue = newValue),
+                                    value: switchListTileValue ??= false,
+                                    onChanged: (newValue) => setState(
+                                            () => switchListTileValue = newValue),
                                     title: Text(
                                       '직접방문/ 픽업',
                                       style: FlutterFlowTheme.title3.override(
@@ -1015,10 +938,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                 EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
                                   width:
-                                  MediaQuery
-                                      .of(context)
-                                      .size
-                                      .width * 0.35,
+                                  MediaQuery.of(context).size.width * 0.35,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Color(0xFFEEEEEE),
@@ -1043,18 +963,14 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                           address: textController5.text,
                                           status: 1,
                                           repairmentid:
-                                          '${currentUserUid};;${fixOrderRepairstoreRecord
-                                              .storeidx
-                                              .toString()};;${getCurrentTimestamp
-                                              .toString()}',
+                                          '${currentUserUid};;${fixOrderRepairstoreRecord.storeidx.toString()};;${getCurrentTimestamp.toString()}',
                                           timestamp: getCurrentTimestamp,
                                           videoUrl: uploadedFileUrl1,
                                           select: datePicked,
                                         );
                                         final repairmentRecordReference =
                                         RepairmentRecord.collection.doc();
-                                        await RepairmentRecord.collection
-                                            .doc()
+                                        await repairmentRecordReference
                                             .set(repairmentCreateData);
                                         rprf = RepairmentRecord
                                             .getDocumentFromData(
@@ -1064,10 +980,13 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                OrderCompleteWidget(
+                                                FirstpurchaseWidget(
+                                                  repairmentrf: rprf.reference,
                                                 ),
                                           ),
                                         );
+
+                                        setState(() {});
                                       },
                                       text: '견적문의',
                                       icon: Icon(
@@ -1077,7 +996,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                       options: FFButtonOptions(
                                         width: 150,
                                         height: 50,
-                                        color: Color(0xFF4B39EF),
+                                        color: Color(0xFF21B6FF),
                                         textStyle:
                                         FlutterFlowTheme.subtitle2.override(
                                           fontFamily: 'tway_air medium',
@@ -1111,4 +1030,3 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
     );
   }
 }
-
