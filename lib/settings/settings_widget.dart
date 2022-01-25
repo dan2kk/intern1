@@ -282,40 +282,39 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            if (currentUserDocument?.emailalarm ?? true)
-                              Expanded(
-                                child: AuthUserStreamWidget(
-                                  child: SwitchListTile.adaptive(
-                                    value: switchListTileValue3 ??=
-                                        currentUserDocument?.emailalarm,
-                                    onChanged: (newValue) => setState(
-                                            () => switchListTileValue3 = newValue),
-                                    title: Text(
-                                      '이메일 알람',
-                                      style: TextStyle(
-                                        fontFamily: 'tway_air medium',
-                                        color: Color(0xFF21B6FF),
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 17,
-                                      ),
+                            Expanded(
+                              child: AuthUserStreamWidget(
+                                child: SwitchListTile.adaptive(
+                                  value: switchListTileValue3 ??=
+                                      currentUserDocument?.emailalarm,
+                                  onChanged: (newValue) => setState(
+                                          () => switchListTileValue3 = newValue),
+                                  title: Text(
+                                    '이메일 알람',
+                                    style: TextStyle(
+                                      fontFamily: 'tway_air medium',
+                                      color: Color(0xFF21B6FF),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 17,
                                     ),
-                                    subtitle: Text(
-                                      '마케팅 팀으로부터 새로운 기능에 대한 이메일 알림을 받으십시오.',
-                                      style: GoogleFonts.getFont(
-                                        'Lexend Deca',
-                                        color: Color(0xFF8B97A2),
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                    activeColor: Color(0xFF21B6FF),
-                                    activeTrackColor: Color(0xFF21B6FF),
-                                    dense: false,
-                                    controlAffinity:
-                                    ListTileControlAffinity.trailing,
                                   ),
+                                  subtitle: Text(
+                                    '마케팅 팀으로부터 새로운 기능에 대한 이메일 알림을 받으십시오.',
+                                    style: GoogleFonts.getFont(
+                                      'Lexend Deca',
+                                      color: Color(0xFF8B97A2),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                  activeColor: Color(0xFF21B6FF),
+                                  activeTrackColor: Color(0xFF21B6FF),
+                                  dense: false,
+                                  controlAffinity:
+                                  ListTileControlAffinity.trailing,
                                 ),
                               ),
+                            ),
                           ],
                         ),
                       ),
