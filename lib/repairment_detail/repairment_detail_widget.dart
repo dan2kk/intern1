@@ -1470,7 +1470,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             if ((repairmentDetailRepairmentRecord.status) == 3)
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 0, 20),
+                                    20, 20, 0, 20),
                                 child: InkWell(
                                   onTap: () async {
                                     await Navigator.push(
@@ -1539,7 +1539,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             if ((repairmentDetailRepairmentRecord.status) == 2)
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 0, 20),
+                                    20, 20, 0, 20),
                                 child: InkWell(
                                   onTap: () async {
                                     await Navigator.push(
