@@ -48,6 +48,9 @@ abstract class RepairmentRecord
   int get price;
 
   @nullable
+  int get paidprice;
+
+  @nullable
   LatLng get geopoint;
 
   @nullable
@@ -95,6 +98,7 @@ abstract class RepairmentRecord
     ..pickupDirect = false
     ..address = ''
     ..price = 0
+    ..paidprice = 0
     ..status = 0
     ..transactionid = ''
     ..repairmentid = ''
@@ -136,6 +140,7 @@ Map<String, dynamic> createRepairmentRecordData({
   bool pickupDirect,
   String address,
   int price,
+  int paidprice,
   LatLng geopoint,
   int status,
   String transactionid,
@@ -161,6 +166,7 @@ Map<String, dynamic> createRepairmentRecordData({
           ..pickupDirect = pickupDirect
           ..address = address
           ..price = price
+          ..paidprice = paidprice
           ..geopoint = geopoint
           ..status = status
           ..transactionid = transactionid

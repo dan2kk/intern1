@@ -41,6 +41,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
   int finalPrice = 36000;
   int discountCoupon = 0;
   int discountPoint = 0;
+  int result;
   int pointHave = currentUserDocument.point ?? 0;
   String input = '';
   bool _submitted = false;
@@ -58,9 +59,10 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
       finalPrice = defaultPrice - alreadyPrice - discountAll;
       setState(() => _submitted = true);
       Navigator.pop(context);
+      print('1');
     }
   }
-  Future<String> openDialog() =>showDialog<String>(
+  Future<String> openDialog() => showDialog<String>(
       context: context,
       builder: (BuildContext context) => AlertDialog(
         title: new Text("포인트 사용"),
@@ -79,32 +81,31 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                       labelText: '포인트 *',
                     ),
                     keyboardType: TextInputType.number,
-                    autovalidateMode: _submitted
-                        ? AutovalidateMode.onUserInteraction
-                        : AutovalidateMode.disabled,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
                     controller: controller,
                     validator: (value) {
-                      if(value == null|| value.isEmpty){
+                      if (value == null || value.isEmpty) {
                         return '빈칸일수는 없습니다!';
                       }
-                      if(int.parse(value) > pointHave){
+                      if (int.parse(value) > pointHave) {
                         return '가진 포인트보다 더 많이 사용할수는 없습니다';
                       }
-                      if(int.parse(value) > defaultPrice - alreadyPrice - discountCoupon){
+                      if (int.parse(value) >
+                          defaultPrice - alreadyPrice - discountCoupon) {
                         return '최종가격보다 더 많이 사용할수는 없습니다';
                       }
                       return null;
                     },
-                    onChanged: (value) => setState(()  => {
+                    onChanged: (value) => setState(() => {
                       input = value,
                     }),
                   ),
                   FlatButton(
                     child: new Text("적용"),
                     onPressed: input.isEmpty ? _submit : null,
-                  )],
-              )
-          )
+                  )
+                ],
+              ))
         ],
       ));
   @override
@@ -121,6 +122,8 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
           );
         }
         final secondpurchaseRepairmentRecord = snapshot.data;
+        defaultPrice = secondpurchaseRepairmentRecord.price;
+        alreadyPrice = secondpurchaseRepairmentRecord.paidprice;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: Color(0xFFD3DDE1),
@@ -861,21 +864,25 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                             onTap: () async {
                                               final result1 = await Navigator.push(context,
                                                 MaterialPageRoute(builder: (context) => CouponWidget(coupon: 1,category: secondpurchaseRepairmentRecord.category, idx: secondpurchaseRepairmentRecord.storeidx)),);
-                                              int result = result1.b;
-                                              //coupon = FirebaseFirestore.instance.collection('coupon').doc('$result1.a');
+                                              result = result1.b;
+                                              copNum = result1.a;
+                                              final coupon = FirebaseFirestore.instance.collection('coupon').where('coupon_num', isEqualTo: copNum).get();
                                               if(0 <= result && result <= 100){
                                                 await setState(() {
-                                                  discountCoupon = (defaultPrice * result /100).toInt();
+                                                  discountCoupon = (defaultPrice * (result) /100).toInt();
                                                   discountAll = discountCoupon;
-                                                  finalPrice = defaultPrice - alreadyPrice -discountAll;
+                                                  finalPrice = defaultPrice  -alreadyPrice -discountAll;
                                                 });
                                               }
                                               else{
                                                 await setState(() {
                                                   discountCoupon = result;
-                                                  if(discountCoupon > defaultPrice) discountAll = defaultPrice;
+                                                  if(discountCoupon > defaultPrice){
+                                                    discountCoupon = defaultPrice;
+                                                    discountAll = defaultPrice;
+                                                  }
                                                   else discountAll = discountCoupon;
-                                                  finalPrice = defaultPrice-alreadyPrice-discountAll;
+                                                  finalPrice = defaultPrice - alreadyPrice -discountAll;
                                                 });
                                               }
                                             },
@@ -1007,7 +1014,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Text(
-                                                    'Hello World',
+                                                    '$discountPoint 점',
                                                     style: FlutterFlowTheme
                                                         .bodyText1
                                                         .override(
@@ -1308,7 +1315,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0, 0, 20, 0),
                                               child: Text(
-                                                '',
+                                                '$defaultPrice원',
                                                 style: FlutterFlowTheme
                                                     .bodyText1
                                                     .override(
@@ -1527,13 +1534,33 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                 final rowRepairmentRecord = snapshot.data;
                                 return InkWell(
                                   onTap: () async {
-                                    await goBootpayRequest(context, finalPrice);
-                                    await Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                    builder: (context) => OrderCompleteWidget(),
-                                    ),(route) => false);
-                                  },
+                          if(finalPrice > 0) await goBootpayRequest(context, finalPrice);
+                          await containerRepairmentRecord.reference.update(
+                          createCouponRecordData(
+                          used : true
+                          ));
+                          await currentUserReference.update(createUsersRecordData(point : pointHave - discountPoint));
+                          String jumon = secondpurchaseRepairmentRecord.repairmentid;
+                          final createPoint = {...createPointsRecordData(
+                          amount : -discountPoint,
+                          earnedDate: getCurrentTimestamp,
+                          expireDate: getCurrentTimestamp.add(Duration(days: 30)),
+                          reason : '주문시 사용'
+                          )};
+                          final pointref = await PointsRecord.collection.doc();
+                          await pointref.set(createPoint);
+                          final usersUpdateData = {'point_his': FieldValue.arrayUnion([pointref]),};
+                          await currentUserReference.update(usersUpdateData);
+                          final createRepairment = {...createRepairmentRecordData(
+                          status: 4,
+                          )};
+                          await secondpurchaseRepairmentRecord.reference.update(createRepairment);
+                          await Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                          builder: (context) => OrderCompleteWidget(),
+                          ),(route) => false);
+                          },
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,

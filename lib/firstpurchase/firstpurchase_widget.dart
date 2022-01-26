@@ -2188,6 +2188,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             await currentUserReference.update(usersUpdateData);
                                             final createRepairment = {...createRepairmentRecordData(
                                               status: 3,
+                                              paidprice: defaultPrice,
                                             )};
                                             await firstpurchaseRepairmentRecord.reference.update(createRepairment);
                                             await Navigator.pushAndRemoveUntil(

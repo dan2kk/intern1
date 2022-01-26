@@ -96,6 +96,12 @@ class _$RepairmentRecordSerializer
         ..add('price')
         ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
+    value = object.paidprice;
+    if (value != null) {
+      result
+        ..add('paidprice')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.geopoint;
     if (value != null) {
       result
@@ -231,6 +237,10 @@ class _$RepairmentRecordSerializer
           result.price = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'paidprice':
+          result.paidprice = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'geopoint':
           result.geopoint = serializers.deserialize(value,
               specifiedType: const FullType(LatLng)) as LatLng;
@@ -308,6 +318,8 @@ class _$RepairmentRecord extends RepairmentRecord {
   @override
   final int price;
   @override
+  final int paidprice;
+  @override
   final LatLng geopoint;
   @override
   final int status;
@@ -346,6 +358,7 @@ class _$RepairmentRecord extends RepairmentRecord {
       this.pickupDirect,
       this.address,
       this.price,
+      this.paidprice,
       this.geopoint,
       this.status,
       this.transactionid,
@@ -382,6 +395,7 @@ class _$RepairmentRecord extends RepairmentRecord {
         pickupDirect == other.pickupDirect &&
         address == other.address &&
         price == other.price &&
+        paidprice == other.paidprice &&
         geopoint == other.geopoint &&
         status == other.status &&
         transactionid == other.transactionid &&
@@ -415,15 +429,15 @@ class _$RepairmentRecord extends RepairmentRecord {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc(0, storeidx.hashCode), userid.hashCode), category.hashCode),
-                                                                                manufacture.hashCode),
-                                                                            model.hashCode),
-                                                                        brokenPart.hashCode),
-                                                                    symptom.hashCode),
-                                                                imgUrl.hashCode),
-                                                            pickupDirect.hashCode),
-                                                        address.hashCode),
-                                                    price.hashCode),
+                                                                            $jc($jc($jc($jc($jc(0, storeidx.hashCode), userid.hashCode), category.hashCode), manufacture.hashCode),
+                                                                                model.hashCode),
+                                                                            brokenPart.hashCode),
+                                                                        symptom.hashCode),
+                                                                    imgUrl.hashCode),
+                                                                pickupDirect.hashCode),
+                                                            address.hashCode),
+                                                        price.hashCode),
+                                                    paidprice.hashCode),
                                                 geopoint.hashCode),
                                             status.hashCode),
                                         transactionid.hashCode),
@@ -451,6 +465,7 @@ class _$RepairmentRecord extends RepairmentRecord {
           ..add('pickupDirect', pickupDirect)
           ..add('address', address)
           ..add('price', price)
+          ..add('paidprice', paidprice)
           ..add('geopoint', geopoint)
           ..add('status', status)
           ..add('transactionid', transactionid)
@@ -513,6 +528,10 @@ class RepairmentRecordBuilder
   int _price;
   int get price => _$this._price;
   set price(int price) => _$this._price = price;
+
+  int _paidprice;
+  int get paidprice => _$this._paidprice;
+  set paidprice(int paidprice) => _$this._paidprice = paidprice;
 
   LatLng _geopoint;
   LatLng get geopoint => _$this._geopoint;
@@ -579,6 +598,7 @@ class RepairmentRecordBuilder
       _pickupDirect = $v.pickupDirect;
       _address = $v.address;
       _price = $v.price;
+      _paidprice = $v.paidprice;
       _geopoint = $v.geopoint;
       _status = $v.status;
       _transactionid = $v.transactionid;
@@ -621,6 +641,7 @@ class RepairmentRecordBuilder
             pickupDirect: pickupDirect,
             address: address,
             price: price,
+            paidprice: paidprice,
             geopoint: geopoint,
             status: status,
             transactionid: transactionid,
