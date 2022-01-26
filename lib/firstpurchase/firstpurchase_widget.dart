@@ -1754,7 +1754,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     width: MediaQuery.of(context).size.width *
                                         0.95,
                                     height: MediaQuery.of(context).size.height *
-                                        0.4,
+                                        0.5,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFF5F5F5),
                                       borderRadius: BorderRadius.circular(10),

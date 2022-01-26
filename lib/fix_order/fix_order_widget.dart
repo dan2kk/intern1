@@ -139,15 +139,13 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        25, 0, 0, 0),
+                                        16, 0, 0, 0),
                                     child: Text(
                                       '사진 첨부',
                                       style:
                                       FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'tway_air medium',
                                         fontSize: 13,
-                                        color: Color(
-                                            0xFF8B97A2),
                                         fontWeight: FontWeight.w500,
                                         useGoogleFonts: false,
                                       ),
@@ -396,8 +394,8 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                         obscureText: false,
                                                         decoration:
                                                         InputDecoration(
-                                                          labelText: '제조사',
-                                                          labelStyle:
+                                                          hintText: '제조사',
+                                                          hintStyle:
                                                           FlutterFlowTheme
                                                               .bodyText2
                                                               .override(
@@ -499,8 +497,8 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                         obscureText: false,
                                                         decoration:
                                                         InputDecoration(
-                                                          labelText: '모델명',
-                                                          labelStyle:
+                                                          hintText: '모델명',
+                                                          hintStyle:
                                                           FlutterFlowTheme
                                                               .bodyText2
                                                               .override(
