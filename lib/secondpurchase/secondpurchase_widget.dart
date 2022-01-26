@@ -48,6 +48,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
   final _formKey = GlobalKey<FormState>();
   DocumentReference<CouponRecord> coupon = null;
   TextEditingController controller;
+  String copNum = '';
   void _submit() {
     // set this variable to true when we try to submit
     if (_formKey.currentState.validate()) {
@@ -861,7 +862,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               final result1 = await Navigator.push(context,
                                                 MaterialPageRoute(builder: (context) => CouponWidget(coupon: 1,category: secondpurchaseRepairmentRecord.category, idx: secondpurchaseRepairmentRecord.storeidx)),);
                                               int result = result1.b;
-                                              coupon = result1.a;
+                                              //coupon = FirebaseFirestore.instance.collection('coupon').doc('$result1.a');
                                               if(0 <= result && result <= 100){
                                                 await setState(() {
                                                   discountCoupon = (defaultPrice * result /100).toInt();
@@ -900,7 +901,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                                      final result1 = await Navigator.push(context,
                                                       MaterialPageRoute(builder: (context) => CouponWidget(coupon: 1,category: secondpurchaseRepairmentRecord.category, idx: secondpurchaseRepairmentRecord.storeidx)),);
                                                      int result = result1.b;
-                                                     coupon = result1.a;
+                                                     //coupon = FirebaseFirestore.instance.collection('coupon').where('coupon_num', isEqualto: result1.a).get();
                                                     if(0 <= result && result <= 100){
                                                       await setState(() {
                                                         discountCoupon = (defaultPrice * result /100).toInt();
@@ -1508,8 +1509,12 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                               color: Color(0xFF21B6FF),
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: StreamBuilder<CouponRecord>(
-                              stream: CouponRecord.getDocument(widget.repairmentrf),
+                            child: StreamBuilder<List<CouponRecord>>(
+                              stream: queryCouponRecord(
+                                queryBuilder: (couponRecord) => couponRecord
+                                    .where('coupon_num', isEqualTo: copNum),
+                                singleRecord: true,
+                              ),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
                                 if (!snapshot.hasData) {
@@ -1522,10 +1527,6 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                 final rowRepairmentRecord = snapshot.data;
                                 return InkWell(
                                   onTap: () async {
-                                    final couponUpdateData = createCouponRecordData(
-                                      used: true,
-                                    );
-                                    await coupon.update(couponUpdateData);
                                     await goBootpayRequest(context, finalPrice);
                                     await Navigator.pushAndRemoveUntil(
                                     context,
