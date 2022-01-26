@@ -1392,7 +1392,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0, 0, 20, 0),
                                               child: Text(
-                                                '30,000',
+                                                '$alreadyPrice원',
                                                 style: FlutterFlowTheme
                                                     .bodyText1
                                                     .override(
@@ -1465,7 +1465,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0, 0, 20, 0),
                                               child: Text(
-                                                '',
+                                                '$finalPrice',
                                                 style: FlutterFlowTheme
                                                     .bodyText1
                                                     .override(
