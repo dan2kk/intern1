@@ -1340,7 +1340,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                                  0.5,
+                                                  0.65,
                                               height: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -1383,7 +1383,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                                  0.45,
+                                                  0.3,
                                               height: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -1465,7 +1465,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                    0.5,
+                                                    0.65,
                                                 height: MediaQuery.of(context)
                                                     .size
                                                     .height *
@@ -1504,7 +1504,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                    0.35,
+                                                    0.3,
                                                 height: MediaQuery.of(context)
                                                     .size
                                                     .height *
@@ -1863,7 +1863,9 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   MainAxisSize.max,
                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
-                                                    Text(
+                                                Padding(
+                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                                child: Text(
                                                       defaultPrice.toString() +'원',
                                                       style: FlutterFlowTheme
                                                           .bodyText1
@@ -1876,6 +1878,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                     ),
+                                                ),
                                                   ],
                                                 ),
                                               ),
@@ -1915,7 +1918,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                           .fromSTEB(
                                                           15, 0, 0, 0),
                                                       child: Text(
-                                                        '픽업 배달료', 
+                                                        '픽업 배달료',
                                                         style: FlutterFlowTheme.bodyText1.override(
                                                           fontFamily: 'tway_air medium',
                                                           color: Colors.black,
@@ -1939,7 +1942,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
                                                     Padding(
-                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
+                                                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                                                       child: Text(
                                                         shipmentPrice.toString()+'원',
                                                         style: FlutterFlowTheme.bodyText1.override(
@@ -2006,7 +2009,9 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   MainAxisSize.max,
                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
-                                                    Text(
+                                                Padding(
+                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                                child: Text(
                                                       discountAll.toString()+' 원',
                                                       style: FlutterFlowTheme
                                                           .bodyText1
@@ -2019,6 +2024,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                     ),
+                                                ),
                                                   ],
                                                 ),
                                               ),
@@ -2092,7 +2098,9 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   MainAxisSize.max,
                                                   mainAxisAlignment: MainAxisAlignment.end,
                                                   children: [
-                                                    Text(
+                                                Padding(
+                                                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                                child: Text(
                                                       finalPrice.toString()+' 원',
                                                       style: FlutterFlowTheme
                                                           .bodyText1
@@ -2105,6 +2113,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                         useGoogleFonts: false,
                                                       ),
                                                     ),
+                                                ),
                                                   ],
                                                 ),
                                               ),
