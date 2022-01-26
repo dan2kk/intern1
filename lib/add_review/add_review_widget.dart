@@ -1,6 +1,7 @@
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../backend/firebase_storage/storage.dart';
+import '../flutter_flow/flutter_flow_expanded_image_view.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -11,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class AddReviewWidget extends StatefulWidget {
   const AddReviewWidget({
@@ -27,7 +29,7 @@ class AddReviewWidget extends StatefulWidget {
 class _AddReviewWidgetState extends State<AddReviewWidget> {
   String uploadedFileUrl1 = '';
   String uploadedFileUrl2 = '';
-  bool picturevideoValue = false ;
+  bool picturevideoValue;
   double ratingBarValue1;
   double ratingBarValue2;
   double ratingBarValue3;
@@ -149,7 +151,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 0, 0, 0),
                                   child: FFButtonWidget(
                                     onPressed: () {
                                       print('Button pressed ...');
@@ -159,7 +162,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                       width: 90,
                                       height: 35,
                                       color: Colors.white,
-                                      textStyle: FlutterFlowTheme.subtitle2.override(
+                                      textStyle:
+                                      FlutterFlowTheme.subtitle2.override(
                                         fontFamily: 'tway_air medium',
                                         color: Color(0xFF21B6FF),
                                         fontWeight: FontWeight.w500,
@@ -176,7 +180,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               ],
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                              padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -194,7 +199,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                              padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -212,7 +218,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                              padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -240,7 +247,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                              padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -255,7 +263,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                     ),
                                   ),
                                   Text(
-                                    addReviewRepairmentRecord.estDate.toString(),
+                                    addReviewRepairmentRecord.estDate
+                                        .toString(),
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Colors.white,
@@ -294,21 +303,27 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width * 0.96,
-                                    height: MediaQuery.of(context).size.height * 0.03,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.96,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.03,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFEEEEEE),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.start,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                          padding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              20, 0, 0, 0),
                                           child: Text(
                                             '수리 요청 사항',
-                                            style: FlutterFlowTheme.bodyText1.override(
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
                                               fontFamily: 'tway_air medium',
                                               color: Color(0xFF21B6FF),
                                               fontSize: 16,
@@ -323,13 +338,15 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 ],
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
                                       '견적 문의 날짜 = ',
-                                      style: FlutterFlowTheme.bodyText1.override(
+                                      style:
+                                      FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'tway_air medium',
                                         color: Color(0xFF21B6FF),
                                         fontSize: 13,
@@ -338,8 +355,10 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                       ),
                                     ),
                                     Text(
-                                      addReviewRepairmentRecord.timestamp.toString(),
-                                      style: FlutterFlowTheme.bodyText1.override(
+                                      addReviewRepairmentRecord.timestamp
+                                          .toString(),
+                                      style:
+                                      FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'tway_air medium',
                                         color: Color(0xFF21B6FF),
                                         fontSize: 13,
@@ -351,13 +370,15 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
                                       '증상 = ',
-                                      style: FlutterFlowTheme.bodyText1.override(
+                                      style:
+                                      FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'tway_air medium',
                                         color: Color(0xFF21B6FF),
                                         fontSize: 13,
@@ -367,7 +388,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                     ),
                                     Text(
                                       addReviewRepairmentRecord.symptom,
-                                      style: FlutterFlowTheme.bodyText1.override(
+                                      style:
+                                      FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'tway_air medium',
                                         color: Color(0xFF21B6FF),
                                         fontSize: 13,
@@ -406,8 +428,9 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                         if (snapshot.data.isEmpty) {
                           return Container();
                         }
-                        final rowUsersRecord =
-                        rowUsersRecordList.isNotEmpty ? rowUsersRecordList.first : null;
+                        final rowUsersRecord = rowUsersRecordList.isNotEmpty
+                            ? rowUsersRecordList.first
+                            : null;
                         return Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -423,26 +446,61 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width * 0.31,
-                                    height: MediaQuery.of(context).size.height * 0.15,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.31,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.15,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Container(
-                                      width: MediaQuery.of(context).size.width * 0.31,
-                                      height: MediaQuery.of(context).size.height * 0.15,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.31,
+                                      height:
+                                      MediaQuery.of(context).size.height *
+                                          0.15,
                                       decoration: BoxDecoration(
                                         color: Color(0xFFEEEEEE),
                                         borderRadius: BorderRadius.circular(20),
                                       ),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(20),
-                                        child: Image.network(
-                                          rowUsersRecord.photoUrl,
-                                          width: MediaQuery.of(context).size.width,
-                                          height: MediaQuery.of(context).size.height * 1,
-                                          fit: BoxFit.cover,
+                                      child: InkWell(
+                                        onTap: () async {
+                                          await Navigator.push(
+                                            context,
+                                            PageTransition(
+                                              type: PageTransitionType.fade,
+                                              child:
+                                              FlutterFlowExpandedImageView(
+                                                image: Image.network(
+                                                  rowUsersRecord.photoUrl,
+                                                  fit: BoxFit.contain,
+                                                ),
+                                                allowRotation: false,
+                                                tag: 'imageTag1',
+                                                useHeroAnimation: true,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                        child: Hero(
+                                          tag: 'imageTag1',
+                                          transitionOnUserGestures: true,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                            BorderRadius.circular(20),
+                                            child: Image.network(
+                                              rowUsersRecord.photoUrl,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                                  1,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -451,49 +509,65 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Container(
-                                        width: MediaQuery.of(context).size.width * 0.65,
-                                        height: MediaQuery.of(context).size.height * 0.15,
+                                        width:
+                                        MediaQuery.of(context).size.width *
+                                            0.65,
+                                        height:
+                                        MediaQuery.of(context).size.height *
+                                            0.15,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
                                         ),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                           children: [
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                               children: [
                                                 Row(
-                                                  mainAxisSize: MainAxisSize.max,
+                                                  mainAxisSize:
+                                                  MainAxisSize.max,
                                                   children: [
                                                     Text(
-                                                      addReviewRepairmentRecord.manufacture,
-                                                      style:
-                                                      FlutterFlowTheme.bodyText1.override(
-                                                        fontFamily: 'tway_air medium',
+                                                      addReviewRepairmentRecord
+                                                          .manufacture,
+                                                      style: FlutterFlowTheme
+                                                          .bodyText1
+                                                          .override(
+                                                        fontFamily:
+                                                        'tway_air medium',
                                                         color: Colors.black,
                                                         fontSize: 18,
-                                                        fontWeight: FontWeight.w500,
+                                                        fontWeight:
+                                                        FontWeight.w500,
                                                         useGoogleFonts: false,
                                                       ),
                                                     ),
                                                   ],
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                                      0, 30, 0, 0),
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(0, 30, 0, 0),
                                                   child: Row(
-                                                    mainAxisSize: MainAxisSize.max,
+                                                    mainAxisSize:
+                                                    MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        rowUsersRecord.displayName,
-                                                        style:
-                                                        FlutterFlowTheme.bodyText1.override(
-                                                          fontFamily: 'tway_air medium',
+                                                        rowUsersRecord
+                                                            .displayName,
+                                                        style: FlutterFlowTheme
+                                                            .bodyText1
+                                                            .override(
+                                                          fontFamily:
+                                                          'tway_air medium',
                                                           color: Colors.black,
                                                           fontSize: 17,
-                                                          fontWeight: FontWeight.w500,
+                                                          fontWeight:
+                                                          FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
                                                       ),
@@ -521,124 +595,182 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(50, 0, 0, 0),
-                          child: Container(
-                            width: 100,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                            ),
-                            child: Stack(
-                              children: [
-                                if (!(picturevideoValue) ?? true)
-                                  InkWell(
-                                    onTap: () async {
-                                      final selectedMedia =
-                                      await selectMediaWithSourceBottomSheet(
-                                        context: context,
-                                        allowPhoto: true,
-                                      );
-                                      if (selectedMedia != null &&
-                                          validateFileFormat(
-                                              selectedMedia.storagePath,
-                                              context)) {
-                                        showUploadMessage(
-                                            context, 'Uploading file...',
-                                            showLoading: true);
-                                        final downloadUrl = await uploadData(
-                                            selectedMedia.storagePath,
-                                            selectedMedia.bytes);
-                                        ScaffoldMessenger.of(context)
-                                            .hideCurrentSnackBar();
-                                        if (downloadUrl != null) {
-                                          setState(() =>
-                                          uploadedFileUrl1 = downloadUrl);
-                                          showUploadMessage(
-                                              context, 'Success!');
-                                        } else {
-                                          showUploadMessage(context,
-                                              'Failed to upload media');
-                                          return;
-                                        }
-                                      }
-                                    },
-                                    child: Image.network(
-                                      'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2F%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=2e283c3a-2d59-4fe8-b97b-2a78784687e9',
-                                      width: 100,
-                                      height: 100,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                if (picturevideoValue ?? true)
-                                  Align(
-                                    alignment: AlignmentDirectional(0, 0),
-                                    child: InkWell(
-                                      onTap: () async {
-                                        final selectedMedia =
-                                        await selectMediaWithSourceBottomSheet(
-                                          context: context,
-                                          allowPhoto: false,
-                                          allowVideo: true,
-                                        );
-                                        if (selectedMedia != null &&
-                                            validateFileFormat(
-                                                selectedMedia.storagePath,
-                                                context)) {
-                                          showUploadMessage(
-                                              context, 'Uploading file...',
-                                              showLoading: true);
-                                          final downloadUrl = await uploadData(
-                                              selectedMedia.storagePath,
-                                              selectedMedia.bytes);
-                                          ScaffoldMessenger.of(context)
-                                              .hideCurrentSnackBar();
-                                          if (downloadUrl != null) {
-                                            setState(() =>
-                                            uploadedFileUrl2 = downloadUrl);
-                                            showUploadMessage(
-                                                context, 'Success!');
-                                          } else {
-                                            showUploadMessage(context,
-                                                'Failed to upload media');
-                                            return;
-                                          }
-                                        }
-                                      },
-                                      child: Image.network(
-                                        'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2Fvideo%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=1efb466d-2eda-4241-b72c-25a918947d38',
-                                        width: 100,
-                                        height: 100,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                              ],
-                            ),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.96,
+                          height: MediaQuery.of(context).size.height * 0.15,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFEEEEEE),
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(20, 0, 40, 0),
-                            child: SwitchListTile.adaptive(
-                              value: picturevideoValue ??= false,
-                              onChanged: (newValue) =>
-                                  setState(() => picturevideoValue = newValue),
-                              title: Text(
-                                '동영상 첨부',
-                                style: FlutterFlowTheme.title2.override(
-                                  fontFamily: 'tway_air medium',
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  useGoogleFonts: false,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.31,
+                                height:
+                                MediaQuery.of(context).size.height * 0.15,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Container(
+                                  width: 31,
+                                  height: 15,
+                                  child: Stack(
+                                    children: [
+                                      if (!(picturevideoValue) ?? true)
+                                        InkWell(
+                                          onTap: () async {
+                                            final selectedMedia =
+                                            await selectMediaWithSourceBottomSheet(
+                                              context: context,
+                                              allowPhoto: true,
+                                            );
+                                            if (selectedMedia != null &&
+                                                validateFileFormat(
+                                                    selectedMedia.storagePath,
+                                                    context)) {
+                                              showUploadMessage(
+                                                  context, 'Uploading file...',
+                                                  showLoading: true);
+                                              final downloadUrl =
+                                              await uploadData(
+                                                  selectedMedia.storagePath,
+                                                  selectedMedia.bytes);
+                                              ScaffoldMessenger.of(context)
+                                                  .hideCurrentSnackBar();
+                                              if (downloadUrl != null) {
+                                                setState(() =>
+                                                uploadedFileUrl1 =
+                                                    downloadUrl);
+                                                showUploadMessage(
+                                                    context, 'Success!');
+                                              } else {
+                                                showUploadMessage(context,
+                                                    'Failed to upload media');
+                                                return;
+                                              }
+                                            }
+                                          },
+                                          child: ClipRRect(
+                                            borderRadius:
+                                            BorderRadius.circular(20),
+                                            child: Image.network(
+                                              'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2F%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=2e283c3a-2d59-4fe8-b97b-2a78784687e9',
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                                  1,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                      if (picturevideoValue ?? true)
+                                        Align(
+                                          alignment: AlignmentDirectional(0, 0),
+                                          child: InkWell(
+                                            onTap: () async {
+                                              final selectedMedia =
+                                              await selectMediaWithSourceBottomSheet(
+                                                context: context,
+                                                allowPhoto: false,
+                                                allowVideo: true,
+                                              );
+                                              if (selectedMedia != null &&
+                                                  validateFileFormat(
+                                                      selectedMedia.storagePath,
+                                                      context)) {
+                                                showUploadMessage(context,
+                                                    'Uploading file...',
+                                                    showLoading: true);
+                                                final downloadUrl =
+                                                await uploadData(
+                                                    selectedMedia
+                                                        .storagePath,
+                                                    selectedMedia.bytes);
+                                                ScaffoldMessenger.of(context)
+                                                    .hideCurrentSnackBar();
+                                                if (downloadUrl != null) {
+                                                  setState(() =>
+                                                  uploadedFileUrl2 =
+                                                      downloadUrl);
+                                                  showUploadMessage(
+                                                      context, 'Success!');
+                                                } else {
+                                                  showUploadMessage(context,
+                                                      'Failed to upload media');
+                                                  return;
+                                                }
+                                              }
+                                            },
+                                            child: ClipRRect(
+                                              borderRadius:
+                                              BorderRadius.circular(20),
+                                              child: Image.network(
+                                                'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2Fvideo%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=1efb466d-2eda-4241-b72c-25a918947d38',
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
+                                                height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                    1,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                              tileColor: Colors.white,
-                              dense: false,
-                              controlAffinity: ListTileControlAffinity.trailing,
-                            ),
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.65,
+                                height:
+                                MediaQuery.of(context).size.height * 0.15,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20, 0, 40, 0),
+                                        child: SwitchListTile.adaptive(
+                                          value: picturevideoValue ??= false,
+                                          onChanged: (newValue) => setState(
+                                                  () =>
+                                              picturevideoValue = newValue),
+                                          title: Text(
+                                            '동영상 첨부',
+                                            style: FlutterFlowTheme.title2
+                                                .override(
+                                              fontFamily: 'tway_air medium',
+                                              color: FlutterFlowTheme
+                                                  .tertiaryColor,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              useGoogleFonts: false,
+                                            ),
+                                          ),
+                                          tileColor: Colors.white,
+                                          dense: false,
+                                          controlAffinity:
+                                          ListTileControlAffinity.trailing,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
