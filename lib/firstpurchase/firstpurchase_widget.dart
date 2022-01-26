@@ -292,19 +292,19 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               onChanged: (value) {
                                                 setState(() {
                                                   if(value == '픽업, 배송 수리(배달비 별도)'){
-                                                    numofCon = 0;
                                                     radioButtonValue1 = value;
                                                     setState(() {
                                                       shipmentPrice = 6000;
                                                       finalPrice = defaultPrice + shipmentPrice - discountAll;
+                                                      numofCon = 0;
                                                     });
                                                 }
                                                   else{
-                                                    numofCon = 1;
                                                     radioButtonValue1 = value;
                                                     setState(() {
                                                       shipmentPrice = 0;
                                                       finalPrice = defaultPrice + shipmentPrice - discountAll;
+                                                      numofCon = 1;
                                                     });
                                                   }
                                                 });
@@ -349,7 +349,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     width: MediaQuery.of(context).size.width *
                                         0.95,
                                     height: MediaQuery.of(context).size.height *
-                                        0.5,
+                                        sizeofContainer[numofCon],
                                     decoration: BoxDecoration(
                                       color: Color(0xFFF5F5F5),
                                       borderRadius: BorderRadius.circular(10),
