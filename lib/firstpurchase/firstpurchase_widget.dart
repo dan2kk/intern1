@@ -73,10 +73,11 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
     // set this variable to true when we try to submit
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
+      setState(() {_submitted = true;
       discountPoint = int.parse(input);
       discountAll = discountCoupon + discountPoint;
       finalPrice = defaultPrice + shipmentPrice - discountAll;
-      setState(() => _submitted = true);
+      });
       Navigator.pop(context);
       print('1');
     }
@@ -154,7 +155,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
         }
         final firstpurchaseRepairmentRecord = snapshot.data;
         defaultPrice = (firstpurchaseRepairmentRecord.price * 0.2).toInt();
-        finalPrice = defaultPrice + shipmentPrice;
+        finalPrice = defaultPrice + shipmentPrice - discountAll;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: Color(0xFFD3DDE1),
@@ -293,12 +294,17 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   if(value == '픽업, 배송 수리(배달비 별도)'){
                                                     numofCon = 0;
                                                     radioButtonValue1 = value;
+                                                    setState(() {
+                                                      shipmentPrice = 6000;
+                                                      finalPrice = defaultPrice + shipmentPrice - discountAll;
+                                                    });
                                                 }
                                                   else{
                                                     numofCon = 1;
                                                     radioButtonValue1 = value;
                                                     setState(() {
                                                       shipmentPrice = 0;
+                                                      finalPrice = defaultPrice + shipmentPrice - discountAll;
                                                     });
                                                   }
                                                 });
