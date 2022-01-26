@@ -98,12 +98,11 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                     },
                     onChanged: (value) {
                       setState(() {input = value;});
-                      _submit();
                       },
                   ),
                   FlatButton(
                     child: new Text("적용"),
-                    onPressed: input.isEmpty ? _submit : null,
+                    onPressed: _submit,
                   )
                 ],
               ))
