@@ -154,6 +154,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
         }
         final firstpurchaseRepairmentRecord = snapshot.data;
         defaultPrice = (firstpurchaseRepairmentRecord.price * 0.2).toInt();
+        finalPrice = defaultPrice;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: Color(0xFFD3DDE1),
