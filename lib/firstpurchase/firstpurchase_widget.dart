@@ -65,11 +65,12 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   int discountPoint = 0;
   int pointHave = currentUserDocument.point ?? 0;
   String input = '';
+  int result = 0;
+  String copNum = '';
   List<double> sizeofContainer = [0.45, 0.35];
   int numofCon = 0;
   bool _submitted = false;
   final _formKey = GlobalKey<FormState>();
-  DocumentReference<CouponRecord> a;
   void _submit() {
     // set this variable to true when we try to submit
     if (_formKey.currentState.validate()) {
@@ -1226,6 +1227,146 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                           endIndent: 15,
                                           color: Colors.black,
                                         ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment:
+                          MainAxisAlignment.start,
+                          crossAxisAlignment:
+                          CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context)
+                                  .size
+                                  .width *
+                                  0.60,
+                              height: MediaQuery.of(context)
+                                  .size
+                                  .height *
+                                  0.06,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF5F5F5),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional
+                                    .fromSTEB(1, 0, 0, 0),
+                                child: Row(
+                                  mainAxisSize:
+                                  MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding:
+                                      EdgeInsetsDirectional
+                                          .fromSTEB(
+                                          15, 0, 0, 0),
+                                      child: Text(
+                                        '할인쿠폰',
+                                        style: FlutterFlowTheme
+                                            .bodyText1
+                                            .override(
+                                          fontFamily:
+                                          'tway_air medium',
+                                          color: Colors.black,
+                                          fontSize: 16,
+                                          fontWeight:
+                                          FontWeight.w500,
+                                          useGoogleFonts: false,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context)
+                                  .size
+                                  .width *
+                                  0.35,
+                              height: MediaQuery.of(context)
+                                  .size
+                                  .height *
+                                  0.06,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFF5F5F5),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional
+                                    .fromSTEB(1, 0, 0, 0),
+                                child: InkWell(
+                                  onTap: () async {
+                                    final result1 = await Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) => CouponWidget(coupon: 1,category: firstpurchaseRepairmentRecord.category, idx: firstpurchaseRepairmentRecord.storeidx)),);
+                                    result = result1.b;
+                                    copNum = result1.a;
+                                    final coupon = FirebaseFirestore.instance.collection('coupon').where('coupon_num', isEqualTo: result1.a).get();
+                                    if(0 <= result && result <= 100){
+                                      await setState(() {
+                                        discountCoupon = (defaultPrice * result /100).toInt();
+                                        discountAll = discountCoupon;
+                                        finalPrice = defaultPrice - shipmentPrice -discountAll;
+                                      });
+                                    }
+                                    else{
+                                      await setState(() {
+                                        discountCoupon = result;
+                                        if(discountCoupon > defaultPrice) discountAll = defaultPrice;
+                                        else discountAll = discountCoupon;
+                                        finalPrice = defaultPrice- shipmentPrice -discountAll;
+                                      });
+                                    }
+                                  },
+                                  child: Row(
+                                    mainAxisSize:
+                                    MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        '할인금액: $discountCoupon원',
+                                        style: FlutterFlowTheme
+                                            .bodyText1
+                                            .override(
+                                          fontFamily:
+                                          'tway_air medium',
+                                          fontSize: 16,
+                                          fontWeight:
+                                          FontWeight.w500,
+                                          useGoogleFonts: false,
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () async {
+                                          final result1 = await Navigator.push(context,
+                                            MaterialPageRoute(builder: (context) => CouponWidget(coupon: 1,category: firstpurchaseRepairmentRecord.category, idx: firstpurchaseRepairmentRecord.storeidx)),);
+                                           result = result1.b;
+                                           copNum = result1.a;
+                                          final coupon = FirebaseFirestore.instance.collection('coupon').where('coupon_num', isEqualTo: copNum).get();
+                                          if(0 <= result && result <= 100){
+                                            await setState(() {
+                                              discountCoupon = (defaultPrice * result /100).toInt();
+                                              discountAll = discountCoupon;
+                                              finalPrice = defaultPrice  + shipmentPrice -discountAll;
+                                            });
+                                          }
+                                          else{
+                                            await setState(() {
+                                              discountCoupon = result;
+                                              if(discountCoupon > defaultPrice) discountAll = defaultPrice;
+                                              else discountAll = discountCoupon;
+                                              finalPrice = defaultPrice - shipmentPrice -discountAll;
+                                            });
+                                          }
+                                        },
+                                        child: Icon(
+                                          Icons
+                                              .keyboard_arrow_right,
+                                          color: Colors.black,
+                                          size: 24,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
                                         Padding(
                                           padding:
                                           EdgeInsetsDirectional.fromSTEB(
@@ -1483,11 +1624,12 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               ),
                                             ],
                                           ),
-                                        )
-                                        ,
+                                        ),
                                       ],
                                     ),
-                                  ),
+                                  ]
+                                    ),
+        )
                                 ],
                               ),
                             ),
@@ -1885,65 +2027,16 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width*0,
-                                height:
-                                MediaQuery.of(context).size.height * 0.1,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFF21B6FF),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: InkWell(
-                                  onTap: () async {
-                                    await goBootpayRequest(context, finalPrice);
-                                    await
-                                    await Navigator.pushAndRemoveUntil(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            OrderCompleteWidget(),
-                                      ), (route) => false);
-                                  },
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '결제하기',
-                                        style:
-                                        FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'tway_air medium',
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w500,
-                                          useGoogleFonts: false,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              StreamBuilder<CouponRecord>(
-                                stream: CouponRecord.getDocument(widget.repairmentrf),
-                                builder: (context, snapshot) {
-                                  // Customize what your widget looks like when it's loading.
-                                  if (!snapshot.hasData) {
-                                    return Center(
-                                      child: LinearProgressIndicator(
-                                        color: Color(0xFF2163CB),
-                                      ),
-                                    );
-                                  }
-                                  final containerRepairmentRecord = snapshot.data;
-                                  return Container(
+                                  Container(
                                     width: MediaQuery.of(context).size.width * 0.95,
                                     height: MediaQuery.of(context).size.height * 0.1,
                                     decoration: BoxDecoration(
                                       color: Color(0xFF21B6FF),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: StreamBuilder<CouponRecord>(
-                                      stream: CouponRecord.getDocument(widget.repairmentrf),
+                                    child: StreamBuilder<List<CouponRecord>>(
+                                           stream: queryCouponRecord(queryBuilder: (couponRecord) => couponRecord.where('coupon_num', isEqualTo: copNum),
+                                          singleRecord: true,),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
@@ -1953,10 +2046,15 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             ),
                                           );
                                         }
-                                        final rowRepairmentRecord = snapshot.data;
+                                        List<CouponRecord> rowCouponList = snapshot.data;
+                                        final rowCouponRecord = rowCouponList.isNotEmpty ? rowCouponList.first : null;
                                         return InkWell(
                                           onTap: () async {
                                             await goBootpayRequest(context, finalPrice);
+                                            await rowCouponRecord.reference.update(
+                                            createCouponRecordData(
+                                                used : true
+                                              ));
                                             await Navigator.pushAndRemoveUntil(
                                               context,
                                               MaterialPageRoute(
@@ -1982,9 +2080,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         );
                                       },
                                     ),
-                                  );
-                                },
-                              ),
+                                  )
                             ],
                           ),
                         ),
