@@ -1340,7 +1340,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                                  0.65,
+                                                  0.7,
                                               height: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -1383,7 +1383,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                                  0.3,
+                                                  0.25,
                                               height: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -1465,7 +1465,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                    0.65,
+                                                    0.7,
                                                 height: MediaQuery.of(context)
                                                     .size
                                                     .height *
@@ -1504,7 +1504,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                    0.3,
+                                                    0.25,
                                                 height: MediaQuery.of(context)
                                                     .size
                                                     .height *
