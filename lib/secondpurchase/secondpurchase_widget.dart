@@ -796,17 +796,17 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                     color: Colors.black,
                                   ),
                                   Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        width: MediaQuery.of(context)
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                          children: [
+                                            Container(
+                                              width: MediaQuery.of(context)
                                             .size
                                             .width *
-                                            0.60,
+                                            0.65,
                                         height: MediaQuery.of(context)
                                             .size
                                             .height *
@@ -849,7 +849,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                         width: MediaQuery.of(context)
                                             .size
                                             .width *
-                                            0.35,
+                                            0.3,
                                         height: MediaQuery.of(context)
                                             .size
                                             .height *
@@ -890,8 +890,10 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               mainAxisSize:
                                               MainAxisSize.max,
                                               children: [
-                                                Text(
-                                                  '할인금액: $discountCoupon원',
+                                            Padding(
+                                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                            child: Text(
+                                                  '$discountCoupon 원',
                                                   style: FlutterFlowTheme
                                                       .bodyText1
                                                       .override(
@@ -903,6 +905,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                                     useGoogleFonts: false,
                                                   ),
                                                 ),
+                                            ),
                                                 InkWell(
                                                   onTap: () async {
                                                      final result1 = await Navigator.push(context,
@@ -929,9 +932,10 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                                     Icons
                                                         .keyboard_arrow_right,
                                                     color: Colors.black,
-                                                    size: 24,
+                                                    size: 30,
                                                   ),
                                                 ),
+
                                               ],
                                             ),
                                           ),
@@ -954,7 +958,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                           width: MediaQuery.of(context)
                                               .size
                                               .width *
-                                              0.6,
+                                              0.65,
                                           height: MediaQuery.of(context)
                                               .size
                                               .height *
@@ -989,7 +993,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                           width: MediaQuery.of(context)
                                               .size
                                               .width *
-                                              0.35,
+                                              0.3,
                                           height: MediaQuery.of(context)
                                               .size
                                               .height *
@@ -1013,7 +1017,9 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Text(
+                                              Padding(
+                                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                                              child: Text(
                                                     '$discountPoint 점',
                                                     style: FlutterFlowTheme
                                                         .bodyText1
@@ -1026,6 +1032,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                                       useGoogleFonts: false,
                                                     ),
                                                   ),
+                                              ),
                                                   Icon(
                                                     Icons.keyboard_arrow_right,
                                                     color: Colors.black,
@@ -1431,6 +1438,86 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(15, 0, 0, 0),
                                               child: Text(
+                                                '할인 금액',
+                                                style: FlutterFlowTheme
+                                                    .bodyText1
+                                                    .override(
+                                                  fontFamily: 'tway_air medium',
+                                                  color: Colors.black,
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        width:
+                                        MediaQuery.of(context).size.width *
+                                            0.3,
+                                        height:
+                                        MediaQuery.of(context).size.height *
+                                            0.06,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFF5F5F5),
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 0, 20, 0),
+                                              child: Text(
+                                                discountAll.toString()+' 원',
+                                                style: FlutterFlowTheme
+                                                    .bodyText1
+                                                    .override(
+                                                  fontFamily: 'tway_air medium',
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500,
+                                                  useGoogleFonts: false,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Divider(
+                                    height: 30,
+                                    thickness: 1,
+                                    indent: 15,
+                                    endIndent: 15,
+                                    color: Colors.black,
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        width:
+                                        MediaQuery.of(context).size.width *
+                                            0.65,
+                                        height:
+                                        MediaQuery.of(context).size.height *
+                                            0.06,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFF5F5F5),
+                                        ),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(15, 0, 0, 0),
+                                              child: Text(
                                                 '추가 결제금액',
                                                 style: FlutterFlowTheme
                                                     .bodyText1
@@ -1481,6 +1568,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                       ),
                                     ],
                                   ),
+
                                 ],
                               ),
                             ),
