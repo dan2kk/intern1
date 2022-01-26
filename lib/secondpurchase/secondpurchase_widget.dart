@@ -54,10 +54,10 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
     // set this variable to true when we try to submit
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
+      setState(() { _submitted = true;
       discountPoint = int.parse(input);
       discountAll = discountCoupon + discountPoint;
-      finalPrice = defaultPrice - alreadyPrice - discountAll;
-      setState(() => _submitted = true);
+      finalPrice = defaultPrice - alreadyPrice - discountAll;});
       Navigator.pop(context);
       print('1');
     }
