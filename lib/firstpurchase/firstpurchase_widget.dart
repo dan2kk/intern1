@@ -2173,11 +2173,8 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               expireDate: getCurrentTimestamp.add(Duration(days: 30)),
                                               reason : '주문번호 $jumon에 사용'
                                             )};
-                                            await PointsRecord.collection.doc().set(createPoint);
-                                            final pointRecordReference = PointsRecord.collection.doc();
-                                            final pointref = await PointsRecord.getDocumentFromData(
-                                                createPoint,
-                                                pointRecordReference).reference;
+                                            final pointref = await PointsRecord.collection.doc();
+                                            await pointref.set(createPoint);
                                             final usersUpdateData = {'point_his': FieldValue.arrayUnion([pointref]),};
                                             await currentUserReference.update(usersUpdateData);
                                             final createRepairment = {...createRepairmentRecordData(
