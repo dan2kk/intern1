@@ -29,7 +29,7 @@ class AddReviewWidget extends StatefulWidget {
 class _AddReviewWidgetState extends State<AddReviewWidget> {
   String uploadedFileUrl1 = '';
   String uploadedFileUrl2 = '';
-  bool picturevideoValue;
+  bool picturevideoValue = false;
   double ratingBarValue1;
   double ratingBarValue2;
   double ratingBarValue3;
