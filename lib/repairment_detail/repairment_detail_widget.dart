@@ -1441,25 +1441,21 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.39,
+                                    width: MediaQuery.of(context).size.width * 0.39,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Text(
                                             '비용',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.black,
                                               fontSize: 15,
@@ -1472,8 +1468,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     ),
                                   ),
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.56,
+                                    width: MediaQuery.of(context).size.width * 0.56,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -1481,25 +1476,11 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          repairmentDetailRepairmentRecord.price
-                                              .toString(),
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
-                                            fontFamily: 'tway_air medium',
-                                            color: Colors.black,
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.w500,
-                                            useGoogleFonts: false,
-                                          ),
-                                        ),
-                                        Text(
-                                          '원 예정',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          '${repairmentDetailRepairmentRecord.price.toString()}원 예정',
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 17,
