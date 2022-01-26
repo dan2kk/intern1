@@ -61,7 +61,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
+                                        20, 0, 0, 0),
                                     child: InkWell(
                                       onTap: () async {
                                         Navigator.pop(context);
@@ -136,7 +136,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                           children: [
                             Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 8, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(20, 8, 0, 0),
                               child: AuthUserStreamWidget(
                                 child: Text(
                                   currentUserDisplayName,
@@ -159,7 +159,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                           children: [
                             Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
                               child: Text(
                                 currentUserUid,
                                 style: FlutterFlowTheme.bodyText1.override(
@@ -181,7 +181,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                           children: [
                             Padding(
                               padding:
-                              EdgeInsetsDirectional.fromSTEB(10, 8, 0, 0),
+                              EdgeInsetsDirectional.fromSTEB(30, 8, 0, 0),
                               child: Text(
                                 '내 포인트 = ',
                                 style: FlutterFlowTheme.bodyText1.override(
