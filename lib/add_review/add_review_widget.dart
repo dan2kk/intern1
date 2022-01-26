@@ -1041,6 +1041,16 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               await ReviewRecord.collection
                                   .doc()
                                   .set(reviewCreateData);
+                              final createPoint = {...createPointsRecordData(
+                                  amount : 500,
+                                  earnedDate: getCurrentTimestamp,
+                                  expireDate: getCurrentTimestamp.add(Duration(days: 30)),
+                                  reason : '리뷰 작성'
+                              )};
+                              final pointref = await PointsRecord.collection.doc();
+                              await pointref.set(createPoint);
+                              final usersUpdateData = {'point_his': FieldValue.arrayUnion([pointref]),};
+                              await currentUserReference.update(usersUpdateData);
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(

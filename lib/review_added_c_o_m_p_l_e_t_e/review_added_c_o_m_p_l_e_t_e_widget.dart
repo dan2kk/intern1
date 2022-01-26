@@ -79,7 +79,7 @@ class _ReviewAddedCOMPLETEWidgetState extends State<ReviewAddedCOMPLETEWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              '',
+                              '500',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'tway_air medium',
@@ -89,7 +89,7 @@ class _ReviewAddedCOMPLETEWidgetState extends State<ReviewAddedCOMPLETEWidget> {
                               ),
                             ),
                             Text(
-                              '포인트 적립',
+                              '포인트 적립 완료!',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'tway_air medium',
