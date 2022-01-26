@@ -707,7 +707,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                           controller: textController3,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            hintText: '고장 부위를 입력하시오..',
+                                            hintText: '고장 부위를 입력하시오',
                                             hintStyle: FlutterFlowTheme
                                                 .bodyText1
                                                 .override(
