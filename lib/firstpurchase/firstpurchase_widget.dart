@@ -2166,10 +2166,12 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 used : true
                                               ));
                                             await currentUserReference.update(createUsersRecordData(point : pointHave - discountPoint));
+                                            String jumon =firstpurchaseRepairmentRecord.repairmentid;
                                             final createPoint = {...createPointsRecordData(
                                               amount : -discountPoint,
                                               earnedDate: getCurrentTimestamp,
                                               expireDate: getCurrentTimestamp.add(Duration(days: 30)),
+                                              reason : '주문번호 $jumon에 사용'
                                             )};
                                             await PointsRecord.collection.doc().set(createPoint);
                                             final pointRecordReference = PointsRecord.collection.doc();
