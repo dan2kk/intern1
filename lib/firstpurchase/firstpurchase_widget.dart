@@ -2171,7 +2171,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               amount : -discountPoint,
                                               earnedDate: getCurrentTimestamp,
                                               expireDate: getCurrentTimestamp.add(Duration(days: 30)),
-                                              reason : '주문번호 $jumon에 사용'
+                                              reason : '주문시 사용'
                                             )};
                                             final pointref = await PointsRecord.collection.doc();
                                             await pointref.set(createPoint);
