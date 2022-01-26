@@ -134,7 +134,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                       ),
                       FlatButton(
                         child: new Text("적용"),
-                        onPressed: input.isEmpty ? _submit : null,
+                        onPressed: _submit,
                       )
                     ],
                   ))
