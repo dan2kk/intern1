@@ -1047,10 +1047,23 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                   expireDate: getCurrentTimestamp.add(Duration(days: 30)),
                                   reason : '리뷰 작성'
                               )};
+                              //
                               final pointref = await PointsRecord.collection.doc();
                               await pointref.set(createPoint);
                               final usersUpdateData = {'point_his': FieldValue.arrayUnion([pointref]),};
                               await currentUserReference.update(usersUpdateData);
+                              //
+                              QuerySnapshot querySnapshot = await ReviewRecord.collection.where('storeidx', isEqualTo: addReviewRepairmentRecord.storeidx).get();
+                              List<Map<String, dynamic>> allData = List<Map<String, dynamic>>.from(querySnapshot.docs.map((doc) => doc.data()).toList());
+                              double sum=0, avg=0;
+                              for(int i=0; i< allData.length; i++){
+                                sum = (allData[i]['rate_avg']).toDouble();
+                              }
+                              avg = (sum / allData.length);
+                              final repairstoreUpdateData = {'rate' : avg};
+                              final storeRecordF = await FirebaseFirestore.instance.collection('repairstore')
+                                  .where('idx', isEqualTo: addReviewRepairmentRecord.storeidx).get().then((ds) => ds.docs.toList().first);
+                              storeRecordF.reference.update(repairstoreUpdateData);
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
