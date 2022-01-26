@@ -1,3 +1,4 @@
+import 'package:intern1/flutter_flow/flutter_flow_expanded_image_view.dart';
 import 'package:intern1/secondpurchase/secondpurchase_widget.dart';
 
 import '../backend/backend.dart';
@@ -819,6 +820,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                       ),
                     ],
                   ),
+                  // Generated code for this Row Widget...
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                     child: Row(
@@ -857,18 +859,42 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.network(
-                                repairmentDetailRepairmentRecord.imgUrl,
-                                width: 100,
-                                height: 100,
-                                fit: BoxFit.cover,
+                              InkWell(
+                                onTap: () async {
+                                  await Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.fade,
+                                      child: FlutterFlowExpandedImageView(
+                                        image: Image.network(
+                                          repairmentDetailRepairmentRecord.imgUrl,
+                                          fit: BoxFit.contain,
+                                        ),
+                                        allowRotation: true,
+                                        tag: 'imageTag7',
+                                        useHeroAnimation: true,
+                                      ),
+                                    ),
+                                  );
+                                },
+                                child: Hero(
+                                  tag: 'imageTag7',
+                                  transitionOnUserGestures: true,
+                                  child: Image.network(
+                                    repairmentDetailRepairmentRecord.imgUrl,
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
                         ),
                       ],
                     ),
-                  ),
+                  )
+                  ,
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                     child: Row(
