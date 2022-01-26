@@ -2180,11 +2180,15 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                         final rowCouponRecord = rowCouponList.isNotEmpty ? rowCouponList.first : null;
                                         return InkWell(
                                           onTap: () async {
-                                            if(finalPrice > 0) await goBootpayRequest(context, finalPrice);
-                                            await rowCouponRecord.reference.update(
-                                            createCouponRecordData(
-                                                used : true
-                                              ));
+                                            if(finalPrice > 0){
+                                              goBootpayRequest(context, finalPrice);
+                                            }
+                                            if(rowCouponRecord != null){
+                                              await rowCouponRecord.reference.update(
+                                                  createCouponRecordData(
+                                                      used : true
+                                                  ));
+                                            }
                                             await currentUserReference.update(createUsersRecordData(point : pointHave - discountPoint));
                                             String jumon =firstpurchaseRepairmentRecord.repairmentid;
                                             final createPoint = {...createPointsRecordData(
