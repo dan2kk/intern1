@@ -253,7 +253,9 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                       children: [
                                         Container(
                                           width: MediaQuery.of(context).size.width,
-                                          height: 80,
+                                          height:
+                                          MediaQuery.of(context).size.height *
+                                              0.12,
                                           decoration: BoxDecoration(
                                             color: Color(0xFFEEEEEE),
                                             border: Border.all(
@@ -277,16 +279,23 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                               return Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Padding(
-                                                    padding: EdgeInsetsDirectional
-                                                        .fromSTEB(8, 0, 8, 0),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                      MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                      children: [
-                                                        Stack(
+                                                  Column(
+                                                    mainAxisSize: MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                    children: [
+                                                      Container(
+                                                        width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width *
+                                                            0.25,
+                                                        height:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .height *
+                                                            0.1,
+                                                        child: Stack(
                                                           children: [
                                                             if ((rowPointsRecord
                                                                 .amount) >
@@ -300,12 +309,12 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                                       context)
                                                                       .size
                                                                       .width *
-                                                                      0.2,
+                                                                      0.9,
                                                                   height: MediaQuery.of(
                                                                       context)
                                                                       .size
                                                                       .height *
-                                                                      0.1,
+                                                                      0.9,
                                                                   child:
                                                                   RiveAnimation
                                                                       .asset(
@@ -331,12 +340,12 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                                       context)
                                                                       .size
                                                                       .width *
-                                                                      0.2,
+                                                                      0.9,
                                                                   height: MediaQuery.of(
                                                                       context)
                                                                       .size
                                                                       .height *
-                                                                      0.1,
+                                                                      0.9,
                                                                   child:
                                                                   RiveAnimation
                                                                       .asset(
@@ -352,8 +361,8 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                               ),
                                                           ],
                                                         ),
-                                                      ],
-                                                    ),
+                                                      ),
+                                                    ],
                                                   ),
                                                   Expanded(
                                                     child: Column(
@@ -483,7 +492,7 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                                   context)
                                                                   .size
                                                                   .height *
-                                                                  0.03,
+                                                                  0.05,
                                                               decoration:
                                                               BoxDecoration(
                                                                 color: Color(
@@ -495,23 +504,31 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                                     .max,
                                                                 children: [
                                                                   Expanded(
-                                                                    child: Text(
-                                                                      rowPointsRecord
-                                                                          .reason,
-                                                                      style: FlutterFlowTheme
-                                                                          .bodyText2
-                                                                          .override(
-                                                                        fontFamily:
-                                                                        'tway_air medium',
-                                                                        color: Color(
-                                                                            0xFF8B97A2),
-                                                                        fontSize:
-                                                                        15,
-                                                                        fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                        useGoogleFonts:
-                                                                        false,
+                                                                    child: Padding(
+                                                                      padding: EdgeInsetsDirectional
+                                                                          .fromSTEB(
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
+                                                                      child: Text(
+                                                                        rowPointsRecord
+                                                                            .reason,
+                                                                        style: FlutterFlowTheme
+                                                                            .bodyText2
+                                                                            .override(
+                                                                          fontFamily:
+                                                                          'tway_air medium',
+                                                                          color: Color(
+                                                                              0xFF000000),
+                                                                          fontSize:
+                                                                          12,
+                                                                          fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                          useGoogleFonts:
+                                                                          false,
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -528,7 +545,7 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                                   context)
                                                                   .size
                                                                   .height *
-                                                                  0.03,
+                                                                  0.05,
                                                               decoration:
                                                               BoxDecoration(
                                                                 color: Color(
