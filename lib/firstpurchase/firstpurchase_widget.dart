@@ -1529,7 +1529,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                       MainAxisSize.max,
                                                       children: [
                                                         Text(
-                                                          '$discountPoint 원',
+                                                          '$discountPoint원',
                                                           style:
                                                           FlutterFlowTheme
                                                               .bodyText1
@@ -2012,7 +2012,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 Padding(
                                                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                                                 child: Text(
-                                                      discountAll.toString()+' 원',
+                                                      discountAll.toString()+'원',
                                                       style: FlutterFlowTheme
                                                           .bodyText1
                                                           .override(
@@ -2101,7 +2101,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 Padding(
                                                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                                                 child: Text(
-                                                      finalPrice.toString()+' 원',
+                                                      finalPrice.toString()+'원',
                                                       style: FlutterFlowTheme
                                                           .bodyText1
                                                           .override(
