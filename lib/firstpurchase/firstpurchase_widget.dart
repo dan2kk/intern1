@@ -297,6 +297,9 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                   else{
                                                     numofCon = 1;
                                                     radioButtonValue1 = value;
+                                                    setState(() {
+                                                      shipmentPrice = 0;
+                                                    });
                                                   }
                                                 });
                                               },
