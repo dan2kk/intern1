@@ -870,7 +870,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               final coupon = FirebaseFirestore.instance.collection('coupon').where('coupon_num', isEqualTo: copNum).get();
                                               if(0 <= result && result <= 100){
                                                 await setState(() {
-                                                  discountCoupon = (defaultPrice * (result) /100).toInt();
+                                                  discountCoupon = ((defaultPrice-alreadyPrice) * (result) /100).toInt();
                                                   discountAll = discountCoupon;
                                                   finalPrice = defaultPrice  -alreadyPrice -discountAll;
                                                 });
@@ -878,9 +878,9 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               else{
                                                 await setState(() {
                                                   discountCoupon = result;
-                                                  if(discountCoupon > defaultPrice){
-                                                    discountCoupon = defaultPrice;
-                                                    discountAll = defaultPrice;
+                                                  if(discountCoupon > defaultPrice-alreadyPrice){
+                                                    discountCoupon = defaultPrice-alreadyPrice;
+                                                    discountAll = discountCoupon + discountPoint;
                                                   }
                                                   else discountAll = discountCoupon;
                                                   finalPrice = defaultPrice - alreadyPrice -discountAll;

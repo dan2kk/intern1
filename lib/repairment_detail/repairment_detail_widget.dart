@@ -1195,7 +1195,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '${repairmentDetailRepairmentRecord.estDate.toString()}일 소요 예정',
+                                '${valueOrDefault(repairmentDetailRepairmentRecord.estDate.toString(), '0')}일 소요 예정',
                                 style: FlutterFlowTheme.bodyText1.override(
                                   fontFamily: 'tway_air medium',
                                   color: Colors.black,
@@ -1211,7 +1211,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                     ),
 
 
-                  if ((repairmentDetailRepairmentRecord.status) >= 2)
+                  if((repairmentDetailRepairmentRecord.status) >= 2)
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -1315,7 +1315,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                         ),
                       ],
                     ),
-                  if ((repairmentDetailRepairmentRecord.status) >= 2)
+                  if ((repairmentDetailRepairmentRecord.status) >= 2 && repairmentDetailRepairmentRecord.status <= 3)
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
