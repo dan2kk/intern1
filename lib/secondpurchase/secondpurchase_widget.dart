@@ -893,7 +893,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                             Padding(
                                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                                             child: Text(
-                                                  '$discountCoupon 원',
+                                                  '$discountCouponㄹ원',
                                                   style: FlutterFlowTheme
                                                       .bodyText1
                                                       .override(
@@ -1020,7 +1020,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               Padding(
                                               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                                               child: Text(
-                                                    '$discountPoint 점',
+                                                    '$discountPoint점',
                                                     style: FlutterFlowTheme
                                                         .bodyText1
                                                         .override(
@@ -1472,7 +1472,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0, 0, 20, 0),
                                               child: Text(
-                                                discountAll.toString()+' 원',
+                                                discountAll.toString()+'원',
                                                 style: FlutterFlowTheme
                                                     .bodyText1
                                                     .override(
