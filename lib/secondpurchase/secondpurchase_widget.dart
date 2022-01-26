@@ -893,7 +893,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
                                             Padding(
                                             padding: EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
                                             child: Text(
-                                                  '$discountCouponㄹ원',
+                                                  '$discountCoupon원',
                                                   style: FlutterFlowTheme
                                                       .bodyText1
                                                       .override(
