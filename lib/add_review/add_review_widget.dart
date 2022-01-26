@@ -29,7 +29,7 @@ class AddReviewWidget extends StatefulWidget {
 class _AddReviewWidgetState extends State<AddReviewWidget> {
   String uploadedFileUrl1 = '';
   String uploadedFileUrl2 = '';
-  bool picturevideoValue = false;
+  bool picturevideoValue =false ;
   double ratingBarValue1;
   double ratingBarValue2;
   double ratingBarValue3;
@@ -524,7 +524,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                               child:
                                               FlutterFlowExpandedImageView(
                                                 image: Image.network(
-                                                  rowUsersRecord.photoUrl,
+                                                  addReviewRepairmentRecord
+                                                      .imgUrl,
                                                   fit: BoxFit.contain,
                                                 ),
                                                 allowRotation: false,
@@ -541,7 +542,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                             borderRadius:
                                             BorderRadius.circular(20),
                                             child: Image.network(
-                                              rowUsersRecord.photoUrl,
+                                              addReviewRepairmentRecord.imgUrl,
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width,
