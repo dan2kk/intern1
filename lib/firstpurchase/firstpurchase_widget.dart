@@ -2173,10 +2173,9 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                             )};
                                             await PointsRecord.collection.doc().set(createPoint);
                                             final pointRecordReference = PointsRecord.collection.doc();
-                                            final pointref = PointsRecord
-                                                .getDocumentFromData(
+                                            final pointref = await PointsRecord.getDocumentFromData(
                                                 createPoint,
-                                                pointRecordReference);
+                                                pointRecordReference).reference;
                                             final usersUpdateData = {'point_his': FieldValue.arrayUnion([pointref]),};
                                             await currentUserReference.update(usersUpdateData);
                                             final createRepairment = {...createRepairmentRecordData(
