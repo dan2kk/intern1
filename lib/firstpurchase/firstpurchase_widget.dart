@@ -1287,7 +1287,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                     width: MediaQuery.of(context).size.width *
                                         0.95,
                                     height: MediaQuery.of(context).size.height *
-                                        0.35,
+                                        0.5,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFF5F5F5),
                                       borderRadius: BorderRadius.circular(10),
@@ -1340,7 +1340,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                                  0.6,
+                                                  0.5,
                                               height: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -1383,7 +1383,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                                  0.35,
+                                                  0.45,
                                               height: MediaQuery.of(context)
                                                   .size
                                                   .height *
@@ -1465,7 +1465,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 width: MediaQuery.of(context)
                                                     .size
                                                     .width *
-                                                    0.6,
+                                                    0.5,
                                                 height: MediaQuery.of(context)
                                                     .size
                                                     .height *
@@ -1609,7 +1609,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                               ),
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(10, 0, 0, 0),
+                                                    .fromSTEB(0, 0, 0, 0),
                                                 child: FlutterFlowRadioButton(
                                                   options: ['미친성'],
                                                   onChanged: (value) {
