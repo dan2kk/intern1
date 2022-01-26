@@ -124,6 +124,7 @@ class _SecondpurchaseWidgetState extends State<SecondpurchaseWidget> {
         final secondpurchaseRepairmentRecord = snapshot.data;
         defaultPrice = secondpurchaseRepairmentRecord.price;
         alreadyPrice = secondpurchaseRepairmentRecord.paidprice;
+        finalPrice = defaultPrice - alreadyPrice;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: Color(0xFFD3DDE1),
