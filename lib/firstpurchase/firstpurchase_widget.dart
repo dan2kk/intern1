@@ -64,7 +64,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
   String input = '';
   int result = 0;
   String copNum = '';
-  List<double> sizeofContainer = [0.45, 0.35];
+  List<double> sizeofContainer = [0.55, 0.45];
   int numofCon = 0;
   bool _submitted = false;
   final _formKey = GlobalKey<FormState>();
