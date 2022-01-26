@@ -1425,7 +1425,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                     MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        '할인금액: $discountCoupon원',
+                                                        '$discountCoupon원',
                                                         style: FlutterFlowTheme
                                                             .bodyText1
                                                             .override(
@@ -1514,7 +1514,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 3, 0, 0),
+                                                      .fromSTEB(0, 0, 0, 0),
                                                   child: InkWell(
                                                     onTap: () async {
                                                       final pointString = await openDialog();
@@ -1529,7 +1529,7 @@ class _FirstpurchaseWidgetState extends State<FirstpurchaseWidget> {
                                                       MainAxisSize.max,
                                                       children: [
                                                         Text(
-                                                          '할인금액 : $discountPoint 원',
+                                                          '$discountPoint 원',
                                                           style:
                                                           FlutterFlowTheme
                                                               .bodyText1
