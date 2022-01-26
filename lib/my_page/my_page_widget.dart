@@ -62,10 +62,15 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10, 0, 0, 0),
-                                    child: Icon(
-                                      Icons.keyboard_arrow_left,
-                                      color: Colors.black,
-                                      size: 30,
+                                    child: InkWell(
+                                      onTap: () async {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Icon(
+                                        Icons.keyboard_arrow_left,
+                                        color: Colors.black,
+                                        size: 30,
+                                      ),
                                     ),
                                   ),
                                 ],
