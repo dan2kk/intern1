@@ -1057,7 +1057,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               List<Map<String, dynamic>> allData = List<Map<String, dynamic>>.from(querySnapshot.docs.map((doc) => doc.data()).toList());
                               double sum=0, avg=0;
                               for(int i=0; i< allData.length; i++){
-                                sum = (allData[i]['rate_avg']).toDouble();
+                                sum = sum + (allData[i]['rate_avg']).toDouble();
+                                print(i);
                               }
                               avg = (sum / allData.length);
                               final repairstoreUpdateData = {'rate' : avg};
