@@ -172,63 +172,41 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                           20, 0, 20, 0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.stretch,
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
                                         children: [
                                           Stack(
                                             children: [
                                               if (picturevideoValue ?? true)
                                                 Align(
                                                   alignment:
-                                                  AlignmentDirectional(
-                                                      0, 0),
+                                                  AlignmentDirectional(0, 0),
                                                   child: InkWell(
                                                     onTap: () async {
-                                                      final selectedMedia =
-                                                      await selectMediaWithSourceBottomSheet(
+                                                      final selectedMedia = await selectMediaWithSourceBottomSheet(
                                                         context: context,
                                                         allowPhoto: false,
                                                         allowVideo: true,
                                                       );
-                                                      if (selectedMedia !=
-                                                          null &&
-                                                          validateFileFormat(
-                                                              selectedMedia
-                                                                  .storagePath,
-                                                              context)) {
+                                                      if (selectedMedia != null && validateFileFormat(selectedMedia.storagePath, context))
+                                                      {
                                                         showUploadMessage(
                                                             context,
                                                             'Uploading file...',
                                                             showLoading: true);
-                                                        final downloadUrl =
-                                                        await uploadData(
-                                                            selectedMedia
-                                                                .storagePath,
-                                                            selectedMedia
-                                                                .bytes);
-                                                        ScaffoldMessenger.of(
-                                                            context)
-                                                            .hideCurrentSnackBar();
-                                                        if (downloadUrl !=
-                                                            null) {
-                                                          setState(() =>
-                                                          uploadedFileUrl1 =
-                                                              downloadUrl);
-                                                          showUploadMessage(
-                                                              context,
-                                                              'Success!');
-                                                        } else {
-                                                          showUploadMessage(
-                                                              context,
-                                                              'Failed to upload media');
+                                                        final downloadUrl = await uploadData(selectedMedia.storagePath, selectedMedia.bytes);
+                                                        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                                                        if (downloadUrl != null) {
+                                                          setState(() => uploadedFileUrl1 = downloadUrl);
+                                                          showUploadMessage(context, 'Success!');
+                                                        }
+                                                        else {
+                                                          showUploadMessage(context, 'Failed to upload media');
                                                           return;
                                                         }
                                                       }
                                                     },
-                                                    child: Image.network(
-                                                      valueOrDefault<String>(
+                                                    child: Image.network(valueOrDefault<String>(
                                                         uploadedFileUrl2,
                                                         'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2Fvideo%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=1efb466d-2eda-4241-b72c-25a918947d38',
                                                       ),
@@ -240,14 +218,9 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                 ),
                                               if (!(picturevideoValue) ?? true)
                                                 Align(
-                                                  alignment:
-                                                  AlignmentDirectional(
-                                                      0, 0),
+                                                  alignment: AlignmentDirectional(0, 0),
                                                   child: Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        0, 10, 0, 0),
+                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                                     child: InkWell(
                                                       onTap: () async {
                                                         final selectedMedia =
@@ -255,45 +228,26 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                           context: context,
                                                           allowPhoto: true,
                                                         );
-                                                        if (selectedMedia !=
-                                                            null &&
-                                                            validateFileFormat(
-                                                                selectedMedia
-                                                                    .storagePath,
-                                                                context)) {
+                                                        if (selectedMedia != null && validateFileFormat(selectedMedia.storagePath, context)) {
                                                           showUploadMessage(
                                                               context,
                                                               'Uploading file...',
                                                               showLoading:
                                                               true);
-                                                          final downloadUrl =
-                                                          await uploadData(
-                                                              selectedMedia
-                                                                  .storagePath,
-                                                              selectedMedia
-                                                                  .bytes);
-                                                          ScaffoldMessenger.of(
-                                                              context)
-                                                              .hideCurrentSnackBar();
-                                                          if (downloadUrl !=
-                                                              null) {
-                                                            setState(() =>
-                                                            uploadedFileUrl2 =
-                                                                downloadUrl);
-                                                            showUploadMessage(
-                                                                context,
-                                                                'Success!');
-                                                          } else {
-                                                            showUploadMessage(
-                                                                context,
-                                                                'Failed to upload media');
+                                                          final downloadUrl = await uploadData(selectedMedia.storagePath, selectedMedia.bytes);
+                                                          ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                                                          if (downloadUrl != null) {
+                                                            setState(() => uploadedFileUrl2 = downloadUrl);
+                                                            showUploadMessage(context, 'Success!');
+                                                          }
+                                                          else {
+                                                            showUploadMessage(context, 'Failed to upload media');
                                                             return;
                                                           }
                                                         }
                                                       },
                                                       child: Image.network(
-                                                        valueOrDefault<String>(
-                                                          uploadedFileUrl1,
+                                                        valueOrDefault<String>(uploadedFileUrl1,
                                                           'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2F%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=2e283c3a-2d59-4fe8-b97b-2a78784687e9',
                                                         ),
                                                         width: 100,
@@ -306,13 +260,10 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                               if ((uploadedFileUrl2) != '')
                                                 Align(
                                                   alignment:
-                                                  AlignmentDirectional(
-                                                      0, -20.85),
+                                                  AlignmentDirectional(0, -20.85),
                                                   child: Padding(
                                                     padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        0, 10, 0, 0),
+                                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                                     child:
                                                     FlutterFlowMediaDisplay(
                                                       path: uploadedFileUrl2,
@@ -348,11 +299,8 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                               children: [
                                                 Text(
                                                   '고장 제품 정보:',
-                                                  style: FlutterFlowTheme
-                                                      .bodyText1
-                                                      .override(
-                                                    fontFamily:
-                                                    'tway_air medium',
+                                                  style: FlutterFlowTheme.bodyText1.override(
+                                                    fontFamily: 'tway_air medium',
                                                     color: Color(0xFF21B6FF),
                                                     fontSize: 15,
                                                     fontWeight: FontWeight.w500,
@@ -363,9 +311,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 12, 0, 0),
+                                            padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -376,86 +322,38 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                     decoration: BoxDecoration(
                                                       color: Colors.white,
                                                       borderRadius:
-                                                      BorderRadius.circular(
-                                                          8),
-                                                      border: Border.all(
-                                                        color:
-                                                        Color(0xFFE6E6E6),
+                                                      BorderRadius.circular(8),
+                                                      border: Border.all(color: Color(0xFFE6E6E6),
                                                       ),
                                                     ),
                                                     child: Padding(
-                                                      padding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          16, 0, 0, 0),
+                                                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                                                       child: TextFormField(
-                                                        controller:
-                                                        textController1,
+                                                        controller: textController1,
                                                         obscureText: false,
-                                                        decoration:
-                                                        InputDecoration(
+                                                        decoration: InputDecoration(
                                                           hintText: '제조사',
-                                                          hintStyle:
-                                                          FlutterFlowTheme
-                                                              .bodyText2
-                                                              .override(
-                                                            fontFamily:
-                                                            'tway_air medium',
-                                                            color: Color(
-                                                                0xFF8B97A2),
-                                                            fontWeight:
-                                                            FontWeight.w500,
-                                                            useGoogleFonts:
-                                                            false,
+                                                          hintStyle: FlutterFlowTheme.bodyText2.override(
+                                                            fontFamily: 'tway_air medium',
+                                                            color: Color(0xFF8B97A2),
+                                                            fontWeight: FontWeight.w500,
+                                                            useGoogleFonts: false,
                                                           ),
-                                                          enabledBorder:
-                                                          UnderlineInputBorder(
-                                                            borderSide:
-                                                            BorderSide(
-                                                              color: Color(
-                                                                  0x00000000),
+                                                          enabledBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(
+                                                              color: Color(0x00000000),
                                                               width: 1,
                                                             ),
-                                                            borderRadius:
-                                                            const BorderRadius
-                                                                .only(
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                  4.0),
-                                                              topRight: Radius
-                                                                  .circular(
-                                                                  4.0),
-                                                            ),
+                                                            borderRadius: const BorderRadius.only(topLeft: Radius.circular(4.0), topRight: Radius.circular(4.0),),
                                                           ),
-                                                          focusedBorder:
-                                                          UnderlineInputBorder(
-                                                            borderSide:
-                                                            BorderSide(
-                                                              color: Color(
-                                                                  0x00000000),
-                                                              width: 1,
-                                                            ),
-                                                            borderRadius:
-                                                            const BorderRadius
-                                                                .only(
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                  4.0),
-                                                              topRight: Radius
-                                                                  .circular(
-                                                                  4.0),
-                                                            ),
+                                                          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color(0x00000000), width: 1,),
+                                                            borderRadius: const BorderRadius.only(topLeft: Radius.circular(4.0), topRight: Radius.circular(4.0),),
                                                           ),
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                            .bodyText2
-                                                            .override(
-                                                          fontFamily:
-                                                          'tway_air medium',
-                                                          color:
-                                                          Color(0xFF8B97A2),
-                                                          fontWeight:
-                                                          FontWeight.w500,
+                                                        style: FlutterFlowTheme.bodyText2.override(
+                                                          fontFamily: 'tway_air medium',
+                                                          color: Color(0xFF8B97A2),
+                                                          fontWeight: FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
                                                       ),
@@ -467,8 +365,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 12, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -478,87 +375,44 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                     height: 40,
                                                     decoration: BoxDecoration(
                                                       color: Colors.white,
-                                                      borderRadius:
-                                                      BorderRadius.circular(
-                                                          8),
-                                                      border: Border.all(
-                                                        color:
-                                                        Color(0xFFE6E6E6),
-                                                      ),
+                                                      borderRadius: BorderRadius.circular(8),
+                                                      border: Border.all(color: Color(0xFFE6E6E6),),
                                                     ),
                                                     child: Padding(
-                                                      padding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          16, 0, 0, 0),
+                                                      padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                                                       child: TextFormField(
-                                                        controller:
-                                                        textController2,
+                                                        controller: textController2,
                                                         obscureText: false,
-                                                        decoration:
-                                                        InputDecoration(
+                                                        decoration: InputDecoration(
                                                           hintText: '모델명',
-                                                          hintStyle:
-                                                          FlutterFlowTheme
-                                                              .bodyText2
-                                                              .override(
-                                                            fontFamily:
-                                                            'tway_air medium',
-                                                            color: Color(
-                                                                0xFF8B97A2),
-                                                            fontWeight:
-                                                            FontWeight.w500,
-                                                            useGoogleFonts:
-                                                            false,
+                                                          hintStyle: FlutterFlowTheme.bodyText2.override(
+                                                            fontFamily: 'tway_air medium',
+                                                            color: Color(0xFF8B97A2),
+                                                            fontWeight: FontWeight.w500,
+                                                            useGoogleFonts: false,
                                                           ),
-                                                          enabledBorder:
-                                                          UnderlineInputBorder(
-                                                            borderSide:
-                                                            BorderSide(
-                                                              color: Color(
-                                                                  0x00000000),
+                                                          enabledBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(
+                                                              color: Color(0x00000000),
                                                               width: 1,
                                                             ),
-                                                            borderRadius:
-                                                            const BorderRadius
-                                                                .only(
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                  4.0),
-                                                              topRight: Radius
-                                                                  .circular(
-                                                                  4.0),
+                                                            borderRadius: const BorderRadius.only(topLeft: Radius.circular(4.0),
+                                                              topRight: Radius.circular(4.0),
                                                             ),
                                                           ),
-                                                          focusedBorder:
-                                                          UnderlineInputBorder(
-                                                            borderSide:
-                                                            BorderSide(
-                                                              color: Color(
-                                                                  0x00000000),
+                                                          focusedBorder: UnderlineInputBorder(
+                                                            borderSide: BorderSide(color: Color(0x00000000),
                                                               width: 1,
                                                             ),
-                                                            borderRadius:
-                                                            const BorderRadius
-                                                                .only(
-                                                              topLeft: Radius
-                                                                  .circular(
-                                                                  4.0),
-                                                              topRight: Radius
-                                                                  .circular(
-                                                                  4.0),
+                                                            borderRadius: const BorderRadius.only(topLeft: Radius.circular(4.0),
+                                                              topRight: Radius.circular(4.0),
                                                             ),
                                                           ),
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                            .bodyText2
-                                                            .override(
-                                                          fontFamily:
-                                                          'tway_air medium',
-                                                          color:
-                                                          Color(0xFF8B97A2),
-                                                          fontWeight:
-                                                          FontWeight.w500,
+                                                        style: FlutterFlowTheme.bodyText2.override(
+                                                          fontFamily: 'tway_air medium',
+                                                          color: Color(0xFF8B97A2),
+                                                          fontWeight: FontWeight.w500,
                                                           useGoogleFonts: false,
                                                         ),
                                                       ),
@@ -569,9 +423,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 12, 0, 0),
+                                            padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -581,55 +433,31 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                     height: 60,
                                                     decoration: BoxDecoration(
                                                       color: Colors.white,
-                                                      borderRadius:
-                                                      BorderRadius.circular(
-                                                          8),
-                                                      border: Border.all(
-                                                        color:
-                                                        Color(0xFFE6E6E6),
-                                                      ),
+                                                      borderRadius: BorderRadius.circular(8),
+                                                      border: Border.all(color: Color(0xFFE6E6E6),),
                                                     ),
                                                     child: Row(
                                                       mainAxisSize:
                                                       MainAxisSize.max,
                                                       children: [
                                                         Padding(
-                                                          padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(15,
-                                                              0, 0, 0),
+                                                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
                                                           child: Text(
                                                             '동영상 여부',
-                                                            style:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
+                                                            style: FlutterFlowTheme.bodyText1.override(
+                                                              fontFamily: 'tway_air medium',
+                                                              fontWeight: FontWeight.w500,
+                                                              useGoogleFonts: false,
                                                             ),
                                                           ),
                                                         ),
                                                         Expanded(
-                                                          child: SwitchListTile
-                                                              .adaptive(
-                                                            value:
-                                                            picturevideoValue ??=
-                                                            false,
-                                                            onChanged: (newValue) =>
-                                                                setState(() =>
-                                                                picturevideoValue =
-                                                                    newValue),
-                                                            tileColor: Color(
-                                                                0xFFF5F5F5),
+                                                          child: SwitchListTile.adaptive(
+                                                            value: picturevideoValue ??= false,
+                                                            onChanged: (newValue) => setState(() => picturevideoValue = newValue),
+                                                            tileColor: Color(0xFFF5F5F5),
                                                             dense: false,
-                                                            controlAffinity:
-                                                            ListTileControlAffinity
-                                                                .trailing,
+                                                            controlAffinity: ListTileControlAffinity.trailing,
                                                           ),
                                                         ),
                                                       ],
@@ -680,13 +508,10 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                   children: [
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              10, 0, 0, 0),
+                                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                           child: Text(
                                             '고장 부위:',
                                             style: TextStyle(
@@ -701,16 +526,13 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 1, 0, 0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(10, 1, 0, 0),
                                         child: TextFormField(
                                           controller: textController3,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             hintText: '고장 부위를 입력하시오',
-                                            hintStyle: FlutterFlowTheme
-                                                .bodyText1
-                                                .override(
+                                            hintStyle: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               fontWeight: FontWeight.w500,
                                               useGoogleFonts: false,
@@ -738,8 +560,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                               ),
                                             ),
                                           ),
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             fontWeight: FontWeight.w500,
                                             useGoogleFonts: false,
@@ -757,14 +578,10 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.9,
-                                height:
-                                MediaQuery.of(context).size.height * 0.2,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                ),
+                                height: MediaQuery.of(context).size.height * 0.2,
+                                decoration: BoxDecoration(color: Colors.white,),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 10, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(15, 10, 0, 0),
                                   child: TextFormField(
                                     controller: textController4,
                                     obscureText: false,
@@ -885,8 +702,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                               },
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.95,
-                                height:
-                                MediaQuery.of(context).size.height * 0.05,
+                                height: MediaQuery.of(context).size.height * 0.05,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
@@ -913,13 +729,9 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 0, 0, 0),
-                                        child: Text(
-                                          dateTimeFormat(
-                                              'M/d h:mm a', datePicked),
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                        child: Text(dateTimeFormat('M/d h:mm a', datePicked),
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontWeight: FontWeight.w500,
@@ -952,16 +764,13 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Container(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.6,
+                                  width: MediaQuery.of(context).size.width * 0.6,
                                   height: 50,
                                   constraints: BoxConstraints(
                                     maxWidth:
-                                    MediaQuery.of(context).size.width *
-                                        0.65,
+                                    MediaQuery.of(context).size.width * 0.65,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
@@ -969,8 +778,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                   ),
                                   child: SwitchListTile(
                                     value: switchListTileValue ??= false,
-                                    onChanged: (newValue) => setState(
-                                            () => switchListTileValue = newValue),
+                                    onChanged: (newValue) => setState(() => switchListTileValue = newValue),
                                     title: Text(
                                       '직접방문/ 픽업',
                                       style: FlutterFlowTheme.title3.override(
@@ -991,23 +799,19 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                 padding:
                                 EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.35,
+                                  width: MediaQuery.of(context).size.width * 0.35,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Color(0xFFEEEEEE),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        5, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        final repairmentCreateData =
-                                        createRepairmentRecordData(
+                                        final repairmentCreateData = createRepairmentRecordData(
                                           storeidx: widget.storeidx,
                                           userid: currentUserUid,
-                                          category: fixOrderRepairstoreRecord
-                                              .category,
+                                          category: fixOrderRepairstoreRecord.category,
                                           manufacture: textController1.text,
                                           model: textController2.text,
                                           brokenPart: textController3.text,
@@ -1022,21 +826,14 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                           videoUrl: uploadedFileUrl1,
                                           select: datePicked,
                                         );
-                                        final repairmentRecordReference =
-                                        RepairmentRecord.collection.doc();
-                                        await repairmentRecordReference
-                                            .set(repairmentCreateData);
-                                        rprf = RepairmentRecord
-                                            .getDocumentFromData(
-                                            repairmentCreateData,
-                                            repairmentRecordReference);
+                                        final repairmentRecordReference = RepairmentRecord.collection.doc();
+                                        await repairmentRecordReference.set(repairmentCreateData);
+                                        rprf = RepairmentRecord.getDocumentFromData(repairmentCreateData, repairmentRecordReference);
                                         await Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                FirstpurchaseWidget(
-                                                  repairmentrf: rprf.reference,
-                                                ),
+                                                FirstpurchaseWidget(repairmentrf: rprf.reference,),
                                           ),
                                         );
 
@@ -1051,8 +848,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                         width: 150,
                                         height: 50,
                                         color: Color(0xFF21B6FF),
-                                        textStyle:
-                                        FlutterFlowTheme.subtitle2.override(
+                                        textStyle: FlutterFlowTheme.subtitle2.override(
                                           fontFamily: 'tway_air medium',
                                           color: Colors.white,
                                           fontSize: 16,
