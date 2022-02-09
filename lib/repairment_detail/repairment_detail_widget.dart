@@ -25,19 +25,11 @@ class RepairmentDetailWidget extends StatefulWidget {
 }
 
 class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
-  final riveAnimationAnimationsList1 = [
-    'Off',
-  ];
+  final riveAnimationAnimationsList1 = ['Off',];
   List<FlutterFlowRiveController> riveAnimationControllers1 = [];
-  final riveAnimationAnimationsList2 = [
-    'On',
-  ];
+  final riveAnimationAnimationsList2 = ['On',];
   List<FlutterFlowRiveController> riveAnimationControllers2 = [];
-  final riveAnimationAnimationsList3 = [
-    'idle',
-    'curves',
-    'bounce',
-  ];
+  final riveAnimationAnimationsList3 = ['idle', 'curves', 'bounce',];
   List<FlutterFlowRiveController> riveAnimationControllers3 = [];
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -70,8 +62,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
   Widget build(BuildContext context) {
     return StreamBuilder<List<RepairmentRecord>>(
       stream: queryRepairmentRecord(
-        queryBuilder: (repairmentRecord) => repairmentRecord
-            .where('repairmentid', isEqualTo: widget.repairmentid),
+        queryBuilder: (repairmentRecord) => repairmentRecord.where('repairmentid', isEqualTo: widget.repairmentid),
         singleRecord: true,
       ),
       builder: (context, snapshot) {
@@ -89,10 +80,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
         if (snapshot.data.isEmpty) {
           return Container();
         }
-        final repairmentDetailRepairmentRecord =
-        repairmentDetailRepairmentRecordList.isNotEmpty
-            ? repairmentDetailRepairmentRecordList.first
-            : null;
+        final repairmentDetailRepairmentRecord = repairmentDetailRepairmentRecordList.isNotEmpty ? repairmentDetailRepairmentRecordList.first : null;
         return Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
@@ -108,8 +96,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
-                      image: AssetImage(
-                          'assets/images/16.png'),
+                      image: AssetImage('assets/images/16.png'),
                       fit: BoxFit.fill,
                     ),
                     shape: BoxShape.rectangle
@@ -647,24 +634,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.39,
+                                    width: MediaQuery.of(context).size.width * 0.39,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Text(
                                             '주소',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.black,
                                               fontSize: 15,
@@ -677,8 +660,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     ),
                                   ),
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.56,
+                                    width: MediaQuery.of(context).size.width * 0.56,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -686,16 +668,12 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          repairmentDetailRepairmentRecord
-                                              .address,
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          repairmentDetailRepairmentRecord.address,
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 17,
@@ -713,24 +691,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Container(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.39,
+                                  width: MediaQuery.of(context).size.width * 0.39,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           '견적 일시',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 15,
@@ -743,8 +717,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   ),
                                 ),
                                 Container(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.56,
+                                  width: MediaQuery.of(context).size.width * 0.56,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
@@ -754,9 +727,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        repairmentDetailRepairmentRecord
-                                            .timestamp
-                                            .toString(),
+                                        repairmentDetailRepairmentRecord.timestamp.toString(),
                                         style:
                                         FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'tway_air medium',
@@ -775,24 +746,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Container(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.39,
+                                  width: MediaQuery.of(context).size.width * 0.39,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           '픽업 여부',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 15,
@@ -805,8 +772,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   ),
                                 ),
                                 Container(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.56,
+                                  width: MediaQuery.of(context).size.width * 0.56,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
@@ -814,30 +780,22 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
                                       Column(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 10, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                             child: Stack(
                                               children: [
-                                                if (repairmentDetailRepairmentRecord
-                                                    .pickupDirect ??
-                                                    true)
+                                                if (repairmentDetailRepairmentRecord.pickupDirect ?? true)
                                                   Text(
                                                     '픽업서비스 이용',
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
+                                                    style: FlutterFlowTheme.bodyText1.override(
                                                       fontFamily:
                                                       'tway_air medium',
                                                       color: Colors.black,
@@ -847,14 +805,10 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                       useGoogleFonts: false,
                                                     ),
                                                   ),
-                                                if (!(repairmentDetailRepairmentRecord
-                                                    .pickupDirect) ??
-                                                    true)
+                                                if (!(repairmentDetailRepairmentRecord.pickupDirect) ?? true)
                                                   Text(
                                                     '직접방문',
-                                                    style: FlutterFlowTheme
-                                                        .bodyText1
-                                                        .override(
+                                                    style: FlutterFlowTheme.bodyText1.override(
                                                       fontFamily:
                                                       'tway_air medium',
                                                       color: Colors.black,
@@ -867,20 +821,14 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                               ],
                                             ),
                                           ),
-                                          if (repairmentDetailRepairmentRecord
-                                              .pickupDirect ??
-                                              true)
+                                          if (repairmentDetailRepairmentRecord.pickupDirect ?? true)
                                             Align(
-                                              alignment:
-                                              AlignmentDirectional(0, 0),
+                                              alignment: AlignmentDirectional(0, 0),
                                               child: Text(
                                                 dateTimeFormat(
                                                     'M/d H:mm',
-                                                    repairmentDetailRepairmentRecord
-                                                        .select),
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
+                                                    repairmentDetailRepairmentRecord.select),
+                                                style: FlutterFlowTheme.bodyText1.override(
                                                   fontFamily: 'tway_air medium',
                                                   color: Colors.black,
                                                   fontSize: 16,
@@ -903,24 +851,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.39,
+                                    width: MediaQuery.of(context).size.width * 0.39,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Text(
                                             '상품 사진',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.black,
                                               fontSize: 15,
@@ -933,16 +877,14 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     ),
                                   ),
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.56,
+                                    width: MediaQuery.of(context).size.width * 0.56,
                                     height: 100,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         InkWell(
                                           onTap: () async {
@@ -953,8 +895,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                                 child:
                                                 FlutterFlowExpandedImageView(
                                                   image: Image.network(
-                                                    repairmentDetailRepairmentRecord
-                                                        .imgUrl,
+                                                    repairmentDetailRepairmentRecord.imgUrl,
                                                     fit: BoxFit.contain,
                                                   ),
                                                   allowRotation: true,
@@ -967,9 +908,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                           child: Hero(
                                             tag: 'imageTag7',
                                             transitionOnUserGestures: true,
-                                            child: Image.network(
-                                              repairmentDetailRepairmentRecord
-                                                  .imgUrl,
+                                            child: Image.network(repairmentDetailRepairmentRecord.imgUrl,
                                               width: 100,
                                               height: 100,
                                               fit: BoxFit.cover,
@@ -989,24 +928,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.39,
+                                    width: MediaQuery.of(context).size.width * 0.39,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Text(
                                             '제조사',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.black,
                                               fontSize: 15,
@@ -1019,22 +954,18 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     ),
                                   ),
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.56,
+                                    width: MediaQuery.of(context).size.width * 0.56,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          repairmentDetailRepairmentRecord
-                                              .manufacture,
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          repairmentDetailRepairmentRecord.manufacture,
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 17,
@@ -1055,24 +986,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.39,
+                                    width: MediaQuery.of(context).size.width * 0.39,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Text(
                                             '모델명',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.black,
                                               fontSize: 15,
@@ -1085,22 +1012,18 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     ),
                                   ),
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.55,
+                                    width: MediaQuery.of(context).size.width * 0.55,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          repairmentDetailRepairmentRecord
-                                              .model,
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          repairmentDetailRepairmentRecord.model,
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 17,
@@ -1118,24 +1041,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Container(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.39,
+                                  width: MediaQuery.of(context).size.width * 0.39,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           '고장 부위',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 15,
@@ -1148,8 +1067,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   ),
                                 ),
                                 Container(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.56,
+                                  width: MediaQuery.of(context).size.width * 0.56,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
@@ -1159,8 +1077,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        repairmentDetailRepairmentRecord
-                                            .brokenPart,
+                                        repairmentDetailRepairmentRecord.brokenPart,
                                         style:
                                         FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'tway_air medium',
@@ -1179,24 +1096,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Container(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.39,
+                                  width: MediaQuery.of(context).size.width * 0.39,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                         Text(
                                           '상세 설명',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 15,
@@ -1209,8 +1122,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                   ),
                                 ),
                                 Container(
-                                  width:
-                                  MediaQuery.of(context).size.width * 0.56,
+                                  width: MediaQuery.of(context).size.width * 0.56,
                                   height: 50,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
@@ -1220,8 +1132,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        repairmentDetailRepairmentRecord
-                                            .symptom,
+                                        repairmentDetailRepairmentRecord.symptom,
                                         style:
                                         FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'tway_air medium',
@@ -1241,24 +1152,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.39,
+                                    width: MediaQuery.of(context).size.width * 0.39,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Text(
                                             '수리점 코멘트',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.black,
                                               fontSize: 15,
@@ -1271,8 +1178,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     ),
                                   ),
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.56,
+                                    width: MediaQuery.of(context).size.width * 0.56,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -1283,10 +1189,8 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                       MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          repairmentDetailRepairmentRecord
-                                              .comment,
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          repairmentDetailRepairmentRecord.comment,
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 17,
@@ -1304,24 +1208,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.39,
+                                    width: MediaQuery.of(context).size.width * 0.39,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Text(
                                             '예상 수리기간',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.black,
                                               fontSize: 15,
@@ -1334,23 +1234,18 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     ),
                                   ),
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.56,
+                                    width: MediaQuery.of(context).size.width * 0.56,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          repairmentDetailRepairmentRecord
-                                              .estDate
-                                              .toString(),
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          repairmentDetailRepairmentRecord.estDate.toString(),
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 17,
@@ -1360,8 +1255,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                         ),
                                         Text(
                                           '일 소요 예정',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 17,
@@ -1379,24 +1273,20 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.39,
+                                    width: MediaQuery.of(context).size.width * 0.39,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Text(
                                             '수리점 코멘트',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.black,
                                               fontSize: 15,
@@ -1409,21 +1299,18 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                     ),
                                   ),
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.56,
+                                    width: MediaQuery.of(context).size.width * 0.56,
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Text(
                                           'Hello World',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Colors.black,
                                             fontSize: 17,
@@ -1506,8 +1393,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                           children: [
                             if ((repairmentDetailRepairmentRecord.status) == 3)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 20, 0, 20),
+                                padding: EdgeInsetsDirectional.fromSTEB(20, 20, 0, 20),
                                 child: InkWell(
                                   onTap: () async {
                                     await Navigator.push(
@@ -1515,16 +1401,13 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             SecondpurchaseWidget(
-                                              repairmentrf:
-                                              repairmentDetailRepairmentRecord
-                                                  .reference,
+                                              repairmentrf: repairmentDetailRepairmentRecord.reference,
                                             ),
                                       ),
                                     );
                                   },
                                   child: Container(
-                                    width:
-                                    MediaQuery.of(context).size.width * 0.9,
+                                    width: MediaQuery.of(context).size.width * 0.9,
                                     decoration: BoxDecoration(
                                       color: Color(0xFF21b6ff),
                                       boxShadow: [
@@ -1537,12 +1420,10 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                       borderRadius: BorderRadius.circular(16),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 16, 16, 16),
+                                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
@@ -1551,16 +1432,14 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                             buttonSize: 60,
                                             icon: FaIcon(
                                               FontAwesomeIcons.moneyBillWave,
-                                              color: FlutterFlowTheme
-                                                  .secondaryColor,
+                                              color: FlutterFlowTheme.secondaryColor,
                                               size: 30,
                                             ),
                                           ),
                                           Text(
                                             '2차 견적서 확인후 결제하기',
                                             textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.white,
                                               fontSize: 16,
@@ -1575,8 +1454,7 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                               ),
                             if ((repairmentDetailRepairmentRecord.status) == 2)
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 20, 0, 20),
+                                padding: EdgeInsetsDirectional.fromSTEB(20, 20, 0, 20),
                                 child: InkWell(
                                   onTap: () async {
                                     await Navigator.push(
@@ -1584,16 +1462,13 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             FirstpurchaseWidget(
-                                              repairmentrf:
-                                              repairmentDetailRepairmentRecord
-                                                  .reference,
+                                              repairmentrf: repairmentDetailRepairmentRecord.reference,
                                             ),
                                       ),
                                     );
                                   },
                                   child: Container(
-                                    width:
-                                    MediaQuery.of(context).size.width * 0.9,
+                                    width: MediaQuery.of(context).size.width * 0.9,
                                     decoration: BoxDecoration(
                                       color: Color(0xFF21b6ff),
                                       boxShadow: [
@@ -1606,12 +1481,10 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                       borderRadius: BorderRadius.circular(16),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 16, 16, 16),
+                                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           FlutterFlowIconButton(
                                             borderColor: Colors.transparent,
@@ -1620,16 +1493,14 @@ class _RepairmentDetailWidgetState extends State<RepairmentDetailWidget> {
                                             buttonSize: 60,
                                             icon: FaIcon(
                                               FontAwesomeIcons.moneyBillWave,
-                                              color: FlutterFlowTheme
-                                                  .secondaryColor,
+                                              color: FlutterFlowTheme.secondaryColor,
                                               size: 30,
                                             ),
                                           ),
                                           Text(
                                             '1차 가견적서 결제하기',
                                             textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Colors.white,
                                               fontSize: 18,

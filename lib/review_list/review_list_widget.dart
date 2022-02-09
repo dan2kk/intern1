@@ -64,10 +64,7 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 110, 0, 0),
                 child: StreamBuilder<List<ReviewRecord>>(
-                  stream: queryReviewRecord(
-                    queryBuilder: (reviewRecord) => reviewRecord
-                        .where('storeidx', isEqualTo: widget.storeidx),
-                  ),
+                  stream: queryReviewRecord(queryBuilder: (reviewRecord) => reviewRecord.where('storeidx', isEqualTo: widget.storeidx),),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
@@ -125,10 +122,7 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                   if (snapshot.data.isEmpty) {
                                     return Container();
                                   }
-                                  final columnUsersRecord =
-                                      columnUsersRecordList.isNotEmpty
-                                          ? columnUsersRecordList.first
-                                          : null;
+                                  final columnUsersRecord = columnUsersRecordList.isNotEmpty ? columnUsersRecordList.first : null;
                                   return InkWell(
                                     onTap: () async {
                                       await Navigator.push(
@@ -136,8 +130,7 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                         PageTransition(
                                           type: PageTransitionType.leftToRight,
                                           duration: Duration(milliseconds: 300),
-                                          reverseDuration:
-                                              Duration(milliseconds: 300),
+                                          reverseDuration: Duration(milliseconds: 300),
                                           child: ReviewDetailWidget(
                                             re000:
                                                 listViewReviewRecord.reviewId,
@@ -151,33 +144,22 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16, 12, 16, 0),
+                                                EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
                                                 Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                  mainAxisSize: MainAxisSize.max,
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      columnUsersRecord
-                                                          .displayName,
-                                                      style: FlutterFlowTheme
-                                                          .subtitle1
-                                                          .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color:
-                                                            Color(0xFF151B1E),
+                                                      columnUsersRecord.displayName,
+                                                      style: FlutterFlowTheme.subtitle1.override(
+                                                        fontFamily: 'Lexend Deca',
+                                                        color: Color(0xFF151B1E),
                                                         fontSize: 18,
-                                                        fontWeight:
-                                                            FontWeight.w500,
+                                                        fontWeight: FontWeight.w500,
                                                       ),
                                                     ),
                                                     Padding(
@@ -186,20 +168,14 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                                               .fromSTEB(
                                                                   0, 4, 0, 4),
                                                       child: RatingBarIndicator(
-                                                        itemBuilder:
-                                                            (context, index) =>
+                                                        itemBuilder: (context, index) =>
                                                                 Icon(
-                                                          Icons.star_rounded,
-                                                          color:
-                                                              Color(0xFFFFA130),
+                                                                  Icons.star_rounded,
+                                                                  color: Color(0xFFFFA130),
                                                         ),
-                                                        direction:
-                                                            Axis.horizontal,
-                                                        rating:
-                                                            listViewReviewRecord
-                                                                .rateAvg,
-                                                        unratedColor:
-                                                            Color(0xFF95A1AC),
+                                                        direction: Axis.horizontal,
+                                                        rating: listViewReviewRecord.rateAvg,
+                                                        unratedColor: Color(0xFF95A1AC),
                                                         itemCount: 5,
                                                         itemSize: 24,
                                                       ),
@@ -207,28 +183,17 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                                   ],
                                                 ),
                                                 Card(
-                                                  clipBehavior: Clip
-                                                      .antiAliasWithSaveLayer,
+                                                  clipBehavior: Clip.antiAliasWithSaveLayer,
                                                   color: Color(0xFFDBE2E7),
                                                   shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            40),
+                                                    borderRadius: BorderRadius.circular(40),
                                                   ),
                                                   child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                2, 2, 2, 2),
+                                                    padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
                                                     child: StreamBuilder<
                                                         List<UsersRecord>>(
                                                       stream: queryUsersRecord(
-                                                        queryBuilder: (usersRecord) =>
-                                                            usersRecord.where(
-                                                                'uid',
-                                                                isEqualTo:
-                                                                    listViewReviewRecord
-                                                                        .uid),
+                                                        queryBuilder: (usersRecord) => usersRecord.where('uid', isEqualTo: listViewReviewRecord.uid),
                                                         singleRecord: true,
                                                       ),
                                                       builder:
@@ -238,39 +203,24 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                                           return Center(
                                                             child:
                                                                 LinearProgressIndicator(
-                                                              color: Color(
-                                                                  0xFF2163CB),
+                                                              color: Color(0xFF2163CB),
                                                             ),
                                                           );
                                                         }
-                                                        List<UsersRecord>
-                                                            circleImageUsersRecordList =
-                                                            snapshot.data;
+                                                        List<UsersRecord> circleImageUsersRecordList = snapshot.data;
                                                         // Return an empty Container when the document does not exist.
-                                                        if (snapshot
-                                                            .data.isEmpty) {
+                                                        if (snapshot.data.isEmpty) {
                                                           return Container();
                                                         }
-                                                        final circleImageUsersRecord =
-                                                            circleImageUsersRecordList
-                                                                    .isNotEmpty
-                                                                ? circleImageUsersRecordList
-                                                                    .first
-                                                                : null;
+                                                        final circleImageUsersRecord = circleImageUsersRecordList.isNotEmpty ? circleImageUsersRecordList.first : null;
                                                         return Container(
                                                           width: 50,
                                                           height: 50,
-                                                          clipBehavior:
-                                                              Clip.antiAlias,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            shape:
-                                                                BoxShape.circle,
+                                                          clipBehavior: Clip.antiAlias,
+                                                          decoration: BoxDecoration(
+                                                            shape: BoxShape.circle,
                                                           ),
-                                                          child: Image.network(
-                                                            circleImageUsersRecord
-                                                                .photoUrl,
-                                                          ),
+                                                          child: Image.network(circleImageUsersRecord.photoUrl,),
                                                         );
                                                       },
                                                     ),
@@ -281,22 +231,18 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16, 4, 16, 12),
+                                                EdgeInsetsDirectional.fromSTEB(16, 4, 16, 12),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Expanded(
                                                   child: Text(
                                                     listViewReviewRecord.review,
-                                                    style: FlutterFlowTheme
-                                                        .bodyText2
-                                                        .override(
+                                                    style: FlutterFlowTheme.bodyText2.override(
                                                       fontFamily: 'Lexend Deca',
                                                       color: Color(0xFF8B97A2),
                                                       fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.normal,
+                                                      fontWeight: FontWeight.normal,
                                                     ),
                                                   ),
                                                 ),
@@ -349,9 +295,7 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                     EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
                                 child: StreamBuilder<List<ReviewRecord>>(
                                   stream: queryReviewRecord(
-                                    queryBuilder: (reviewRecord) =>
-                                        reviewRecord.where('storeidx',
-                                            isEqualTo: widget.storeidx),
+                                    queryBuilder: (reviewRecord) => reviewRecord.where('storeidx', isEqualTo: widget.storeidx),
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
@@ -399,17 +343,14 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 0, 12),
+                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
                                     child:
                                         StreamBuilder<List<RepairstoreRecord>>(
-                                      stream: queryRepairstoreRecord(
-                                        queryBuilder: (repairstoreRecord) =>
-                                            repairstoreRecord.where('idx',
-                                                isEqualTo: widget.storeidx),
-                                        singleRecord: true,
-                                      ),
-                                      builder: (context, snapshot) {
+                                          stream: queryRepairstoreRecord(
+                                            queryBuilder: (repairstoreRecord) => repairstoreRecord.where('idx', isEqualTo: widget.storeidx),
+                                            singleRecord: true,
+                                          ),
+                                          builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
                                           return Center(
@@ -418,18 +359,12 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                             ),
                                           );
                                         }
-                                        List<RepairstoreRecord>
-                                            textRepairstoreRecordList =
-                                            snapshot.data;
+                                        List<RepairstoreRecord> textRepairstoreRecordList = snapshot.data;
                                         // Return an empty Container when the document does not exist.
                                         if (snapshot.data.isEmpty) {
                                           return Container();
                                         }
-                                        final textRepairstoreRecord =
-                                            textRepairstoreRecordList.isNotEmpty
-                                                ? textRepairstoreRecordList
-                                                    .first
-                                                : null;
+                                        final textRepairstoreRecord = textRepairstoreRecordList.isNotEmpty ? textRepairstoreRecordList.first : null;
                                         return Text(
                                           formatNumber(
                                             textRepairstoreRecord.rate,
@@ -437,8 +372,7 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                             format: '#.#',
                                             locale: '',
                                           ),
-                                          style:
-                                              FlutterFlowTheme.title1.override(
+                                          style: FlutterFlowTheme.title1.override(
                                             fontFamily: 'Lexend Deca',
                                             color: Color(0xFF090F13),
                                             fontSize: 28,
@@ -449,8 +383,7 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 0, 0, 12),
+                                    padding: EdgeInsetsDirectional.fromSTEB(4, 0, 0, 12),
                                     child: Icon(
                                       Icons.star_rounded,
                                       color: Color(0xFFFFA130),
