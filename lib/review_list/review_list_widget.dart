@@ -102,9 +102,7 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                   EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
                               child: StreamBuilder<List<UsersRecord>>(
                                 stream: queryUsersRecord(
-                                  queryBuilder: (usersRecord) =>
-                                      usersRecord.where('uid',
-                                          isEqualTo: listViewReviewRecord.uid),
+                                  queryBuilder: (usersRecord) => usersRecord.where('uid', isEqualTo: listViewReviewRecord.uid),
                                   singleRecord: true,
                                 ),
                                 builder: (context, snapshot) {
@@ -132,8 +130,7 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                           duration: Duration(milliseconds: 300),
                                           reverseDuration: Duration(milliseconds: 300),
                                           child: ReviewDetailWidget(
-                                            re000:
-                                                listViewReviewRecord.reviewId,
+                                            re000: listViewReviewRecord.reviewId,
                                           ),
                                         ),
                                       );
@@ -164,12 +161,9 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0, 4, 0, 4),
+                                                          EdgeInsetsDirectional.fromSTEB(0, 4, 0, 4),
                                                       child: RatingBarIndicator(
-                                                        itemBuilder: (context, index) =>
-                                                                Icon(
+                                                        itemBuilder: (context, index) => Icon(
                                                                   Icons.star_rounded,
                                                                   color: Color(0xFFFFA130),
                                                         ),
@@ -191,8 +185,7 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                                   child: Padding(
                                                     padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
                                                     child: StreamBuilder<
-                                                        List<UsersRecord>>(
-                                                      stream: queryUsersRecord(
+                                                        List<UsersRecord>>(stream: queryUsersRecord(
                                                         queryBuilder: (usersRecord) => usersRecord.where('uid', isEqualTo: listViewReviewRecord.uid),
                                                         singleRecord: true,
                                                       ),
@@ -230,8 +223,7 @@ class _ReviewListWidgetState extends State<ReviewListWidget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(16, 4, 16, 12),
+                                            padding: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 12),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [

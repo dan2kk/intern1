@@ -83,8 +83,7 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
                           height: MediaQuery.of(context).size.height * 0.1,
                           constraints: BoxConstraints(
                             maxWidth: MediaQuery.of(context).size.width,
-                            maxHeight:
-                            MediaQuery.of(context).size.height * 0.05,
+                            maxHeight: MediaQuery.of(context).size.height * 0.05,
                           ),
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -131,10 +130,7 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
                           onPressed: () async {
                             await Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    NavBarPage(initialPage: 'MainPage'),
-                              ),
+                              MaterialPageRoute(builder: (context) => NavBarPage(initialPage: 'MainPage'),),
                             );
                           },
                           text: '메인 화면',
@@ -165,10 +161,7 @@ class _OrderCompleteWidgetState extends State<OrderCompleteWidget> {
                           onPressed: () async {
                             await Navigator.push(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    NavBarPage(initialPage: 'MyPage'),
-                              ),
+                              MaterialPageRoute(builder: (context) => NavBarPage(initialPage: 'MyPage'),),
                             );
                           },
                           text: '마이 페이지',

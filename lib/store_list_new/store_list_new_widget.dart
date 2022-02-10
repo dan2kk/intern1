@@ -27,8 +27,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
   Widget build(BuildContext context) {
     return StreamBuilder<List<RepairmentRecord>>(
       stream: queryRepairmentRecord(
-        queryBuilder: (repairmentRecord) =>
-            repairmentRecord.where('userid', isEqualTo: currentUserUid),
+        queryBuilder: (repairmentRecord) => repairmentRecord.where('userid', isEqualTo: currentUserUid),
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
@@ -63,8 +62,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                   shape: BoxShape.rectangle
               ),
             ),
-            onPressed: () {
-              Navigator.push(
+            onPressed: () {Navigator.push(
                 context,
                 PageTransition(
                   type: PageTransitionType.rightToLeft,
@@ -125,8 +123,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                             children: List.generate(listofhistory.length, (listofhistoryIndex) {
                                   final listofhistoryItem = listofhistory[listofhistoryIndex];
                                   return Padding(
-                                    padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                                     child: Container(
                                       width: MediaQuery.of(context).size.width,
                                       height: 184,
@@ -152,11 +149,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                                           onTap: () async {
                                             await Navigator.push(
                                               context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    RepairmentStoreDetailWidget(
-                                                      stidx: listofhistoryItem.storeidx,
-                                                    ),
+                                              MaterialPageRoute(builder: (context) => RepairmentStoreDetailWidget(stidx: listofhistoryItem.storeidx,),
                                               ),
                                             );
                                           },
@@ -164,18 +157,14 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16, 16, 16, 0),
+                                                padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
                                                 child: Row(
                                                   mainAxisSize: MainAxisSize.max,
                                                   children: [
                                                     Expanded(
                                                       child: Text(
                                                         listofhistoryItem.model,
-                                                        style: FlutterFlowTheme
-                                                            .title1
-                                                            .override(
+                                                        style: FlutterFlowTheme.title1.override(
                                                           fontFamily: 'Lexend Deca',
                                                           color: Colors.white,
                                                           fontSize: 24,
@@ -194,17 +183,14 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                                               ),
                                               Padding(
                                                 padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16, 4, 16, 0),
+                                                EdgeInsetsDirectional.fromSTEB(16, 4, 16, 0),
                                                 child: Row(
                                                   mainAxisSize: MainAxisSize.max,
                                                   children: [
                                                     Expanded(
                                                       child: Text(
                                                         listofhistoryItem.brokenPart,
-                                                        style: FlutterFlowTheme
-                                                            .bodyText2
-                                                            .override(
+                                                        style: FlutterFlowTheme.bodyText2.override(
                                                           fontFamily: 'Lexend Deca',
                                                           color: Color(0xFF39D2C0),
                                                           fontSize: 14,
@@ -218,24 +204,17 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(16, 4, 16, 16),
+                                                  padding: EdgeInsetsDirectional.fromSTEB(16, 4, 16, 16),
                                                   child: Row(
                                                     mainAxisSize: MainAxisSize.max,
-                                                    crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
+                                                    crossAxisAlignment: CrossAxisAlignment.end,
                                                     children: [
                                                       FFButtonWidget(
                                                         onPressed: () async {
                                                           await Navigator.push(
                                                             context,
-                                                            MaterialPageRoute(
-                                                              builder: (context) =>
-                                                                  RepairmentDetailWidget(
-                                                                    repairmentid:
-                                                                    listofhistoryItem
-                                                                        .repairmentid,
-                                                                  ),
+                                                            MaterialPageRoute(builder: (context) =>
+                                                                  RepairmentDetailWidget(repairmentid: listofhistoryItem.repairmentid,),
                                                             ),
                                                           );
                                                         },
@@ -257,8 +236,7 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                                                           ),
                                                           elevation: 3,
                                                           borderSide: BorderSide(
-                                                            color:
-                                                            Colors.transparent,
+                                                            color: Colors.transparent,
                                                             width: 1,
                                                           ),
                                                           borderRadius: 8,
@@ -266,13 +244,9 @@ class _StoreListNewWidgetState extends State<StoreListNewWidget> {
                                                       ),
                                                       Expanded(
                                                         child: Column(
-                                                          mainAxisSize:
-                                                          MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                          MainAxisAlignment.end,
-                                                          crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .end,
+                                                          mainAxisSize: MainAxisSize.max,
+                                                          mainAxisAlignment: MainAxisAlignment.end,
+                                                          crossAxisAlignment: CrossAxisAlignment.end,
                                                           children: [],
                                                         ),
                                                       ),

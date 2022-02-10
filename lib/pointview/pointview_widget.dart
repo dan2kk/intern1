@@ -78,8 +78,7 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                     child: InkWell(
                                       onTap: () async {
                                         Navigator.pop(context);
@@ -92,8 +91,7 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                     child: Text(
                                       '포인트 내역',
                                       style:
@@ -139,16 +137,14 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8, 8, 8, 8),
+                                  padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Expanded(
                                         child: Text(
                                           '포인트',
-                                          style: FlutterFlowTheme.bodyText2
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText2.override(
                                             fontFamily: 'tway_air medium',
                                             color: Color(0xFF8B97A2),
                                             fontSize: 18,
@@ -164,15 +160,13 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          8, 0, 0, 8),
+                                      padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 8),
                                       child: AuthUserStreamWidget(
                                         child: Text(
                                           formatNumber(
                                             currentUserDocument?.point,
                                             formatType: FormatType.decimal,
-                                            decimalType:
-                                            DecimalType.periodDecimal,
+                                            decimalType: DecimalType.periodDecimal,
                                           ),
                                           style:
                                           FlutterFlowTheme.title2.override(
@@ -217,8 +211,7 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12, 0, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                                   child: Text(
                                     'This Month',
                                     style: FlutterFlowTheme.bodyText2.override(
@@ -239,23 +232,18 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                     AuthUserStreamWidget(
                       child: Builder(
                         builder: (context) {
-                          final listofhistory =
-                              currentUserDocument?.pointHis?.toList() ?? [];
+                          final listofhistory = currentUserDocument?.pointHis?.toList() ?? [];
                           return SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
-                              children: List.generate(listofhistory.length,
-                                      (listofhistoryIndex) {
-                                    final listofhistoryItem =
-                                    listofhistory[listofhistoryIndex];
+                              children: List.generate(listofhistory.length, (listofhistoryIndex) {
+                                    final listofhistoryItem = listofhistory[listofhistoryIndex];
                                     return Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Container(
                                           width: MediaQuery.of(context).size.width,
-                                          height:
-                                          MediaQuery.of(context).size.height *
-                                              0.12,
+                                          height: MediaQuery.of(context).size.height * 0.12,
                                           decoration: BoxDecoration(
                                             color: Color(0xFFEEEEEE),
                                             border: Border.all(
@@ -264,8 +252,7 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                             ),
                                           ),
                                           child: StreamBuilder<PointsRecord>(
-                                            stream: PointsRecord.getDocument(
-                                                listofhistoryItem),
+                                            stream: PointsRecord.getDocument(listofhistoryItem),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {
@@ -281,81 +268,36 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                 children: [
                                                   Column(
                                                     mainAxisSize: MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                                    mainAxisAlignment: MainAxisAlignment.center,
                                                     children: [
                                                       Container(
-                                                        width:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .width *
-                                                            0.25,
-                                                        height:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .height *
-                                                            0.1,
+                                                        width: MediaQuery.of(context).size.width * 0.25,
+                                                        height: MediaQuery.of(context).size.height * 0.1,
                                                         child: Stack(
                                                           children: [
-                                                            if ((rowPointsRecord
-                                                                .amount) >
-                                                                0)
+                                                            if ((rowPointsRecord.amount) > 0)
                                                               Align(
-                                                                alignment:
-                                                                AlignmentDirectional(
-                                                                    0, 0),
+                                                                alignment: AlignmentDirectional(0, 0),
                                                                 child: Container(
-                                                                  width: MediaQuery.of(
-                                                                      context)
-                                                                      .size
-                                                                      .width *
-                                                                      0.9,
-                                                                  height: MediaQuery.of(
-                                                                      context)
-                                                                      .size
-                                                                      .height *
-                                                                      0.9,
-                                                                  child:
-                                                                  RiveAnimation
-                                                                      .asset(
-                                                                    'assets/rive_animations/368-694-checkmark-icon.riv',
-                                                                    artboard:
-                                                                    'Artboard',
-                                                                    fit: BoxFit
-                                                                        .cover,
-                                                                    controllers:
-                                                                    riveAnimationControllers1,
+                                                                  width: MediaQuery.of(context).size.width * 0.9,
+                                                                  height: MediaQuery.of(context).size.height * 0.9,
+                                                                  child: RiveAnimation.asset('assets/rive_animations/368-694-checkmark-icon.riv',
+                                                                    artboard: 'Artboard',
+                                                                    fit: BoxFit.cover,
+                                                                    controllers: riveAnimationControllers1,
                                                                   ),
                                                                 ),
                                                               ),
-                                                            if ((rowPointsRecord
-                                                                .amount) <=
-                                                                0)
+                                                            if ((rowPointsRecord.amount) <= 0)
                                                               Align(
-                                                                alignment:
-                                                                AlignmentDirectional(
-                                                                    0, 0),
+                                                                alignment: AlignmentDirectional(0, 0),
                                                                 child: Container(
-                                                                  width: MediaQuery.of(
-                                                                      context)
-                                                                      .size
-                                                                      .width *
-                                                                      0.9,
-                                                                  height: MediaQuery.of(
-                                                                      context)
-                                                                      .size
-                                                                      .height *
-                                                                      0.9,
-                                                                  child:
-                                                                  RiveAnimation
-                                                                      .asset(
-                                                                    'assets/rive_animations/369-695-error-icon.riv',
-                                                                    artboard:
-                                                                    'Artboard',
-                                                                    fit: BoxFit
-                                                                        .cover,
-                                                                    controllers:
-                                                                    riveAnimationControllers2,
+                                                                  width: MediaQuery.of(context).size.width * 0.9,
+                                                                  height: MediaQuery.of(context).size.height * 0.9,
+                                                                  child: RiveAnimation.asset('assets/rive_animations/369-695-error-icon.riv',
+                                                                    artboard: 'Artboard',
+                                                                    fit: BoxFit.cover,
+                                                                    controllers: riveAnimationControllers2,
                                                                   ),
                                                                 ),
                                                               ),
@@ -366,109 +308,58 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                   ),
                                                   Expanded(
                                                     child: Column(
-                                                      mainAxisSize:
-                                                      MainAxisSize.max,
-                                                      mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceEvenly,
+                                                      mainAxisSize: MainAxisSize.max,
+                                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                       children: [
                                                         Row(
-                                                          mainAxisSize:
-                                                          MainAxisSize.max,
+                                                          mainAxisSize: MainAxisSize.max,
                                                           children: [
                                                             Container(
-                                                              width: MediaQuery.of(
-                                                                  context)
-                                                                  .size
-                                                                  .width *
-                                                                  0.35,
-                                                              height: MediaQuery.of(
-                                                                  context)
-                                                                  .size
-                                                                  .height *
-                                                                  0.03,
-                                                              decoration:
-                                                              BoxDecoration(
-                                                                color: Color(
-                                                                    0xFFEEEEEE),
+                                                              width: MediaQuery.of(context).size.width * 0.35,
+                                                              height: MediaQuery.of(context).size.height * 0.03,
+                                                              decoration: BoxDecoration(
+                                                                color: Color(0xFFEEEEEE),
                                                               ),
                                                               child: Row(
-                                                                mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
+                                                                mainAxisSize: MainAxisSize.max,
                                                                 children: [
                                                                   Text(
                                                                     formatNumber(
-                                                                      rowPointsRecord
-                                                                          .amount,
-                                                                      formatType:
-                                                                      FormatType
-                                                                          .decimal,
+                                                                      rowPointsRecord.amount,
+                                                                      formatType: FormatType.decimal,
                                                                     ),
-                                                                    style: FlutterFlowTheme
-                                                                        .subtitle1
-                                                                        .override(
-                                                                      fontFamily:
-                                                                      'tway_air medium',
-                                                                      color: Color(
-                                                                          0xFF15212B),
+                                                                    style: FlutterFlowTheme.subtitle1.override(
+                                                                      fontFamily: 'tway_air medium',
+                                                                      color: Color(0xFF15212B),
                                                                       fontSize: 18,
-                                                                      fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                      useGoogleFonts:
-                                                                      false,
+                                                                      fontWeight: FontWeight.w500,
+                                                                      useGoogleFonts: false,
                                                                     ),
                                                                   ),
                                                                 ],
                                                               ),
                                                             ),
                                                             Container(
-                                                              width: MediaQuery.of(
-                                                                  context)
-                                                                  .size
-                                                                  .width *
-                                                                  0.35,
-                                                              height: MediaQuery.of(
-                                                                  context)
-                                                                  .size
-                                                                  .height *
-                                                                  0.03,
-                                                              decoration:
-                                                              BoxDecoration(
-                                                                color: Color(
-                                                                    0xFFEEEEEE),
+                                                              width: MediaQuery.of(context).size.width * 0.35,
+                                                              height: MediaQuery.of(context).size.height * 0.03,
+                                                              decoration: BoxDecoration(
+                                                                color: Color(0xFFEEEEEE),
                                                               ),
                                                               child: Row(
-                                                                mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
+                                                                mainAxisSize: MainAxisSize.max,
                                                                 children: [
                                                                   Expanded(
                                                                     child: Align(
-                                                                      alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.7,
-                                                                          0),
+                                                                      alignment: AlignmentDirectional(0.7, 0),
                                                                       child: Text(
-                                                                        dateTimeFormat(
-                                                                            'yMd',
-                                                                            rowPointsRecord
-                                                                                .earnedDate),
-                                                                        textAlign:
-                                                                        TextAlign
-                                                                            .end,
+                                                                        dateTimeFormat('yMd', rowPointsRecord.earnedDate),
+                                                                        textAlign: TextAlign.end,
                                                                         style:
                                                                         TextStyle(
-                                                                          fontFamily:
-                                                                          'tway_air medium',
-                                                                          color: Color(
-                                                                              0xFF57636C),
-                                                                          fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                          fontSize:
-                                                                          12,
+                                                                          fontFamily: 'tway_air medium',
+                                                                          color: Color(0xFF57636C),
+                                                                          fontWeight: FontWeight.w500,
+                                                                          fontSize: 12,
                                                                         ),
                                                                       ),
                                                                     ),
@@ -479,55 +370,27 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                           ],
                                                         ),
                                                         Row(
-                                                          mainAxisSize:
-                                                          MainAxisSize.max,
+                                                          mainAxisSize: MainAxisSize.max,
                                                           children: [
                                                             Container(
-                                                              width: MediaQuery.of(
-                                                                  context)
-                                                                  .size
-                                                                  .width *
-                                                                  0.35,
-                                                              height: MediaQuery.of(
-                                                                  context)
-                                                                  .size
-                                                                  .height *
-                                                                  0.05,
-                                                              decoration:
-                                                              BoxDecoration(
-                                                                color: Color(
-                                                                    0xFFEEEEEE),
+                                                              width: MediaQuery.of(context).size.width * 0.35,
+                                                              height: MediaQuery.of(context).size.height * 0.05,
+                                                              decoration: BoxDecoration(color: Color(0xFFEEEEEE),
                                                               ),
                                                               child: Row(
-                                                                mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
+                                                                mainAxisSize: MainAxisSize.max,
                                                                 children: [
                                                                   Expanded(
                                                                     child: Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                          5,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                                                       child: Text(
-                                                                        rowPointsRecord
-                                                                            .reason,
-                                                                        style: FlutterFlowTheme
-                                                                            .bodyText2
-                                                                            .override(
-                                                                          fontFamily:
-                                                                          'tway_air medium',
-                                                                          color: Color(
-                                                                              0xFF000000),
-                                                                          fontSize:
-                                                                          12,
-                                                                          fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                          useGoogleFonts:
-                                                                          false,
+                                                                        rowPointsRecord.reason,
+                                                                        style: FlutterFlowTheme.bodyText2.override(
+                                                                          fontFamily: 'tway_air medium',
+                                                                          color: Color(0xFF000000),
+                                                                          fontSize: 12,
+                                                                          fontWeight: FontWeight.w500,
+                                                                          useGoogleFonts: false,
                                                                         ),
                                                                       ),
                                                                     ),
@@ -536,49 +399,26 @@ class _PointviewWidgetState extends State<PointviewWidget> {
                                                               ),
                                                             ),
                                                             Container(
-                                                              width: MediaQuery.of(
-                                                                  context)
-                                                                  .size
-                                                                  .width *
-                                                                  0.35,
-                                                              height: MediaQuery.of(
-                                                                  context)
-                                                                  .size
-                                                                  .height *
-                                                                  0.05,
+                                                              width: MediaQuery.of(context).size.width * 0.35,
+                                                              height: MediaQuery.of(context).size.height * 0.05,
                                                               decoration:
                                                               BoxDecoration(
-                                                                color: Color(
-                                                                    0xFFEEEEEE),
+                                                                color: Color(0xFFEEEEEE),
                                                               ),
                                                               child: Row(
-                                                                mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
+                                                                mainAxisSize: MainAxisSize.max,
                                                                 children: [
                                                                   Expanded(
                                                                     child: Align(
-                                                                      alignment:
-                                                                      AlignmentDirectional(
-                                                                          0.7,
-                                                                          0),
+                                                                      alignment: AlignmentDirectional(0.7, 0),
                                                                       child: Text(
-                                                                        dateTimeFormat(
-                                                                            'yMd',
-                                                                            rowPointsRecord
-                                                                                .expireDate),
-                                                                        textAlign:
-                                                                        TextAlign
-                                                                            .start,
+                                                                        dateTimeFormat('yMd', rowPointsRecord.expireDate),
+                                                                        textAlign: TextAlign.start,
                                                                         style:
                                                                         TextStyle(
-                                                                          color: Color(
-                                                                              0xFF57636C),
-                                                                          fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                          fontSize:
-                                                                          12,
+                                                                          color: Color(0xFF57636C),
+                                                                          fontWeight: FontWeight.w500,
+                                                                          fontSize: 12,
                                                                         ),
                                                                       ),
                                                                     ),

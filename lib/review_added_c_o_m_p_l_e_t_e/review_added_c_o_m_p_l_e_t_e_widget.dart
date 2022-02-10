@@ -135,10 +135,7 @@ class _ReviewAddedCOMPLETEWidgetState extends State<ReviewAddedCOMPLETEWidget> {
                               onPressed: () async {
                                 await Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        NavBarPage(initialPage: 'MainPage'),
-                                  ),
+                                  MaterialPageRoute(builder: (context) => NavBarPage(initialPage: 'MainPage'),),
                                 );
                               },
                               text: '메인 화면',
@@ -167,12 +164,7 @@ class _ReviewAddedCOMPLETEWidgetState extends State<ReviewAddedCOMPLETEWidget> {
                             ),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        NavBarPage(initialPage: 'MyPage'),
-                                  ),
+                                await Navigator.push(context, MaterialPageRoute(builder: (context) => NavBarPage(initialPage: 'MyPage'),),
                                 );
                               },
                               text: '마이 페이지',

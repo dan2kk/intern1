@@ -113,9 +113,7 @@ class _PickupPaymentWidgetState extends State<PickupPaymentWidget> {
                     await DatePicker.showDateTimePicker(
                       context,
                       showTitleActions: true,
-                      onConfirm: (date) {
-                        setState(() => datePicked = date);
-                      },
+                      onConfirm: (date) {setState(() => datePicked = date);},
                       currentTime: getCurrentTimestamp,
                       minTime: getCurrentTimestamp,
                     );
@@ -132,10 +130,7 @@ class _PickupPaymentWidgetState extends State<PickupPaymentWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            valueOrDefault<String>(
-                              dateTimeFormat('M/d H:m', datePicked),
-                              'Not set',
-                            ),
+                            valueOrDefault<String>(dateTimeFormat('M/d H:m', datePicked), 'Not set',),
                             style: FlutterFlowTheme.bodyText1,
                           ),
                         ],
@@ -148,9 +143,7 @@ class _PickupPaymentWidgetState extends State<PickupPaymentWidget> {
                     final repairmentCreateData = createRepairmentRecordData(
                       select: datePicked,
                     );
-                    await RepairmentRecord.collection
-                        .doc()
-                        .set(repairmentCreateData);
+                    await RepairmentRecord.collection.doc().set(repairmentCreateData);
                   },
                   text: '선택',
                   options: FFButtonOptions(

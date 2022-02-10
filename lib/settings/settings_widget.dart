@@ -56,15 +56,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 child: Align(
                                   alignment: AlignmentDirectional(0, -0.5),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 20, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              10, 0, 0, 0),
+                                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                           child: InkWell(
                                             onTap: () async {
                                               Navigator.pop(context);
@@ -78,16 +75,14 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              20, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Text(
                                                 '알람 설정',
                                                 textAlign: TextAlign.start,
-                                                style: FlutterFlowTheme.title1
-                                                    .override(
+                                                style: FlutterFlowTheme.title1.override(
                                                   fontFamily: 'tway_air medium',
                                                   color: Color(0xFFFBFBF6),
                                                   fontSize: 25,
@@ -161,10 +156,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 alignment: AlignmentDirectional(0, 0),
                                 child: AuthUserStreamWidget(
                                   child: SwitchListTile.adaptive(
-                                    value: switchListTileValue1 ??=
-                                        currentUserDocument?.pushalarm,
-                                    onChanged: (newValue) => setState(
-                                            () => switchListTileValue1 = newValue),
+                                    value: switchListTileValue1 ??= currentUserDocument?.pushalarm,
+                                    onChanged: (newValue) => setState(() => switchListTileValue1 = newValue),
                                     title: Text(
                                       '푸쉬 설정',
                                       style: TextStyle(
@@ -188,8 +181,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     activeColor: Color(0xFF21B6FF),
                                     activeTrackColor: Color(0xFF21B6FF),
                                     dense: false,
-                                    controlAffinity:
-                                    ListTileControlAffinity.trailing,
+                                    controlAffinity: ListTileControlAffinity.trailing,
                                   ),
                                 ),
                               ),
@@ -227,10 +219,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     topRight: Radius.circular(2),
                                   ),
                                   child: SwitchListTile.adaptive(
-                                    value: switchListTileValue2 ??=
-                                        currentUserDocument?.locationsetting,
-                                    onChanged: (newValue) => setState(
-                                            () => switchListTileValue2 = newValue),
+                                    value: switchListTileValue2 ??= currentUserDocument?.locationsetting,
+                                    onChanged: (newValue) => setState(() => switchListTileValue2 = newValue),
                                     title: Text(
                                       '위치 설정',
                                       style: GoogleFonts.getFont(
@@ -252,8 +242,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     activeColor: Color(0xFF21B6FF),
                                     activeTrackColor: Color(0xFF21B6FF),
                                     dense: false,
-                                    controlAffinity:
-                                    ListTileControlAffinity.trailing,
+                                    controlAffinity: ListTileControlAffinity.trailing,
                                   ),
                                 ),
                               ),
@@ -285,10 +274,8 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                             Expanded(
                               child: AuthUserStreamWidget(
                                 child: SwitchListTile.adaptive(
-                                  value: switchListTileValue3 ??=
-                                      currentUserDocument?.emailalarm,
-                                  onChanged: (newValue) => setState(
-                                          () => switchListTileValue3 = newValue),
+                                  value: switchListTileValue3 ??= currentUserDocument?.emailalarm,
+                                  onChanged: (newValue) => setState(() => switchListTileValue3 = newValue),
                                   title: Text(
                                     '이메일 알람',
                                     style: TextStyle(
@@ -310,8 +297,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   activeColor: Color(0xFF21B6FF),
                                   activeTrackColor: Color(0xFF21B6FF),
                                   dense: false,
-                                  controlAffinity:
-                                  ListTileControlAffinity.trailing,
+                                  controlAffinity: ListTileControlAffinity.trailing,
                                 ),
                               ),
                             ),
@@ -334,9 +320,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                     await currentUserReference.update(usersUpdateData);
                     await Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => NavBarPage(initialPage: 'MyPage'),
-                      ),
+                      MaterialPageRoute(builder: (context) => NavBarPage(initialPage: 'MyPage'),),
                     );
                   },
                   text: '설정 변경',

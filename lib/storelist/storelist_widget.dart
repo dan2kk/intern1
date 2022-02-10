@@ -27,8 +27,7 @@ class _StorelistWidgetState extends State<StorelistWidget> {
   Widget build(BuildContext context) {
     return StreamBuilder<List<RepairstoreRecord>>(
       stream: queryRepairstoreRecord(
-        queryBuilder: (repairstoreRecord) =>
-            repairstoreRecord.where('category', isEqualTo: widget.category),
+        queryBuilder: (repairstoreRecord) => repairstoreRecord.where('category', isEqualTo: widget.category),
       ),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
@@ -65,14 +64,12 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                             child: Align(
                               alignment: AlignmentDirectional(0, -0.5),
                               child: Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                       child: InkWell(
                                         onTap: () async {
                                           Navigator.pop(context);
@@ -85,8 +82,7 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                       child: Text(
                                         widget.category,
                                         style:
@@ -117,10 +113,7 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                   onTap: () async {
                                     await Navigator.push(
                                       context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            FIxHistoryWidget(),
-                                      ),
+                                      MaterialPageRoute(builder: (context) => FIxHistoryWidget(),),
                                     );
                                   },
                                   child: Image.network(
@@ -157,11 +150,7 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                               alignment: AlignmentDirectional(0, 0),
                               child: FutureBuilder<List<RepairstoreRecord>>(
                                 future: queryRepairstoreRecordOnce(
-                                  queryBuilder: (repairstoreRecord) =>
-                                      repairstoreRecord
-                                          .where('category',
-                                          isEqualTo: widget.category)
-                                          .orderBy('rate', descending: true),
+                                  queryBuilder: (repairstoreRecord) => repairstoreRecord.where('category', isEqualTo: widget.category).orderBy('rate', descending: true),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -172,224 +161,114 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                       ),
                                     );
                                   }
-                                  List<RepairstoreRecord>
-                                  listViewRepairstoreRecordList =
-                                      snapshot.data;
+                                  List<RepairstoreRecord>listViewRepairstoreRecordList = snapshot.data;
                                   return ListView.builder(
                                     padding: EdgeInsets.zero,
                                     primary: false,
                                     scrollDirection: Axis.vertical,
-                                    itemCount:
-                                    listViewRepairstoreRecordList.length,
+                                    itemCount: listViewRepairstoreRecordList.length,
                                     itemBuilder: (context, listViewIndex) {
-                                      final listViewRepairstoreRecord =
-                                      listViewRepairstoreRecordList[
-                                      listViewIndex];
+                                      final listViewRepairstoreRecord = listViewRepairstoreRecordList[listViewIndex];
                                       return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 5),
+                                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                                         child: InkWell(
                                           onTap: () async {
                                             await Navigator.push(
                                               context,
                                               PageTransition(
-                                                type: PageTransitionType
-                                                    .leftToRight,
-                                                duration:
-                                                Duration(milliseconds: 300),
-                                                reverseDuration:
-                                                Duration(milliseconds: 300),
-                                                child:
-                                                RepairmentStoreDetailWidget(
-                                                  stidx:
-                                                  listViewRepairstoreRecord
-                                                      .idx,
-                                                ),
+                                                type: PageTransitionType.leftToRight,
+                                                duration: Duration(milliseconds: 300),
+                                                reverseDuration: Duration(milliseconds: 300),
+                                                child: RepairmentStoreDetailWidget(stidx: listViewRepairstoreRecord.idx,),
                                               ),
                                             );
                                           },
                                           child: Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width *
-                                                0.95,
-                                            height: MediaQuery.of(context)
-                                                .size
-                                                .height *
-                                                0.15,
+                                            width: MediaQuery.of(context).size.width * 0.95,
+                                            height: MediaQuery.of(context).size.height * 0.15,
                                             constraints: BoxConstraints(
-                                              maxWidth: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                                  0.8,
+                                              maxWidth: MediaQuery.of(context).size.width * 0.8,
                                             ),
                                             decoration: BoxDecoration(
                                               color: Colors.white,
-                                              borderRadius:
-                                              BorderRadius.circular(20),
+                                              borderRadius: BorderRadius.circular(20),
                                             ),
                                             child: Align(
-                                              alignment:
-                                              AlignmentDirectional(0, 0),
+                                              alignment: AlignmentDirectional(0, 0),
                                               child: InkWell(
                                                 onTap: () async {
                                                   await Navigator.push(
                                                     context,
-                                                    MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          RepairmentStoreDetailWidget(
-                                                            stidx:
-                                                            listViewRepairstoreRecord
-                                                                .idx,
-                                                          ),
+                                                    MaterialPageRoute(builder: (context) => RepairmentStoreDetailWidget(stidx: listViewRepairstoreRecord.idx,),
                                                     ),
                                                   );
                                                 },
                                                 child: Row(
-                                                  mainAxisSize:
-                                                  MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceAround,
-                                                  crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
+                                                  mainAxisSize: MainAxisSize.max,
+                                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
                                                   children: [
                                                     Container(
-                                                      width:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                          0.2,
-                                                      height:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .height *
-                                                          0.1,
+                                                      width: MediaQuery.of(context).size.width * 0.2,
+                                                      height: MediaQuery.of(context).size.height * 0.1,
                                                       decoration: BoxDecoration(
-                                                        color:
-                                                        Color(0xFFEEEEEE),
-                                                        borderRadius:
-                                                        BorderRadius
-                                                            .circular(20),
+                                                        color: Color(0xFFEEEEEE),
+                                                        borderRadius: BorderRadius.circular(20),
                                                       ),
                                                       child: ClipRRect(
-                                                        borderRadius:
-                                                        BorderRadius
-                                                            .circular(20),
+                                                        borderRadius: BorderRadius.circular(20),
                                                         child: Image.network(
-                                                          listViewRepairstoreRecord
-                                                              .imgUrl1,
-                                                          width: MediaQuery.of(
-                                                              context)
-                                                              .size
-                                                              .width *
-                                                              0.2,
-                                                          height: MediaQuery.of(
-                                                              context)
-                                                              .size
-                                                              .height *
-                                                              0.12,
+                                                          listViewRepairstoreRecord.imgUrl1,
+                                                          width: MediaQuery.of(context).size.width * 0.2,
+                                                          height: MediaQuery.of(context).size.height * 0.12,
                                                           fit: BoxFit.cover,
                                                         ),
                                                       ),
                                                     ),
                                                     Container(
-                                                      width:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                          0.5,
-                                                      height:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .height *
-                                                          0.15,
+                                                      width: MediaQuery.of(context).size.width * 0.5,
+                                                      height: MediaQuery.of(context).size.height * 0.15,
                                                       decoration: BoxDecoration(
                                                         color: Colors.white,
                                                       ),
                                                       child: Column(
-                                                        mainAxisSize:
-                                                        MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceEvenly,
-                                                        crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .center,
+                                                        mainAxisSize: MainAxisSize.max,
+                                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                        crossAxisAlignment: CrossAxisAlignment.center,
                                                         children: [
                                                           Row(
-                                                            mainAxisSize:
-                                                            MainAxisSize
-                                                                .max,
-                                                            mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                            crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
+                                                            mainAxisSize: MainAxisSize.max,
+                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                            crossAxisAlignment: CrossAxisAlignment.start,
                                                             children: [
                                                               Padding(
-                                                                padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                    3,
-                                                                    0,
-                                                                    0,
-                                                                    0),
+                                                                padding: EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                                                 child: Text(
-                                                                  listViewRepairstoreRecord
-                                                                      .name,
-                                                                  style: FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
-                                                                    fontFamily:
-                                                                    'tway_air medium',
-                                                                    fontSize:
-                                                                    14,
-                                                                    fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                    useGoogleFonts:
-                                                                    false,
+                                                                  listViewRepairstoreRecord.name,
+                                                                  style: FlutterFlowTheme.bodyText1.override(
+                                                                    fontFamily: 'tway_air medium',
+                                                                    fontSize: 14,
+                                                                    fontWeight: FontWeight.w500,
+                                                                    useGoogleFonts: false,
                                                                   ),
                                                                 ),
                                                               ),
                                                             ],
                                                           ),
                                                           Row(
-                                                            mainAxisSize:
-                                                            MainAxisSize
-                                                                .max,
-                                                            mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .center,
-                                                            crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
+                                                            mainAxisSize: MainAxisSize.max,
+                                                            mainAxisAlignment: MainAxisAlignment.center,
+                                                            crossAxisAlignment: CrossAxisAlignment.start,
                                                             children: [
                                                               Padding(
-                                                                padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                    3,
-                                                                    0,
-                                                                    0,
-                                                                    0),
+                                                                padding: EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                                                 child: Text(
-                                                                  listViewRepairstoreRecord
-                                                                      .breif,
-                                                                  style: FlutterFlowTheme
-                                                                      .bodyText1
-                                                                      .override(
-                                                                    fontFamily:
-                                                                    'tway_air medium',
-                                                                    fontSize:
-                                                                    14,
-                                                                    fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                    useGoogleFonts:
-                                                                    false,
+                                                                  listViewRepairstoreRecord.breif,
+                                                                  style: FlutterFlowTheme.bodyText1.override(
+                                                                    fontFamily: 'tway_air medium',
+                                                                    fontSize: 14,
+                                                                    fontWeight: FontWeight.w500,
+                                                                    useGoogleFonts: false,
                                                                   ),
                                                                 ),
                                                               ),
@@ -400,42 +279,24 @@ class _StorelistWidgetState extends State<StorelistWidget> {
                                                     ),
                                                     Container(
                                                       width:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                          0.25,
-                                                      height:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .height *
-                                                          0.15,
+                                                      MediaQuery.of(context).size.width * 0.25,
+                                                      height: MediaQuery.of(context).size.height * 0.15,
                                                       decoration: BoxDecoration(
                                                         color: Colors.white,
                                                       ),
                                                       child: Row(
-                                                        mainAxisSize:
-                                                        MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
+                                                        mainAxisSize: MainAxisSize.max,
+                                                        mainAxisAlignment: MainAxisAlignment.center,
                                                         children: [
                                                           RatingBarIndicator(
-                                                            itemBuilder:
-                                                                (context,
-                                                                index) =>
+                                                            itemBuilder: (context, index) =>
                                                                 FaIcon(
-                                                                  FontAwesomeIcons
-                                                                      .hammer,
-                                                                  color: Color(
-                                                                      0xFF21B6FF),
+                                                                  FontAwesomeIcons.hammer,
+                                                                  color: Color(0xFF21B6FF),
                                                                 ),
-                                                            direction:
-                                                            Axis.horizontal,
-                                                            rating:
-                                                            listViewRepairstoreRecord
-                                                                .rate,
-                                                            unratedColor: Color(
-                                                                0xFF9E9E9E),
+                                                            direction: Axis.horizontal,
+                                                            rating: listViewRepairstoreRecord.rate,
+                                                            unratedColor: Color(0xFF9E9E9E),
                                                             itemCount: 5,
                                                             itemSize: 17,
                                                           ),

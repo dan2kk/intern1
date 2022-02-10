@@ -78,10 +78,7 @@ class _RepairmentStoreDetailWidgetState
         if (snapshot.data.isEmpty) {
           return Container();
         }
-        final repairmentStoreDetailRepairstoreRecord =
-        repairmentStoreDetailRepairstoreRecordList.isNotEmpty
-            ? repairmentStoreDetailRepairstoreRecordList.first
-            : null;
+        final repairmentStoreDetailRepairstoreRecord = repairmentStoreDetailRepairstoreRecordList.isNotEmpty ? repairmentStoreDetailRepairstoreRecordList.first : null;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: Colors.white,
@@ -111,8 +108,7 @@ class _RepairmentStoreDetailWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                   child: InkWell(
                                     onTap: () async {
                                       Navigator.pop(context);
@@ -125,14 +121,12 @@ class _RepairmentStoreDetailWidgetState
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Text(
-                                        repairmentStoreDetailRepairstoreRecord
-                                            .name,
+                                        repairmentStoreDetailRepairstoreRecord.name,
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.title1.override(
                                           fontFamily: 'tway_air medium',
@@ -177,37 +171,20 @@ class _RepairmentStoreDetailWidgetState
                                       alignment: AlignmentDirectional(0, 0),
                                       child: Builder(
                                         builder: (context) {
-                                          final image =
-                                              repairmentStoreDetailRepairstoreRecord
-                                                  .imgUrl
-                                                  .toList()
-                                                  ?.toList() ??
-                                                  [];
+                                          final image = repairmentStoreDetailRepairstoreRecord.imgUrl.toList()?.toList() ?? [];
                                           return Container(
                                             width: double.infinity,
                                             height: 500,
                                             child: Stack(
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 50),
+                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
                                                   child: PageView.builder(
-                                                    controller: pageViewController ??=
-                                                        PageController(
-                                                            initialPage: min(
-                                                                repairmentStoreDetailRepairstoreRecord
-                                                                    .imgUrl
-                                                                    .toList()
-                                                                    .length,
-                                                                image.length -
-                                                                    1)),
-                                                    scrollDirection:
-                                                    Axis.horizontal,
+                                                    controller: pageViewController ??= PageController(
+                                                            initialPage: min(repairmentStoreDetailRepairstoreRecord.imgUrl.toList().length, image.length - 1)),
+                                                    scrollDirection: Axis.horizontal,
                                                     itemCount: image.length,
-                                                    itemBuilder:
-                                                        (context, imageIndex) {
-                                                      final imageItem =
-                                                      image[imageIndex];
+                                                    itemBuilder: (context, imageIndex) {final imageItem = image[imageIndex];
                                                       return Image.network(
                                                         imageItem,
                                                         width: 100,
@@ -218,36 +195,17 @@ class _RepairmentStoreDetailWidgetState
                                                   ),
                                                 ),
                                                 Align(
-                                                  alignment:
-                                                  AlignmentDirectional(
-                                                      0, 1),
+                                                  alignment: AlignmentDirectional(0, 1),
                                                   child: Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        0, 0, 0, 10),
+                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                                                     child: SmoothPageIndicator(
-                                                      controller: pageViewController ??=
-                                                          PageController(
-                                                              initialPage: min(
-                                                                  repairmentStoreDetailRepairstoreRecord
-                                                                      .imgUrl
-                                                                      .toList()
-                                                                      .length,
-                                                                  image.length -
-                                                                      1)),
+                                                      controller: pageViewController ??= PageController(
+                                                              initialPage: min(repairmentStoreDetailRepairstoreRecord.imgUrl.toList().length, image.length - 1)),
                                                       count: image.length,
                                                       axisDirection:
                                                       Axis.horizontal,
                                                       onDotClicked: (i) {
-                                                        pageViewController
-                                                            .animateToPage(
-                                                          i,
-                                                          duration: Duration(
-                                                              milliseconds:
-                                                              500),
-                                                          curve: Curves.ease,
-                                                        );
+                                                        pageViewController.animateToPage(i, duration: Duration(milliseconds: 500), curve: Curves.ease,);
                                                       },
                                                       effect:
                                                       ExpandingDotsEffect(
@@ -256,12 +214,9 @@ class _RepairmentStoreDetailWidgetState
                                                         radius: 16,
                                                         dotWidth: 16,
                                                         dotHeight: 16,
-                                                        dotColor:
-                                                        Color(0xFF9E9E9E),
-                                                        activeDotColor:
-                                                        Color(0xFF21B6FF),
-                                                        paintStyle:
-                                                        PaintingStyle.fill,
+                                                        dotColor: Color(0xFF9E9E9E),
+                                                        activeDotColor: Color(0xFF21B6FF),
+                                                        paintStyle: PaintingStyle.fill,
                                                       ),
                                                     ),
                                                   ),
@@ -273,36 +228,26 @@ class _RepairmentStoreDetailWidgetState
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 16, 16, 16),
+                                      padding: EdgeInsetsDirectional.fromSTEB(16, 16, 16, 16),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment.end,
+                                            mainAxisAlignment: MainAxisAlignment.end,
+                                            crossAxisAlignment: CrossAxisAlignment.end,
                                             children: [
                                               Card(
-                                                clipBehavior:
-                                                Clip.antiAliasWithSaveLayer,
+                                                clipBehavior: Clip.antiAliasWithSaveLayer,
                                                 color: Color(0x3A050505),
                                                 shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                  BorderRadius.circular(8),
+                                                  borderRadius: BorderRadius.circular(8),
                                                 ),
                                                 child: Stack(
                                                   children: [
-                                                    if (!(FFAppState()
-                                                        .favorites
-                                                        .contains(widget
-                                                        .stidx)) ??
-                                                        true)
+                                                    if (!(FFAppState().favorites.contains(widget.stidx)) ?? true)
                                                       FlutterFlowIconButton(
-                                                        borderColor:
-                                                        Colors.transparent,
+                                                        borderColor: Colors.transparent,
                                                         borderRadius: 30,
                                                         buttonSize: 46,
                                                         icon: Icon(
@@ -311,56 +256,31 @@ class _RepairmentStoreDetailWidgetState
                                                           size: 24,
                                                         ),
                                                         onPressed: () async {
-                                                          setState(() => FFAppState()
-                                                              .addToFavorites(
-                                                              widget
-                                                                  .stidx));
+                                                          setState(() => FFAppState().addToFavorites(widget.stidx));
                                                           final usersUpdateData =
                                                           {
-                                                            'favorites':
-                                                            FieldValue
-                                                                .arrayUnion([
-                                                              widget.stidx
-                                                            ]),
+                                                            'favorites': FieldValue.arrayUnion([widget.stidx]),
                                                           };
-                                                          await currentUserReference
-                                                              .update(
-                                                              usersUpdateData);
+                                                          await currentUserReference.update(usersUpdateData);
                                                         },
                                                       ),
-                                                    if (FFAppState()
-                                                        .favorites
-                                                        .contains(
-                                                        widget.stidx) ??
-                                                        true)
+                                                    if (FFAppState().favorites.contains(widget.stidx) ?? true)
                                                       FlutterFlowIconButton(
-                                                        borderColor:
-                                                        Colors.transparent,
+                                                        borderColor: Colors.transparent,
                                                         borderRadius: 30,
                                                         buttonSize: 46,
                                                         icon: Icon(
                                                           Icons.favorite,
-                                                          color:
-                                                          FlutterFlowTheme
-                                                              .primaryColor,
+                                                          color: FlutterFlowTheme.primaryColor,
                                                           size: 24,
                                                         ),
                                                         onPressed: () async {
-                                                          setState(() => FFAppState()
-                                                              .removeFromFavorites(
-                                                              widget
-                                                                  .stidx));
+                                                          setState(() => FFAppState().removeFromFavorites(widget.stidx));
                                                           final usersUpdateData =
                                                           {
-                                                            'favorites':
-                                                            FieldValue
-                                                                .arrayRemove([
-                                                              widget.stidx
-                                                            ]),
+                                                            'favorites': FieldValue.arrayRemove([widget.stidx]),
                                                           };
-                                                          await currentUserReference
-                                                              .update(
-                                                              usersUpdateData);
+                                                          await currentUserReference.update(usersUpdateData);
                                                         },
                                                       ),
                                                   ],
@@ -421,8 +341,7 @@ class _RepairmentStoreDetailWidgetState
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.6,
-                                height:
-                                MediaQuery.of(context).size.height * 0.03,
+                                height: MediaQuery.of(context).size.height * 0.03,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                 ),
@@ -435,9 +354,7 @@ class _RepairmentStoreDetailWidgetState
                                         color: Color(0xFF21B6FF),
                                       ),
                                       direction: Axis.horizontal,
-                                      rating:
-                                      repairmentStoreDetailRepairstoreRecord
-                                          .rate,
+                                      rating: repairmentStoreDetailRepairstoreRecord.rate,
                                       unratedColor: Color(0xFF95A1AC),
                                       itemCount: 5,
                                       itemSize: 24,
@@ -447,8 +364,7 @@ class _RepairmentStoreDetailWidgetState
                               ),
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.2,
-                                height:
-                                MediaQuery.of(context).size.height * 0.03,
+                                height: MediaQuery.of(context).size.height * 0.03,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                 ),
@@ -457,11 +373,7 @@ class _RepairmentStoreDetailWidgetState
                                   children: [
                                     StreamBuilder<List<ReviewRecord>>(
                                       stream: queryReviewRecord(
-                                        queryBuilder: (reviewRecord) =>
-                                            reviewRecord.where('storeidx',
-                                                isEqualTo:
-                                                repairmentStoreDetailRepairstoreRecord
-                                                    .idx),
+                                        queryBuilder: (reviewRecord) => reviewRecord.where('storeidx', isEqualTo: repairmentStoreDetailRepairstoreRecord.idx),
                                       ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
@@ -479,27 +391,19 @@ class _RepairmentStoreDetailWidgetState
                                               )
                                           );
                                         }
-                                        List<ReviewRecord>
-                                        textReviewRecordList =
-                                            snapshot.data;
+                                        List<ReviewRecord> textReviewRecordList = snapshot.data;
                                         return InkWell(
                                           onTap: () async {
                                             await Navigator.push(
                                               context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    ReviewListWidget(
-                                                      storeidx:
-                                                      repairmentStoreDetailRepairstoreRecord
-                                                          .idx,
-                                                    ),
+                                              MaterialPageRoute(builder: (context) =>
+                                                    ReviewListWidget(storeidx: repairmentStoreDetailRepairstoreRecord.idx,),
                                               ),
                                             );
                                           },
                                           child: Text(
                                             '${textReviewRecordList.length.toString()} 리뷰',
-                                            style: FlutterFlowTheme.bodyText2
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText2.override(
                                               fontFamily: 'tway_air medium',
                                               color: Color(0xFF8B97A2),
                                               fontSize: 12,
@@ -542,11 +446,9 @@ class _RepairmentStoreDetailWidgetState
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 10, 0, 24),
+                                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 24),
                                   child: Text(
-                                    repairmentStoreDetailRepairstoreRecord
-                                        .explain,
+                                    repairmentStoreDetailRepairstoreRecord.explain,
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Color(0xFF8b97a2),
@@ -570,8 +472,7 @@ class _RepairmentStoreDetailWidgetState
                   child: InkWell(
                     onTap: () async {
                       if ((currentUserUid) == '') {
-                        await Navigator.push(
-                          context,
+                        await Navigator.push(context,
                           PageTransition(
                             type: PageTransitionType.leftToRight,
                             duration: Duration(milliseconds: 300),
@@ -582,10 +483,7 @@ class _RepairmentStoreDetailWidgetState
                       }
                       await Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => FixOrderWidget(
-                            storeidx: widget.stidx,
-                          ),
+                        MaterialPageRoute(builder: (context) => FixOrderWidget(storeidx: widget.stidx,),
                         ),
                       );
                     },

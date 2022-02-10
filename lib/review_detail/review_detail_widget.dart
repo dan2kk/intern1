@@ -676,17 +676,14 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 5, 0, 0),
-                                            child: RatingBarIndicator(
-                                              itemBuilder: (context, index) =>
+                                            EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                                            child: RatingBarIndicator(itemBuilder: (context, index) =>
                                                   FaIcon(
                                                     FontAwesomeIcons.hammer,
                                                     color: Color(0xFF21B6FF),
                                                   ),
                                               direction: Axis.horizontal,
-                                              rating: reviewDetailReviewRecord
-                                                  .rate1,
+                                              rating: reviewDetailReviewRecord.rate1,
                                               unratedColor: Color(0xFF9E9E9E),
                                               itemCount: 5,
                                               itemSize: 20,
@@ -699,8 +696,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 5, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                             child: RatingBarIndicator(
                                               itemBuilder: (context, index) =>
                                                   FaIcon(
@@ -708,8 +704,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                                     color: Color(0xFF21B6FF),
                                                   ),
                                               direction: Axis.horizontal,
-                                              rating: reviewDetailReviewRecord
-                                                  .rate2,
+                                              rating: reviewDetailReviewRecord.rate2,
                                               unratedColor: Color(0xFF9E9E9E),
                                               itemCount: 5,
                                               itemSize: 20,
@@ -722,8 +717,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 5, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                             child: RatingBarIndicator(
                                               itemBuilder: (context, index) =>
                                                   FaIcon(
@@ -731,8 +725,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                                     color: Color(0xFF21B6FF),
                                                   ),
                                               direction: Axis.horizontal,
-                                              rating: reviewDetailReviewRecord
-                                                  .rate3,
+                                              rating: reviewDetailReviewRecord.rate3,
                                               unratedColor: Color(0xFF9E9E9E),
                                               itemCount: 5,
                                               itemSize: 20,
@@ -771,8 +764,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 10, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(10, 10, 0, 0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -796,8 +788,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                       child: Text(
                                         reviewDetailReviewRecord.review,
                                         style:
@@ -839,8 +830,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 10, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(10, 10, 0, 0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -864,8 +854,7 @@ class _ReviewDetailWidgetState extends State<ReviewDetailWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 5, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(10, 5, 0, 0),
                                       child: Text(
                                         'Hello World',
                                         style:
