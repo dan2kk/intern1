@@ -138,8 +138,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                                     child: Text(
                                       '사진 첨부',
                                       style:
@@ -158,8 +157,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                               alignment: AlignmentDirectional(0, 0),
                               child: Container(
                                 width: MediaQuery.of(context).size.width * 0.9,
-                                height:
-                                MediaQuery.of(context).size.height * 0.5,
+                                height: MediaQuery.of(context).size.height * 0.5,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
@@ -168,8 +166,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                 child: Stack(
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 20, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -179,8 +176,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                             children: [
                                               if (picturevideoValue ?? true)
                                                 Align(
-                                                  alignment:
-                                                  AlignmentDirectional(0, 0),
+                                                  alignment: AlignmentDirectional(0, 0),
                                                   child: InkWell(
                                                     onTap: () async {
                                                       final selectedMedia = await selectMediaWithSourceBottomSheet(
@@ -190,10 +186,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                       );
                                                       if (selectedMedia != null && validateFileFormat(selectedMedia.storagePath, context))
                                                       {
-                                                        showUploadMessage(
-                                                            context,
-                                                            'Uploading file...',
-                                                            showLoading: true);
+                                                        showUploadMessage(context, 'Uploading file...', showLoading: true);
                                                         final downloadUrl = await uploadData(selectedMedia.storagePath, selectedMedia.bytes);
                                                         ScaffoldMessenger.of(context).hideCurrentSnackBar();
                                                         if (downloadUrl != null) {
@@ -223,17 +216,12 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                     padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                                     child: InkWell(
                                                       onTap: () async {
-                                                        final selectedMedia =
-                                                        await selectMediaWithSourceBottomSheet(
+                                                        final selectedMedia = await selectMediaWithSourceBottomSheet(
                                                           context: context,
                                                           allowPhoto: true,
                                                         );
                                                         if (selectedMedia != null && validateFileFormat(selectedMedia.storagePath, context)) {
-                                                          showUploadMessage(
-                                                              context,
-                                                              'Uploading file...',
-                                                              showLoading:
-                                                              true);
+                                                          showUploadMessage(context, 'Uploading file...', showLoading: true);
                                                           final downloadUrl = await uploadData(selectedMedia.storagePath, selectedMedia.bytes);
                                                           ScaffoldMessenger.of(context).hideCurrentSnackBar();
                                                           if (downloadUrl != null) {
@@ -259,16 +247,12 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                 ),
                                               if ((uploadedFileUrl2) != '')
                                                 Align(
-                                                  alignment:
-                                                  AlignmentDirectional(0, -20.85),
+                                                  alignment: AlignmentDirectional(0, -20.85),
                                                   child: Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                                    child:
-                                                    FlutterFlowMediaDisplay(
+                                                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                                    child: FlutterFlowMediaDisplay(
                                                       path: uploadedFileUrl2,
-                                                      imageBuilder: (path) =>
-                                                          Image.network(
+                                                      imageBuilder: (path) => Image.network(
                                                             path,
                                                             width: 100,
                                                             height: 100,
@@ -282,8 +266,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                             looping: true,
                                                             showControls: true,
                                                             allowFullScreen: true,
-                                                            allowPlaybackSpeedMenu:
-                                                            false,
+                                                            allowPlaybackSpeedMenu: false,
                                                           ),
                                                     ),
                                                   ),
@@ -291,9 +274,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                             ],
                                           ),
                                           Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 16, 0, 0),
+                                            padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -321,8 +302,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                     height: 40,
                                                     decoration: BoxDecoration(
                                                       color: Colors.white,
-                                                      borderRadius:
-                                                      BorderRadius.circular(8),
+                                                      borderRadius: BorderRadius.circular(8),
                                                       border: Border.all(color: Color(0xFFE6E6E6),
                                                       ),
                                                     ),
@@ -364,8 +344,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                             ),
                                           ),
                                           Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+                                            padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -437,8 +416,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                                       border: Border.all(color: Color(0xFFE6E6E6),),
                                                     ),
                                                     child: Row(
-                                                      mainAxisSize:
-                                                      MainAxisSize.max,
+                                                      mainAxisSize: MainAxisSize.max,
                                                       children: [
                                                         Padding(
                                                           padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
@@ -693,9 +671,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                 await DatePicker.showDateTimePicker(
                                   context,
                                   showTitleActions: true,
-                                  onConfirm: (date) {
-                                    setState(() => datePicked = date);
-                                  },
+                                  onConfirm: (date) {setState(() => datePicked = date);},
                                   currentTime: getCurrentTimestamp,
                                   minTime: getCurrentTimestamp,
                                 );
@@ -708,18 +684,15 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 0, 0, 0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                         child: Text(
                                           '픽업 희망 시간:',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Color(0xFF21B6FF),
                                             fontSize: 16,
@@ -769,8 +742,7 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                   width: MediaQuery.of(context).size.width * 0.6,
                                   height: 50,
                                   constraints: BoxConstraints(
-                                    maxWidth:
-                                    MediaQuery.of(context).size.width * 0.65,
+                                    maxWidth: MediaQuery.of(context).size.width * 0.65,
                                   ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
@@ -790,14 +762,12 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                     ),
                                     tileColor: Color(0xFFF5F5F5),
                                     dense: true,
-                                    controlAffinity:
-                                    ListTileControlAffinity.leading,
+                                    controlAffinity: ListTileControlAffinity.leading,
                                   ),
                                 ),
                               ),
                               Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
                                   width: MediaQuery.of(context).size.width * 0.35,
                                   height: 50,
@@ -831,12 +801,8 @@ class _FixOrderWidgetState extends State<FixOrderWidget> {
                                         rprf = RepairmentRecord.getDocumentFromData(repairmentCreateData, repairmentRecordReference);
                                         await Navigator.push(
                                           context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                FirstpurchaseWidget(repairmentrf: rprf.reference,),
-                                          ),
+                                          MaterialPageRoute(builder: (context) => FirstpurchaseWidget(repairmentrf: rprf.reference,),),
                                         );
-
                                         setState(() {});
                                       },
                                       text: '견적문의',

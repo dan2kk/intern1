@@ -62,10 +62,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       onTap: () async {
                                         await Navigator.push(
                                           context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                LoginPageWidget(),
-                                          ),
+                                          MaterialPageRoute(builder: (context) => LoginPageWidget(),),
                                         );
                                       },
                                       child: Text(
@@ -83,10 +80,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       onTap: () async {
                                         await Navigator.push(
                                           context,
-                                          MaterialPageRoute(
-                                            builder: (context) => NavBarPage(
-                                                initialPage: 'MyPage'),
-                                          ),
+                                          MaterialPageRoute(builder: (context) => NavBarPage(initialPage: 'MyPage'),),
                                         );
                                       },
                                       child: Text(
@@ -128,9 +122,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                 onTap: () async {
                                   await Navigator.push(
                                     context,
-                                    MaterialPageRoute(
-                                      builder: (context) => FIxHistoryWidget(),
-                                    ),
+                                    MaterialPageRoute(builder: (context) => FIxHistoryWidget(),),
                                   );
                                 },
                                 child: Image.network(
@@ -155,8 +147,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                       'AIzaSyD0cTKJv0xqY_p1XU7OEzliJOs2cn5nL-E',
                       webGoogleMapsApiKey:
                       'AIzaSyA-zHCiO1a9q5VM4zmWdOrbXgdLcKiIrSo',
-                      onSelect: (place) =>
-                          setState(() => placePickerValue = place),
+                      onSelect: (place) => setState(() => placePickerValue = place),
                       defaultText: 'Select Location',
                       icon: Icon(
                         Icons.place,
@@ -270,8 +261,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                 color: Colors.white,
                               ),
                               child: Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                 child: Text(
                                   '오늘의 수리',
                                   textAlign: TextAlign.start,
@@ -309,8 +299,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                           alignment: AlignmentDirectional(0, 0),
                           child: StreamBuilder<List<EventsRecord>>(
                             stream: queryEventsRecord(
-                              queryBuilder: (eventsRecord) => eventsRecord
-                                  .where('ongoing', isEqualTo: true),
+                              queryBuilder: (eventsRecord) => eventsRecord.where('ongoing', isEqualTo: true),
                             ),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
@@ -334,74 +323,51 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                 width: MediaQuery.of(context).size.width,
                                 height: MediaQuery.of(context).size.height * 1,
                                 child: PageView.builder(
-                                  controller: pageViewController ??=
-                                      PageController(
-                                          initialPage: min(
-                                              0,
-                                              pageViewEventsRecordList.length -
-                                                  1)),
+                                  controller: pageViewController ??= PageController(
+                                          initialPage: min(0, pageViewEventsRecordList.length - 1)),
                                   scrollDirection: Axis.horizontal,
                                   itemCount: pageViewEventsRecordList.length,
                                   itemBuilder: (context, pageViewIndex) {
-                                    final pageViewEventsRecord =
-                                    pageViewEventsRecordList[pageViewIndex];
+                                    final pageViewEventsRecord = pageViewEventsRecordList[pageViewIndex];
                                     return Stack(
                                       children: [
                                         InkWell(
                                           onTap: () async {
                                             await Navigator.push(
                                               context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    EventdetailWidget(
-                                                      events: pageViewEventsRecord
-                                                          .reference,
-                                                    ),
+                                              MaterialPageRoute(builder: (context) => EventdetailWidget(events: pageViewEventsRecord.reference,),
                                               ),
                                             );
                                           },
                                           child: ClipRRect(
-                                            borderRadius:
-                                            BorderRadius.circular(20),
+                                            borderRadius: BorderRadius.circular(20),
                                             child: Image.network(
                                               pageViewEventsRecord.banner,
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
-                                              height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                                  1,
+                                              width: MediaQuery.of(context).size.width,
+                                              height: MediaQuery.of(context).size.height * 1,
                                               fit: BoxFit.cover,
                                             ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              260, 80, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(260, 80, 0, 0),
                                           child: Container(
                                             width: 100,
                                             height: 20,
                                             decoration: BoxDecoration(
                                               color: Color(0x9614181B),
-                                              borderRadius:
-                                              BorderRadius.circular(20),
+                                              borderRadius: BorderRadius.circular(20),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
+                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                               child: Text(
                                                 valueOrDefault<String>(
-                                                  '${(pageViewIndex+1).toString()} / ${(pageViewEventsRecordList.length).toString()} 모두보기',
-                                                  '0 / 0 모두보기',
+                                                  '${(pageViewIndex+1).toString()} / ${(pageViewEventsRecordList.length).toString()} 모두보기', '0 / 0 모두보기',
                                                 ),
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
+                                                style: FlutterFlowTheme.bodyText1.override(
                                                   fontFamily: 'tway_air medium',
-                                                  color: FlutterFlowTheme
-                                                      .secondaryColor,
+                                                  color: FlutterFlowTheme.secondaryColor,
                                                   useGoogleFonts: false,
                                                 ),
                                               ),
@@ -471,13 +437,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              5, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                           child: Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width *
-                                                0.48,
+                                            width: MediaQuery.of(context).size.width * 0.48,
                                             height: 200,
                                             decoration: BoxDecoration(
                                               color: Color(0xFFEEEEEE),
@@ -486,13 +448,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               onTap: () async {
                                                 await Navigator.push(
                                                   context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        StorelistWidget(
-                                                          category: 'electronics',
-                                                        ),
-                                                  ),
-                                                );
+                                                  MaterialPageRoute(builder: (context) => StorelistWidget(category: 'electronics',),),);
                                               },
                                               child: Image.asset(
                                                 'assets/images/r85he_.png',
@@ -504,13 +460,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              5, 0, 0, 0),
+                                          EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                           child: Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width *
-                                                0.48,
+                                            width: MediaQuery.of(context).size.width * 0.48,
                                             height: 200,
                                             decoration: BoxDecoration(
                                               color: Color(0xFFEEEEEE),
@@ -519,11 +471,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                               onTap: () async {
                                                 await Navigator.push(
                                                   context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        StorelistWidget(
-                                                          category: 'mobile_phone',
-                                                        ),
+                                                  MaterialPageRoute(builder: (context) => StorelistWidget(category: 'mobile_phone',),
                                                   ),
                                                 );
                                               },
@@ -539,20 +487,15 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 5, 0, 10),
+                                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 10),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                3, 0, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                             child: Container(
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                                  0.24,
+                                              width: MediaQuery.of(context).size.width * 0.24,
                                               height: 100,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
@@ -561,12 +504,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                 onTap: () async {
                                                   await Navigator.push(
                                                     context,
-                                                    MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          StorelistWidget(
-                                                            category: 'electronics',
-                                                          ),
-                                                    ),
+                                                    MaterialPageRoute(builder: (context) => StorelistWidget(category: 'electronics',),),
                                                   );
                                                 },
                                                 child: Image.asset(
@@ -580,13 +518,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                3, 0, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                             child: Container(
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                                  0.24,
+                                              width: MediaQuery.of(context).size.width * 0.24,
                                               height: 100,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
@@ -601,13 +535,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                3, 0, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                             child: Container(
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                                  0.24,
+                                              width: MediaQuery.of(context).size.width * 0.24,
                                               height: 100,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
@@ -616,11 +546,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                 onTap: () async {
                                                   await Navigator.push(
                                                     context,
-                                                    MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          StorelistWidget(
-                                                            category: 'luxury',
-                                                          ),
+                                                    MaterialPageRoute(builder: (context) => StorelistWidget(category: 'luxury',),
                                                     ),
                                                   );
                                                 },
@@ -635,13 +561,9 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                3, 0, 0, 0),
+                                            EdgeInsetsDirectional.fromSTEB(3, 0, 0, 0),
                                             child: Container(
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                                  0.24,
+                                              width: MediaQuery.of(context).size.width * 0.24,
                                               height: 100,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
@@ -651,11 +573,7 @@ class _MainPageWidgetState extends State<MainPageWidget> {
                                                   await Navigator.push(
                                                     context,
                                                     MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          StorelistWidget(
-                                                            category:
-                                                            'transportation',
-                                                          ),
+                                                      builder: (context) => StorelistWidget(category: 'transportation',),
                                                     ),
                                                   );
                                                 },

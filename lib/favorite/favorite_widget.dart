@@ -46,14 +46,12 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                           child: Align(
                             alignment: AlignmentDirectional(0, -0.5),
                             child: Padding(
-                              padding:
-                              EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                     child: InkWell(
                                       onTap: () async {
                                         Navigator.pop(context);
@@ -66,12 +64,10 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                     child: Text(
                                       '즐겨 찾기',
-                                      style:
-                                      FlutterFlowTheme.bodyText1.override(
+                                      style: FlutterFlowTheme.bodyText1.override(
                                         fontFamily: 'tway_air medium',
                                         color: Colors.white,
                                         fontSize: 25,
@@ -94,8 +90,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
             AuthUserStreamWidget(
               child: Builder(
                 builder: (context) {
-                  final lllll =
-                      currentUserDocument?.favorites?.toList()?.toList() ?? [];
+                  final lllll = currentUserDocument?.favorites?.toList()?.toList() ?? [];
                   return Column(
                     mainAxisSize: MainAxisSize.max,
                     children: List.generate(lllll.length, (lllllIndex) {
@@ -104,9 +99,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                         child: StreamBuilder<List<RepairstoreRecord>>(
                           stream: queryRepairstoreRecord(
-                            queryBuilder: (repairstoreRecord) =>
-                                repairstoreRecord.where('idx',
-                                    isEqualTo: lllllItem),
+                            queryBuilder: (repairstoreRecord) => repairstoreRecord.where('idx', isEqualTo: lllllItem),
                             singleRecord: true,
                           ),
                           builder: (context, snapshot) {
@@ -118,25 +111,18 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                 ),
                               );
                             }
-                            List<RepairstoreRecord> rowRepairstoreRecordList =
-                                snapshot.data;
+                            List<RepairstoreRecord> rowRepairstoreRecordList = snapshot.data;
                             // Return an empty Container when the document does not exist.
                             if (snapshot.data.isEmpty) {
                               return Container();
                             }
-                            final rowRepairstoreRecord =
-                            rowRepairstoreRecordList.isNotEmpty
-                                ? rowRepairstoreRecordList.first
-                                : null;
+                            final rowRepairstoreRecord = rowRepairstoreRecordList.isNotEmpty ? rowRepairstoreRecordList.first : null;
                             return InkWell(
                               onTap: () async {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        RepairmentStoreDetailWidget(
-                                          stidx: lllllItem,
-                                        ),
+                                    builder: (context) => RepairmentStoreDetailWidget(stidx: lllllItem,),
                                   ),
                                 );
                               },
@@ -151,23 +137,17 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                     ),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         Container(
-                                          width: MediaQuery.of(context)
-                                              .size
-                                              .width *
-                                              0.3,
+                                          width: MediaQuery.of(context).size.width * 0.3,
                                           height: 100,
                                           decoration: BoxDecoration(
                                             color: Color(0xFFEEEEEE),
-                                            borderRadius:
-                                            BorderRadius.circular(30),
+                                            borderRadius: BorderRadius.circular(30),
                                           ),
                                           child: ClipRRect(
-                                            borderRadius:
-                                            BorderRadius.circular(30),
+                                            borderRadius: BorderRadius.circular(30),
                                             child: Image.network(
                                               rowRepairstoreRecord.imgUrl1,
                                               width: 100,
@@ -177,61 +157,38 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                           ),
                                         ),
                                         Container(
-                                          width: MediaQuery.of(context)
-                                              .size
-                                              .width *
-                                              0.65,
+                                          width: MediaQuery.of(context).size.width * 0.65,
                                           height: 100,
                                           decoration: BoxDecoration(
                                             color: Color(0xFFEEEEEE),
                                           ),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
+                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                             children: [
                                               Row(
                                                 mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .spaceEvenly,
+                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                 children: [
                                                   Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        5, 0, 0, 0),
+                                                    padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                                     child: Container(
-                                                      width:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                          0.15,
+                                                      width: MediaQuery.of(context).size.width * 0.15,
                                                       height: 30,
                                                       decoration: BoxDecoration(
-                                                        color:
-                                                        Color(0xFFEEEEEE),
+                                                        color: Color(0xFFEEEEEE),
                                                       ),
                                                       child: Row(
-                                                        mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        mainAxisSize: MainAxisSize.max,
                                                         children: [
                                                           Text(
                                                             '업체명: ',
-                                                            style:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
-                                                              color:
-                                                              Colors.black,
+                                                            style: FlutterFlowTheme.bodyText1.override(
+                                                              fontFamily: 'tway_air medium',
+                                                              color: Colors.black,
                                                               fontSize: 13,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
+                                                              fontWeight: FontWeight.w500,
+                                                              useGoogleFonts: false,
                                                             ),
                                                           ),
                                                         ],
@@ -239,33 +196,21 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                                     ),
                                                   ),
                                                   Container(
-                                                    width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                        0.35,
+                                                    width: MediaQuery.of(context).size.width * 0.35,
                                                     height: 30,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFEEEEEE),
                                                     ),
                                                     child: Row(
-                                                      mainAxisSize:
-                                                      MainAxisSize.max,
+                                                      mainAxisSize: MainAxisSize.max,
                                                       children: [
                                                         Text(
-                                                          rowRepairstoreRecord
-                                                              .name,
-                                                          style:
-                                                          FlutterFlowTheme
-                                                              .bodyText1
-                                                              .override(
-                                                            fontFamily:
-                                                            'tway_air medium',
+                                                          rowRepairstoreRecord.name,
+                                                          style: FlutterFlowTheme.bodyText1.override(
+                                                            fontFamily: 'tway_air medium',
                                                             fontSize: 13,
-                                                            fontWeight:
-                                                            FontWeight.w500,
-                                                            useGoogleFonts:
-                                                            false,
+                                                            fontWeight: FontWeight.w500,
+                                                            useGoogleFonts: false,
                                                           ),
                                                         ),
                                                       ],
@@ -275,46 +220,27 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                               ),
                                               Row(
                                                 mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .spaceEvenly,
+                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                 children: [
                                                   Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        5, 0, 0, 0),
+                                                    padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                                     child: Container(
-                                                      width:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                          0.15,
+                                                      width: MediaQuery.of(context).size.width * 0.15,
                                                       height: 30,
                                                       decoration: BoxDecoration(
-                                                        color:
-                                                        Color(0xFFEEEEEE),
+                                                        color: Color(0xFFEEEEEE),
                                                       ),
                                                       child: Row(
-                                                        mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        mainAxisSize: MainAxisSize.max,
                                                         children: [
                                                           Text(
                                                             '카테고리: ',
-                                                            style:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
-                                                              color:
-                                                              Colors.black,
+                                                            style: FlutterFlowTheme.bodyText1.override(
+                                                              fontFamily: 'tway_air medium',
+                                                              color: Colors.black,
                                                               fontSize: 13,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
+                                                              fontWeight: FontWeight.w500,
+                                                              useGoogleFonts: false,
                                                             ),
                                                           ),
                                                         ],
@@ -322,33 +248,21 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                                     ),
                                                   ),
                                                   Container(
-                                                    width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                        0.35,
+                                                    width: MediaQuery.of(context).size.width * 0.35,
                                                     height: 30,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFEEEEEE),
                                                     ),
                                                     child: Row(
-                                                      mainAxisSize:
-                                                      MainAxisSize.max,
+                                                      mainAxisSize: MainAxisSize.max,
                                                       children: [
                                                         Text(
-                                                          rowRepairstoreRecord
-                                                              .category,
-                                                          style:
-                                                          FlutterFlowTheme
-                                                              .bodyText1
-                                                              .override(
-                                                            fontFamily:
-                                                            'tway_air medium',
+                                                          rowRepairstoreRecord.category,
+                                                          style: FlutterFlowTheme.bodyText1.override(
+                                                            fontFamily: 'tway_air medium',
                                                             fontSize: 13,
-                                                            fontWeight:
-                                                            FontWeight.w500,
-                                                            useGoogleFonts:
-                                                            false,
+                                                            fontWeight: FontWeight.w500,
+                                                            useGoogleFonts: false,
                                                           ),
                                                         ),
                                                       ],
@@ -358,46 +272,27 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                               ),
                                               Row(
                                                 mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .spaceEvenly,
+                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                 children: [
                                                   Padding(
-                                                    padding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                        5, 0, 0, 0),
+                                                    padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                                     child: Container(
-                                                      width:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                          0.15,
+                                                      width: MediaQuery.of(context).size.width * 0.15,
                                                       height: 30,
                                                       decoration: BoxDecoration(
-                                                        color:
-                                                        Color(0xFFEEEEEE),
+                                                        color: Color(0xFFEEEEEE),
                                                       ),
                                                       child: Row(
-                                                        mainAxisSize:
-                                                        MainAxisSize.max,
+                                                        mainAxisSize: MainAxisSize.max,
                                                         children: [
                                                           Text(
                                                             '수리품목:',
-                                                            style:
-                                                            FlutterFlowTheme
-                                                                .bodyText1
-                                                                .override(
-                                                              fontFamily:
-                                                              'tway_air medium',
-                                                              color:
-                                                              Colors.black,
+                                                            style: FlutterFlowTheme.bodyText1.override(
+                                                              fontFamily: 'tway_air medium',
+                                                              color: Colors.black,
                                                               fontSize: 13,
-                                                              fontWeight:
-                                                              FontWeight
-                                                                  .w500,
-                                                              useGoogleFonts:
-                                                              false,
+                                                              fontWeight: FontWeight.w500,
+                                                              useGoogleFonts: false,
                                                             ),
                                                           ),
                                                         ],
@@ -405,33 +300,22 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
                                                     ),
                                                   ),
                                                   Container(
-                                                    width:
-                                                    MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                        0.35,
+                                                    width: MediaQuery.of(context).size.width * 0.35,
                                                     height: 30,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xFFEEEEEE),
                                                     ),
                                                     child: Row(
-                                                      mainAxisSize:
-                                                      MainAxisSize.max,
+                                                      mainAxisSize: MainAxisSize.max,
                                                       children: [
                                                         Text(
-                                                          rowRepairstoreRecord
-                                                              .breif,
-                                                          style:
-                                                          FlutterFlowTheme
-                                                              .bodyText1
-                                                              .override(
+                                                          rowRepairstoreRecord.breif,
+                                                          style: FlutterFlowTheme.bodyText1.override(
                                                             fontFamily:
                                                             'tway_air medium',
                                                             fontSize: 13,
-                                                            fontWeight:
-                                                            FontWeight.w500,
-                                                            useGoogleFonts:
-                                                            false,
+                                                            fontWeight: FontWeight.w500,
+                                                            useGoogleFonts: false,
                                                           ),
                                                         ),
                                                       ],

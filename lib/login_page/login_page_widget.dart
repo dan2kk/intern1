@@ -78,8 +78,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                             child: InkWell(
                               onTap: () async {
-                                final user =
-                                await signInWithNaver(context);
+                                final user = await signInWithNaver(context);
                                 if (user == null) {
                                   return;
                                 }
@@ -93,26 +92,19 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   borderRadius: BorderRadius.circular(30),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Container(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.12,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
+                                        width: MediaQuery.of(context).size.width * 0.12,
+                                        height: MediaQuery.of(context).size.height * 0.05,
                                         decoration: BoxDecoration(
                                           color: Color(0xFFEEEEEE),
-                                          borderRadius:
-                                              BorderRadius.circular(30),
+                                          borderRadius: BorderRadius.circular(30),
                                         ),
                                         child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(0),
+                                          borderRadius: BorderRadius.circular(0),
                                           child: Image.asset(
                                             'assets/images/mxqzu_.PNG',
                                             width: 100,
@@ -122,13 +114,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 0, 0, 0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                         child: Text(
                                           '네이버로 로그인하기',
                                           style: TextStyle(
-                                            color:
-                                                FlutterFlowTheme.secondaryColor,
+                                            color: FlutterFlowTheme.secondaryColor,
                                             fontWeight: FontWeight.w600,
                                             fontSize: 16,
                                           ),
@@ -159,12 +149,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   borderRadius: BorderRadius.circular(30),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                   child: InkWell(
                                     onTap: () async {
-                                      final user =
-                                          await signInWithFacebook(context);
+                                      final user = await signInWithFacebook(context);
                                       if (user == null) {
                                         return;
                                       }
@@ -174,28 +162,18 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Container(
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.11,
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.05,
+                                          width: MediaQuery.of(context).size.width * 0.11,
+                                          height: MediaQuery.of(context).size.height * 0.05,
                                           decoration: BoxDecoration(
                                             color: Color(0xFF4450C5),
-                                            borderRadius:
-                                                BorderRadius.circular(50),
+                                            borderRadius: BorderRadius.circular(50),
                                           ),
                                           child: Align(
-                                            alignment:
-                                                AlignmentDirectional(-0.95, -1),
+                                            alignment: AlignmentDirectional(-0.95, -1),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(5, 0, 0, 0),
+                                              padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                               child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(0),
+                                                borderRadius: BorderRadius.circular(0),
                                                 child: Image.asset(
                                                   'assets/images/facebook_.jpg',
                                                   width: 100,
@@ -208,13 +186,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  10, 0, 0, 0),
+                                              EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                           child: Text(
                                             'Facebook으로 로그인하기',
                                             style: TextStyle(
-                                              color: FlutterFlowTheme
-                                                  .secondaryColor,
+                                              color: FlutterFlowTheme.secondaryColor,
                                               fontWeight: FontWeight.w600,
                                               fontSize: 16,
                                             ),
@@ -232,8 +208,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                             child: InkWell(
                               onTap: () async {
-                                final user =
-                                await signInWithKaKao(context);
+                                final user = await signInWithKaKao(context);
                                 if (user == null) {
                                   return;
                                 }
@@ -247,26 +222,19 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   borderRadius: BorderRadius.circular(30),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Container(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.12,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.05,
+                                        width: MediaQuery.of(context).size.width * 0.12,
+                                        height: MediaQuery.of(context).size.height * 0.05,
                                         decoration: BoxDecoration(
                                           color: Color(0xFFEEEEEE),
-                                          borderRadius:
-                                              BorderRadius.circular(30),
+                                          borderRadius: BorderRadius.circular(30),
                                         ),
                                         child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(30),
+                                          borderRadius: BorderRadius.circular(30),
                                           child: Image.asset(
                                             'assets/images/q0lkr_.PNG',
                                             width: 100,
@@ -276,8 +244,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 0, 0, 0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                         child: Text(
                                           '카카오로 로그인하기',
                                           style: TextStyle(
@@ -297,20 +264,17 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                 child: InkWell(
                                   onTap: () async {
-                                    final user =
-                                        await signInWithGoogle(context);
+                                    final user = await signInWithGoogle(context);
                                     if (user == null) {
                                       return;
                                     }
                                     await Navigator.of(context).pop(true);
                                   },
                                   child: Container(
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.75,
+                                    width: MediaQuery.of(context).size.width * 0.75,
                                     height: 55,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFFBFBF6),
@@ -320,12 +284,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                       child: InkWell(
                                         onTap: () async {
-                                          final user =
-                                              await signInWithGoogle(context);
+                                          final user = await signInWithGoogle(context);
                                           if (user == null) {
                                             return;
                                           }
@@ -335,22 +297,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Container(
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.12,
-                                              height: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  0.05,
+                                              width: MediaQuery.of(context).size.width * 0.12,
+                                              height: MediaQuery.of(context).size.height * 0.05,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
-                                                borderRadius:
-                                                    BorderRadius.circular(30),
+                                                borderRadius: BorderRadius.circular(30),
                                               ),
                                               child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(30),
+                                                borderRadius: BorderRadius.circular(30),
                                                 child: Image.asset(
                                                   'assets/images/h59m3_.PNG',
                                                   width: 100,
@@ -360,8 +314,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
+                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                               child: Text(
                                                 'Google로 로그인하기',
                                                 style: TextStyle(
@@ -379,8 +332,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                                 child: Text(
                                   '소셜 계정이 없으신가요?',
                                   style: TextStyle(

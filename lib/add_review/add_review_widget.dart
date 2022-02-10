@@ -46,8 +46,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
   Widget build(BuildContext context) {
     return StreamBuilder<List<RepairmentRecord>>(
       stream: queryRepairmentRecord(
-        queryBuilder: (repairmentRecord) => repairmentRecord
-            .where('repairmentid', isEqualTo: widget.repairmentid),
+        queryBuilder: (repairmentRecord) => repairmentRecord.where('repairmentid', isEqualTo: widget.repairmentid),
         singleRecord: true,
       ),
       builder: (context, snapshot) {
@@ -64,10 +63,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
         if (snapshot.data.isEmpty) {
           return Container();
         }
-        final addReviewRepairmentRecord =
-        addReviewRepairmentRecordList.isNotEmpty
-            ? addReviewRepairmentRecordList.first
-            : null;
+        final addReviewRepairmentRecord = addReviewRepairmentRecordList.isNotEmpty ? addReviewRepairmentRecordList.first : null;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: Colors.white,
@@ -112,8 +108,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                   child: Text(
                                     '리뷰 작성',
                                     style: FlutterFlowTheme.bodyText1.override(
@@ -151,8 +146,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                   child: FFButtonWidget(
                                     onPressed: () {
                                       print('Button pressed ...');
@@ -162,8 +156,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                       width: 90,
                                       height: 35,
                                       color: Colors.white,
-                                      textStyle:
-                                      FlutterFlowTheme.subtitle2.override(
+                                      textStyle: FlutterFlowTheme.subtitle2.override(
                                         fontFamily: 'tway_air medium',
                                         color: Color(0xFF21B6FF),
                                         fontWeight: FontWeight.w500,
@@ -263,8 +256,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                     ),
                                   ),
                                   Text(
-                                    addReviewRepairmentRecord.estDate
-                                        .toString(),
+                                    addReviewRepairmentRecord.estDate.toString(),
                                     style: FlutterFlowTheme.bodyText1.override(
                                       fontFamily: 'tway_air medium',
                                       color: Colors.white,
@@ -303,30 +295,23 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.96,
-                                    height: MediaQuery.of(context).size.height *
-                                        0.03,
+                                    width: MediaQuery.of(context).size.width * 0.96,
+                                    height: MediaQuery.of(context).size.height * 0.03,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFEEEEEE),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 5, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                20, 0, 0, 0),
+                                            padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                             child: Text(
                                               '수리 요청 사항',
-                                              style: FlutterFlowTheme.bodyText1
-                                                  .override(
+                                              style: FlutterFlowTheme.bodyText1.override(
                                                 fontFamily: 'tway_air medium',
                                                 color: Color(0xFF21B6FF),
                                                 fontSize: 16,
@@ -343,8 +328,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               ),
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.96,
-                                height:
-                                MediaQuery.of(context).size.height * 0.23,
+                                height: MediaQuery.of(context).size.height * 0.23,
                                 decoration: BoxDecoration(
                                   color: Color(0xFFEEEEEE),
                                   borderRadius: BorderRadius.circular(20),
@@ -354,15 +338,13 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 5, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 5, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
                                             '견적 문의 날짜 = ',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Color(0xFF21B6FF),
                                               fontSize: 13,
@@ -371,10 +353,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                             ),
                                           ),
                                           Text(
-                                            addReviewRepairmentRecord.timestamp
-                                                .toString(),
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            addReviewRepairmentRecord.timestamp.toString(),
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Color(0xFF21B6FF),
                                               fontSize: 13,
@@ -386,15 +366,13 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 15, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 15, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
                                             '고장 부위 = ',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Color(0xFF21B6FF),
                                               fontSize: 13,
@@ -403,10 +381,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                             ),
                                           ),
                                           Text(
-                                            addReviewRepairmentRecord
-                                                .brokenPart,
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            addReviewRepairmentRecord.brokenPart,
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Color(0xFF21B6FF),
                                               fontSize: 13,
@@ -418,15 +394,13 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 15, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 15, 0, 0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
                                             '증상 = ',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Color(0xFF21B6FF),
                                               fontSize: 13,
@@ -436,8 +410,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                           ),
                                           Text(
                                             addReviewRepairmentRecord.symptom,
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
+                                            style: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Color(0xFF21B6FF),
                                               fontSize: 13,
@@ -479,9 +452,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                         if (snapshot.data.isEmpty) {
                           return Container();
                         }
-                        final rowUsersRecord = rowUsersRecordList.isNotEmpty
-                            ? rowUsersRecordList.first
-                            : null;
+                        final rowUsersRecord = rowUsersRecordList.isNotEmpty ? rowUsersRecordList.first : null;
                         return Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -497,20 +468,15 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: MediaQuery.of(context).size.width *
-                                        0.31,
-                                    height: MediaQuery.of(context).size.height *
-                                        0.15,
+                                    width: MediaQuery.of(context).size.width * 0.31,
+                                    height: MediaQuery.of(context).size.height * 0.15,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Container(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.31,
-                                      height:
-                                      MediaQuery.of(context).size.height *
-                                          0.15,
+                                      width: MediaQuery.of(context).size.width * 0.31,
+                                      height: MediaQuery.of(context).size.height * 0.15,
                                       decoration: BoxDecoration(
                                         color: Color(0xFFEEEEEE),
                                         borderRadius: BorderRadius.circular(20),
@@ -524,8 +490,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                               child:
                                               FlutterFlowExpandedImageView(
                                                 image: Image.network(
-                                                  addReviewRepairmentRecord
-                                                      .imgUrl,
+                                                  addReviewRepairmentRecord.imgUrl,
                                                   fit: BoxFit.contain,
                                                 ),
                                                 allowRotation: false,
@@ -539,17 +504,11 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                           tag: 'imageTag1',
                                           transitionOnUserGestures: true,
                                           child: ClipRRect(
-                                            borderRadius:
-                                            BorderRadius.circular(20),
+                                            borderRadius: BorderRadius.circular(20),
                                             child: Image.network(
                                               addReviewRepairmentRecord.imgUrl,
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
-                                              height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                                  1,
+                                              width: MediaQuery.of(context).size.width * 1,
+                                              height: MediaQuery.of(context).size.height * 1,
                                               fit: BoxFit.cover,
                                             ),
                                           ),
@@ -561,35 +520,25 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Container(
-                                        width:
-                                        MediaQuery.of(context).size.width *
-                                            0.65,
-                                        height:
-                                        MediaQuery.of(context).size.height *
-                                            0.15,
+                                        width: MediaQuery.of(context).size.width * 0.65,
+                                        height: MediaQuery.of(context).size.height * 0.15,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
                                         ),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          mainAxisAlignment: MainAxisAlignment.center,
                                           children: [
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.center,
                                               children: [
                                                 Row(
-                                                  mainAxisSize:
-                                                  MainAxisSize.max,
+                                                  mainAxisSize: MainAxisSize.max,
                                                   children: [
                                                     Text(
-                                                      addReviewRepairmentRecord
-                                                          .manufacture,
-                                                      style: FlutterFlowTheme
-                                                          .bodyText1
-                                                          .override(
+                                                      addReviewRepairmentRecord.manufacture,
+                                                      style: FlutterFlowTheme.bodyText1.override(
                                                         fontFamily:
                                                         'tway_air medium',
                                                         color: Colors.black,
@@ -602,20 +551,14 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                                   ],
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 30, 0, 0),
+                                                  padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                                                   child: Row(
-                                                    mainAxisSize:
-                                                    MainAxisSize.max,
+                                                    mainAxisSize: MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        rowUsersRecord
-                                                            .displayName,
-                                                        style: FlutterFlowTheme
-                                                            .bodyText1
-                                                            .override(
-                                                          fontFamily:
-                                                          'tway_air medium',
+                                                        rowUsersRecord.displayName,
+                                                        style: FlutterFlowTheme.bodyText1.override(
+                                                          fontFamily: 'tway_air medium',
                                                           color: Colors.black,
                                                           fontSize: 17,
                                                           fontWeight:
@@ -660,8 +603,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.31,
-                                height:
-                                MediaQuery.of(context).size.height * 0.15,
+                                height: MediaQuery.of(context).size.height * 0.15,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(20),
@@ -674,49 +616,31 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                       if (!(picturevideoValue) ?? true)
                                         InkWell(
                                           onTap: () async {
-                                            final selectedMedia =
-                                            await selectMediaWithSourceBottomSheet(
+                                            final selectedMedia = await selectMediaWithSourceBottomSheet(
                                               context: context,
                                               allowPhoto: true,
                                             );
-                                            if (selectedMedia != null &&
-                                                validateFileFormat(
-                                                    selectedMedia.storagePath,
-                                                    context)) {
+                                            if (selectedMedia != null && validateFileFormat(selectedMedia.storagePath, context)) {
                                               showUploadMessage(
                                                   context, 'Uploading file...',
                                                   showLoading: true);
-                                              final downloadUrl =
-                                              await uploadData(
-                                                  selectedMedia.storagePath,
-                                                  selectedMedia.bytes);
-                                              ScaffoldMessenger.of(context)
-                                                  .hideCurrentSnackBar();
+                                              final downloadUrl = await uploadData(selectedMedia.storagePath, selectedMedia.bytes);
+                                              ScaffoldMessenger.of(context).hideCurrentSnackBar();
                                               if (downloadUrl != null) {
-                                                setState(() =>
-                                                uploadedFileUrl1 =
-                                                    downloadUrl);
-                                                showUploadMessage(
-                                                    context, 'Success!');
+                                                setState(() => uploadedFileUrl1 = downloadUrl);
+                                                showUploadMessage(context, 'Success!');
                                               } else {
-                                                showUploadMessage(context,
-                                                    'Failed to upload media');
+                                                showUploadMessage(context, 'Failed to upload media');
                                                 return;
                                               }
                                             }
                                           },
                                           child: ClipRRect(
-                                            borderRadius:
-                                            BorderRadius.circular(20),
+                                            borderRadius: BorderRadius.circular(20),
                                             child: Image.network(
                                               'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2F%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=2e283c3a-2d59-4fe8-b97b-2a78784687e9',
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
-                                              height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                                  1,
+                                              width: MediaQuery.of(context).size.width,
+                                              height: MediaQuery.of(context).size.height * 1,
                                               fit: BoxFit.cover,
                                             ),
                                           ),
@@ -726,35 +650,22 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                           alignment: AlignmentDirectional(0, 0),
                                           child: InkWell(
                                             onTap: () async {
-                                              final selectedMedia =
-                                              await selectMediaWithSourceBottomSheet(
+                                              final selectedMedia = await selectMediaWithSourceBottomSheet(
                                                 context: context,
                                                 allowPhoto: false,
                                                 allowVideo: true,
                                               );
-                                              if (selectedMedia != null &&
-                                                  validateFileFormat(
-                                                      selectedMedia.storagePath,
-                                                      context)) {
+                                              if (selectedMedia != null && validateFileFormat(selectedMedia.storagePath, context)) {
                                                 showUploadMessage(context,
                                                     'Uploading file...',
                                                     showLoading: true);
-                                                final downloadUrl =
-                                                await uploadData(
-                                                    selectedMedia
-                                                        .storagePath,
-                                                    selectedMedia.bytes);
-                                                ScaffoldMessenger.of(context)
-                                                    .hideCurrentSnackBar();
+                                                final downloadUrl = await uploadData(selectedMedia.storagePath, selectedMedia.bytes);
+                                                ScaffoldMessenger.of(context).hideCurrentSnackBar();
                                                 if (downloadUrl != null) {
-                                                  setState(() =>
-                                                  uploadedFileUrl2 =
-                                                      downloadUrl);
-                                                  showUploadMessage(
-                                                      context, 'Success!');
+                                                  setState(() => uploadedFileUrl2 = downloadUrl);
+                                                  showUploadMessage(context, 'Success!');
                                                 } else {
-                                                  showUploadMessage(context,
-                                                      'Failed to upload media');
+                                                  showUploadMessage(context, 'Failed to upload media');
                                                   return;
                                                 }
                                               }
@@ -764,13 +675,8 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                               BorderRadius.circular(20),
                                               child: Image.network(
                                                 'https://firebasestorage.googleapis.com/v0/b/ttak-tta-gu-ri.appspot.com/o/repairment%2Fvideo%20%EC%B4%88%EA%B9%83%EA%B0%92.JPG?alt=media&token=1efb466d-2eda-4241-b72c-25a918947d38',
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                    1,
+                                                width: MediaQuery.of(context).size.width,
+                                                height: MediaQuery.of(context).size.height * 1,
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -782,8 +688,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               ),
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.65,
-                                height:
-                                MediaQuery.of(context).size.height * 0.15,
+                                height: MediaQuery.of(context).size.height * 0.15,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                 ),
@@ -793,20 +698,15 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                   children: [
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 40, 0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 40, 0),
                                         child: SwitchListTile.adaptive(
                                           value: picturevideoValue ??= false,
-                                          onChanged: (newValue) => setState(
-                                                  () =>
-                                              picturevideoValue = newValue),
+                                          onChanged: (newValue) => setState(() => picturevideoValue = newValue),
                                           title: Text(
                                             '동영상 첨부',
-                                            style: FlutterFlowTheme.title2
-                                                .override(
+                                            style: FlutterFlowTheme.title2.override(
                                               fontFamily: 'tway_air medium',
-                                              color: FlutterFlowTheme
-                                                  .tertiaryColor,
+                                              color: FlutterFlowTheme.tertiaryColor,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500,
                                               useGoogleFonts: false,
@@ -814,8 +714,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                           ),
                                           tileColor: Colors.white,
                                           dense: false,
-                                          controlAffinity:
-                                          ListTileControlAffinity.trailing,
+                                          controlAffinity: ListTileControlAffinity.trailing,
                                         ),
                                       ),
                                     ),
@@ -856,8 +755,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 ),
                               ),
                               RatingBar.builder(
-                                onRatingUpdate: (newValue) =>
-                                    setState(() => ratingBarValue1 = newValue),
+                                onRatingUpdate: (newValue) => setState(() => ratingBarValue1 = newValue),
                                 itemBuilder: (context, index) => FaIcon(
                                   FontAwesomeIcons.hammer,
                                   color: Color(0xFF21B6FF),
@@ -886,8 +784,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 ),
                               ),
                               RatingBar.builder(
-                                onRatingUpdate: (newValue) =>
-                                    setState(() => ratingBarValue2 = newValue),
+                                onRatingUpdate: (newValue) => setState(() => ratingBarValue2 = newValue),
                                 itemBuilder: (context, index) => FaIcon(
                                   FontAwesomeIcons.hammer,
                                   color: Color(0xFF21B6FF),
@@ -916,8 +813,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 ),
                               ),
                               RatingBar.builder(
-                                onRatingUpdate: (newValue) =>
-                                    setState(() => ratingBarValue3 = newValue),
+                                onRatingUpdate: (newValue) => setState(() => ratingBarValue3 = newValue),
                                 itemBuilder: (context, index) => FaIcon(
                                   FontAwesomeIcons.hammer,
                                   color: Color(0xFF21B6FF),
@@ -1038,9 +934,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                                 ),
                                 'photo_url': [uploadedFileUrl1],
                               };
-                              await ReviewRecord.collection
-                                  .doc()
-                                  .set(reviewCreateData);
+                              await ReviewRecord.collection.doc().set(reviewCreateData);
                               final createPoint = {...createPointsRecordData(
                                   amount : 500,
                                   earnedDate: getCurrentTimestamp,
@@ -1068,8 +962,7 @@ class _AddReviewWidgetState extends State<AddReviewWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      ReviewAddedCOMPLETEWidget(),
+                                  builder: (context) => ReviewAddedCOMPLETEWidget(),
                                 ),
                               );
                             },

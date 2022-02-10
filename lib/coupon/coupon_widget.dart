@@ -82,9 +82,7 @@ class _CouponWidgetState extends State<CouponWidget> {
         if (snapshot.data.isEmpty) {
           return Container();
         }
-        final couponCouponRecord = couponCouponRecordList.isNotEmpty
-            ? couponCouponRecordList.first
-            : null;
+        final couponCouponRecord = couponCouponRecordList.isNotEmpty ? couponCouponRecordList.first : null;
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: Colors.white,
@@ -109,14 +107,12 @@ class _CouponWidgetState extends State<CouponWidget> {
                               child: Align(
                                 alignment: AlignmentDirectional(0, -0.5),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 20, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 0, 0, 0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                         child: InkWell(
                                           onTap: () async {
                                             Navigator.pop(context);
@@ -127,8 +123,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                                             decoration: BoxDecoration(
                                                 borderRadius: BorderRadius.circular(20),
                                                 image: DecorationImage(
-                                                  image: AssetImage(
-                                                      'assets/images/16.png'),
+                                                  image: AssetImage('assets/images/16.png'),
                                                   fit: BoxFit.fill,
                                                 ),
                                                 shape: BoxShape.rectangle
@@ -137,12 +132,10 @@ class _CouponWidgetState extends State<CouponWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            MediaQuery.of(context).size.width*0.25, 0, 0, 0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(MediaQuery.of(context).size.width * 0.25, 0, 0, 0),
                                         child: Text(
                                           '쿠폰 현황',
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Color(0xFF21B6FF),
                                             fontSize: 25,
@@ -171,8 +164,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.85,
                               height: 50,
@@ -185,46 +177,39 @@ class _CouponWidgetState extends State<CouponWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding:
-                                EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          4, 0, 4, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
                                       child: Container(
-                                    width: 24,
-                                height: 24,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/17.png'),
-                                      fit: BoxFit.fill,
-                                    ),
-                                    shape: BoxShape.rectangle
-                                ),
-                              ),
+                                        width: 24,
+                                        height: 24,
+                                        decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(20),
+                                            image: DecorationImage(
+                                              image: AssetImage('assets/images/17.png'),
+                                              fit: BoxFit.fill,
+                                            ),
+                                            shape: BoxShape.rectangle
+                                        ),
+                                      ),
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            4, 0, 0, 0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
                                         child: TextFormField(
-                                          onChanged: (_) =>
-                                              EasyDebounce.debounce(
+                                          onChanged: (_) => EasyDebounce.debounce(
                                                 'textController',
                                                 Duration(milliseconds: 1000),
-                                                    () => setState(() {}),
+                                                () => setState(() {}),
                                               ),
                                           controller: textController,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: '쿠폰번호 입력하기',
-                                            labelStyle: FlutterFlowTheme
-                                                .bodyText1
-                                                .override(
+                                            labelStyle: FlutterFlowTheme.bodyText1.override(
                                               fontFamily: 'tway_air medium',
                                               color: Color(0xFF95A1AC),
                                               fontSize: 14,
@@ -236,8 +221,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                 color: Color(0x00000000),
                                                 width: 1,
                                               ),
-                                              borderRadius:
-                                              const BorderRadius.only(
+                                              borderRadius: const BorderRadius.only(
                                                 topLeft: Radius.circular(4.0),
                                                 topRight: Radius.circular(4.0),
                                               ),
@@ -247,15 +231,13 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                 color: Color(0x00000000),
                                                 width: 1,
                                               ),
-                                              borderRadius:
-                                              const BorderRadius.only(
+                                              borderRadius: const BorderRadius.only(
                                                 topLeft: Radius.circular(4.0),
                                                 topRight: Radius.circular(4.0),
                                               ),
                                             ),
                                           ),
-                                          style: FlutterFlowTheme.bodyText1
-                                              .override(
+                                          style: FlutterFlowTheme.bodyText1.override(
                                             fontFamily: 'tway_air medium',
                                             color: Color(0xFF95A1AC),
                                             fontSize: 14,
@@ -271,20 +253,17 @@ class _CouponWidgetState extends State<CouponWidget> {
                                         AlignmentDirectional(0.95, 0),
                                         child: InkWell(
                                           onTap: () async {
-                                            if ((couponCouponRecord.uid) !=
-                                                '') {
+                                            if ((couponCouponRecord.uid) != '') {
                                               await showDialog(
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
                                                     title: Text('이미 등록된 쿠폰'),
-                                                    content:
-                                                    Text('이미 등록된 쿠폰입니다!'),
+                                                    content: Text('이미 등록된 쿠폰입니다!'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
-                                                            Navigator.pop(
-                                                                alertDialogContext),
+                                                            Navigator.pop(alertDialogContext),
                                                         child: Text('Ok'),
                                                       ),
                                                     ],
@@ -299,13 +278,9 @@ class _CouponWidgetState extends State<CouponWidget> {
                                               return;
                                             }
                                             final usersUpdateData = {
-                                              'coupon_his':
-                                              FieldValue.arrayUnion([
-                                                couponCouponRecord.reference
-                                              ]),
+                                              'coupon_his': FieldValue.arrayUnion([couponCouponRecord.reference]),
                                             };
-                                            await currentUserReference
-                                                .update(usersUpdateData);
+                                            await currentUserReference.update(usersUpdateData);
                                           },
                                           child: Icon(
                                             Icons.transit_enterexit_outlined,
@@ -332,14 +307,12 @@ class _CouponWidgetState extends State<CouponWidget> {
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: List.generate(listofcoupon.length,
-                                      (listofcouponIndex) {
+                              children: List.generate(listofcoupon.length, (listofcouponIndex) {
                                     final listofcouponItem = listofcoupon[listofcouponIndex];
                                     chooseColor.add(0);
                                     border.add(1);
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 10, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                       child: StreamBuilder<CouponRecord>(
                                         stream: CouponRecord.getDocument(
                                             listofcouponItem),
@@ -359,9 +332,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                                             children: [
                                               InkWell(
                                               child: Container(
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width * 0.95,
+                                                width: MediaQuery.of(context).size.width * 0.95,
                                                 height: 90,
                                                 decoration: BoxDecoration(
                                                   color: Colors.white,
@@ -374,58 +345,39 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                   mainAxisSize: MainAxisSize.max,
                                                   children: [
                                                     Column(
-                                                      mainAxisSize:
-                                                      MainAxisSize.max,
+                                                      mainAxisSize: MainAxisSize.max,
                                                       children: [
                                                         Container(
                                                           width: 100,
                                                           height: 80,
-                                                          child:
-                                                          RiveAnimation.asset(
+                                                          child: RiveAnimation.asset(
                                                             'assets/rive_animations/1435-2808-scrolling-letter.riv',
-                                                            artboard:
-                                                            'New Artboard',
+                                                            artboard: 'New Artboard',
                                                             fit: BoxFit.cover,
-                                                            controllers:
-                                                            riveAnimationControllers,
+                                                            controllers: riveAnimationControllers,
                                                           ),
                                                         ),
                                                       ],
                                                     ),
                                                     Expanded(
                                                       child: Padding(
-                                                        padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                            8, 1, 0, 0),
+                                                        padding: EdgeInsetsDirectional.fromSTEB(8, 1, 0, 0),
                                                         child: Column(
-                                                          mainAxisSize:
-                                                          MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
+                                                          mainAxisSize: MainAxisSize.max,
+                                                          mainAxisAlignment: MainAxisAlignment.center,
                                                           children: [
                                                             Row(
-                                                              mainAxisSize:
-                                                              MainAxisSize.max,
+                                                              mainAxisSize: MainAxisSize.max,
                                                               children: [
                                                                 Stack(
                                                                   children: [
                                                                     Text(
-                                                                      storeListViewCouponRecord
-                                                                          .breif,
-                                                                      style: FlutterFlowTheme
-                                                                          .subtitle1
-                                                                          .override(
-                                                                        fontFamily:
-                                                                        'Lexend Deca',
-                                                                        color: Color(
-                                                                            0xFF15212B),
-                                                                        fontSize:
-                                                                        18,
-                                                                        fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
+                                                                      storeListViewCouponRecord.breif,
+                                                                      style: FlutterFlowTheme.subtitle1.override(
+                                                                        fontFamily: 'Lexend Deca',
+                                                                        color: Color(0xFF15212B),
+                                                                        fontSize: 18,
+                                                                        fontWeight: FontWeight.w500,
                                                                       ),
                                                                     ),
                                                                   ],
@@ -433,8 +385,7 @@ class _CouponWidgetState extends State<CouponWidget> {
                                                               ],
                                                             ),
                                                             Row(
-                                                              mainAxisSize:
-                                                              MainAxisSize.max,
+                                                              mainAxisSize: MainAxisSize.max,
                                                               children: [
                                                                 Text(
                                                                   '${dateTimeFormat('y년 M월 d', storeListViewCouponRecord.expireDate)}일 까지 사용가능',

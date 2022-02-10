@@ -75,8 +75,7 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                       child: InkWell(
                                         onTap: () async {
                                           Navigator.pop(context);
@@ -89,8 +88,7 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 0, 0),
+                                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                       child: Text(
                                         '수리 진행 현황',
                                         style:
@@ -163,14 +161,7 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: InkWell(
                         onTap: () async {
-                          await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RepairmentDetailWidget(
-                                repairmentid: widget.repairmentid0,
-                              ),
-                            ),
-                          );
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => RepairmentDetailWidget(repairmentid: widget.repairmentid0,),));
                         },
                         child: Text(
                           '수리 요청 및 결제 완료',
@@ -430,10 +421,7 @@ class _FixCurrentStateWidgetState extends State<FixCurrentStateWidget> {
                       onPressed: () async {
                         await Navigator.push(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => RepairmentDetailWidget(
-                              repairmentid: widget.repairmentid0,
-                            ),
+                          MaterialPageRoute(builder: (context) => RepairmentDetailWidget(repairmentid: widget.repairmentid0,),
                           ),
                         );
                       },

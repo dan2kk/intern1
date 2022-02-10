@@ -93,16 +93,13 @@ class _EventdetailWidgetState extends State<EventdetailWidget>
                                     child: Align(
                                       alignment: AlignmentDirectional(0, -0.5),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 20, 0, 0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
+                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                                               child: InkWell(
                                                 onTap: () async {
                                                   Navigator.pop(context);
@@ -115,13 +112,10 @@ class _EventdetailWidgetState extends State<EventdetailWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(20, 0, 0, 0),
+                                              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                               child: Text(
                                                 '이벤트 상세',
-                                                style: FlutterFlowTheme
-                                                    .bodyText1
-                                                    .override(
+                                                style: FlutterFlowTheme.bodyText1.override(
                                                   fontFamily: 'tway_air medium',
                                                   color: Colors.white,
                                                   fontSize: 25,
@@ -140,8 +134,7 @@ class _EventdetailWidgetState extends State<EventdetailWidget>
                               Align(
                                 alignment: AlignmentDirectional(0, 0.15),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 10, 0, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -150,12 +143,10 @@ class _EventdetailWidgetState extends State<EventdetailWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    60, 0, 0, 0),
+                                                EdgeInsetsDirectional.fromSTEB(60, 0, 0, 0),
                                             child: Text(
                                               eventdetailEventsRecord.name,
-                                              style: FlutterFlowTheme.title1
-                                                  .override(
+                                              style: FlutterFlowTheme.title1.override(
                                                 fontFamily: 'tway_air medium',
                                                 color: Colors.white,
                                                 fontSize: 23,
@@ -178,22 +169,17 @@ class _EventdetailWidgetState extends State<EventdetailWidget>
                   ),
                   Builder(
                     builder: (context) {
-                      final listofimage = eventdetailEventsRecord.mainImage
-                              .toList()
-                              ?.toList() ??
-                          [];
+                      final listofimage = eventdetailEventsRecord.mainImage.toList()?.toList() ?? [];
                       return Column(
                         mainAxisSize: MainAxisSize.max,
-                        children: List.generate(listofimage.length,
-                            (listofimageIndex) {
+                        children: List.generate(listofimage.length, (listofimageIndex) {
                           final listofimageItem = listofimage[listofimageIndex];
                           return Image.network(
                             listofimageItem,
                             width: MediaQuery.of(context).size.width,
                             height: 240,
                             fit: BoxFit.cover,
-                          ).animated(
-                              [animationsMap['imageOnPageLoadAnimation']]);
+                          ).animated([animationsMap['imageOnPageLoadAnimation']]);
                         }),
                       );
                     },

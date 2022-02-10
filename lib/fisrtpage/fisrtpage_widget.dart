@@ -129,10 +129,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                     onTap: () async {
                       await Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              NavBarPage(initialPage: 'MainPage'),
-                        ),
+                        MaterialPageRoute(builder: (context) => NavBarPage(initialPage: 'MainPage'),),
                       );
                     },
                     child: Container(
@@ -154,8 +151,7 @@ class _FisrtpageWidgetState extends State<FisrtpageWidget> {
                                   PageTransition(
                                     type: PageTransitionType.bottomToTop,
                                     duration: Duration(milliseconds: 300),
-                                    reverseDuration:
-                                    Duration(milliseconds: 300),
+                                    reverseDuration: Duration(milliseconds: 300),
                                     child: NavBarPage(initialPage: 'MainPage'),
                                   ),
                                 );

@@ -60,8 +60,7 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                                     child: InkWell(
                                       onTap: () async {
                                         Navigator.pop(context);
@@ -85,27 +84,17 @@ class _MyPageWidgetState extends State<MyPageWidget> {
                               child: AuthUserStreamWidget(
                                 child: InkWell(
                                   onTap: () async {
-                                    final selectedMedia =
-                                    await selectMediaWithSourceBottomSheet(
+                                    final selectedMedia = await selectMediaWithSourceBottomSheet(
                                       context: context,
                                       allowPhoto: true,
                                       allowVideo: true,
                                     );
-                                    if (selectedMedia != null &&
-                                        validateFileFormat(
-                                            selectedMedia.storagePath,
-                                            context)) {
-                                      showUploadMessage(
-                                          context, 'Uploading file...',
-                                          showLoading: true);
-                                      final downloadUrl = await uploadData(
-                                          selectedMedia.storagePath,
-                                          selectedMedia.bytes);
-                                      ScaffoldMessenger.of(context)
-                                          .hideCurrentSnackBar();
+                                    if (selectedMedia != null && validateFileFormat(selectedMedia.storagePath, context)) {
+                                      showUploadMessage(context, 'Uploading file...', showLoading: true);
+                                      final downloadUrl = await uploadData(selectedMedia.storagePath, selectedMedia.bytes);
+                                      ScaffoldMessenger.of(context).hideCurrentSnackBar();
                                       if (downloadUrl != null) {
-                                        setState(() =>
-                                        uploadedFileUrl = downloadUrl);
+                                        setState(() => uploadedFileUrl = downloadUrl);
                                         showUploadMessage(context, 'Success!');
                                       } else {
                                         showUploadMessage(
